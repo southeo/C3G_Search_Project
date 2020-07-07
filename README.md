@@ -11,7 +11,10 @@ Regular search Parameters:
 - age_max
 - age_units
 - gender
-- species 
+- species
+- markers
+- biomaterial_provider
+
 
 Instance Search Parameters:
 - primary_id
