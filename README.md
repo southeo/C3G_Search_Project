@@ -9,7 +9,7 @@ Regular search Parameters:
 - project
 - age_min
 - age_max
-- age_units
+- age_exact
 - gender
 - species
 - markers
