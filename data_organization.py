@@ -16,12 +16,18 @@ def scan_through(ref_list):
 	for elem in os.listdir():
 		if os.path.isfile(elem) and is_datafile(elem):
 			id = get_id(elem)  # get first characters before extentions/extra information
+<<<<<<< Updated upstream
 			ref_list = match_to_db(id, ref_list)
 			print(id)
+=======
+			match_to_db(id, ref_list)
+			print("File:  ",id)
+>>>>>>> Stashed changes
 		elif os.path.isdir(elem):
 			saved_wd = os.getcwd()
 			new_wd = os.path.join(saved_wd, elem)
 			os.chdir(new_wd)
+			print("Dir: ", new_wd)
 			scan_through(ref_list)
 			os.chdir(saved_wd)
 
@@ -58,7 +64,7 @@ with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
 	scan_through(ref_table_copy)
 	count = 0
 	for elem in ref_table_copy["data"]:
-		print("ID: ", elem["ihec_id"], ", Project: ", elem["project"])
+		#print("ID: ", elem["ihec_id"], ", Project: ", elem["project"])
 		count +=1
 	print("number not downloaded: ", count, ", ", count/len(ref_table)*100,"%")    
 
