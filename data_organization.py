@@ -14,9 +14,9 @@ POTENTIAL_DELIMETERS = [".", "-", "_"]
 
 def scan_through(ref_list):
 	for elem in os.listdir():
-		if os.path.isfile(elem): # and is_datafile(elem):
+		if os.path.isfile(elem) and is_datafile(elem):
 			id = get_id(elem)  # get first characters before extentions/extra information
-			match_to_db(id, ref_list)
+			ref_list = match_to_db(id, ref_list)
 			print(id)
 		elif os.path.isdir(elem):
 			saved_wd = os.getcwd()
@@ -48,6 +48,7 @@ def match_to_db(id, ref_list):
 				return
 			if len(elem["instances"]) == 0:
 				del elem
+	return ref_list
 
 
 with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
