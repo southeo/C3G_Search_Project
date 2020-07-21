@@ -17,6 +17,7 @@ def scan_through(ref_list):
 		if os.path.isfile(elem): # and is_datafile(elem):
 			id = get_id(elem)  # get first characters before extentions/extra information
 			match_to_db(id, ref_list)
+			print(id)
 		elif os.path.isdir(elem):
 			saved_wd = os.getcwd()
 			new_wd = os.path.join(saved_wd, elem)
