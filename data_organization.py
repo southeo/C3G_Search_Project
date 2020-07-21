@@ -16,18 +16,14 @@ def scan_through(ref_list):
 	for elem in os.listdir():
 		if os.path.isfile(elem) and is_datafile(elem):
 			id = get_id(elem)  # get first characters before extentions/extra information
-<<<<<<< Updated upstream
 			ref_list = match_to_db(id, ref_list)
-			print(id)
-=======
+			#print("original: ", str(elem), "  id:", id)
 			match_to_db(id, ref_list)
-			print("File:  ",id)
->>>>>>> Stashed changes
 		elif os.path.isdir(elem):
 			saved_wd = os.getcwd()
 			new_wd = os.path.join(saved_wd, elem)
 			os.chdir(new_wd)
-			print("Dir: ", new_wd)
+			#print("Dir: ", new_wd)
 			scan_through(ref_list)
 			os.chdir(saved_wd)
 
