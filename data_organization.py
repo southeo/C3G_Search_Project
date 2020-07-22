@@ -3,6 +3,8 @@ import glob
 import os, sys
 import pathlib
 import json
+import csv
+import pandas as pd
 
 ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".bam.cip",
                        ".bam.crypt"]
@@ -64,6 +66,24 @@ with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
 		#print("ID: ", elem["ihec_id"], ", Project: ", elem["project"])
 		count +=1
 	print("number not downloaded: ", count, ", ", count/len(ref_table)*100,"%")    
+
+#with open("McGill_onsite_filelist.details") as onsite, open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
+onsite_list = pd.read_csv("McGill_onsite_filelist.details", sep='\t')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #not_downloaded = json.dumps(ref_table_copy, indent=4)
