@@ -53,6 +53,7 @@ def match_to_db(id, ref_list):
 	return ref_list
 
 
+print("Hello world!")
 with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
 	ref_table = json.load(rt)
 	ref_table_copy = copy.deepcopy(ref_table)
@@ -63,6 +64,7 @@ with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
 		#print("ID: ", elem["ihec_id"], ", Project: ", elem["project"])
 		count +=1
 	print("number not downloaded: ", count, ", ", count/len(ref_table)*100,"%")    
+
 
 #not_downloaded = json.dumps(ref_table_copy, indent=4)
 #    print(not_downloaded)
