@@ -109,6 +109,7 @@ def print_results(scope, search_params, row):
         if elem:
             search_params_shortlist.append(search_params[idx])
     match_count = 0
+    # TODO: Get unique ids
     #print(search_params_shortlist, instance_flag)
     if scope["data"]:
         for elem in scope["data"]:
