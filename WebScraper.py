@@ -293,9 +293,27 @@ def consolidate_all(data_file):
         consolidate_age(consolidated_file)
 
 
+def link_ega_ids(metadata_file, ebi_file):
+    with open(metadata_file) as egad_mtd, open(ebi_file) as ebi_db:
+        egad_json = json.load(egad_mtd)
+        ebi_json = json.load(ebi_db)
+        for egad in egad_json:
+            for elem in ebi_json["data"]:
+                for inst in elem["instances"]:
+                    if egad == inst["secondary_id"]:
+                        for egax in egad_json[egad]:
+                            if egax == inst["primary_id"]:
+                                inst["egar_id"] = []
+                                inst["egaf_id"] = []
+                                for egar in egad_json[egad][egax]:
+                                    inst["egar_id"].append(egar)
+                                    for egaf in egad_json[egad][egax][egar]:
+                                        inst["egaf_id"].append(egaf)
+
+    with open("EBI_Consolidated_test", 'w') as outfile:
+        json.dump(ebi_json, outfile, indent=4)
+
+
 
 #parse_ihec_db()
-with open ("egad_file_mapping.json") as egad_mtd:
-    egad_json = json.load(egad_mtd)
-    for elem in egad_json:
-        print(elem)
+
