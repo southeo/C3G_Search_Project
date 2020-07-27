@@ -151,3 +151,5 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
         print_results(scope, search_list_copy, row)
+
+

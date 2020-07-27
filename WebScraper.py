@@ -295,5 +295,7 @@ def consolidate_all(data_file):
 
 
 #parse_ihec_db()
-consolidate_age("EBI_Database_Consolidated_2020-07-09.txt")
-
+with open ("egad_file_mapping.json") as egad_mtd:
+    egad_json = json.load(egad_mtd)
+    for elem in egad_json:
+        print(elem)
