@@ -36,5 +36,16 @@ Keyword Search parameters:
 # Keyword Searches
 
 # Creating A Query File
+A query file is one of two parameters passed into the search function. It contains all information you are searching for. The first line of the file contains all 
+
+# Sample Input
+
+project gender  assay_type  tissue_keywords
+blueprint   chip-seq  cancer
+  male  rna-seq 
+
+
+
+
 
 # Updating Local Copy of EBI Database
