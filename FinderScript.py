@@ -143,7 +143,7 @@ def get_location(scope):
     for inst in scope["instances"]:
         for filename in os.listdir(path):
             misc_id = fetch_id(str(filename))
-            if misc_id == inst["primary_id"] or misc_id == inst["egar_id"] or misc_id == inst["egaf_id"]:
+            if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                 matches["data"].append({
                     "ihec_id": scope["ihec_id"],
                     "path": path
