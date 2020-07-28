@@ -86,16 +86,17 @@ with open("EBI_Database_Consolidated_2020-07-06.txt") as rt:
 	on_disc_not_on_ebi = []
 
 	ihec_list = get_ihec_list(ref_table)
-
+	os.chdir('../../../jbodpool_mp2')
 	for id in onsite_list["EXPERIMENT_ACCESSION"]:
 		# print(id)
 		if id in ihec_list:
 			on_disc_on_ebi.append(id)
-			path = "*/" + str(id)
-			print(glob.glob(path))
+			path = str(id) + "/*"
+			print("globbing: ", path, ", ", glob.glob(path))
+			#print(path)
 		elif str(id) != "nan":
 			on_disc_not_on_ebi.append(id)
-			print(id)
+			#print(id)
 
 	for id in ihec_list:
 		if id not in onsite_list and "EGAX" in str(id):
