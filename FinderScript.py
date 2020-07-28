@@ -143,7 +143,11 @@ def get_location(ihec_elem):
 
 with open("EBI_Consolidated_test") as rt:
     ref_table_json = json.load(rt)
-    get_location(ref_table_json["data"][10])
+    for elem in ref_table_json["data"]:
+        if elem["ihec_id"] == "IHECRE00001307.1":
+            idx = ref_table_json["data"].index(elem)
+            break
+    get_location(ref_table_json["data"][idx])
 
 '''
 args = parse_args()
