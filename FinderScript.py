@@ -135,21 +135,19 @@ def fetch_id(filename):
 
 def get_location(scope):
     matches = { "data":[] }
-
-    for elem in scope["data"]:
-        path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" +ihec_elem["ihec_id"][0:14] + "/" + str(ihec_elem["ihec_id"])
-        for inst in elem["instances"]:
-            for filename in os.listdir(path):
-                id = fetch_id(str(filename))
-                if id == inst["primary_id"] or id == inst["egar_id"] or id == inst["egaf_id"]:
-                    matches["data"].append({
-                        "ihec_id" : elem["ihec_id"],
-                        "path" : path
+    path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + scope["ihec_id"][0:14] + "/" + scope["ihec_id"]
+    for inst in scope["instances"]:
+         for filename in os.listdir(path):
+         id = fetch_id(str(filename))
+         if id == inst["primary_id"] or id == inst["egar_id"] or id == inst["egaf_id"]:
+               matches["data"].append({
+                    "ihec_id" : elem["ihec_id"],
+                     "path" : path
                     })
     with open("Matches.txt", 'w') as outfile:
         json.dump(matches, outfile, indent=4)
-
-
+	
+       '''
 with open("EBI_Consolidated_test") as rt:
     ref_table_json = json.load(rt)
     for elem in ref_table_json["data"]:
@@ -157,7 +155,7 @@ with open("EBI_Consolidated_test") as rt:
             idx = ref_table_json["data"].index(elem)
             break
     get_location(ref_table_json["data"][idx])
-
+    #print(ref_table_json["data"][idx])
 '''
 args = parse_args()
 check_args(args)
