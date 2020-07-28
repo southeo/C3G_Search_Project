@@ -1,0 +1,9 @@
+{
+    "data": [
+        {
+            "ihec_id": "IHECRE00000309.2",
+            "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000309/IHECRE00000309.2",
+            "ID": "EGAR00001269775"
+        }
+    ]
+}

@@ -140,13 +140,15 @@ def get_location(scope):
     matches = {"data": []}
     path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + scope["ihec_id"][0:14] + "/" + scope[
         "ihec_id"]
+    print(path, " ", scope["ihec_id"])
     for inst in scope["instances"]:
         for filename in os.listdir(path):
             misc_id = fetch_id(str(filename))
             if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                 matches["data"].append({
                     "ihec_id": scope["ihec_id"],
-                    "path": path
+                    "path": path,
+                    "ID" : misc_id
                 })
     with open("Matches.txt", 'w') as outfile:
         json.dump(matches, outfile, indent=4)
@@ -155,7 +157,7 @@ def get_location(scope):
 with open("EBI_Consolidated_test") as rt:
     ref_table_json = json.load(rt)
     for elem in ref_table_json["data"]:
-        if elem["ihec_id"] == "IHECRE00001307.1":
+        if elem["ihec_id"] == "IHECRE00000309.2":
             idx = ref_table_json["data"].index(elem)
             break
     get_location(ref_table_json["data"][idx])
