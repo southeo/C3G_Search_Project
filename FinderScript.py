@@ -135,10 +135,10 @@ def fetch_id(filename):
 
 def get_location(ihec_elem):
     path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" +ihec_elem["ihec_id"][0:14] + "/" + str(ihec_elem["ihec_id"])
-    print(path)
     for inst in ihec_elem["instances"]:
         for filename in os.listdir(path):
             id = fetch_id(str(filename))
+            print(id)
 
 
 with open("EBI_Consolidated_test") as rt:
