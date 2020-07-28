@@ -141,15 +141,14 @@ def get_location(scope, search_list):
         "data": [],
         "parameters": search_list
     }
-    for elem in scope:
-        path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem[
-            "ihec_id"]
+    for elem in scope["data"]:
+        path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]
         for inst in elem["instances"]:
             for filename in os.listdir(path):
                 misc_id = fetch_id(str(filename))
                 if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                     results["data"].append({
-                        "ihec_id": scope["ihec_id"],
+                        "ihec_id": elem["ihec_id"],
                         "path": path,
                         })
                     for param in search_list:
@@ -157,13 +156,15 @@ def get_location(scope, search_list):
                             results["data"][-1][param] = inst[param]
                         else:
                             results["data"][-1][param] = elem[param]
-
+    return results
+    '''
     with open("Matches.txt", 'w') as outfile:
         json.dump(results, outfile, indent=4)
-
+    '''
 
 args = parse_args()
 check_args(args)
+results = []
 with open(args.query_table) as qt, open(args.ref_table) as rt:
     ref_table_json = json.load(rt)
     #get_location(ref_table_json["data"][10])
@@ -187,3 +188,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             #print(val_to_match)
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
+        results.append(get_location(scope, search_list))
+with open("Matches.txt", "w") as outfile:
+    json.dump(results, outfile, indent=4)
