@@ -3,6 +3,7 @@ import glob
 import sys
 import argparse
 import os
+from os import path
 import json
 import copy
 
@@ -142,21 +143,22 @@ def get_location(scope, search_list):
         "parameters": search_list
     }
     for elem in scope["data"]:
-        path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]
-        for inst in elem["instances"]:
-            for filename in os.listdir(path):
-                misc_id = fetch_id(str(filename))
-                if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
-                    results["data"].append({
-                        "ihec_id": elem["ihec_id"],
-                        "path": path,
-                        })
-                    for param in search_list:
-                        if param in INSTANCE_SEARCHES:
-                            results["data"][-1][param] = inst[param]
-                        else:
-                            results["data"][-1][param] = elem[param]
-    return results
+        ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]
+        if path.exists(ihec_path):
+            for inst in elem["instances"]:
+                for filename in os.listdir(ihec_path):
+                    misc_id = fetch_id(str(filename))
+                    if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
+                        results["data"].append({
+                            "ihec_id": elem["ihec_id"],
+                            "path": ihec_path,
+                            })
+                        for param in search_list:
+                            if param in INSTANCE_SEARCHES:
+                                results["data"][-1][param] = inst[param]
+                            else:
+                                results["data"][-1][param] = elem[param]
+        return results
     '''
     with open("Matches.txt", 'w') as outfile:
         json.dump(results, outfile, indent=4)
