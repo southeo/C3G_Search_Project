@@ -134,7 +134,7 @@ def fetch_id(filename):
     return(filename[idx:idx+15])
 
 def get_location(ihec_elem):
-    path = "/"+ihec_elem["ihec_id"][0:14]+"/"+ihec_elem["ihec_id"]
+    path = ihec_elem["ihec_id"][0:14]+"/"+ihec_elem["ihec_id"]
     for inst in ihec_elem["instances"]:
         for filename in os.listdir(path):
             id = fetch_id(str(filename))
