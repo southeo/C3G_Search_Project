@@ -134,7 +134,7 @@ def fetch_id(filename):
     return(filename[idx:idx+15])
 
 def get_location(ihec_elem):
-    path = os.path.abspath(["ihec_id"][0:14]+"/"+ihec_elem["ihec_id"])
+    path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" +ihec_elem["ihec_id"][0:14] + "/" + str(ihec_elem["ihec_id"])
     print(path)
     for inst in ihec_elem["instances"]:
         for filename in os.listdir(path):
