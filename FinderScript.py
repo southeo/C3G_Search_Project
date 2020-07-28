@@ -8,7 +8,7 @@ import copy
 
 INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_type", "archive"]  # these searches are handled differently
 KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_keywords", "tissue_keywords"]
-AGE_UNITS = ["year", "month", "week", "day"]
+ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 
 def help():
     print("help info")
@@ -109,7 +109,6 @@ def print_results(scope, search_params, row):
         if elem:
             search_params_shortlist.append(search_params[idx])
     match_count = 0
-    # TODO: Get unique ids
     #print(search_params_shortlist, instance_flag)
     if scope["data"]:
         for elem in scope["data"]:
@@ -126,9 +125,31 @@ def print_results(scope, search_params, row):
                     print("\n }")
     print("\n Number of matches: ", match_count)
 
+
+def fetch_id(filename):
+    for prefix in ID_PREFIXES:
+        idx = filename.find(prefix)
+        if idx != -1:
+            break
+    return(filename[idx:idx+15])
+
+def get_location(ihec_elem):
+    path = "/"+ihec_elem["ihec_id"][0:14]+"/"+ihec_elem["ihec_id"]
+    for inst in ihec_elem["instances"]:
+        for filename in os.listdir(path):
+            id = fetch_id(str(filename))
+
+
+with open("EBI_Consolidated_test") as rt:
+    ref_table_json = json.load(rt)
+    get_location(ref_table_json["data"][10])
+
+'''
 args = parse_args()
 check_args(args)
 with open(args.query_table) as qt, open(args.ref_table) as rt:
+    ref_table_json = json.load(rt)
+    get_location(ref_table_json["data"][10])
     query_table_csv = csv.reader(qt, delimiter='\t')
     ref_table_json = json.load(rt)
     search_list = get_search_list(query_table_csv)
@@ -153,3 +174,4 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
         print_results(scope, search_list_copy, row)
 
 
+'''
