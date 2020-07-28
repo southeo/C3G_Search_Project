@@ -49,7 +49,7 @@ def get_search_list(query_table):
 
 def match_search_params(scope, query, value, search_list):
     modified_scope = {"data": []}  # stores potential matches. This will limit the scope as searching progresses
-    print(query, ", ", type(query))
+    #print(query, ", ", type(query))
     for elem in scope["data"]:
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
@@ -64,7 +64,7 @@ def match_search_params(scope, query, value, search_list):
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
         elif query == "age_min" and query in elem.keys():
-            print(value)
+            #print(value)
             try:
                 value = float(value)
             except ValueError:
@@ -115,7 +115,7 @@ def print_results(scope, search_params, row):
     if scope["data"]:
         for elem in scope["data"]:
             print(elem)
-            print("\n \n IHEC ID: ", elem["IHEC ID"])
+            print("\n \n IHEC ID: ", elem["ihec_id"])
             for param in search_params_shortlist:
                 match_count += 1
                 if param not in INSTANCE_SEARCHES:
@@ -136,40 +136,38 @@ def fetch_id(filename):
     return (filename[idx:idx + 15])
 
 
-def get_location(scope):
-    matches = {"data": []}
-    path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + scope["ihec_id"][0:14] + "/" + scope[
-        "ihec_id"]
-    print(path, " ", scope["ihec_id"])
-    for inst in scope["instances"]:
-        for filename in os.listdir(path):
-            misc_id = fetch_id(str(filename))
-            if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
-                matches["data"].append({
-                    "ihec_id": scope["ihec_id"],
-                    "path": path,
-                    "ID" : misc_id
-                })
+def get_location(scope, search_list):
+    results = {
+        "data": [],
+        "parameters": search_list
+    }
+    for elem in scope:
+        path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem[
+            "ihec_id"]
+        for inst in elem["instances"]:
+            for filename in os.listdir(path):
+                misc_id = fetch_id(str(filename))
+                if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
+                    results["data"].append({
+                        "ihec_id": scope["ihec_id"],
+                        "path": path,
+                        })
+                    for param in search_list:
+                        if param in INSTANCE_SEARCHES:
+                            results["data"][-1][param] = inst[param]
+                        else:
+                            results["data"][-1][param] = elem[param]
+
     with open("Matches.txt", 'w') as outfile:
-        json.dump(matches, outfile, indent=4)
+        json.dump(results, outfile, indent=4)
 
 
-with open("EBI_Consolidated_test") as rt:
-    ref_table_json = json.load(rt)
-    for elem in ref_table_json["data"]:
-        if elem["ihec_id"] == "IHECRE00000309.2":
-            idx = ref_table_json["data"].index(elem)
-            break
-    get_location(ref_table_json["data"][idx])
-    # print(ref_table_json["data"][idx])
-'''
 args = parse_args()
 check_args(args)
 with open(args.query_table) as qt, open(args.ref_table) as rt:
     ref_table_json = json.load(rt)
-    get_location(ref_table_json["data"][10])
+    #get_location(ref_table_json["data"][10])
     query_table_csv = csv.reader(qt, delimiter='\t')
-    ref_table_json = json.load(rt)
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
 
@@ -186,10 +184,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             val_to_match = val.casefold()
             if search_param == "donor_age" or search_param == "age_min" or search_param == "age_max":
                 val_to_match = val_to_match.split(",")  # take age as a list with 3 properties: val, unit, flag
-            print(val_to_match)
+            #print(val_to_match)
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        print_results(scope, search_list_copy, row)
-
-
-'''
