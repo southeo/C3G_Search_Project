@@ -161,7 +161,7 @@ def get_location(scope, search_list):
                             else:
                                 results["data"][-1][param] = elem[param]
         else:
-            print("Path doesn't exist \t", str(ihec_path))
+            print("Path doesn't exist \t", elem["ihec_id"])
         return results
     '''
     with open("Matches.txt", 'w') as outfile:
@@ -195,9 +195,9 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        #for elem in scope:
-        #    print(query_list)
-        #    print('\t', elem)
+        for elem in scope:
+            print(query_list)
+            print('\t', elem)
 
 
 
