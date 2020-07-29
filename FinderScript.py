@@ -53,7 +53,7 @@ def match_search_params(scope, query, value, search_list):
     #print(query, ", ", type(query))
     for elem in scope["data"]:
         if query in elem.keys():
-            print("Val to match: ", value, "\t This item: ", elem[query])
+            #print("Val to match: ", value, "\t This item: ", elem[query])
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
             # catch all bad matches. Loop through list of instances until certain there are none that sneak past
@@ -66,6 +66,8 @@ def match_search_params(scope, query, value, search_list):
                         bad_matches -= 1  # one less bad match
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
+                print("Got one!")
+                print("Val to match: ", value, "\t This item: ", elem[query])
         elif query == "age_min" and query in elem.keys():
             #print(value)
             try:
@@ -82,6 +84,7 @@ def match_search_params(scope, query, value, search_list):
                     print("Invalid max age")
                 if "age_max" in elem.keys() and value >= elem["age_max"]:
                     modified_scope["data"].append(elem)
+
         elif query == "age_exact":
             if query in elem.keys():
                 try:
@@ -90,6 +93,8 @@ def match_search_params(scope, query, value, search_list):
                     print("Invalid exact age")
                 if "age_exact" in elem.keys() and value == elem["age_exact"]:
                     modified_scope["data"].append(elem)
+                    print("Got one!")
+                    print("Val to match: ", value, "\t This item: ", elem[query])
         elif query.casefold() in KEYWORD_SEARCHES:
             # keyword searches: all items in input must be satisfied, but there may be extra keywords in the search element
             value_keywords = value.split()
@@ -99,9 +104,13 @@ def match_search_params(scope, query, value, search_list):
                     keywords_all_match = False
             if keywords_all_match:
                 modified_scope["data"].append(elem)
+                print("Got one!")
+                print("Val to match: ", value, "\t This item: ", elem[query])
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
+                print("Got one!")
+                print("Val to match: ", value, "\t This item: ", elem[query])
     return modified_scope
 
 
