@@ -139,20 +139,23 @@ def fetch_id(filename):
     return (filename[idx:idx + 15])
 
 
-def get_location(scope, search_list):
+def get_location(scope, search_list, val_list):
     results = {
         "parameters": [],
         "data": []
     }
+    idx = 0
+    print(val_list)
+    print(search_list) 
+    '''    
+    
     for query in search_list:
         if query in INSTANCE_SEARCHES:
-            #param_string = str(query) + " = " + str(scope["data"][1]["instances"][query])
-            pass
+            param_string = str(query) + " = " + val_list[idx]
         else:
-            #param_string = str(query) + " = " + str(scope["data"][1][query])
-            pass
-        print(scope["data"][1])
-        #results["parameters"].append(param_string)
+            param_string = str(query) + " = " + val_list[idx]
+        results["parameters"].append(param_string)
+        idx += 1
 
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
@@ -161,7 +164,7 @@ def get_location(scope, search_list):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
-                    # print(misc_id)
+                    
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
@@ -173,7 +176,7 @@ def get_location(scope, search_list):
                             else:
                                 results["data"][-1][param] = elem[param]
     return results
-    '''
+    ''''''
     with open("Matches.txt", 'w') as outfile:
         json.dump(results, outfile, indent=4)
     '''
@@ -193,6 +196,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
         search_list = copy.deepcopy(search_list_copy)  # reset search list (values have been popped)
         query_list = []  # this will store the queries actually used in a given search
+        val_list = []  # This will store the values to match for each query
         for val in row:
             try:
                 search_param = search_list.pop(0)
@@ -204,9 +208,9 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 val_to_match = val_to_match.split(",")  # take age as a list with 3 properties: val, unit, flag
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
+                val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
-            # print(query_list)
+                results.append(get_location(scope, search_list, val_list))
 
-        results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
