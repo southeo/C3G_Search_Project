@@ -145,10 +145,7 @@ def get_location(scope, search_list, val_list):
         "data": []
     }
     idx = 0
-    print(val_list)
-    print(search_list) 
-    '''    
-    
+
     for query in search_list:
         if query in INSTANCE_SEARCHES:
             param_string = str(query) + " = " + val_list[idx]
@@ -176,7 +173,7 @@ def get_location(scope, search_list, val_list):
                             else:
                                 results["data"][-1][param] = elem[param]
     return results
-    ''''''
+    '''
     with open("Matches.txt", 'w') as outfile:
         json.dump(results, outfile, indent=4)
     '''
@@ -210,7 +207,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 query_list.append(search_param)
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
-                results.append(get_location(scope, search_list, val_list))
+                results.append(get_location(scope, query_list, val_list))
 
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
