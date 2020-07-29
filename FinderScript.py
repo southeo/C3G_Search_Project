@@ -65,7 +65,7 @@ def match_search_params(scope, query, value, search_list):
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
                 print("Got one!")
-                print("Val to match: ", value, "\t This item: ", elem[query])
+                print("Val to match: ", value, "\t This item: ", inst[query])
         elif query == "age_min" and query in elem.keys():
             #print(value)
             try:
