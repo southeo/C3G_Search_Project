@@ -80,7 +80,6 @@ def match_search_params(scope, query, value):
                     print("Invalid max age")
                 if "age_max" in elem.keys() and value >= elem["age_max"]:
                     modified_scope["data"].append(elem)
-
         elif query == "age_exact":
             if query in elem.keys():
                 try:
@@ -102,7 +101,7 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    print("Matches so far: ", len(scope["data"]))
+    #print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
 
@@ -164,7 +163,7 @@ def get_location(scope, search_list):
                                 results["data"][-1][param] = elem[param]
         else:
             print("Path doesn't exist \t", elem["ihec_id"])
-        return results
+    return results
     '''
     with open("Matches.txt", 'w') as outfile:
         json.dump(results, outfile, indent=4)
@@ -196,7 +195,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match)
-            print(query_list)
+            #print(query_list)
             
 
         #results.append(get_location(scope, query_list))
