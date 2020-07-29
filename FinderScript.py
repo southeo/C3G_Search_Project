@@ -149,7 +149,7 @@ def get_location(scope, search_list):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
-                    print(misc_id)
+                    #print(misc_id)
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
@@ -161,7 +161,7 @@ def get_location(scope, search_list):
                             else:
                                 results["data"][-1][param] = elem[param]
         else:
-            print("Path doesn't exist \t", str(path))
+            print("Path doesn't exist \t", str(ihec_path))
         return results
     '''
     with open("Matches.txt", 'w') as outfile:
