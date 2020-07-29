@@ -161,8 +161,6 @@ def get_location(scope, search_list):
                                 results["data"][-1][param] = inst[param]
                             else:
                                 results["data"][-1][param] = elem[param]
-        else:
-            print("Path doesn't exist \t", elem["ihec_id"])
     return results
     '''
     with open("Matches.txt", 'w') as outfile:
@@ -198,6 +196,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             #print(query_list)
             
 
-        #results.append(get_location(scope, query_list))
+        results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)

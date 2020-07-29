@@ -1,1 +1,195 @@
-[]
+[
+    {
+        "parameters": [
+            "ihec_id"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read2.fastq.gz.cip"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read1.fastq.gz.cip"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "assay_type"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000309.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000309/IHECRE00000309.2/EGAR00001269775_141030_SN935_0211_B_C5R24ACXX_GTGGCC_1_read1.fastq.gz.cip",
+                "assay_type": "RNA-Seq"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read2.fastq.gz.cip",
+                "assay_type": "RNA-Seq"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read1.fastq.gz.cip",
+                "assay_type": "RNA-Seq"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "assay_type",
+            "gender"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read2.fastq.gz.cip",
+                "assay_type": "RNA-Seq",
+                "gender": "female"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read1.fastq.gz.cip",
+                "assay_type": "RNA-Seq",
+                "gender": "female"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "project"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000309.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000309/IHECRE00000309.2/EGAR00001269775_141030_SN935_0211_B_C5R24ACXX_GTGGCC_1_read1.fastq.gz.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317637_cnag-blueprint-29_C5J7RACXX_2_13.unaligned.bam.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317653_cnag-blueprint-29_C5R9LACXX_4_13.unaligned.bam.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317638_cnag-blueprint-29_C5J7RACXX_2_16.unaligned.bam.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317654_cnag-blueprint-29_C5R9LACXX_4_16.unaligned.bam.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read2.fastq.gz.cip",
+                "project": "blueprint"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read1.fastq.gz.cip",
+                "project": "blueprint"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "tissue_keywords"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317637_cnag-blueprint-29_C5J7RACXX_2_13.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317653_cnag-blueprint-29_C5R9LACXX_4_13.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317638_cnag-blueprint-29_C5J7RACXX_2_16.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317654_cnag-blueprint-29_C5R9LACXX_4_16.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "tissue_keywords"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317637_cnag-blueprint-29_C5J7RACXX_2_13.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000308.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000308/IHECRE00000308.2/EGAR00001317653_cnag-blueprint-29_C5R9LACXX_4_13.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317638_cnag-blueprint-29_C5J7RACXX_2_16.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            },
+            {
+                "ihec_id": "IHECRE00000353.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000353/IHECRE00000353.2/EGAR00001317654_cnag-blueprint-29_C5R9LACXX_4_16.unaligned.bam.cip",
+                "tissue_keywords": [
+                    "venous",
+                    "blood",
+                    "mature",
+                    "neutrophil"
+                ]
+            }
+        ]
+    }
+]
