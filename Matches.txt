@@ -1,9 +1,48 @@
-{
-    "data": [
-        {
-            "ihec_id": "IHECRE00000309.2",
-            "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000309/IHECRE00000309.2",
-            "ID": "EGAR00001269775"
-        }
-    ]
-}
+[
+    {
+        "parameters": [
+            "ihec_id"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read2.fastq.gz.cip"
+            },
+            {
+                "ihec_id": "IHECRE00000248.2",
+                "path": "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/IHECRE00000248/IHECRE00000248.2/EGAR00001269778_141030_SN935_0210_A_C4537ACXX_GGCTAC_7_read1.fastq.gz.cip"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            "assay_type"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "assay_type",
+            "gender"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "project"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "tissue_keywords"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "tissue_keywords"
+        ],
+        "data": []
+    }
+]

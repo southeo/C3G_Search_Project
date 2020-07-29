@@ -1,7 +1,7 @@
 ihec_id	assay_type	project	gender	tissue_keywords
-IHECRE00000248.2	""	""	""	""
-""	RNA-Seq	""	""	""
-""	RNA-Seq	""	female	""
-""	""	blueprint	""	""
-""	""	""	""	blood
-""	""	""	""	blood venous cell
+IHECRE00000248.2				
+	RNA-Seq				
+	RNA-Seq		female	
+		blueprint		
+				blood
+				blood venous 
