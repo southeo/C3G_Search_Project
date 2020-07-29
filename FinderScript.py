@@ -139,19 +139,19 @@ def fetch_id(filename):
 
 def get_location(scope, search_list):
     results = {
-        "data": [],
-        "parameters": search_list
+        "parameters": search_list,
+        "data": []
     }
-    for elem in scope["data"]:
-        ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]
+    for elem in scope["data"]:  # Cycle through all matches
+        ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
-            for inst in elem["instances"]:
-                for filename in os.listdir(ihec_path):
-                    misc_id = fetch_id(str(filename))
+            for inst in elem["instances"]:  # Cycle through instances of each match
+                for filename in os.listdir(ihec_path):  # Cycle through files in directory
+                    misc_id = fetch_id(str(filename))  # Matches filename to instance
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
-                            "path": ihec_path,
+                            "path": (str(ihec_path) + "/" + str(filename)),
                             })
                         for param in search_list:
                             if param in INSTANCE_SEARCHES:
