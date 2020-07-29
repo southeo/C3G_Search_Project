@@ -64,8 +64,6 @@ def match_search_params(scope, query, value, search_list):
                         bad_matches -= 1  # one less bad match
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                print("Got one!")
-                print("Val to match: ", value, "\t This item: ", inst[query])
         elif query == "age_min" and query in elem.keys():
             #print(value)
             try:
@@ -91,8 +89,6 @@ def match_search_params(scope, query, value, search_list):
                     print("Invalid exact age")
                 if "age_exact" in elem.keys() and value == elem["age_exact"]:
                     modified_scope["data"].append(elem)
-                    print("Got one!")
-                    print("Val to match: ", value, "\t This item: ", elem[query])
         elif query.casefold() in KEYWORD_SEARCHES:
             # keyword searches: all items in input must be satisfied, but there may be extra keywords in the search element
             value_keywords = value.split()
@@ -102,13 +98,9 @@ def match_search_params(scope, query, value, search_list):
                     keywords_all_match = False
             if keywords_all_match:
                 modified_scope["data"].append(elem)
-                print("Got one!")
-                print("Val to match: ", value, "\t This item: ", elem[query])
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-                print("Got one!")
-                print("Val to match: ", value, "\t This item: ", elem[query])
     return modified_scope
 
 
@@ -154,9 +146,11 @@ def get_location(scope, search_list):
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
+            print("path exists!", path)
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
+                    print(misc_id)
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
