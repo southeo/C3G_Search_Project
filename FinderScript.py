@@ -52,7 +52,6 @@ def match_search_params(scope, query, value):
     modified_scope = {"data": []}  # stores potential matches. This will limit the scope as searching progresses
     #print(query, ", ", type(query))
     for elem in scope["data"]:
-        print(len(scope["data"]))
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
             # catch all bad matches. Loop through list of instances until certain there are none that sneak past
