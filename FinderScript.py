@@ -178,6 +178,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
     for row in query_table_csv:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
         search_list = copy.deepcopy(search_list_copy)  # reset search list (values have been popped)
+        query_list = []  # this will store the queries actually used in a given search
         for val in row:
             try:
                 search_param = search_list.pop(0)
@@ -189,7 +190,9 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 val_to_match = val_to_match.split(",")  # take age as a list with 3 properties: val, unit, flag
             #print(val_to_match)
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
+                query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        results.append(get_location(scope, search_list))
+
+        results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)

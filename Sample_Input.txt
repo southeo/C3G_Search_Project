@@ -4,4 +4,4 @@ IHECRE00000248.2	""	""	""	""
 ""	RNA-Seq	""	female	""
 ""	""	blueprint	""	""
 ""	""	""	""	blood
-""	""	""	""	venous blood
+""	""	""	""	blood venous cell
