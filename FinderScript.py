@@ -188,12 +188,15 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             val_to_match = val.casefold()
             if search_param == "donor_age" or search_param == "age_min" or search_param == "age_max":
                 val_to_match = val_to_match.split(",")  # take age as a list with 3 properties: val, unit, flag
-            #print(val_to_match)
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
+        for elem in scope:
+            print(query_list)
+            print('\t', elem)
 
-        print_results(scope, query_list, row)
+
+
         results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
