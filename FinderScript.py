@@ -198,6 +198,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
         print(len(scope))
 
 
-        results.append(get_location(scope, query_list))
+        #results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
