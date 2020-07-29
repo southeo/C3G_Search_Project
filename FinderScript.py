@@ -195,10 +195,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        for elem in scope:
-            print(query_list)
-            print('\t', elem)
-
+        print(len(scope))
 
 
         results.append(get_location(scope, query_list))
