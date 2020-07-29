@@ -64,6 +64,7 @@ def match_search_params(scope, query, value, search_list):
                         bad_matches -= 1  # one less bad match
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
+                print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
         elif query == "age_min" and query in elem.keys():
             #print(value)
             try:
@@ -98,10 +99,12 @@ def match_search_params(scope, query, value, search_list):
                     keywords_all_match = False
             if keywords_all_match:
                 modified_scope["data"].append(elem)
+                print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    return modified_scope
+                print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
+        return modified_scope
 
 
 def print_results(scope, search_params, row):
@@ -177,13 +180,14 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
     query_table_csv = csv.reader(qt, delimiter='\t')
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
-
+    print("REF TABLE SIZE: ", len(ref_table_json))
 
     for row in query_table_csv:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
         search_list = copy.deepcopy(search_list_copy)  # reset search list (values have been popped)
         query_list = []  # this will store the queries actually used in a given search
         for val in row:
+            print(len(scope))
             try:
                 search_param = search_list.pop(0)
             except IndexError:
@@ -195,8 +199,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        print(len(scope))
-
+            
 
         #results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
