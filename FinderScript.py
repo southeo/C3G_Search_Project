@@ -50,7 +50,7 @@ def get_search_list(query_table):
 
 def match_search_params(scope, query, value):
     modified_scope = {"data": []}  # stores potential matches. This will limit the scope as searching progresses
-    #print(query, ", ", type(query))
+    # print(query, ", ", type(query))
     for elem in scope["data"]:
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
@@ -64,7 +64,7 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad match
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                #print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
+                # print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -97,11 +97,11 @@ def match_search_params(scope, query, value):
                     keywords_all_match = False
             if keywords_all_match:
                 modified_scope["data"].append(elem)
-                #print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
+                # print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    #print("Matches so far: ", len(modified_scope["data"]))
+    # print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
 
@@ -141,21 +141,29 @@ def fetch_id(filename):
 
 def get_location(scope, search_list):
     results = {
-        "parameters": search_list,
+        "parameters": [],
         "data": []
     }
+    for query in search_list:
+        if query in INSTANCE_SEARCHES:
+            param_string = str(query) + " = " + str(scope["data"][1]["instances"][query])
+        else:
+            param_string = str(query) + " = " + str(scope["data"][1][query])
+        results["parameters"].append(param_string)
+
     for elem in scope["data"]:  # Cycle through all matches
-        ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]  # get path to where the file SHOULD be...
+        ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
+                    elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
-                    #print(misc_id)
+                    # print(misc_id)
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
                             "path": (str(ihec_path) + "/" + str(filename)),
-                            })
+                        })
                         for param in search_list:
                             if param in INSTANCE_SEARCHES:
                                 results["data"][-1][param] = inst[param]
@@ -167,12 +175,13 @@ def get_location(scope, search_list):
         json.dump(results, outfile, indent=4)
     '''
 
+
 args = parse_args()
 check_args(args)
 results = []
 with open(args.query_table) as qt, open(args.ref_table) as rt:
     ref_table_json = json.load(rt)
-    #get_location(ref_table_json["data"][10])
+    # get_location(ref_table_json["data"][10])
     query_table_csv = csv.reader(qt, delimiter='\t')
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
@@ -193,8 +202,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match)
-            #print(query_list)
-            
+            # print(query_list)
 
         results.append(get_location(scope, query_list))
 with open("Matches.txt", "w") as outfile:
