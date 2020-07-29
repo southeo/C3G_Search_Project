@@ -52,6 +52,8 @@ def match_search_params(scope, query, value, search_list):
     modified_scope = {"data": []}  # stores potential matches. This will limit the scope as searching progresses
     #print(query, ", ", type(query))
     for elem in scope["data"]:
+        if query in elem.keys()
+            print("Val to match: ", value, "\t This item: ", elem[query])
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
             # catch all bad matches. Loop through list of instances until certain there are none that sneak past
@@ -191,9 +193,9 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match, search_list_copy)
-        for elem in scope:
-            print(query_list)
-            print('\t', elem)
+        #for elem in scope:
+        #    print(query_list)
+        #    print('\t', elem)
 
 
 
