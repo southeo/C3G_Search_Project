@@ -103,8 +103,8 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-                #print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
-        return modified_scope
+                print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
+    return modified_scope
 
 
 def print_results(scope, search_params, row):
