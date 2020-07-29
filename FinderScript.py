@@ -52,6 +52,7 @@ def match_search_params(scope, query, value):
     modified_scope = {"data": []}  # stores potential matches. This will limit the scope as searching progresses
     #print(query, ", ", type(query))
     for elem in scope["data"]:
+        print(len(scope["data"]))
         if query.casefold() in INSTANCE_SEARCHES:
             bad_matches = len(elem["instances"])
             # catch all bad matches. Loop through list of instances until certain there are none that sneak past
@@ -66,7 +67,6 @@ def match_search_params(scope, query, value):
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
                 #print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
         elif query == "age_min" and query in elem.keys():
-            #print(value)
             try:
                 value = float(value)
             except ValueError:
@@ -180,14 +180,12 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
     query_table_csv = csv.reader(qt, delimiter='\t')
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
-    print("REF TABLE SIZE: ", len(ref_table_json["data"]))
 
     for row in query_table_csv:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
         search_list = copy.deepcopy(search_list_copy)  # reset search list (values have been popped)
         query_list = []  # this will store the queries actually used in a given search
         for val in row:
-            print(len(scope))
             try:
                 search_param = search_list.pop(0)
             except IndexError:
@@ -199,6 +197,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 scope = match_search_params(scope, search_param, val_to_match)
+            print(query_list)
             
 
         #results.append(get_location(scope, query_list))
