@@ -146,7 +146,6 @@ def get_location(scope, search_list):
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
-            print("path exists!", path)
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
@@ -161,6 +160,8 @@ def get_location(scope, search_list):
                                 results["data"][-1][param] = inst[param]
                             else:
                                 results["data"][-1][param] = elem[param]
+        else:
+            print("Path doesn't exist \t", str(path))
         return results
     '''
     with open("Matches.txt", 'w') as outfile:
