@@ -35,16 +35,10 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - donor_ethnicity_keywords
 - disease_keywords
 
-# Regular Searches
-
-# Instance Searches
-
-# Keyword Searches
-
-# Creating A Query File
+## Creating A Query File
 A query file is one of two parameters passed into the search function. It contains all information you are searching for. The first line of the file contains all 
 
-# Sample Input
+## Sample Input
 
 project gender  assay_type  tissue_keywords
 blueprint   chip-seq  cancer
