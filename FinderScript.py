@@ -149,12 +149,11 @@ def get_location(scope, search_list, val_list):
     }
 
     for query in search_list:
-        if query in INSTANCE_SEARCHES:
-            param_string = str(query) + " = " + val_list[idx]
-        else:
-            param_string = str(query) + " = " + val_list[idx]
+        param_string = str(query) + " = " + val_list[idx]
         results["parameters"].append(param_string)
         idx += 1
+
+    print(results["parameters"])
 
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
