@@ -186,7 +186,6 @@ def get_location(scope, search_list, val_list):
                     elif elem["ihec_id"] in ihec_list and ("read1" in str(filename) or "read2" in str(filename)):
                         for res in results["data"]:
                             if elem["ihec_id"] == res["ihec_id"]:
-                                print("id to match: ", elem["ihec_id"], "res id:", res["ihec_id"])
                                 if "read1" in str(filename) and "r1_path" not in res.keys():
                                     res["r1_path"]: (str(ihec_path) + "/" + str(filename))
                                     print(res)
