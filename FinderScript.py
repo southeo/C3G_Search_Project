@@ -140,11 +140,13 @@ def fetch_id(filename):
 
 
 def get_location(scope, search_list, val_list):
+    idx = 0
+    ihec_list = []
+
     results = {
         "parameters": [],
         "data": []
     }
-    idx = 0
 
     for query in search_list:
         if query in INSTANCE_SEARCHES:
@@ -165,28 +167,31 @@ def get_location(scope, search_list, val_list):
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         if "read1" in str(filename):
                             for res in results["data"]:
-                                if res["ihec_id"] == elem["ihec_id"]:
+                                if res["ihec_id"] == elem["ihec_id"] :
                                     res["read_1_path"] = (str(ihec_path) + "/" + str(filename))
-                            if "read_1_path" not in elem.keys():
+                            if "read_1_path" not in elem.keys() and elem["ihec_id"] not in ihec_list:
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "read_1_path": (str(ihec_path) + "/" + str(filename)),
                                 })
+                                ihec_list.append(elem["ihec_id"])
                         elif "read2" in str(filename):
                             for res in results["data"]:
                                 print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
                                     res["read_2_path"] = (str(ihec_path) + "/" + str(filename))
-                            if "read_2_path" not in elem.keys():
+                            if "read_2_path" not in elem.keys() and elem["ihec_id"] not in ihec_list:
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "read_2_path": (str(ihec_path) + "/" + str(filename)),
                                 })
+                                ihec_list.append(elem["ihec_id"])
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "path": (str(ihec_path) + "/" + str(filename)),
                             })
+                            ihec_list.append(elem["ihec_id"])
                         '''for param in search_list:
                             if param in INSTANCE_SEARCHES:
                                 results["data"][-1][param] = inst[param]
