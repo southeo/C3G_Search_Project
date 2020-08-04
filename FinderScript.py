@@ -164,34 +164,33 @@ def get_location(scope, search_list, val_list):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
                     
-                    if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
+                    if (misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]) and \
+                            elem["ihec_id"] not in ihec_list:
                         if "read1" in str(filename):
-                            for res in results["data"]:
-                                if res["ihec_id"] == elem["ihec_id"] :
-                                    res["read_1_path"] = (str(ihec_path) + "/" + str(filename))
-                            if "read_1_path" not in elem.keys() and elem["ihec_id"] not in ihec_list:
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "read_1_path": (str(ihec_path) + "/" + str(filename)),
-                                })
-                                ihec_list.append(elem["ihec_id"])
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "r1_path": (str(ihec_path) + "/" + str(filename)),
+                            })
+
                         elif "read2" in str(filename):
-                            for res in results["data"]:
-                                print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
-                                if res["ihec_id"] == elem["ihec_id"]:
-                                    res["read_2_path"] = (str(ihec_path) + "/" + str(filename))
-                            if "read_2_path" not in elem.keys() and elem["ihec_id"] not in ihec_list:
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
-                                    "read_2_path": (str(ihec_path) + "/" + str(filename)),
+                                    "r2_path": (str(ihec_path) + "/" + str(filename)),
                                 })
-                                ihec_list.append(elem["ihec_id"])
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "path": (str(ihec_path) + "/" + str(filename)),
                             })
-                            ihec_list.append(elem["ihec_id"])
+                        ihec_list.append(elem["ihec_id"])
+                    elif elem["ihec_id"] in ihec_list and ("read1" in str(filename) or "read2" in str(filename)):
+                        for res in results["data"]:
+                            if elem["ihec_id"] == res["ihec_id"]:
+                                if "read1" in str(filename):
+                                    res["r1_path"]: (str(ihec_path) + "/" + str(filename))
+                                elif "read2" in str(filename):
+                                    res["r2_path"]: (str(ihec_path) + "/" + str(filename))
+
                         '''for param in search_list:
                             if param in INSTANCE_SEARCHES:
                                 results["data"][-1][param] = inst[param]
