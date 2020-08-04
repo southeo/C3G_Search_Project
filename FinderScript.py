@@ -163,46 +163,37 @@ def get_location(scope, search_list, val_list):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
-                    
-                    if (misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]) and \
-                            elem["ihec_id"] not in ihec_list:
-                        if "read1" in str(filename):
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "r1_path": (str(ihec_path) + "/" + str(filename)),
-                            })
 
-                        elif "read2" in str(filename):
+                    if (misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]):
+
+                        if elem["ihec_id"] not in ihec_list:
+                            if "read1" in str(filename):
+                                results["data"].append({
+                                    "ihec_id": elem["ihec_id"],
+                                    "r1_path": (str(ihec_path) + "/" + str(filename)),
+                                })
+                                ihec_list.append(elem["ihec_id"])
+
+                            elif "read2" in str(filename):
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "r2_path": (str(ihec_path) + "/" + str(filename)),
                                 })
-                        else:
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "path": (str(ihec_path) + "/" + str(filename)),
-                            })
-                        ihec_list.append(elem["ihec_id"])
-                    elif elem["ihec_id"] in ihec_list and ("read1" in str(filename) or "read2" in str(filename)):
-                        for res in results["data"]:
-                            if elem["ihec_id"] == res["ihec_id"]:
-                                if "read1" in str(filename) and "r1_path" not in res.keys():
-                                    res["r1_path"]: (str(ihec_path) + "/" + str(filename))
-                                    print(res)
-                                elif "read2" in str(filename) and "r2_path" not in res.keys():
-                                    res["r2_path"]: (str(ihec_path) + "/" + str(filename))
-                                    print(res)
-
-                        '''for param in search_list:
-                            if param in INSTANCE_SEARCHES:
-                                results["data"][-1][param] = inst[param]
+                                ihec_list.append(elem["ihec_id"])
                             else:
-                                results["data"][-1][param] = elem[param]'''
+                                results["data"].append({
+                                    "ihec_id": elem["ihec_id"],
+                                    "path": (str(ihec_path) + "/" + str(filename)),
+                                })
+                                ihec_list.append(elem["ihec_id"])
+                        else:
+                            for res in results["data"]:
+                                if elem["ihec_id"] == res["ihec_id"]:
+                                    if "read1" in str(filename):
+                                        res["r1_path"] =  (str(ihec_path) + "/" + str(filename))
+                                    elif "read2" in str(filename):
+                                        res["r2_path"] = (str(ihec_path) + "/" + str(filename))
     return results
-    '''
-    with open("Matches.txt", 'w') as outfile:
-        json.dump(results, outfile, indent=4)
-    '''
 
 
 args = parse_args()
