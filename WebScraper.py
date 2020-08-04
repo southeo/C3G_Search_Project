@@ -17,7 +17,7 @@ from datetime import date
 import math
 
 IHEC_PORTAL_URL = "https://www.ebi.ac.uk/vg/epirr/view/"  # must be cat'd with "all" or IHECRE ID
-remove_char_list = [',', '.', ';', '(', ')']
+remove_char_list = [',', '.', ';', '(', ')', '-', '/', '_', '\'', '\"']
 
 
 def requests_retry_session(retries=3, backoff_factor=0.3, status_forcelist=(500, 502, 504), session=None, ):
@@ -98,23 +98,23 @@ def consolidate_tissue(data_file):
         for elem in db_json["data"]:
             tissue_keywords = []
             if "tissue_type" in elem and elem["tissue_type"] is not None:
-                tissue_keywords += elem["tissue_type"].split()
+                tissue_keywords.append(elem["tissue_type"])
             if "tissue-type" in elem and elem["tissue-type"] is not None:
-                tissue_keywords += elem["tissue-type"].split()
+                tissue_keywords.append(elem["tissue-type"])
             if "tissue" in elem and elem["tissue"] is not None:
-                tissue_keywords += elem["tissue"].split()
+                tissue_keywords.append(elem["tissue"])
             if "origin_sample" in elem and elem["origin_sample"] is not None:
-                tissue_keywords += elem["origin_sample"].split()
+                tissue_keywords.append(elem["origin_sample"])
             if "cell ontology" in elem and elem["cell ontology"] is not None:
-                tissue_keywords += elem["cell ontology"].split()
+                tissue_keywords.append(elem["cell ontology"])
             if "lineage" in elem and elem["lineage"] is not None:
-                tissue_keywords += elem["lineage"].split()
+                tissue_keywords.append(elem["lineage"])
             if "cell_type" in elem and elem["cell_type"] is not None:
-                tissue_keywords += elem["cell_type"].split()
+                tissue_keywords.append(elem["cell_type"])
             if "histological_type" in elem and elem["histological_type"] is not None:
-                tissue_keywords += elem["histological_type"].split()
+                tissue_keywords.append(elem["histological_type"])
 
-            elem["tissue_keywords"] = tissue_keywords
+            elem["tissue_keywords"] = remove_bad_chars(tissue_keywords)
 
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
@@ -148,14 +148,15 @@ def consolidate_ethnicity(data_file):
 
             # make searching a little easier:
             if "white" in ethnicity_keywords or "White" in ethnicity_keywords:
-                ethnicity_keywords.append("Caucasian")
-            elif "Caucasian" in ethnicity_keywords:
-                ethnicity_keywords.append("White")
+                ethnicity_keywords.append("caucasian")
+            elif "Caucasian" in ethnicity_keywords or "caucasian" in ethnicity_keywords:
+                ethnicity_keywords.append("white")
             if "African" in ethnicity_keywords and "American" in ethnicity_keywords or "AA" in ethnicity_keywords:
                 ethnicity_keywords.extend(["Black", "African American"])
             if "Native" in ethnicity_keywords and "American" in ethnicity_keywords:
                 ethnicity_keywords.extend(["Native American", "First Nations", "Indigenous"])
-            elem['donor_ethnicity_keywords'] = ethnicity_keywords
+            if ethnicity_keywords:
+                elem['donor_ethnicity_keywords'] = remove_bad_chars(ethnicity_keywords)
 
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
@@ -259,18 +260,11 @@ def consolidate_disease(data_file):
         for elem in db_json["data"]:
             disease_list = []
             if "disease" in elem and elem["disease"] is not None:
-                # remove some formatting issues
-                elem["disease"] = elem["disease"].replace(",", "")
-                elem["disease"] = elem["disease"].replace(";", "")
-                elem["disease"] = elem["disease"].replace("(", "")
-                elem["disease"] = elem["disease"].replace(")", "")
-                elem["disease"] = elem["disease"].replace("_", " ")
-                # add each term to keywords list
-                disease_list = elem["disease"].split()
+                disease_list.append(elem["disease"])
             if "donor_health_status" in elem and elem["donor_health_status"] is not None:
-                disease_list += elem["donor_health_status"].split()
-
-            elem["disease_keywords"] = disease_list
+                disease_list.append(elem["donor_health_status"])
+            #print(disease_list)
+            elem["disease_keywords"] = remove_bad_chars(disease_list)
 
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
@@ -290,7 +284,7 @@ def consolidate_all(data_file):
         consolidate_ethnicity(consolidated_file)
         consolidate_gender(consolidated_file)
         consolidate_tissue(consolidated_file)
-        consolidate_age(consolidated_file)
+    
 
 
 def link_ega_ids(metadata_file, ebi_file):
@@ -313,7 +307,43 @@ def link_ega_ids(metadata_file, ebi_file):
     with open("EBI_Consolidated_test", 'w') as outfile:
         json.dump(ebi_json, outfile, indent=4)
 
+def remove_bad_chars(keywords):
+    new_list = []
+    for kw in keywords:
+        for char in remove_char_list:
+            kw = kw.replace(char, " ")
+        new_list.extend(kw.split())
+    return list(set(new_list))
 
+filename = "EBI_Consolidated_test.txt"
+consolidate_disease("EBI_Consolidated_test.txt")
+consolidate_tissue("EBI_Consolidated_test.txt")
+consolidate_ethnicity("EBI_Consolidated_test.txt")
 
-#parse_ihec_db()
+with open("EBI_Consolidated_test.txt") as ebi_db:
+    ebi_json = json.load(ebi_db)
+    disease_keywords = []
+    tissue_keywords = []
+    ethnicity_keywords = []
+    for elem in ebi_json["data"]:
+        if elem["disease_keywords"]:
+            for key1 in elem["disease_keywords"]:
+                if key1 not in disease_keywords:
+                    disease_keywords.append(key1)
+        if elem["tissue_keywords"]:
+            for key2 in elem["tissue_keywords"]:
+                if key2 not in tissue_keywords:
+                    tissue_keywords.append(key2)
+        if elem["donor_ethnicity_keywords"]:
+            for key3 in elem["donor_ethnicity_keywords"]:
+                if key3 not in ethnicity_keywords:
+                    ethnicity_keywords.append(key3)
+
+    disease_keywords = sorted(disease_keywords)
+    tissue_keywords = sorted(tissue_keywords)
+    ethnicity_keywords = sorted(ethnicity_keywords)
+
+    print(disease_keywords)
+    print(tissue_keywords)
+    print(ethnicity_keywords)
 

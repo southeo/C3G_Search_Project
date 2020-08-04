@@ -201,8 +201,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 print("Column Missmatch. Please ensure all rows in the search "
                       "file have the same number of columns")
             val_to_match = val.casefold()
-            if search_param == "donor_age" or search_param == "age_min" or search_param == "age_max":
-                val_to_match = val_to_match.split(",")  # take age as a list with 3 properties: val, unit, flag
             if val_to_match:  # if string is not empty -> ie it is a valid search parameter
                 query_list.append(search_param)
                 val_list.append(val_to_match)
