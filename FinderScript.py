@@ -187,10 +187,10 @@ def get_location(scope, search_list, val_list):
                         for res in results["data"]:
                             if elem["ihec_id"] == res["ihec_id"]:
                                 print("id to match: ", elem["ihec_id"], "res id:", res["ihec_id"])
-                                if "read1" in str(filename):
+                                if "read1" in str(filename) and "r1_path" not in res.keys():
                                     res["r1_path"]: (str(ihec_path) + "/" + str(filename))
                                     print(res)
-                                elif "read2" in str(filename):
+                                elif "read2" in str(filename) and "r2_path" not in res.keys():
                                     res["r2_path"]: (str(ihec_path) + "/" + str(filename))
                                     print(res)
 
