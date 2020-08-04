@@ -154,7 +154,7 @@ def get_location(scope, search_list, val_list):
         idx += 1
 
     print(search_list, "\t", val_list)
-    print(results["parameters"])
+    #print(results["parameters"])
 
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
