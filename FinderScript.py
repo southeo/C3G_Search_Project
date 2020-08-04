@@ -184,8 +184,8 @@ def get_location(scope, search_list, val_list):
                             })
                         ihec_list.append(elem["ihec_id"])
                     elif elem["ihec_id"] in ihec_list and ("read1" in str(filename) or "read2" in str(filename)):
-                        print("gotta get a new one")
                         for res in results["data"]:
+                            print(res)
                             if elem["ihec_id"] == res["ihec_id"]:
                                 if "read1" in str(filename):
                                     res["r1_path"]: (str(ihec_path) + "/" + str(filename))
