@@ -177,11 +177,11 @@ def get_location(scope, search_list, val_list):
                                 "ihec_id": elem["ihec_id"],
                                 "path": (str(ihec_path) + "/" + str(filename)),
                             })
-                        for param in search_list:
+                        '''for param in search_list:
                             if param in INSTANCE_SEARCHES:
                                 results["data"][-1][param] = inst[param]
                             else:
-                                results["data"][-1][param] = elem[param]
+                                results["data"][-1][param] = elem[param]'''
     return results
     '''
     with open("Matches.txt", 'w') as outfile:
