@@ -178,7 +178,7 @@ def get_location(scope, search_list, val_list):
                                 print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
                                     res["read_2_path"] = (str(ihec_path) + "/" + str(filename))
-                            if "read_1_path" not in elem.keys():
+                            if "read_2_path" not in elem.keys():
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "read_1_path": (str(ihec_path) + "/" + str(filename)),
