@@ -163,10 +163,21 @@ def get_location(scope, search_list, val_list):
                     misc_id = fetch_id(str(filename))  # Matches filename to instance
                     
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
-                        results["data"].append({
-                            "ihec_id": elem["ihec_id"],
-                            "path": (str(ihec_path) + "/" + str(filename)),
-                        })
+                        if "read1" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "read_1_path": (str(ihec_path) + "/" + str(filename)),
+                            })
+                        elif "read2" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "read_1_path": (str(ihec_path) + "/" + str(filename)),
+                            })
+                        else:
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "path": (str(ihec_path) + "/" + str(filename)),
+                            })
                         for param in search_list:
                             if param in INSTANCE_SEARCHES:
                                 results["data"][-1][param] = inst[param]
