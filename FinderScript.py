@@ -173,7 +173,6 @@ def get_location(scope, search_list, val_list):
                                     "read_1_path": (str(ihec_path) + "/" + str(filename)),
                                 })
                         elif "read2" in str(filename):
-                            print(":) ")
                             for res in results["data"]:
                                 print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
@@ -181,7 +180,7 @@ def get_location(scope, search_list, val_list):
                             if "read_2_path" not in elem.keys():
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
-                                    "read_1_path": (str(ihec_path) + "/" + str(filename)),
+                                    "read_2_path": (str(ihec_path) + "/" + str(filename)),
                                 })
                         else:
                             results["data"].append({
