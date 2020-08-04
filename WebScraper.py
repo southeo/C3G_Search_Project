@@ -151,10 +151,10 @@ def consolidate_ethnicity(data_file):
                 ethnicity_keywords.append("caucasian")
             elif "Caucasian" in ethnicity_keywords or "caucasian" in ethnicity_keywords:
                 ethnicity_keywords.append("white")
-            if "African" in ethnicity_keywords and "American" in ethnicity_keywords or "AA" in ethnicity_keywords:
-                ethnicity_keywords.extend(["Black", "African American"])
-            if "Native" in ethnicity_keywords and "American" in ethnicity_keywords:
-                ethnicity_keywords.extend(["Native American", "First Nations", "Indigenous"])
+            if "african" in ethnicity_keywords and "american" in ethnicity_keywords or "aa" in ethnicity_keywords:
+                ethnicity_keywords.extend(["black", "african american"])
+            if "native" in ethnicity_keywords and "american" in ethnicity_keywords:
+                ethnicity_keywords.extend(["first", "nations", "indigenous"])
             if ethnicity_keywords:
                 elem['donor_ethnicity_keywords'] = remove_bad_chars(ethnicity_keywords)
 
@@ -315,11 +315,7 @@ def remove_bad_chars(keywords):
         new_list.extend(kw.split())
     return list(set(new_list))
 
-filename = "EBI_Consolidated_test.txt"
-consolidate_disease("EBI_Consolidated_test.txt")
-consolidate_tissue("EBI_Consolidated_test.txt")
-consolidate_ethnicity("EBI_Consolidated_test.txt")
-
+'''
 with open("EBI_Consolidated_test.txt") as ebi_db:
     ebi_json = json.load(ebi_db)
     disease_keywords = []
@@ -343,7 +339,4 @@ with open("EBI_Consolidated_test.txt") as ebi_db:
     tissue_keywords = sorted(tissue_keywords)
     ethnicity_keywords = sorted(ethnicity_keywords)
 
-    print(disease_keywords)
-    print(tissue_keywords)
-    print(ethnicity_keywords)
-
+'''
