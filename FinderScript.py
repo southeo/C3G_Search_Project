@@ -170,6 +170,7 @@ def get_location(scope, search_list, val_list):
                             })
                         elif "read2" in str(filename):
                             for res in results["data"]:
+                                print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
                                     res["read_2_path"] = (str(ihec_path) + "/" + str(filename)),
                         else:
