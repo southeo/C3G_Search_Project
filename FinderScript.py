@@ -165,7 +165,6 @@ def get_location(scope, search_list, val_list):
                     if misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]:
                         if "read1" in str(filename):
                             for res in results["data"]:
-                                print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
                                     res["read_1_path"] = (str(ihec_path) + "/" + str(filename))
                             if "read_1_path" not in elem.keys():
@@ -174,6 +173,7 @@ def get_location(scope, search_list, val_list):
                                     "read_1_path": (str(ihec_path) + "/" + str(filename)),
                                 })
                         elif "read2" in str(filename):
+                            print(":) ")
                             for res in results["data"]:
                                 print("Res id: ", res["ihec_id"], "elem id: ", elem["ihec_id"])
                                 if res["ihec_id"] == elem["ihec_id"]:
@@ -183,7 +183,6 @@ def get_location(scope, search_list, val_list):
                                     "ihec_id": elem["ihec_id"],
                                     "read_1_path": (str(ihec_path) + "/" + str(filename)),
                                 })
-
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
