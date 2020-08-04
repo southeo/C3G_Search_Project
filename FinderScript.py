@@ -189,8 +189,10 @@ def get_location(scope, search_list, val_list):
                                 print("id to match: ", elem["ihec_id"], "res id:", res["ihec_id"])
                                 if "read1" in str(filename):
                                     res["r1_path"]: (str(ihec_path) + "/" + str(filename))
+                                    print(res)
                                 elif "read2" in str(filename):
                                     res["r2_path"]: (str(ihec_path) + "/" + str(filename))
+                                    print(res)
 
                         '''for param in search_list:
                             if param in INSTANCE_SEARCHES:
