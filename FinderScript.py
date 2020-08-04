@@ -153,6 +153,7 @@ def get_location(scope, search_list, val_list):
         results["parameters"].append(param_string)
         idx += 1
 
+    print(search_list, "\t", val_list)
     print(results["parameters"])
 
     for elem in scope["data"]:  # Cycle through all matches
