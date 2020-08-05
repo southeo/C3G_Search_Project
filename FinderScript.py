@@ -152,8 +152,6 @@ def get_location(scope, search_list, val_list):
         param_string = str(query) + " = " + val_list[idx]
         results["parameters"].append(param_string)
         idx += 1
-
-    print(search_list, "\t", val_list)
     #print(results["parameters"])
 
     for elem in scope["data"]:  # Cycle through all matches
@@ -205,6 +203,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
     query_table_csv = csv.reader(qt, delimiter='\t')
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
+    print(search_list_copy)
 
     for row in query_table_csv:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
