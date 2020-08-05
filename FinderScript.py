@@ -212,7 +212,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
         for val in row:
             try:
                 search_param = search_list.pop(0)
-                print(search_param)
             except IndexError:
                 print("Column Missmatch. Please ensure all rows in the search "
                       "file have the same number of columns")
@@ -222,6 +221,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
                 results.append(get_location(scope, query_list, val_list))
+                print(query_list)
 
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
