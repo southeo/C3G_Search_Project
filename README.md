@@ -30,7 +30,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - donor_ethnicity_keywords
 - disease_keywords
 
-### Accepted keywords:
+### Accepted Tissue Keywords
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
@@ -45,128 +45,20 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | conventional| cord | coronary | cortex | cortical | culture | cytotoxic | cytotrophoblast |
 | d2 | d4 | d6 | dendritic | derived | dermis | differentiated | dim |
 | double | duodenal | duodenum | early | ectoderm | effector | 
-
-
-embryo
-embryonic
-eminence
-endocardial
-endocrine
-endoderm
-endometrial
-endometrium
-endothelial
-endothelium
-eosinophil
-epiblast
-epidermal
-epithelia
-epithelial
-epithelium
-erythroblast
-erythrocyte
-erythroid
-esophagus
-examined
-extravillous
-facial
-fat
-fetal
-fibroblast
-fluid
-follicular
-forebrain
-foreskin
-form
-forming
-foveolar
-from
-frontal
-gain
-gains
-ganglionic
-gastrocnemius
-gastroesophageal
-germ
-germinal
-gland
-granulocyte
-great
-gyrus
-h18
-have
-heart
-helper
-hematopoietic
-hepatocyte
-hepatocytes
-hindbrain
-hippocampus
-hla
-htert
-hterts
-human
-immature
-induced
-inflammatory
-intestine
-ipsc
-islet
-isolated
-keratinocyte
-kidney
-killer
-lamina
-large
-late
-layer
-leg
-limb
-lineage
-liver
-lobe
-luminal
-lung
-lymph
-lymphocyte
-lymphocytes
-lymphoid
-macrophage
-mammary
-marrow
-marroy
-matrix
-mature
-medialis
-megakaryocyte
-melanocyte
-melanocytes
-memory
-mesangial
-mesenchymal
-mesenchyme
-mesoderm
-mesodermal
-metamyelocyte
-microvascular
-midbrain
-middle
-mixed
-monocyte
-mononuclear
-mucosa
-mucous
-multipotent
-muscle
-muscularis
-myelocyte
-myeloid
-myoblast
-myoepithelial
-naive
-natural
-negative
-neoplastic
+| embryo | embryonic | eminence | endocardial | endocrine | endoderm | endometrial | endometrium |
+| endothelial | endothelium | eosinophil | epiblast | epidermal | epithelia | epithelial | epithelium |
+| erythroblast | erythrocyte | erythroid | esophagus | extravillous | facial | fat | fetal | fibroblast | 
+| fluid | follicular | forebrain | foreskin | form | foveolar | frontal | gain | 
+| ganglionic | gastrocnemius | gastroesophageal | germ | germinal | gland | ganulocyte | great |
+| gyrus | h18 | heart | helper | hematopoietic | hepatocyte | hepatocytes | hindbrain | 
+| hippocampus | hla | htert | hterts| immature| induced | inflammatory| intestine | 
+| ipsc | islet | isolated | keratinocyte | kidney | killer | lamina | large |
+| layer | leg | limb | lineage | liver | lobe | luminal | lung | | lymph |
+| lymphocyte | lymphocytes | lymphoid | macrophage | mammary | marrow | marroy |
+| matrix | mature | medialis | megakaryocyte | melanocyte | melanocytes | memory | mesangial
+| mesenchymal | mesenchyme | mesoderm | mesodermal | metamyelocyte | microvascular | midbrain | middle |
+| mixed | monocyte | mononuclear | mucosa | mucous | multipotent | muscle | muscularis |
+| myelocyte | myeloid | myoblast | myoepithelial | naive | natural | negative | neoplastic |
 nerve
 neural
 neuron
