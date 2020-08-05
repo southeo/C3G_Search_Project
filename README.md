@@ -30,7 +30,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - donor_ethnicity_keywords
 - disease_keywords
 
-### Accepted Tissue Keywords
+#### Accepted Tissue Keywords
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
@@ -59,123 +59,21 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | mesenchymal | mesenchyme | mesoderm | mesodermal | metamyelocyte | microvascular | midbrain | middle |
 | mixed | monocyte | mononuclear | mucosa | mucous | multipotent | muscle | muscularis |
 | myelocyte | myeloid | myoblast | myoepithelial | naive | natural | negative | neoplastic |
-nerve
-neural
-neuron
-neurosphere
-neutrophil
-neutrophilic
-nigra
-node
-normal
-nucleus
-occipetal
-olfactory
-oocyte
-original
-osteoblast
-osteoclast
-other
-ovary
-pad
-pancreas
-parathyroid
-parenchymal
-passage
-patch
-peripheral
-peyer
-phase
-placenta
-plasma
-plate
-pluripotent
-podocyte
-polychromatophilic
-population
-positive
-prdm14
-preadipocyte
-precursor
-predisposed
-prefrontal
-primary
-primordial
-progenitor
-progenitors
-proliferating
-prominence
-propria
-prostate
-psoas
-pulmonary
-rapidly
-rectal
-rectosigmoid
-rectum
-region
-regulatory
-resting
-right
-saphenous
-satellite
-segmented
-selected
-sigmoid
-skeletal
-skin
-small
-smooth
-sperm
-sphincter
-spleen
-squamous
-stem
-stomach
-stroaml
-stroma
-stromal
-subclavian
-subcutaneous
-substantia
-superior
-suprapubic
-surface
-switched
-synovial
-temporal
-temra
-terminally
-testes
-testis
-thoracic
-thymocyte
-thymus
-thyroid
-tibial
-tissue
-tobeupdated
-tonsil
-transverse
-trophoblast
-trunk
-tube
-umbilical
-unknown
-unswitched
-upon
-upper
-uterus
-vagina
-vein
-vena
-venous
-ventricle
-vessels
-was
-which
-white
-wt
+| nerve | neural | neuron | neurosphere | neutrophil | neutrophilic | nigra | node |
+| normal | nucleus | occipetal | olfactory | oocyte | original | osteoblast | osteoclast |
+| other | ovary | pad | pancreas | parathyroid | parenchymal | passage | patch |
+| peripheral | peyer | phase | placenta | plasma | plate | pluripotent | podocyte |
+| polychromatophilic | population | positive | prdm14 | preadipocyte | precursor | predisposed | prefrontal |
+| primary | primordial | progenitor | progenitors | proliferating | prominence | propria | prostate | 
+| psoas | pulmonary | rapidly | rectal | rectosigmoid | rectum | region | regulatory |
+| resting | right | saphenous | satellite | segmented | selected | sigmoid | skeletal |
+| skin | small | smooth | sperm | sphincter | spleen | squamous | stem |
+| stomach | stroaml | stroma | stromal | subclavian | subcutaneous | substantia | superior | 
+| suprapubic | surface | switched | synovial | temporal | temra | terminally | testes | 
+| testis | thoracic | thymocyte | thymus | thyroid | tibial | tissue | tobeupdated | 
+| tonsil | transverse | trophoblast | trunk | tube | umbilical | unswitched | upon |
+| upper | uterus | vagina | vein | vena | venous | ventricle | vessels
+| white |  wt | 
 
 
 
