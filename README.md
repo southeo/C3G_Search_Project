@@ -117,7 +117,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 
 
 ## Creating A Query File
-A query file is one of two parameters passed into the search function. It is a tab-delimited file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
+A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
 
 ### Sample Input
 
@@ -127,8 +127,15 @@ A query file is one of two parameters passed into the search function. It is a t
 | | male | rna-seq | |
 | | | | venous blood | histone H3K4me3 |
 
-The first search returns all files from 
+Note this file must need to be tab-delimited. An empty string ("") may be used on each new tab for clarity. A sample input file can be found in this repository. 
 
+## The Reference File
+The referene file is the second parameter passed to the search function. It contains metadata for all datasets in the EBI database. 
 
+` EBI_Database_Consolidated_[Date of creation] `
 
-# Updating Local Copy of EBI Database
+### Updating the Reference File
+If the reference file on disc is outdated with respect to the EBI Database, you may update the metadata file with the following command:
+` sample command `
+
+This will scan through the EBI Web portal and create a new metadata file with the updated information. This script may take a few hours to run; it is recommended that this script be run on a compute node. 
