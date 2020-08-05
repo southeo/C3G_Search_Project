@@ -31,6 +31,8 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - disease_keywords
 
 ### Accepted keywords:
+
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
 | amnion | amygdala | angular | anterior | aorta | aortic | area | artery |
 | ascending | astrocyte | atrium | auricular | band | basal | basophilic | beta |
@@ -43,6 +45,8 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | conventional| cord | coronary | cortex | cortical | culture | cytotoxic | cytotrophoblast |
 | d2 | d4 | d6 | dendritic | derived | dermis | differentiated | dim |
 | double | duodenal | duodenum | early | ectoderm | effector | 
+
+
 embryo
 embryonic
 eminence
