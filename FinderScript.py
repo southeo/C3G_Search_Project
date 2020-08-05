@@ -220,8 +220,8 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
                 query_list.append(search_param)
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
-                results.append(get_location(scope, query_list, val_list))
-                print(query_list)
+        results.append(get_location(scope, query_list, val_list))
+
 
 with open("Matches.txt", "w") as outfile:
     json.dump(results, outfile, indent=4)
