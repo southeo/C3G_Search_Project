@@ -152,7 +152,6 @@ def get_location(scope, search_list, val_list):
         param_string = str(query) + " = " + val_list[idx]
         results["parameters"].append(param_string)
         idx += 1
-    #print(results["parameters"])
 
     for elem in scope["data"]:  # Cycle through all matches
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
@@ -169,6 +168,7 @@ def get_location(scope, search_list, val_list):
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "r1_path": (str(ihec_path) + "/" + str(filename)),
+                                    "is live": elem["is live version?"]
                                 })
                                 ihec_list.append(elem["ihec_id"])
 
@@ -176,12 +176,14 @@ def get_location(scope, search_list, val_list):
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "r2_path": (str(ihec_path) + "/" + str(filename)),
+                                    "is live": elem["is live version?"]
                                 })
                                 ihec_list.append(elem["ihec_id"])
                             else:
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "path": (str(ihec_path) + "/" + str(filename)),
+                                    "is live": elem["is live version?"]
                                 })
                                 ihec_list.append(elem["ihec_id"])
                         else:
@@ -191,6 +193,10 @@ def get_location(scope, search_list, val_list):
                                         res["r1_path"] =  (str(ihec_path) + "/" + str(filename))
                                     elif "read2" in str(filename):
                                         res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+
+
+
+
     return results
 
 
