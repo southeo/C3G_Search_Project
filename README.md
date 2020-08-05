@@ -31,7 +31,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - disease_keywords
 
 ### Accepted keywords:
-
+| h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
 | amnion | amygdala | angular | anterior | aorta | aortic | area | artery |
