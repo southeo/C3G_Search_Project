@@ -125,7 +125,7 @@ A query file is one of two parameters passed into the search function. It is a t
 | --- | --- | --- | --- | --- |
 | blueprint | | chip-seq | cancer |
 | | male | rna-seq | |
-| | | | Histone H3K4me3 |
+| | | | venous blood | histone H3K4me3 |
 
 The first search returns all files from 
 
