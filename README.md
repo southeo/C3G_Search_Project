@@ -132,7 +132,7 @@ Note this file must need to be tab-delimited. An empty string ("") may be used o
 ## The Reference File
 The referene file is the second parameter passed to the search function. It contains metadata for all datasets in the EBI database. 
 
-` EBI_Database_Consolidated_[Date of creation] `
+` EBI_Database_Consolidated_[Date of creation].txt `
 
 ### Updating the Reference File
 If the reference file on disc is outdated with respect to the EBI Database, you may update the metadata file with the following command:
