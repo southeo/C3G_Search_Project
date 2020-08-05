@@ -121,8 +121,8 @@ A query file is one of two parameters passed into the search function. It is a t
 
 ### Sample Input
 
-| project |  gender | assay_type | tissue_keywords | experiment_type 
-| --- | --- | --- | --- | 
+| project |  gender | assay_type | tissue_keywords | experiment_type |
+| --- | --- | --- | --- | --- |
 | blueprint | | chip-seq | cancer |
 | | male | rna-seq | |
 | | | | Histone H3K4me3 |
