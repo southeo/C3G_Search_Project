@@ -203,7 +203,6 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
     query_table_csv = csv.reader(qt, delimiter='\t')
     search_list = get_search_list(query_table_csv)
     search_list_copy = copy.deepcopy(search_list)
-    print(search_list_copy)
 
     for row in query_table_csv:
         scope = copy.deepcopy(ref_table_json)  # reset scope for each search
@@ -213,6 +212,7 @@ with open(args.query_table) as qt, open(args.ref_table) as rt:
         for val in row:
             try:
                 search_param = search_list.pop(0)
+                print(search_param)
             except IndexError:
                 print("Column Missmatch. Please ensure all rows in the search "
                       "file have the same number of columns")
