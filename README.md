@@ -76,6 +76,8 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | white |  wt | 
 
 
+#### Accepted Disease Keywords
+
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abuse | activated | acute | adenocarcinoma | adenoma | adenosquamous | adipositas | alport | 
@@ -103,6 +105,15 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | stenosis | submaxillar | symptomatic | syndrome | systemic | temporal | thyroid | trauma |
 | trisomy | tumor | type | ulcerative | usher | vater | xald
 
+#### Accepted Ethnicity Keywords
+| h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| afghan | african | american | arab | arabic | asian | australia | bahraini |
+| bangladeshi | british | bulgarian | caucasian | ceu | chinese | cuban | dutch | 
+| east | english | european | first | german | hispanic | indian | indigenous |
+| indo | iranian | japanese | korean | middle | mixed | muslim | native |
+| nations | north | northern | pakistan | pakistani | seychellwa | south | srilankan |
+| white | 
 
 
 ## Creating A Query File
