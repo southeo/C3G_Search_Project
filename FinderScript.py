@@ -99,6 +99,7 @@ def match_search_params(scope, query, value):
                 modified_scope["data"].append(elem)
                 # print("Matches so far: ",len(scope),"\t Elem[Query: ", elem[query], "\t Query: ", query)
         elif query.casefold == "ihec_id" and len(value) == 13:  # if no version is provided, provided latest version
+            print(query, value)
             if elem["is live version"] == "yes" and value == (str(elem[query]).casefold())[0:13]:  #checks if it is latest
                 modified_scope["data"].append(elem)
         else:
