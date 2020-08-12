@@ -1,0 +1,7 @@
+#!/bin/sh
+#SBATCH --time=10:00:00
+#SBATCH --account=def-bourqueg
+
+grep -f -r *.fastq.gz 
+
+find *.fastq.gz -exec gzip {} ; 
