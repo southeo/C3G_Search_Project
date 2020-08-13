@@ -219,7 +219,7 @@ def scan_through(ref_list, dest_dir):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            scan_through(ref_list)
+            scan_through(ref_list, os.getcwd())
             os.chdir(saved_wd)
         else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
