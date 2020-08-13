@@ -189,6 +189,7 @@ def scan_through(ref_list, dest_dir):
     for elem_str in os.listdir():
         elem = Path(elem_str)
         if os.path.isfile(elem) and is_datafile(elem_str):
+            print(elem)
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
@@ -224,7 +225,7 @@ def scan_through(ref_list, dest_dir):
             os.chdir(new_wd)
             scan_through(ref_list)
             os.chdir(saved_wd)
-    #print(rejected_extensions)
+    print(rejected_extensions)
     return move_list
 
 
