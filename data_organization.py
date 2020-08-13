@@ -186,10 +186,10 @@ def scan_through(ref_list, dest_dir):
     move_list = []
     rejected_extensions = []
     missing_list = []
-    for elem in os.listdir():
-        elem = Path(elem)
-        if os.path.isfile(elem) and is_datafile(elem):
-            misc_id, missing_list = fetch_id(elem, missing_list)  # get the EGAX/etc id from the filename or the onsite list
+    for elem_str in os.listdir():
+        elem = Path(elem_str)
+        if os.path.isfile(elem) and is_datafile(elem_str):
+            misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 earliest_id = ihec_ids.pop(0)
@@ -208,7 +208,7 @@ def scan_through(ref_list, dest_dir):
                         # perhaps above should be os.symlink(file_path + "/" + elem, sym_path)?
                 move_list.append(
                     {
-                        "source location": str(os.getcwd()) + "/" + str(elem),
+                        "source location": str(os.getcwd()) + "/" + elem_str,
                         "destination": file_path,
                         "other versions": ihec_ids
                     }
