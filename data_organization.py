@@ -259,5 +259,5 @@ with open(args.ref_table) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table, args.destination_dir)
-    move_list = json.dump(move_list, indent=2)
+    move_list = json.dumps(move_list, indent=2)
     print(move_list)
