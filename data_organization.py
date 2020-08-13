@@ -142,7 +142,7 @@ def path_string(path):
     path = path.split("/")
     new_path = path.pop(0)
     while path:
-        new_path = new_path + '//' + path.pop(0)
+        new_path = new_path + '\\' + path.pop(0)
     print(new_path)
     return new_path
 
