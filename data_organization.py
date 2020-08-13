@@ -155,13 +155,13 @@ check_args(args)
 
 # I know it's bad practice to change global variables, but they need to reflect the args,
 #   and the args need to be global, else they would be passed through 2-3 functions
-print(REF_TABLE, "1")
-REF_TABLE = args.ref_dir + '/' + REF_TABLE
+#REF_TABLE = args.ref_dir + '/' + REF_TABLE
 ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
 SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
-print(REF_TABLE)
+saved_dir = os.getcwd()
+os.chdir(REF_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
