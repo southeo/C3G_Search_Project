@@ -140,10 +140,11 @@ def match_to_db(misc_id, ref_list):
 
 def path_string(path):
     path = path.split("/")
-    new_path = "/" + path.pop(0)
+    new_path = path.pop(0)
     while path:
         new_path = new_path + '//' + path.pop(0)
     print(new_path)
+    return new_path
 
 
 
@@ -159,7 +160,7 @@ SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
 
-path_string(REF_TABLE)
+REF_TABLE = path_string(REF_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
