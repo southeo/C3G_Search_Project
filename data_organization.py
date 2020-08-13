@@ -161,10 +161,12 @@ SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
 os.chdir(args.ref_dir)
-print(os.getcwd() + "/" + REF_TABLE)
-with open(str(os.getcwd() + "/" + REF_TABLE)) as rt:
+REF_TABLE = os.getcwd() + "/" + REF_TABLE
+with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table)
     move_list = json.dumps(move_list, indent=2)
     print(move_list)
+
+/genfs/projects/IHEC/soulaine_test/FinderProject/C3G_Search_Project/EBI_Consolidated_test.txt
