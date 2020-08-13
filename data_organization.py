@@ -161,7 +161,7 @@ DEST_DIR = args.destination_dir
 
 
 REF_TABLE = path_string(REF_TABLE)
-with open('\genfs\projects\IHEC\soulaine_test\FinderProject\C3G_Search_Project\EBI_consolidated_test.txt') as rt:
+with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table)
