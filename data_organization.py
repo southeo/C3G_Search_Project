@@ -214,11 +214,11 @@ def scan_through(ref_list, dest_dir):
                     }
                 )
         elif not is_datafile(elem_str):
-            rejected = elem.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
+            rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             if rejected not in rejected_extensions:
                 rejected_extensions.append(rejected)
         elif os.path.isdir(elem):
-            print(elem)
+            print("is directory!")
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
