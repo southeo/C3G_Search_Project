@@ -135,6 +135,11 @@ HOME_DIR = "/ihec_data"
 REF_TABLE = "EBI_Database_Consolidated_2020-07-06.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 
+#TODO Connect DRX and DRR IDs using the upper directory (AMED-Crest)
+#TODO Figure out how to link CEMT IDs to IHEC IDs
+
+
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
