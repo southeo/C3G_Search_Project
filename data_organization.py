@@ -132,8 +132,9 @@ def match_to_db(misc_id, ref_list):
     ihec_ids = []
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            print(inst)
-            if inst["primary_id"] == misc_id or inst["secondary_id"] == misc_id or misc_id in inst['egar_id'] or misc_id in inst['egaf_id']:
+            if inst["primary_id"] == misc_id or inst["secondary_id"] or \
+                    (inst["egar_id"] and misc_id in inst['egar_id']) or \
+                    (inst["egaf_id"] and misc_id in inst['egaf_id']):
                 ihec_ids.append(elem["ihec_id"])
     ihec_ids.sort()
     return ihec_ids
