@@ -138,6 +138,17 @@ def match_to_db(misc_id, ref_list):
     ihec_ids.sort()
     return ihec_ids
 
+def path_string(path):
+    path = path.split("/")
+    i = 0
+    new_path = "/" + path.pop(0)
+    while i < len(path):
+        new_path = new_path + '/' + path.pop(0)
+        i+=1
+    print(new_path)
+
+
+
 
 args = parse_args()
 check_args(args)
@@ -149,7 +160,8 @@ ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
 SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
-REF_TABLE = "//genfs//projects//IHEC//soulaine_test//FinderProject//C3G_Search_Project//EBI_Consolidated_test.txt"
+
+path_string(REF_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
