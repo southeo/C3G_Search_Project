@@ -149,6 +149,10 @@ def parse_args():
                         '--destination_dir',
                         help="Root directory that will hold organized data",
                         required=True)
+    parser.add_argument('-r',
+                        '--ref_table',
+                        help="Reference table from EBI site",
+                        required=True)
     return parser.parse_args()
 
 def check_args(args):
@@ -250,9 +254,9 @@ def match_to_db(misc_id, ref_list):
 
 args = parse_args()
 check_args(args)
-os.chdir(args.source_dir)
 
-with open(REF_TABLE) as rt:
+with open(args.ref_table) as rt:
+    os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table, args.destination_dir)
     move_list = json.dump(move_list, indent=2)
