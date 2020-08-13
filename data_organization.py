@@ -169,4 +169,3 @@ with open(REF_TABLE) as rt:
     move_list = json.dumps(move_list, indent=2)
     print(move_list)
 
-/genfs/projects/IHEC/soulaine_test/FinderProject/C3G_Search_Project/EBI_Consolidated_test.txt
