@@ -66,19 +66,19 @@ def fetch_id(filename, missing_list):
     return retval, missing_list
 
 
-def scan_through(ref_list, dest_dir):  # Scans through source directory and moves stuff around
+def scan_through(ref_list):  # Scans through source directory and moves stuff around
     move_list = []
     rejected_extensions = []
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
         if os.path.isfile(elem) and is_datafile(elem_str):
-            print("elem is file")
+            print("elem is file", elem, elem_str)
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 earliest_id = ihec_ids.pop(0)
-                file_path = dest_dir + "/" + str(earliest_id[0:14]) + "/" + str(earliest_id)
+                file_path = DEST_DIR + "/" + str(earliest_id[0:14]) + "/" + str(earliest_id)
                 if not os.path.exists(file_path):  # if path does not already exist
                     os.mkdir(file_path)
                 # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
@@ -86,7 +86,7 @@ def scan_through(ref_list, dest_dir):  # Scans through source directory and move
                 # make symlinks for the rest of the occurrences:
                 if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
-                        sym_path = dest_dir + "/" + str(id[0:14]) + "/" + str(id)
+                        sym_path = DEST_DIR + "/" + str(id[0:14]) + "/" + str(id)
                         if not os.path.exists(sym_path):  # if path does not already exist
                             os.mkdir(sym_path)
                         os.symlink(file_path, sym_path)
@@ -103,7 +103,7 @@ def scan_through(ref_list, dest_dir):  # Scans through source directory and move
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            scan_through(ref_list, dest_dir)
+            scan_through(ref_list)
             os.chdir(saved_wd)
         else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
@@ -147,12 +147,12 @@ check_args(args)
 REF_TABLE = args.ref_dir + '/' + REF_TABLE
 ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
 SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
-DEST_DIR = args.dest_dir
+DEST_DIR = args.destination_dir
 
 
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
-    move_list = scan_through(ref_table, args.destination_dir)
+    move_list = scan_through(ref_table)
     move_list = json.dumps(move_list, indent=2)
     print(move_list)
