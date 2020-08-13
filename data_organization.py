@@ -189,7 +189,7 @@ def scan_through(ref_list, dest_dir):
     for elem_str in os.listdir():
         elem = Path(elem_str)
         if os.path.isfile(elem) and is_datafile(elem_str):
-            print(elem)
+            print("elem is file")
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
