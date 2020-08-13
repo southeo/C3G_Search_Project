@@ -139,8 +139,6 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 #TODO Figure out how to link CEMT IDs to IHEC IDs
 
 
-
-
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s',
@@ -180,7 +178,7 @@ def fetch_id(filename, missing_list):
     return retval, missing_list
 
 
-def scan_through(ref_list):
+def scan_through(ref_list, dest_dir):
     move_list = []
     rejected_extensions = []
     missing_list = []
@@ -190,16 +188,15 @@ def scan_through(ref_list):
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 earliest_id = ihec_ids.pop(0)
-                file_path = HOME_DIR + "/" + str(earliest_id[0:14]) + "/" + str(earliest_id)
+                file_path = home_dir + "/" + str(earliest_id[0:14]) + "/" + str(earliest_id)
                 if not os.path.exists(file_path):  # if path does not already exist
                     os.mkdir(file_path)
                 # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
 
-
                 # make symlinks for the rest of the occurrences:
                 if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
-                        sym_path = HOME_DIR + "/" + str(id[0:14]) + "/" + str(id)
+                        sym_path = dest_dir + "/" + str(id[0:14]) + "/" + str(id)
                         if not os.path.exists(sym_path):  # if path does not already exist
                             os.mkdir(sym_path)
                         os.symlink(file_path, sym_path)
@@ -253,10 +250,10 @@ def match_to_db(misc_id, ref_list):
 
 args = parse_args()
 check_args(args)
-os.chdir(args)
+os.chdir(args.source_dir)
 
 with open(REF_TABLE) as rt:
     ref_table = json.load(rt)
-    onsite_list = pd.read_csv(ON_SITE_TABLE)
-    move_list = scan_through(ref_table)
+    move_list = scan_through(ref_table, args.destination_dir)
     move_list = json.dump(move_list, indent=2)
+    print(move_list)
