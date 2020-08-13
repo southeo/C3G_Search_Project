@@ -161,7 +161,7 @@ SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
 saved_dir = os.getcwd()
-os.chdir(REF_TABLE)
+os.chdir(args.ref_dir)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
