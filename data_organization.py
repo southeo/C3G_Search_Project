@@ -187,9 +187,7 @@ def scan_through(ref_list, dest_dir):
     rejected_extensions = []
     missing_list = []
     for elem_str in os.listdir():
-        print(type(elem_str))
         elem = Path(elem_str)
-        '''
         if os.path.isfile(elem) and is_datafile(elem_str):
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
@@ -215,7 +213,7 @@ def scan_through(ref_list, dest_dir):
                         "other versions": ihec_ids
                     }
                 )
-        elif not is_datafile(elem):
+        elif not is_datafile(elem_str):
             rejected = elem.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             if rejected not in rejected_extensions:
                 rejected_extensions.append(rejected)
@@ -225,7 +223,7 @@ def scan_through(ref_list, dest_dir):
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
             scan_through(ref_list)
-            os.chdir(saved_wd)'''
+            os.chdir(saved_wd)
     #print(rejected_extensions)
     return move_list
 
