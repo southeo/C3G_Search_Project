@@ -187,6 +187,7 @@ def scan_through(ref_list, dest_dir):
     rejected_extensions = []
     missing_list = []
     for elem in os.listdir():
+        print(type(elem))
         if os.path.isfile(elem) and is_datafile(elem):
             misc_id, missing_list = fetch_id(elem, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
