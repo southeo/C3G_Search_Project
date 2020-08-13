@@ -149,7 +149,7 @@ ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
 SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
 DEST_DIR = args.destination_dir
 
-
+REF_TABLE = "//genfs//projects//IHEC//soulaine_test//FinderProject//C3G_Search_Project//EBI_Consolidated_test.txt"
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
