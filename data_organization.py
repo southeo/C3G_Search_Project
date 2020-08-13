@@ -132,7 +132,7 @@ ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz"
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 HOME_DIR = "/ihec_data"
-REF_TABLE = "EBI_Database_Consolidated_2020-07-06.txt"
+REF_TABLE = "EBI_consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 
 #TODO Connect DRX and DRR IDs using the upper directory (AMED-Crest)
@@ -150,8 +150,8 @@ def parse_args():
                         help="Root directory that will hold organized data",
                         required=True)
     parser.add_argument('-r',
-                        '--ref_table',
-                        help="Reference table from EBI site",
+                        '--ref_dir',
+                        help="Directory that holds reference files",
                         required=True)
     return parser.parse_args()
 
@@ -219,7 +219,7 @@ def scan_through(ref_list, dest_dir):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            scan_through(ref_list, os.getcwd())
+            scan_through(ref_list, dest_dir)
             os.chdir(saved_wd)
         else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
@@ -258,7 +258,12 @@ def match_to_db(misc_id, ref_list):
 args = parse_args()
 check_args(args)
 
-with open(args.ref_table) as rt:
+# I know it's bad practice to change global variables, but they need to reflect the args,
+#   and the args need to be global, else they would be passed through 2-3 functions
+REF_TABLE = args.ref_dir + '/' + REF_TABLE
+ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
+
+with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table, args.destination_dir)
