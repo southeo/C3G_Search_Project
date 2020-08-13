@@ -14,7 +14,7 @@ ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz"
                        ".bam.crypt"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
-REF_TABLE = "EBI_consolidated_test.txt"
+REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = "/ihec_data"
