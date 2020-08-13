@@ -141,6 +141,7 @@ def match_to_db(misc_id, ref_list):
 def path_string(path):
     path = path.split("/")
     new_path = path.pop(0)
+    new_path.replace("/", "")
     while path:
         new_path = new_path + '\\' + path.pop(0)
     #print(new_path)
