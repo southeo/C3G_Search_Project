@@ -140,11 +140,9 @@ def match_to_db(misc_id, ref_list):
 
 def path_string(path):
     path = path.split("/")
-    i = 0
     new_path = "/" + path.pop(0)
-    while i < len(path):
+    while path:
         new_path = new_path + '/' + path.pop(0)
-        i+=1
     print(new_path)
 
 
