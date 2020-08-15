@@ -103,7 +103,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                         print(file_path, "already exists")
                 # shutil.move(elem, file_path)  # Uncomment when ready to move files
                 # make symlinks for the rest of the occurrences:
-                if len(ihec_ids > 1) :  # if there are later versions this file appears in, make symlinks to data file
+                if len(ihec_ids) > 1 :  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
                         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
 
