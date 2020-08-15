@@ -81,6 +81,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
+        ihec_ids = []
         if os.path.isfile(elem) and is_datafile(elem_str):
             print("elem is file", elem, elem_str)
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
