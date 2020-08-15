@@ -88,8 +88,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 earliest_id = ihec_ids.pop(0)
                 file_path = os.path.join(DEST_DIR, str(earliest_id[0:14])) #+ "/" + str(earliest_id)
-                print("we are here: ", os.getcwd())
-                print("we want to be here: ", DEST_DIR)
+
                 if not os.path.exists(file_path):  # if path does not already exist
                     os.mkdir(file_path)
                     #file_path = os.path.join(file_path, str(earliest_id))
