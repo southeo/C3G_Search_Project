@@ -113,8 +113,8 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                             print(elem, "symlink occurs in ", sym_path)
                         except FileExistsError:
                             try:
-                                file_path = os.path.join(file_path, str(earliest_id))
-                                os.mkdir(file_path)
+                                file_path = os.path.join(sym_path, str(earliest_id))
+                                os.mkdir(sym_path)
                                 print(elem, "symlink occurs in ", sym_path)
                             except FileExistsError:
                                 print(file_path, "already exists")
