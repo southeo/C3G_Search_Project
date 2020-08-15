@@ -55,14 +55,23 @@ def fetch_id(filename, missing_list):
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
             break
-    onsite_list = pd.read_csv(ON_SITE_TABLE)
-    for row in onsite_list:
-        fn = row[4]  # where the file name is stored
-        if fn in filename or filename in fn:  # if one filename contains another
-            retval = row[1]  # return EGAX id
-            break
     if not retval:  # if retval is empty
-        missing_list.append(filename)
+        onsite_list = pd.read_csv(ON_SITE_TABLE)
+        for row in onsite_list:
+            fn = row[4]  # where the file name is stored
+            if fn in filename or filename in fn:  # if one filename contains another
+                retval = row[1]  # return EGAX id
+                break
+    if not retval:  # if retval is STILL empty
+        pass
+        '''
+        parent_dir = str([parent directory])
+        if "DRX" in parent_dir:
+            idx = filename.find("DRX")
+                if idx != -1:  # if prefix is found
+                    retval = filename[idx:idx + 15]
+    if not retval:  # if retval is STILL empty...
+        missing_list.append(filename) '''
     return retval, missing_list
 
 
@@ -78,8 +87,10 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 earliest_id = ihec_ids.pop(0)
-                file_path = DEST_DIR + "/" + str(earliest_id[0:14]) + "/" + str(earliest_id)
+                file_path = DEST_DIR + "/" + str(earliest_id[0:14]) #+ "/" + str(earliest_id)
                 if not os.path.exists(file_path):  # if path does not already exist
+                    os.mkdir(file_path)
+                    file_path = file_path + "/" + str(earliest_id)
                     os.mkdir(file_path)
                 # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
 
