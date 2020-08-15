@@ -89,10 +89,20 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                 earliest_id = ihec_ids.pop(0)
                 file_path = os.path.join(DEST_DIR, str(earliest_id[0:14])) #+ "/" + str(earliest_id)
                 print(file_path)
-                if not os.path.exists(file_path):  # if path does not already exist
+                try:
                     os.mkdir(file_path)
-                    #file_path = os.path.join(file_path, str(earliest_id))
-                    #os.mkdir(file_path)
+                    file_path = os.path.join(file_path, str(earliest_id))
+                    os.mkdir(file_path)
+                except FileExistsError:
+                    try:
+                        file_path = os.path.join(file_path, str(earliest_id))
+                        os.mkdir(file_path)
+                    except FileExistsError:
+                        print(file_path, "already exists")
+
+
+                if not os.path.exists(file_path):
+                    os.mkdir(file_path)
                 # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
 
                 # make symlinks for the rest of the occurrences:
