@@ -93,27 +93,31 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                     os.mkdir(file_path)
                     file_path = os.path.join(file_path, str(earliest_id))
                     os.mkdir(file_path)
+                    print(elem, "moved to ", file_path)
                 except FileExistsError:
                     try:
                         file_path = os.path.join(file_path, str(earliest_id))
                         os.mkdir(file_path)
+                        print(elem, "moved to ", file_path)
                     except FileExistsError:
                         print(file_path, "already exists")
-
-
-                if not os.path.exists(file_path):
-                    os.mkdir(file_path)
-                # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
-
+                # shutil.move(elem, file_path)  # Uncomment when ready to move files
                 # make symlinks for the rest of the occurrences:
                 if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
-                        sym_path = os.path.join(DEST_DIR, str(id[0:14]), str(id))
+                        sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                         try:
                             os.mkdir(sym_path)
+                            file_path = os.path.join(sym_path, id)
+                            os.mkdir(sym_path)
+                            print(elem, "symlink occurs in ", sym_path)
                         except FileExistsError:
-                            print(sym_path, "already exists")
-                            #create symlink
+                            try:
+                                file_path = os.path.join(file_path, str(earliest_id))
+                                os.mkdir(file_path)
+                                print(elem, "symlink occurs in ", sym_path)
+                            except FileExistsError:
+                                print(file_path, "already exists")
                 move_list.append(
                     {
                         "source location": str(os.getcwd()) + "/" + elem_str,
