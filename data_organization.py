@@ -63,6 +63,7 @@ def fetch_id(filename, missing_list):
             fn = row[4]  # where the file name is stored
             if fn in filename or filename in fn:  # if one filename contains another
                 retval = row[1]  # return EGAX id
+                print(fn, filename)
                 break
     if not retval:  # if retval is STILL empty
         pass
@@ -85,7 +86,6 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
         elem = Path(elem_str)
         ihec_ids = []
         if os.path.isfile(elem) and is_datafile(elem_str):
-            print("elem is file", elem, elem_str)
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             print("misc id:", misc_id)
             if misc_id:  # if there is a match for secondary id
