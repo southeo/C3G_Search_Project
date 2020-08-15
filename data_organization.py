@@ -87,24 +87,23 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                earliest_id = ihec_ids.pop(0)
-                file_path = os.path.join(DEST_DIR, str(earliest_id[0:14])) #+ "/" + str(earliest_id)
+                file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
                 print(file_path)
                 try:
                     os.mkdir(file_path)
-                    file_path = os.path.join(file_path, str(earliest_id))
+                    file_path = os.path.join(file_path, str(ihec_ids[0])
                     os.mkdir(file_path)
                     print(elem, "moved to ", file_path)
                 except FileExistsError:
                     try:
-                        file_path = os.path.join(file_path, str(earliest_id))
+                        file_path = os.path.join(file_path, str(ihec_ids[0]))
                         os.mkdir(file_path)
                         print(elem, "moved to ", file_path)
                     except FileExistsError:
                         print(file_path, "already exists")
                 # shutil.move(elem, file_path)  # Uncomment when ready to move files
                 # make symlinks for the rest of the occurrences:
-                if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file
+                if len(ihec_ids > 1) :  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
                         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                         try:
