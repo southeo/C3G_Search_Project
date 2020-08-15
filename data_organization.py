@@ -170,11 +170,11 @@ check_args(args)
 # I know it's bad practice to change global variables, but they need to reflect the args,
 #   and the args need to be global, else they would be passed through 2-3 functions
 os.chdir(args.ref_dir)
-ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
-SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
+SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
-REF_TABLE = os.path.join(args.ref_dir, REF_TABLE)
-print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE)
+REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
+ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
+print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
