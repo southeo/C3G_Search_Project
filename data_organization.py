@@ -108,11 +108,12 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                 # make symlinks for the rest of the occurrences:
                 if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file
                     for id in ihec_ids:
-                        sym_path = DEST_DIR + "/" + str(id[0:14]) + "/" + str(id)
-                        if not os.path.exists(sym_path):  # if path does not already exist
+                        sym_path = os.path.join(DEST_DIR, str(id[0:14]), str(id))
+                        try:
                             os.mkdir(sym_path)
-                        os.symlink(file_path, sym_path)
-                        # perhaps above should be os.symlink(file_path + "/" + elem, sym_path)?
+                        except FileExistsError:
+                            print(sym_path, "already exists")
+                            #create symlink
                 move_list.append(
                     {
                         "source location": str(os.getcwd()) + "/" + elem_str,
