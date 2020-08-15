@@ -90,7 +90,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                 file_path = DEST_DIR + "/" + str(earliest_id[0:14]) #+ "/" + str(earliest_id)
                 print(file_path)
                 if not os.path.exists(file_path):  # if path does not already exist
-                    os.mkdir(file_path)
+                    os.mkdirs(file_path)
                     file_path = file_path + "/" + str(earliest_id)
                     os.mkdir(file_path)
                 # shutil.move(str(os.getcwd()+elem), path)  # Uncomment when ready to move files
