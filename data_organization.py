@@ -17,7 +17,7 @@ ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
-DEST_DIR = "/ihec_data"
+DEST_DIR = ""
 
 #TODO Connect DRX and DRR IDs using the upper directory (AMED-Crest)
 #TODO Figure out how to link CEMT IDs to IHEC IDs
@@ -172,8 +172,9 @@ check_args(args)
 os.chdir(args.ref_dir)
 ON_SITE_TABLE = args.ref_dir + '/' + ON_SITE_TABLE
 SOURCE_DIR = args.source_dir + '/' + SOURCE_DIR
-DEST_DIR = args.destination_dir
-REF_TABLE = os.getcwd() + "/" + REF_TABLE
+DEST_DIR = os.path.abspath(args.destination_dir)
+REF_TABLE = os.path.join(args.ref_dir, REF_TABLE)
+print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
