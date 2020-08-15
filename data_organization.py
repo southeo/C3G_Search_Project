@@ -126,7 +126,6 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                     }
                 )
         elif os.path.isdir(elem):
-            print(elem, "is directory!")
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
