@@ -62,7 +62,7 @@ def fetch_id(filename, missing_list):
             onsite_list = csv.reader(onsite_csv)
             next(onsite_list)
             for row in onsite_list:
-                fn = row[3]  # where the file name is stored
+                fn = row[2]  # where the file name is stored
                 print(fn, filename)
                 if fn in filename or filename in fn:  # if one filename contains another
                     retval = row[1]  # return EGAX id
