@@ -54,9 +54,8 @@ def fetch_id(filename, missing_list):
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
-            if retval:
-                print("ret val" , retval)
             break
+    print("First Check: ", retval)
     if not retval:  # if retval is empty
         onsite_list = pd.read_csv(ON_SITE_TABLE)
         for row in onsite_list:
@@ -65,7 +64,9 @@ def fetch_id(filename, missing_list):
                 retval = row[1]  # return EGAX id
                 print(fn, filename)
                 break
+    print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
+        print("Parent Dir: ", Path(os.getcwd().parent))
         pass
         '''
         parent_dir = str([parent directory])
@@ -88,6 +89,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
         if os.path.isfile(elem) and is_datafile(elem_str):
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             print("misc id:", misc_id)
+            '''
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 #print(len(ihec_ids))
@@ -131,17 +133,17 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                         "destination": file_path,
                         "other versions": ihec_ids
                     }
-                )
+                )'''
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
             scan_through(ref_list)
             os.chdir(saved_wd)
-        else:
+        '''else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             if rejected not in rejected_extensions:
-                rejected_extensions.append(rejected)
+                rejected_extensions.append(rejected)'''
     #print(rejected_extensions)
     return move_list
 
