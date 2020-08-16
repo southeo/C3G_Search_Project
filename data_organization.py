@@ -56,10 +56,7 @@ def fetch_id(filename, missing_list):
             retval = filename[idx:idx + 15]
             #print(prefix, filename)
             break
-    idx = filename.find("EGAZ")
-    if idx != -1:  # need to go through on-site list to get EGAX id
-        filename = filename[idx:idx+14]
-        print(filename)
+    if "EGAZ" in filename:  # need to go through on-site list to get EGAX id
         #print("file name: ", filename, ", string: ", test_str, ", idx:", idx)
         with open(ON_SITE_TABLE) as onsite_csv:
             onsite_list = csv.reader(onsite_csv)
