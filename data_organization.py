@@ -52,18 +52,19 @@ def fetch_id(filename, missing_list):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
-        print("index: ", idx)
+        #print("index: ", idx)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
             break
-    print("First Check: ", retval, "Filename: ", filename)
+    #print("First Check: ", retval, "Filename: ", filename)
     if not retval:  # if retval is empty
         onsite_list = pd.read_csv(ON_SITE_TABLE)
         for row in onsite_list:
             fn = row[4]  # where the file name is stored
+            print(row)
             if fn in filename or filename in fn:  # if one filename contains another
                 retval = row[1]  # return EGAX id
-                print(fn, filename)
+                #print(fn, filename)
                 break
     print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
