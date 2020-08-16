@@ -69,7 +69,7 @@ def fetch_id(filename, missing_list):
                     break
     print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
-        print("Parent Dir: ", Path(os.getcwd().parent))
+        print("Parent Dir: ", Path(os.getcwd()).parent)
         pass
         '''
         parent_dir = str([parent directory])
