@@ -66,7 +66,7 @@ def fetch_id(filename, missing_list):
                     retval = row[3]  # return EGAD id
                     break
     if not retval:  # if retval is STILL empty
-        parent_dir = Path(os.getcwd()).parent
+        parent_dir = str(Path(os.getcwd()).parent)
         for prefix in ID_PREFIXES:
             idx = parent_dir.find(prefix)
             if idx != -1:  # if prefix is found
