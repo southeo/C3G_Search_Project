@@ -63,10 +63,10 @@ def fetch_id(filename, missing_list):
             next(onsite_list)
             for row in onsite_list:
                 fn = row[3]  # where the file name is stored
-                #print(fn, filename)
+                print(fn, filename)
                 if fn in filename or filename in fn:  # if one filename contains another
                     retval = row[1]  # return EGAX id
-                    print(fn, filename)
+                    print("MATCH!!", fn, filename)
                     break
     #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
