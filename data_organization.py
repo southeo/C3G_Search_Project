@@ -54,7 +54,7 @@ def fetch_id(filename, missing_list):
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
-            print(prefix, filename)
+            #print(prefix, filename)
             break
     test_str = filename
     idx = test_str.find("EGAZ")
@@ -65,14 +65,14 @@ def fetch_id(filename, missing_list):
             next(onsite_list)
             for row in onsite_list:
                 fn = row[4]  # where the file name is stored
-                print(fn)
+                #print(fn)
                 if fn in filename or filename in fn:  # if one filename contains another
                     retval = row[1]  # return EGAX id
                     #print(fn, filename)
                     break
     #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
-        print("Parent Dir: ", Path(os.getcwd()).parent)
+        #print("Parent Dir: ", Path(os.getcwd()).parent)
         pass
         '''
         parent_dir = str([parent directory])
@@ -202,7 +202,7 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
-print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
+#print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
