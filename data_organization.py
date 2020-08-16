@@ -55,7 +55,7 @@ def fetch_id(filename, missing_list):
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
             break
-    print("First Check: ", retval)
+    print("First Check: ", retval, "Filename: ", filename)
     if not retval:  # if retval is empty
         onsite_list = pd.read_csv(ON_SITE_TABLE)
         for row in onsite_list:
