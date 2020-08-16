@@ -58,15 +58,16 @@ def fetch_id(filename, missing_list):
             break
     #print("First Check: ", retval, "Filename: ", filename)
     if not retval:  # if retval is empty
-        onsite_list = csv.reader(ON_SITE_TABLE)
-        next(onsite_list)
-        for row in onsite_list:
-            fn = "asdfghjk" #row[4]  # where the file name is stored
-            print(row)
-            if fn in filename or filename in fn:  # if one filename contains another
-                retval = row[1]  # return EGAX id
-                #print(fn, filename)
-                break
+        with open(ON_SITE_TABLE) as onsite_csv:
+            onsite_list = csv.reader(onsite_csv)
+            next(onsite_list)
+            for row in onsite_list:
+                fn = "asdfghjk" #row[4]  # where the file name is stored
+                print(row)
+                if fn in filename or filename in fn:  # if one filename contains another
+                    retval = row[1]  # return EGAX id
+                    #print(fn, filename)
+                    break
     print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
         print("Parent Dir: ", Path(os.getcwd().parent))
