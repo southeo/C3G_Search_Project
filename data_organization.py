@@ -52,13 +52,13 @@ def fetch_id(filename, missing_list):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
-        print(prefix, filename)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
             print(prefix, filename)
             break
     #print("First Check: ", retval, "Filename: ", filename)
-    if not retval:  # if retval is empty
+    if not retval and "EGAZ" in filename:  # if retval is empty
+        print(filename)
         with open(ON_SITE_TABLE) as onsite_csv:
             onsite_list = csv.reader(onsite_csv)
             next(onsite_list)
@@ -68,7 +68,7 @@ def fetch_id(filename, missing_list):
                     retval = row[1]  # return EGAX id
                     #print(fn, filename)
                     break
-    print("Second Check: ", retval)
+    #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
         print("Parent Dir: ", Path(os.getcwd()).parent)
         pass
