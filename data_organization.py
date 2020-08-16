@@ -13,7 +13,7 @@ import argparse
 ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".bam.cip",
                        ".bam.crypt"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
-ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
+ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
