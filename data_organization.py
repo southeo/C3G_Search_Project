@@ -72,11 +72,10 @@ def fetch_id(filename, missing_list):
             idx = parent_dir.find(prefix)
             if idx != -1:  # if prefix is found
                 retval = filename[idx:idx + 15]
-                print("Parent ", parent_dir)
-
 
     if not retval:  # if retval is STILL empty...
         missing_list.append(filename)
+    print(retval)
     return retval, missing_list
 
 
