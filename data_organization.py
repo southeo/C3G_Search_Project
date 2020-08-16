@@ -52,9 +52,9 @@ def fetch_id(filename, missing_list):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
-        print(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
+            print(retval, filename)
             break
     #print("First Check: ", retval, "Filename: ", filename)
     if not retval:  # if retval is empty
@@ -65,7 +65,7 @@ def fetch_id(filename, missing_list):
                 fn = row[4]  # where the file name is stored
                 if fn in filename or filename in fn:  # if one filename contains another
                     retval = row[1]  # return EGAX id
-                    print(fn, filename)
+                    #print(fn, filename)
                     break
     print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
