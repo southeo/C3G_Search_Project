@@ -58,7 +58,7 @@ def fetch_id(filename, missing_list):
             break
     #print("First Check: ", retval, "Filename: ", filename)
     if not retval:  # if retval is empty
-        onsite_list = pd.read_csv(ON_SITE_TABLE)
+        onsite_list = csv.reader(ON_SITE_TABLE)
         next(onsite_list)
         for row in onsite_list:
             fn = row[4]  # where the file name is stored
