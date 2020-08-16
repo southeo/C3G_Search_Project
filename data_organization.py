@@ -69,7 +69,7 @@ def fetch_id(filename, missing_list):
         parent_dir = str(Path(os.getcwd()).parent)
         for prefix in ID_PREFIXES:
             idx = parent_dir.find(prefix)
-            print("Parent", parent_dir,", Prefix: ", prefix)
+            print("Parent", parent_dir,", Prefix: ", prefix, "pwd: ", os.getcwd())
             if idx != -1:  # if prefix is found
                 retval = filename[idx:idx + 15]
     if not retval:  # if retval is STILL empty...
