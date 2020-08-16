@@ -56,8 +56,7 @@ def fetch_id(filename, missing_list):
             retval = filename[idx:idx + 15]
             print(prefix, filename)
             break
-    #print("First Check: ", retval, "Filename: ", filename)
-    if "EGAZ" in str(filename):  # need to go through on-site list to get EGAX id
+    if filename.find("EGAZ") != -1 :  # need to go through on-site list to get EGAX id
         print(filename)
         with open(ON_SITE_TABLE) as onsite_csv:
             onsite_list = csv.reader(onsite_csv)
@@ -71,7 +70,7 @@ def fetch_id(filename, missing_list):
                     break
     #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
-        #print("Parent Dir: ", Path(os.getcwd()).parent)
+        print("Parent Dir: ", Path(os.getcwd()).parent)
         pass
         '''
         parent_dir = str([parent directory])
