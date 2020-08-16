@@ -64,13 +64,14 @@ def fetch_id(filename, missing_list):
             next(onsite_list)
             for row in onsite_list:
                 fn = row[4]  # where the file name is stored
+                print(fn)
                 if fn in filename or filename in fn:  # if one filename contains another
                     retval = row[1]  # return EGAX id
                     #print(fn, filename)
                     break
     #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
-        print("Parent Dir: ", Path(os.getcwd()).parent)
+        #print("Parent Dir: ", Path(os.getcwd()).parent)
         pass
         '''
         parent_dir = str([parent directory])
