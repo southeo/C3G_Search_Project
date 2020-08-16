@@ -66,8 +66,8 @@ def fetch_id(filename, missing_list):
                 #if "EGAZ" in row[0] or "EGAZ" in row[1] or "EGAZ" in row[2] or "EGAZ" in row[3]:
                 #    print("0: ", row[0], "\n 1: ", row[1], "\n 2: ", row[2], "\n 3: ", row[3], "\n 4: ", row[4])
                 if "EGAZ" in fn and (fn in filename or filename in fn):  # if one filename contains another
-                    retval = row[1]  # return EGAD id
-                    print("MATCH!!", fn, filename)
+                    retval = row[3]  # return EGAD id
+                    print("MATCH!!", fn, filename, retval)
                     break
     #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
