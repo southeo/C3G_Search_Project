@@ -57,30 +57,25 @@ def fetch_id(filename, missing_list):
             #print(prefix, filename)
             break
     if "EGAZ" in filename:  # need to go through on-site list to get EGAX id
-        #print("file name: ", filename, ", string: ", test_str, ", idx:", idx)
         with open(ON_SITE_TABLE) as onsite_csv:
             onsite_list = csv.reader(onsite_csv)
             next(onsite_list)
             for row in onsite_list:
                 fn = row[2]  # where the file name is stored
-                #if "EGAZ" in row[0] or "EGAZ" in row[1] or "EGAZ" in row[2] or "EGAZ" in row[3]:
-                #    print("0: ", row[0], "\n 1: ", row[1], "\n 2: ", row[2], "\n 3: ", row[3], "\n 4: ", row[4])
                 if "EGAZ" in fn and (fn in filename or filename in fn):  # if one filename contains another
                     retval = row[3]  # return EGAD id
-                    print("MATCH!!", fn, filename, retval)
                     break
-    #print("Second Check: ", retval)
     if not retval:  # if retval is STILL empty
-        #print("Parent Dir: ", Path(os.getcwd()).parent)
-        pass
-        '''
-        parent_dir = str([parent directory])
-        if "DRX" in parent_dir:
-            idx = filename.find("DRX")
-                if idx != -1:  # if prefix is found
-                    retval = filename[idx:idx + 15]
+        parent_dir = Path(os.getcwd()).parent
+        for prefix in ID_PREFIXES:
+            idx = parent_dir.find(prefix)
+            if idx != -1:  # if prefix is found
+                retval = filename[idx:idx + 15]
+                print("Parent ", parent_dir)
+
+
     if not retval:  # if retval is STILL empty...
-        missing_list.append(filename) '''
+        missing_list.append(filename)
     return retval, missing_list
 
 
