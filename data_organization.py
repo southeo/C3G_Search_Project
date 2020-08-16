@@ -52,7 +52,7 @@ def fetch_id(filename, missing_list):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
-        #print("index: ", idx)
+        print(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
             break
