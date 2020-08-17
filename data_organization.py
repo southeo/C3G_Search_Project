@@ -71,7 +71,6 @@ def fetch_id(filename, missing_list):
             idx = working_dir.find(prefix)
             if idx != -1:  # if prefix is found
                 retval = working_dir[idx:idx + 15]
-                print(retval, "\t", filename, "\t",os.getcwd())
                 break
     if not retval and filename not in missing_list:  # if retval is STILL empty...
         missing_list.append(filename)
@@ -87,11 +86,10 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
         ihec_ids = []
         if os.path.isfile(elem) and is_datafile(elem_str):
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
-            #print("misc id:", misc_id)
-            '''
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                #print(len(ihec_ids))
+                print(len(ihec_ids))
+                print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
                 file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
                 #print(file_path)
                 try:
@@ -132,7 +130,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                         "destination": file_path,
                         "other versions": ihec_ids
                     }
-                )'''
+                )
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
