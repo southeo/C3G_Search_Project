@@ -72,7 +72,7 @@ def fetch_id(filename):
                 retval = working_dir[idx:idx + 15]
                 break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
-        with open(MISSING_LIST) as ms_lst:
+        with open(MISSING_LIST, "w") as ms_lst:
             missing = {
                 "file name": filename,
                 "location": os.getcwd()
