@@ -72,12 +72,14 @@ def fetch_id(filename):
                 retval = working_dir[idx:idx + 15]
                 break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
-        with open(MISSING_LIST, "w") as ms_lst:
+        with open(MISSING_LIST, "r+") as ms_lst:
+            missing_list = json.load(ms_lst)
             missing = {
                 "file name": filename,
                 "location": os.getcwd()
             }
-            json.dump(missing, ms_lst, indent=2)
+            missing_list.append(missing)
+            json.dump(MISSING_LIST, ms_lst, indent=2)
     return retval
 
 
