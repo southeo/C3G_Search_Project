@@ -18,6 +18,7 @@ REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
+MISSING_LIST = "No_Misc_ID_list.txt"
 
 
 # TODO Figure out how to link CEMT IDs to IHEC IDs
@@ -72,11 +73,12 @@ def fetch_id(filename):
                 retval = working_dir[idx:idx + 15]
                 break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
-        missing = {
-            "file name": filename,
-            "location": os.getcwd()
-        }
-        print(missing)
+        with open(MISSING_LIST) as ms_lst:
+            missing = {
+                "file name": filename,
+                "location": os.getcwd()
+            }
+            json.dump(missing, ms_lst, indent=2)
     return retval
 
 
@@ -171,6 +173,7 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
+MISSING_LIST = os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST))
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
