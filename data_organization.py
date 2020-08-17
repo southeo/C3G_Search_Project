@@ -49,7 +49,6 @@ def check_args(args):
 
 
 def fetch_id(filename, missing_list):
-    21 = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
