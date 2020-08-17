@@ -97,12 +97,12 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                         os.mkdir(file_path)
                         file_path = os.path.join(file_path, str(ihec_ids[0]))
                         os.mkdir(file_path)
-                        #print(elem, "moved to ", file_path)
+                        print(elem, "moved to ", file_path)
                     except FileExistsError:
                         try:
                             file_path = os.path.join(file_path, str(ihec_ids[0]))
                             os.mkdir(file_path)
-                            #print(elem, "moved to ", file_path)
+                            print(elem, "moved to ", file_path)
                         except FileExistsError:
                             #print(file_path, "already exists")
                             pass
@@ -168,8 +168,6 @@ def match_to_db(misc_id, ref_list):
             if inst["primary_id"] == misc_id or inst["secondary_id"] == misc_id or \
                     ("egar_id" in inst.keys() and misc_id in inst['egar_id']) or \
                     ("egaf_id" in inst.keys() and misc_id in inst['egaf_id']):
-                print("Misc id", misc_id)
-                print(inst)
                 ihec_ids.append(elem["ihec_id"])
     ihec_ids.sort()
     return ihec_ids
