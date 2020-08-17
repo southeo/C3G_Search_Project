@@ -19,6 +19,7 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
 MISSING_LIST = "No_Misc_ID_List.txt"
+REJECTED_LIST = "Rejected_file_list.txt"
 
 # TODO Figure out how to link CEMT IDs to IHEC IDs
 
@@ -72,7 +73,7 @@ def fetch_id(filename):
                 retval = working_dir[idx:idx + 15]
                 break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
-        with open(MISSING_LIST, "a+", newline="\t") as ms_lst:
+        with open(MISSING_LIST, "a+", newline="") as ms_lst:
             row = [filename, os.getcwd()]
             writer = csv.writer(ms_lst)
             writer.writerow(row)
@@ -121,7 +122,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                                 except FileExistsError:
                                     # print(sym_path, "already exists")
                                     pass
-                        # os.symlink(file_path, sym_path)  # may also be os.symlink((os.path.join(file_path, filename), sym_path)
+                        # os.symlink((os.path.join(file_path, filename), sym_path)
                     move_list.append({
                         "source location": str(os.getcwd()) + "/" + elem_str,
                         "destination": file_path,
@@ -134,9 +135,12 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         else:
-            rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
-            if rejected not in rejected_extensions:
-                rejected_extensions.append(rejected)
+            #rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
+            #if rejected not in rejected_extensions:
+            with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                row = [elem]
+                writer = csv.writer(rj_lst)
+                writer.writerow(row)
     # print(rejected_extensions)
     return move_list
 
@@ -170,7 +174,8 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
-MISSING_LIST =Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
+MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
+REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
