@@ -70,7 +70,7 @@ def fetch_id(filename, missing_list):
         for prefix in ID_PREFIXES:
             idx = working_dir.find(prefix)
             if idx != -1:  # if prefix is found
-                retval = filename[idx:idx + 15]
+                retval = working_dir[idx:idx + 15]
                 print(retval, "\t", filename, "\t",os.getcwd())
                 break
     if not retval and filename not in missing_list:  # if retval is STILL empty...
