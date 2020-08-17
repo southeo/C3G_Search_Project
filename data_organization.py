@@ -78,6 +78,7 @@ def fetch_id(filename):
         }
         with open("No_Misc_ID_List.txt", "w") as ms_lst:
             json.dump(missing, ms_lst)
+            print(missing)
     return retval
 
 
