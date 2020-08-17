@@ -72,7 +72,7 @@ def fetch_id(filename):
                 retval = working_dir[idx:idx + 15]
                 break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
-        with open(MISSING_LIST, "a+", newline="") as ms_lst:
+        with open(MISSING_LIST, "a+", newline="\t") as ms_lst:
             row = [filename, os.getcwd()]
             writer = csv.writer(ms_lst)
             writer.writerow(row)
