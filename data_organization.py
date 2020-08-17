@@ -54,7 +54,7 @@ def check_args(args):
 
 def get_JGAR_id(dir_name):
     JGAD_id = str(Path(dir_name).parent)
-    JGAD_id.split("/")
+    JGAD_id = JGAD_id.split("/")
     print(JGAD_id)
 
 def fetch_id(filename):
