@@ -54,7 +54,9 @@ def check_args(args):
 
 def get_JGAR_id(dir_name):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
+    md_file = ""
     for elem in os.listdir():
+        print("elem", elem)
         if JGAD_id in elem:
             md_file = elem
             break
