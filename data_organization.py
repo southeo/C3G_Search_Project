@@ -18,8 +18,7 @@ REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
-MISSING_LIST = "No_Misc_ID_list.txt"
-
+MISSING_LIST = "No_Misc_ID_List.txt"
 
 # TODO Figure out how to link CEMT IDs to IHEC IDs
 
