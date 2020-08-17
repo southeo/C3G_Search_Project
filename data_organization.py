@@ -9,12 +9,16 @@ import glob
 from Bio import SeqIO
 import gzip
 import argparse
+import xml.etree.ElementTree as ET
+
+
 
 ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",
                        ".crypt", ".bcf"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
+JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
@@ -48,6 +52,10 @@ def check_args(args):
     assert (os.path.isdir(args.ref_dir)), "Reference file directory not found"
 
 
+def get_JGAR_id(dir_name):
+    print(Path(dir_name).parent)
+
+
 def fetch_id(filename):
     retval = ""
     for prefix in ID_PREFIXES:
@@ -67,11 +75,14 @@ def fetch_id(filename):
                     break
     if not retval:  # if retval is STILL empty, check the directory name, not the file name
         working_dir = os.getcwd()
-        for prefix in ID_PREFIXES:
-            idx = working_dir.find(prefix)
-            if idx != -1:  # if prefix is found
-                retval = working_dir[idx:idx + 15]
-                break
+        if "JGAR" in working_dir:
+            retval = get_JGAR_id(working_dir)
+        else:
+            for prefix in ID_PREFIXES:
+                idx = working_dir.find(prefix)
+                if idx != -1:  # if prefix is found
+                    retval = working_dir[idx:idx + 15]
+                    break
     if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
         with open(MISSING_LIST, "a+", newline="") as ms_lst:
             row = [filename, os.getcwd()]
@@ -176,6 +187,8 @@ REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
+JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
+
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
