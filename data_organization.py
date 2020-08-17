@@ -49,7 +49,7 @@ def check_args(args):
 
 
 def fetch_id(filename, missing_list):
-    retval = ""
+    21 = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
@@ -71,7 +71,8 @@ def fetch_id(filename, missing_list):
             idx = working_dir.find(prefix)
             if idx != -1:  # if prefix is found
                 retval = filename[idx:idx + 15]
-                print(retval, "\t", filename)
+                print(retval, "\t", filename, "\t",os.getcwd())
+                break
     if not retval and filename not in missing_list:  # if retval is STILL empty...
         missing_list.append(filename)
     return retval, missing_list
