@@ -47,7 +47,7 @@ def check_args(args):
     assert (os.path.isdir(args.ref_dir)), "Reference file directory not found"
 
 
-def fetch_id(filename, missing_list):
+def fetch_id(filename):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
@@ -71,9 +71,14 @@ def fetch_id(filename, missing_list):
             if idx != -1:  # if prefix is found
                 retval = working_dir[idx:idx + 15]
                 break
-    if not retval and filename not in missing_list:  # if retval is STILL empty...
-        missing_list.append(filename)
-    return retval, missing_list
+    if not retval:  # if retval is STILL empty, write it to missing list. This will have no misc id associated with it
+        missing = {
+            "file name": filename,
+            "location": os.getcwd()
+        }
+        with open("No_Misc_ID_List.txt", "w") as ms_lst:
+            json.dump(missing, ms_lst)
+    return retval
 
 
 def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
@@ -131,10 +136,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             os.chdir(new_wd)
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
-        '''else:
+        else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             if rejected not in rejected_extensions:
-                rejected_extensions.append(rejected)'''
+                rejected_extensions.append(rejected)
     # print(rejected_extensions)
     return move_list
 
