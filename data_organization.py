@@ -56,10 +56,10 @@ def get_JGAR_id(dir_name):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
     md_file = ""
     for elem in os.listdir(JGAD_DIR):
-        print("elem", elem, ", id", JGAD_id)
         if JGAD_id in elem:
             md_file = elem
             break
+    md_file = os.path.join(JGAD_DIR, md_file)
     print(md_file)
 
 
