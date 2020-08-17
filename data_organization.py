@@ -88,25 +88,23 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:
-                    # print(len(ihec_ids), misc_id)
-                    # print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
-                    file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14]))
+                    first_id = ihec_ids.pop(0)
+                    file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
                     # print(file_path)
                     try:
                         os.mkdir(file_path)
-                        file_path = os.path.join(file_path, str(ihec_ids[0]))
+                        file_path = os.path.join(file_path, first_id)
                         os.mkdir(file_path)
                     except FileExistsError:
                         try:
-                            file_path = os.path.join(file_path, str(ihec_ids[0]))
+                            file_path = os.path.join(file_path, first_id)
                             os.mkdir(file_path)
                         except FileExistsError:
                             # print(file_path, "already exists")
                             pass
                     # shutil.move(elem, file_path)  # Uncomment when ready to move files
                     # make symlinks for the rest of the occurrences:
-                    if len(
-                            ihec_ids) > 1:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
+                    if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
                         for id in ihec_ids:
                             sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                             try:
