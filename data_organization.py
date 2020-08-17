@@ -97,12 +97,10 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                         os.mkdir(file_path)
                         file_path = os.path.join(file_path, str(ihec_ids[0]))
                         os.mkdir(file_path)
-                        print(elem, "moved to ", file_path)
                     except FileExistsError:
                         try:
                             file_path = os.path.join(file_path, str(ihec_ids[0]))
                             os.mkdir(file_path)
-                            print(elem, "moved to ", file_path)
                         except FileExistsError:
                             #print(file_path, "already exists")
                             pass
@@ -119,7 +117,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                                #print(elem, "symlink occurs in ", sym_path)
                             except FileExistsError:
                                 try:
-                                    file_path = os.path.join(sym_path, id)
+                                    sym_path = os.path.join(sym_path, id)
                                     os.mkdir(sym_path)
                                     #print(elem, "symlink occurs in ", sym_path)
                                 except FileExistsError:
@@ -195,10 +193,10 @@ DEST_DIR = os.path.abspath(args.destination_dir)
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 #print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
-with open(REF_TABLE) as rt:
+with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table)
-    move_list = json.dumps(move_list, indent=2)
-    print(move_list)
+    json.dump(move_list, mv_lst)
+
 
