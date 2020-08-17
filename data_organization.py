@@ -88,49 +88,50 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                #print(len(ihec_ids), misc_id)
-                #print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
-                file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
-                #print(file_path)
-                try:
-                    os.mkdir(file_path)
-                    file_path = os.path.join(file_path, str(ihec_ids[0]))
-                    os.mkdir(file_path)
-                    #print(elem, "moved to ", file_path)
-                except FileExistsError:
+                if ihec_ids:
+                    #print(len(ihec_ids), misc_id)
+                    #print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
+                    file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
+                    #print(file_path)
                     try:
+                        os.mkdir(file_path)
                         file_path = os.path.join(file_path, str(ihec_ids[0]))
                         os.mkdir(file_path)
                         #print(elem, "moved to ", file_path)
                     except FileExistsError:
-                        #print(file_path, "already exists")
-                        pass
-                # shutil.move(elem, file_path)  # Uncomment when ready to move files
-                # make symlinks for the rest of the occurrences:
-                if len(ihec_ids) > 1 :  # if there are later versions this file appears in, make symlinks to data file
-                    for id in ihec_ids:
-                        sym_path = os.path.join(DEST_DIR, str(id[0:14]))
-
                         try:
-                            os.mkdir(sym_path)
-                            file_path = os.path.join(sym_path, id)
-                            os.mkdir(sym_path)
-                           #print(elem, "symlink occurs in ", sym_path)
+                            file_path = os.path.join(file_path, str(ihec_ids[0]))
+                            os.mkdir(file_path)
+                            #print(elem, "moved to ", file_path)
                         except FileExistsError:
+                            #print(file_path, "already exists")
+                            pass
+                    # shutil.move(elem, file_path)  # Uncomment when ready to move files
+                    # make symlinks for the rest of the occurrences:
+                    if len(ihec_ids) > 1 :  # if there are later versions this file appears in, make symlinks to data file
+                        for id in ihec_ids:
+                            sym_path = os.path.join(DEST_DIR, str(id[0:14]))
+
                             try:
+                                os.mkdir(sym_path)
                                 file_path = os.path.join(sym_path, id)
                                 os.mkdir(sym_path)
-                                #print(elem, "symlink occurs in ", sym_path)
+                               #print(elem, "symlink occurs in ", sym_path)
                             except FileExistsError:
-                                #print(sym_path, "already exists")
-                                pass
-                move_list.append(
-                    {
-                        "source location": str(os.getcwd()) + "/" + elem_str,
-                        "destination": file_path,
-                        "other versions": ihec_ids
-                    }
-                )
+                                try:
+                                    file_path = os.path.join(sym_path, id)
+                                    os.mkdir(sym_path)
+                                    #print(elem, "symlink occurs in ", sym_path)
+                                except FileExistsError:
+                                    #print(sym_path, "already exists")
+                                    pass
+                    move_list.append(
+                        {
+                            "source location": str(os.getcwd()) + "/" + elem_str,
+                            "destination": file_path,
+                            "other versions": ihec_ids
+                        }
+                    )
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
