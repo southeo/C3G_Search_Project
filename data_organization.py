@@ -91,7 +91,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                 if ihec_ids:
                     #print(len(ihec_ids), misc_id)
                     #print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
-                    file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
+                    file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14]))
                     #print(file_path)
                     try:
                         os.mkdir(file_path)
@@ -106,14 +106,13 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                             pass
                     # shutil.move(elem, file_path)  # Uncomment when ready to move files
                     # make symlinks for the rest of the occurrences:
-                    if len(ihec_ids) > 1 :  # if there are later versions this file appears in, make symlinks to data file
+                    if len(ihec_ids) > 1:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
                         for id in ihec_ids:
                             sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                             try:
                                 os.mkdir(sym_path)
                                 file_path = os.path.join(sym_path, id)
                                 os.mkdir(sym_path)
-                               #print(elem, "symlink occurs in ", sym_path)
                             except FileExistsError:
                                 try:
                                     sym_path = os.path.join(sym_path, id)
@@ -122,12 +121,12 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                                 except FileExistsError:
                                     #print(sym_path, "already exists")
                                     pass
+                        #os.symlink(file_path, sym_path)  # may also be os.symlink((os.path.join(file_path, filename), sym_path)
                     move_list.append({
                             "source location": str(os.getcwd()) + "/" + elem_str,
                             "destination": file_path,
                             "other versions": ihec_ids
                         })
-                    print(move_list[0])
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
@@ -195,6 +194,7 @@ with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = scan_through(ref_table)
+    print(move_list)
     json.dump(move_list, mv_lst)
 
 
