@@ -176,5 +176,4 @@ with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     ref_table = json.load(rt)
     move_list = []
     move_list = scan_through(ref_table, move_list)
-    print(move_list)
     json.dump(move_list, mv_lst, indent=2)
