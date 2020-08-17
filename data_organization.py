@@ -88,7 +88,7 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
             misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                print(len(ihec_ids), misc_id)
+                #print(len(ihec_ids), misc_id)
                 #print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
                 file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14])) #+ "/" + str(earliest_id)
                 #print(file_path)
