@@ -19,8 +19,8 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
 
-#TODO Connect DRX and DRR IDs using the upper directory (AMED-Crest)
-#TODO Figure out how to link CEMT IDs to IHEC IDs
+
+# TODO Figure out how to link CEMT IDs to IHEC IDs
 
 
 def parse_args():
@@ -39,13 +39,12 @@ def parse_args():
                         required=True)
     return parser.parse_args()
 
+
 def check_args(args):
     # make sure directories exist
     assert (os.path.isdir(args.source_dir)), "Source directory not found"
-    assert (os.path.isdir(args.destination_dir)), "Destination directory file not found"
-
-    # first step: optional, update ref table from ebi website (keep old version)
-    # Second step: search
+    assert (os.path.isdir(args.destination_dir)), "Destination directory not found"
+    assert (os.path.isdir(args.ref_dir)), "Reference file directory not found"
 
 
 def fetch_id(filename, missing_list):
@@ -54,7 +53,7 @@ def fetch_id(filename, missing_list):
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
-            #print(prefix, filename)
+            # print(prefix, filename)
             break
     if "EGAZ" in filename:  # need to go through on-site list to get EGAX id
         with open(ON_SITE_TABLE) as onsite_csv:
@@ -65,7 +64,7 @@ def fetch_id(filename, missing_list):
                 if "EGAZ" in fn and (fn in filename or filename in fn):  # if one filename contains another
                     retval = row[3]  # return EGAD id
                     break
-    if not retval:  # if retval is STILL empty
+    if not retval:  # if retval is STILL empty, check the directory name, not the file name
         working_dir = os.getcwd()
         for prefix in ID_PREFIXES:
             idx = working_dir.find(prefix)
@@ -77,22 +76,22 @@ def fetch_id(filename, missing_list):
     return retval, missing_list
 
 
-def scan_through(ref_list):  # Scans through source directory and moves stuff around
-    move_list = []
+def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
     rejected_extensions = []
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
         if os.path.isfile(elem) and is_datafile(elem_str):
-            misc_id, missing_list = fetch_id(elem_str, missing_list)  # get the EGAX/etc id from the filename or the onsite list
+            misc_id, missing_list = fetch_id(elem_str,
+                                             missing_list)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:
-                    #print(len(ihec_ids), misc_id)
-                    #print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
+                    # print(len(ihec_ids), misc_id)
+                    # print("IHEC ID: ", ihec_ids[0], ", Misc ID: ", misc_id)
                     file_path = os.path.join(DEST_DIR, str(ihec_ids[0][0:14]))
-                    #print(file_path)
+                    # print(file_path)
                     try:
                         os.mkdir(file_path)
                         file_path = os.path.join(file_path, str(ihec_ids[0]))
@@ -102,11 +101,12 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                             file_path = os.path.join(file_path, str(ihec_ids[0]))
                             os.mkdir(file_path)
                         except FileExistsError:
-                            #print(file_path, "already exists")
+                            # print(file_path, "already exists")
                             pass
                     # shutil.move(elem, file_path)  # Uncomment when ready to move files
                     # make symlinks for the rest of the occurrences:
-                    if len(ihec_ids) > 1:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
+                    if len(
+                            ihec_ids) > 1:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
                         for id in ihec_ids:
                             sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                             try:
@@ -117,36 +117,28 @@ def scan_through(ref_list):  # Scans through source directory and moves stuff ar
                                 try:
                                     sym_path = os.path.join(sym_path, id)
                                     os.mkdir(sym_path)
-                                    #print(elem, "symlink occurs in ", sym_path)
+                                    # print(elem, "symlink occurs in ", sym_path)
                                 except FileExistsError:
-                                    #print(sym_path, "already exists")
+                                    # print(sym_path, "already exists")
                                     pass
-                        #os.symlink(file_path, sym_path)  # may also be os.symlink((os.path.join(file_path, filename), sym_path)
+                        # os.symlink(file_path, sym_path)  # may also be os.symlink((os.path.join(file_path, filename), sym_path)
                     move_list.append({
-                            "source location": str(os.getcwd()) + "/" + elem_str,
-                            "destination": file_path,
-                            "other versions": ihec_ids
-                        })
+                        "source location": str(os.getcwd()) + "/" + elem_str,
+                        "destination": file_path,
+                        "other versions": ihec_ids
+                    })
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            scan_through(ref_list)
+            move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         '''else:
             rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             if rejected not in rejected_extensions:
                 rejected_extensions.append(rejected)'''
-    #print(rejected_extensions)
+    # print(rejected_extensions)
     return move_list
-
-
-'''
-def get_id(filename):
-    for char in POTENTIAL_DELIMETERS:
-        filename = filename.split(char).pop(0)
-    return filename
-'''
 
 
 def is_datafile(filename):
@@ -167,17 +159,6 @@ def match_to_db(misc_id, ref_list):
     ihec_ids.sort()
     return ihec_ids
 
-def path_string(path):
-    path = path.split("/")
-    new_path = path.pop(0)
-    new_path.replace("/", "")
-    while path:
-        new_path = new_path + '\\' + path.pop(0)
-    #print(new_path)
-    return new_path
-
-
-
 
 args = parse_args()
 check_args(args)
@@ -189,12 +170,11 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
-#print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
+# print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
-    move_list = scan_through(ref_table)
+    move_list = []
+    move_list = scan_through(ref_table, move_list)
     print(move_list)
     json.dump(move_list, mv_lst)
-
-
