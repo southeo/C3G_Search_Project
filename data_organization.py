@@ -52,8 +52,10 @@ def check_args(args):
     assert (os.path.isdir(args.ref_dir)), "Reference file directory not found"
 
 
-def get_JGAR_id(dir_name):
+def get_JGAR_id(dir_name, filename):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
+    JGAR_id = str(Path(dir_name)).split("/")[-1]
+    print(JGAR_id, JGAD_id)
     md_file = ""
     for elem in os.listdir(JGAD_DIR):
         if JGAD_id in elem:
@@ -63,10 +65,10 @@ def get_JGAR_id(dir_name):
     tree = ET.parse(md_file)
     root = tree.getroot()
 
-    for ex_ref in root.iter("EXPERIMENT_REF"):
+  #  for ex_ref in root.iter("EXPERIMENT_REF"):
         #print(ex_ref.tag, ex_ref.attrib)
-        refname = ex_ref.get("refname")
-        print(refname)
+        #JGAX_id = ex_ref.get("refname")
+        #print(JGAX_id)
 
 
     '''
@@ -104,7 +106,7 @@ def fetch_id(filename):
     if not retval:  # if retval is STILL empty, check the directory name, not the file name
         working_dir = os.getcwd()
         if "JGAR" in working_dir:
-            retval = get_JGAR_id(working_dir)
+            retval = get_JGAR_id(working_dir, filename)
         else:
             for prefix in ID_PREFIXES:
                 idx = working_dir.find(prefix)
