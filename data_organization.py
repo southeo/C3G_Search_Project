@@ -64,9 +64,9 @@ def get_JGAR_id(dir_name):
     root = tree.getroot()
 
     for ex_ref in root.iter("EXPERIMENT_REF"):
-        #print(ex_ref.attrib)
-        refname = ex_ref.find("refname").text
-        print(refname)
+        print(ex_ref.tag, ex_ref.attrib)
+        #refname = ex_ref.find("refname").text
+        #print(refname)
 
 
     '''
