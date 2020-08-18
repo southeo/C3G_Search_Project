@@ -67,7 +67,7 @@ def get_JGAR_id(dir_name, filename):
     for elem in root.findall("DATA"):
         print("Alias", elem.get("alias"))
         for child in elem:
-            print("Child Tag and attrivb", elem.tag, elem.attrib)
+            print("Child Tag and attrivb", child.tag, child.attrib)
 
 
 
