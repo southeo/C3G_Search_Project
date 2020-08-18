@@ -62,20 +62,21 @@ def get_JGAR_id(dir_name):
     md_file = os.path.join(JGAD_DIR, md_file)
     tree = ET.parse(md_file)
     root = tree.getroot()
+
+    for child in root:
+        print(child.tag)
+
     '''
     for child in root:
         for refname in child.iter("refname"):
             print(refname)
-'''
+
     for child in root:
         print("child tag: ", child.tag)
-        print(child[0].text)
-        print(child[1].text)
-        print(child[2].text)
         for grandchild in child:
             print("Grand child tag", grandchild.tag)
 
-    '''
+
     blah blah blah parse JGAD tree and return its 
     '''
 
