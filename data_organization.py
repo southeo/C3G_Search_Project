@@ -67,10 +67,8 @@ def get_JGAR_id(dir_name, filename):
     for elem in root.findall("DATA"):
         print("Alias", elem.get("alias"))
         print("Tag and attrivb", elem.tag, elem.attrib)
+        print("Ref name: ", elem.find("refname"))
 
-
-        #JGAX_id = ex_ref.get("refname")
-        #print(JGAX_id)
 
 
     '''
