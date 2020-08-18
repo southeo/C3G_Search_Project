@@ -108,7 +108,6 @@ def fetch_id(filename):
         working_dir = os.getcwd()
         if "JGAR" in working_dir:
             retval = get_JGAR_id(working_dir, filename)
-            print("JGAR RETVAL: ", retval)
         else:
             for prefix in ID_PREFIXES:
                 idx = working_dir.find(prefix)
@@ -133,6 +132,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
+                print("JGAX IHEC IDS", ihec_ids, '\n JGAX ID: ', misc_id)
                 if ihec_ids:
                     first_id = ihec_ids.pop(0)
                     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
