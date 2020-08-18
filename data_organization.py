@@ -68,7 +68,7 @@ def get_JGAR_id(dir_name, filename):
         if JGAR_id == elem.get("alias"):
             for child in elem.findall("EXPERIMENT_REF"):
                 JGAX_id = child.get("refname")
-                print(JGAR_id, JGAX_id)
+                return JGAX_id
 
 
 
@@ -108,6 +108,7 @@ def fetch_id(filename):
         working_dir = os.getcwd()
         if "JGAR" in working_dir:
             retval = get_JGAR_id(working_dir, filename)
+            print("JGAR RETVAL: ", retval)
         else:
             for prefix in ID_PREFIXES:
                 idx = working_dir.find(prefix)
