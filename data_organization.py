@@ -62,9 +62,8 @@ def get_JGAR_id(dir_name):
     md_file = os.path.join(JGAD_DIR, md_file)
     tree = ET.parse(md_file)
     root = tree.getroot()
-    print(root[0][1].text)
-#    for child in root:
-#        print(child.tag, child.attrib)
+    for child in root:
+        print(child.tag, child.attrib)
 
     '''
     blah blah blah parse JGAD tree and return its 
