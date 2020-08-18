@@ -55,7 +55,6 @@ def check_args(args):
 def get_JGAR_id(dir_name, filename):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
     JGAR_id = str(Path(dir_name)).split("/")[-1]
-    print(JGAR_id, JGAD_id)
     md_file = ""
     for elem in os.listdir(JGAD_DIR):
         if JGAD_id in elem:
@@ -65,8 +64,11 @@ def get_JGAR_id(dir_name, filename):
     tree = ET.parse(md_file)
     root = tree.getroot()
 
-  #  for ex_ref in root.iter("EXPERIMENT_REF"):
-        #print(ex_ref.tag, ex_ref.attrib)
+    for elem in root.findall("DATA"):
+        print("Alias", elem.get("alias"))
+        print("Tag and attrivb", elem.tag, elem.attrib)
+
+
         #JGAX_id = ex_ref.get("refname")
         #print(JGAX_id)
 
