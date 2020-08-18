@@ -63,8 +63,9 @@ def get_JGAR_id(dir_name):
     tree = ET.parse(md_file)
     root = tree.getroot()
 
-    for child in root:
-        print(child.tag)
+    for ref in root.iter("EXPERIMENT_REF"):
+        print(ref.attrib)
+
 
     '''
     for child in root:
