@@ -65,10 +65,10 @@ def get_JGAR_id(dir_name, filename):
     root = tree.getroot()
 
     for elem in root.findall("DATA"):
-        JGAR_id_tmp = "Alias", elem.get("alias")
-        for child in elem.findall("EXPERIMENT_REF"):
-            JGAX_id = child.get("refname")
-            print(JGAR_id_tmp, JGAX_id, JGAR_id)
+        if JGAR_id == elem.get("alias"):
+            for child in elem.findall("EXPERIMENT_REF"):
+                JGAX_id = child.get("refname")
+                print(JGAR_id, JGAX_id)
 
 
 
