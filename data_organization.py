@@ -69,6 +69,9 @@ def get_JGAR_id(dir_name):
 '''
     for child in root:
         print("child tag: ", child.tag)
+        print(child[0].text)
+        print(child[1].text)
+        print(child[2].text)
         for grandchild in child:
             print("Grand child tag", grandchild.tag)
 
