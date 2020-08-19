@@ -13,8 +13,7 @@ import xml.etree.ElementTree as ET
 
 
 
-ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",
-                       ".crypt", ".bcf"]
+ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",".crypt", ".bcf"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
@@ -133,7 +132,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                print("JGAX IHEC IDS", ihec_ids, '\n JGAX ID: ', misc_id)
+                print("JGAX IHEC IDS", ihec_ids, '\n JGAX ID: ', misc_id, '\n File name: ', elem_str)
                 if ihec_ids:
                     first_id = ihec_ids.pop(0)
                     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
@@ -186,10 +185,11 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         else:
             #rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             #if rejected not in rejected_extensions:
-            with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+            '''with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                 row = [elem]
                 writer = csv.writer(rj_lst)
-                writer.writerow(row)
+                writer.writerow(row)'''
+            pass
     # print(rejected_extensions)
     return move_list
 
