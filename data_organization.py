@@ -128,6 +128,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
+        misc_id =[]
         if os.path.isfile(elem) and is_datafile(elem_str):
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
@@ -171,6 +172,11 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         "destination": file_path,
                         "other versions": ihec_ids
                     })
+                else:
+                    with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                        row = [elem, misc_id]
+                        writer = csv.writer(rj_lst)
+                        writer.writerow(row)
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
