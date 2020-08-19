@@ -173,7 +173,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                     })
                 else:
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                        row = [elem, misc_id]
+                        row = [elem, misc_id, "JGAX has no corresponding IHEC ID"]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
         elif os.path.isdir(elem):
