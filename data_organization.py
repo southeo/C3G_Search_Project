@@ -127,7 +127,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
-        misc_id =[]
+        misc_id = []
         if os.path.isfile(elem) and is_datafile(elem_str):
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
@@ -185,10 +185,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         else:
             #rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             #if rejected not in rejected_extensions:
-            '''with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+            with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                 row = [elem]
                 writer = csv.writer(rj_lst)
-                writer.writerow(row)'''
+                writer.writerow(row)
             pass
     # print(rejected_extensions)
     return move_list
@@ -198,6 +198,7 @@ def is_datafile(filename):
     for ext in ACCEPTED_EXTENTIONS:
         if filename.endswith(ext):
             return True
+    print(filename)
     return False
 
 
