@@ -280,10 +280,10 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
         for egad in egad_json:
             print(egad)
             for elem in ebi_json["data"]:
-                for inst in elem["Instances"]:
+                for inst in elem["instances"]:
                     if egad == inst["secondary_id"]:
                         for egax in egad_json[egad]:
-                            if egax == inst["primary_id"]:
+                            if egax == inst["primary id"]:
                                 inst["egar_id"] = []
                                 inst["egaf_id"] = []
                                 for egar in egad_json[egad][egax]:
@@ -329,6 +329,6 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-#parse_ihec_db()
-with open('EBI_Database_Raw.txt', 'r') as raw_file:
-    consolidate_all('EBI_Database_Raw.txt')
+parse_ihec_db()
+#with open('EBI_Database_Raw.txt', 'r') as raw_file:
+#    consolidate_all('EBI_Database_Raw.txt')
