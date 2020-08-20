@@ -260,6 +260,9 @@ def consolidate_all(data_file):
     #raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
     ebi_file = "egad_file_mapping.json"
+    print(data_file)
+    print(os.path.abspath(data_file))
+    print(consolidated_file)
 
     if not os.path.isfile(consolidated_file):
         copyfile(os.path.abspath(consolidated_file), str(consolidated_file))
