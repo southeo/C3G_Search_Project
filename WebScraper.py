@@ -334,4 +334,4 @@ def get_keyword_list(ebi_db):
 
 #parse_ihec_db()
 with open('EBI_Database_Raw.txt', 'r') as raw_file:
-    consolidate_all(raw_file)
+    consolidate_all('EBI_Database_Raw.txt')
