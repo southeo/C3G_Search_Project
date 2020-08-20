@@ -262,7 +262,7 @@ def consolidate_all(data_file):
     ebi_file = "egad_file_mapping.json"
 
     if not os.path.isfile(consolidated_file):
-        copyfile(data_file, consolidated_file)
+        copyfile(str(data_file), str(consolidated_file))
 
         # consolidate data
         consolidate_age(consolidated_file)
