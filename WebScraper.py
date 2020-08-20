@@ -260,9 +260,6 @@ def consolidate_all(data_file):
     #raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
     egad_map = "egad_file_mapping.json"
-    print(data_file)
-    print(os.path.abspath(data_file))
-    print(consolidated_file)
 
     if not os.path.isfile(consolidated_file):
         os.rename(data_file, consolidated_file)
@@ -278,7 +275,7 @@ def consolidate_all(data_file):
 
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
-    with open(egad_map) as egad_mtd, open(consolidated_file) as ebi_db:
+    with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file) as ebi_db:
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
         for egad in egad_json:
