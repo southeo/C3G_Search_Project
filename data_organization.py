@@ -171,7 +171,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                     })
                 else:
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                        row = [os.getcwd(), elem, misc_id, "no corresponding IHEC ID"]
+                        row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
         elif os.path.isdir(elem):
@@ -181,10 +181,9 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         else:
-            #rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
-            #if rejected not in rejected_extensions:
+            rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                row = [os.getcwd(), elem, "", "Incorrect file type"]
+                row = [elem, "", rejected_ext, "Incorrect file type", os.getcwd()]
                 writer = csv.writer(rj_lst)
                 writer.writerow(row)
             pass
