@@ -130,11 +130,9 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                print("JGAX IHEC IDS", ihec_ids, '\n JGAX ID: ', misc_id, '\n File name: ', elem_str)
                 if ihec_ids:
                     first_id = ihec_ids.pop(0)
                     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
-                    # print(file_path)
                     try:
                         os.mkdir(file_path)
                         file_path = os.path.join(file_path, first_id)
@@ -144,11 +142,11 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                             file_path = os.path.join(file_path, first_id)
                             os.mkdir(file_path)
                         except FileExistsError:
-                            # print(file_path, "already exists")
                             pass
                     # shutil.move(elem, file_path)  # Uncomment when ready to move files
                     # make symlinks for the rest of the occurrences:
-                    if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for each subsequent ihec id
+                    if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for
+                        # each subsequent ihec id
                         for id in ihec_ids:
                             sym_path = os.path.join(DEST_DIR, str(id[0:14]))
                             try:
@@ -213,8 +211,6 @@ def match_to_db(misc_id, ref_list):
 args = parse_args()
 check_args(args)
 
-# I know it's bad practice to change global variables, but they need to reflect the args,
-#   and the args need to be global, else they would be passed through 2-3 functions
 os.chdir(args.ref_dir)
 SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
