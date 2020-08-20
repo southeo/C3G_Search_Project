@@ -173,7 +173,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                     })
                 else:
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                        row = [elem, misc_id, "JGAX has no corresponding IHEC ID"]
+                        row = [os.getcwd(), elem, misc_id, "no corresponding IHEC ID"]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
         elif os.path.isdir(elem):
@@ -186,7 +186,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             #rejected = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             #if rejected not in rejected_extensions:
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                row = [elem]
+                row = [os.getcwd(), elem, "", "Incorrect file type"]
                 writer = csv.writer(rj_lst)
                 writer.writerow(row)
             pass
