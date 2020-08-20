@@ -259,7 +259,7 @@ def consolidate_all(data_file):
     #home_dir = str(os.getcwd()) + '\\' + str(data_file)
     #raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
-    ebi_file = "egad_file_mapping.json"
+    egad_map = "egad_file_mapping.json"
     print(data_file)
     print(os.path.abspath(data_file))
     print(consolidated_file)
@@ -274,11 +274,11 @@ def consolidate_all(data_file):
         consolidate_ethnicity(consolidated_file)
         consolidate_gender(consolidated_file)
         consolidate_tissue(consolidated_file)
-        link_ega_ids(ebi_file, consolidated_file)
+        link_ega_ids(egad_map, consolidated_file)
 
 
-def link_ega_ids(metadata_file, ebi_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
-    with open(metadata_file) as egad_mtd, open(ebi_file) as ebi_db:
+def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
+    with open(egad_map) as egad_mtd, open(consolidated_file) as ebi_db:
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
         for egad in egad_json:
