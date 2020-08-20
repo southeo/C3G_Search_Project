@@ -256,14 +256,14 @@ def consolidate_disease(data_file):
 
 
 def consolidate_all(data_file):
-    home_dir = str(os.getcwd()) + '\\' + str(data_file)
-    raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
+    #home_dir = str(os.getcwd()) + '\\' + str(data_file)
+    #raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
     ebi_file = "egad_file_mapping.json"
 
     if not os.path.isfile(consolidated_file):
-        shutil.copy2(home_dir, raw_dir)
-        os.rename(data_file, consolidated_file)
+        copyfile(data_file, consolidated_file)
+
         # consolidate data
         consolidate_age(consolidated_file)
         consolidate_disease(consolidated_file)
@@ -329,6 +329,6 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-parse_ihec_db()
+#parse_ihec_db()
 with open('EBI_Database_Raw.txt', 'r') as raw_file:
     consolidate_all(raw_file)

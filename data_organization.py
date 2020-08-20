@@ -23,7 +23,7 @@ SOURCE_DIR = ""
 DEST_DIR = ""
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
-
+DUPLICATE_LIST = "Duplicate_list.txt"
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -68,22 +68,6 @@ def get_JGAR_id(dir_name, filename):
                 return JGAX_id
 
 
-
-    '''
-    for child in root:
-        for refname in child.iter("refname"):
-            print(refname)
-
-    for child in root:
-        print("child tag: ", child.tag)
-        for grandchild in child:
-            print("Grand child tag", grandchild.tag)
-
-
-    blah blah blah parse JGAD tree and return its 
-    '''
-
-
 def fetch_id(filename):
     retval = ""
     for prefix in ID_PREFIXES:
@@ -119,6 +103,50 @@ def fetch_id(filename):
     return retval
 
 
+def move_files(ihec_ids,elem, move_list):
+    first_id = ihec_ids.pop(0)
+    file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
+    # make directories:
+    try:
+        os.mkdir(file_path)
+        file_path = os.path.join(file_path, first_id)
+        os.mkdir(file_path)
+    except FileExistsError:
+        try:
+            file_path = os.path.join(file_path, first_id)
+            os.mkdir(file_path)
+        except FileExistsError:
+            pass
+    # Copy file to its new home:
+    if not os.path.exists(file_path+"/"+elem):
+        # shutil.copyfile(elem, file_path)
+        move_list.append({
+            "source location": str(os.getcwd()) + "/" + str(elem),
+            "destination": str(ihec_ids[0]),
+            "other versions": ihec_ids
+        })
+    else:  # if file already exists, record it:
+        with open(DUPLICATE_LIST, "a") as dp_lst:
+            row = [elem, file_path, os.getcwd()]
+            writer = csv.writer(dp_lst)
+            writer.writerow(row)
+    # Create symlinks for hmm
+    for id in ihec_ids:
+        sym_path = os.path.join(DEST_DIR, str(id[0:14]))
+        try:
+            os.mkdir(sym_path)
+            sym_path = os.path.join(sym_path, id)
+            os.mkdir(sym_path)
+        except FileExistsError:
+            try:
+                sym_path = os.path.join(sym_path, id)
+                os.mkdir(sym_path)
+                # print(elem, "symlink occurs in ", sym_path)
+            except FileExistsError:
+                pass
+    return move_list
+
+
 def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
     rejected_extensions = []
     missing_list = []
@@ -130,43 +158,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                if ihec_ids:
-                    first_id = ihec_ids.pop(0)
-                    file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
-                    try:
-                        os.mkdir(file_path)
-                        file_path = os.path.join(file_path, first_id)
-                        os.mkdir(file_path)
-                    except FileExistsError:
-                        try:
-                            file_path = os.path.join(file_path, first_id)
-                            os.mkdir(file_path)
-                        except FileExistsError:
-                            pass
-                    # shutil.move(elem, file_path)  # Uncomment when ready to move files
-                    # make symlinks for the rest of the occurrences:
-                    if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for
-                        # each subsequent ihec id
-                        for id in ihec_ids:
-                            sym_path = os.path.join(DEST_DIR, str(id[0:14]))
-                            try:
-                                os.mkdir(sym_path)
-                                file_path = os.path.join(sym_path, id)
-                                os.mkdir(sym_path)
-                            except FileExistsError:
-                                try:
-                                    sym_path = os.path.join(sym_path, id)
-                                    os.mkdir(sym_path)
-                                    # print(elem, "symlink occurs in ", sym_path)
-                                except FileExistsError:
-                                    # print(sym_path, "already exists")
-                                    pass
-                        # os.symlink((os.path.join(file_path, filename), sym_path)
-                    move_list.append({
-                        "source location": str(os.getcwd()) + "/" + elem_str,
-                        "destination": file_path,
-                        "other versions": ihec_ids
-                    })
+                # make symlinks for the rest of the occurrences:
+                if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for
+                    move_list = move_files(ihec_ids, elem, move_list)
+                    # os.symlink((os.path.join(file_path, filename), sym_path)
                 else:
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
@@ -218,6 +213,7 @@ REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
+DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)))
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
