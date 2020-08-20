@@ -265,15 +265,13 @@ def consolidate_all(data_file):
         os.rename(data_file, consolidated_file)
 
         # consolidate data
-        consolidate_age(consolidated_file)
-        consolidate_disease(consolidated_file)
-        consolidate_donor_id(consolidated_file)
-        consolidate_ethnicity(consolidated_file)
-        consolidate_gender(consolidated_file)
-        consolidate_tissue(consolidated_file)
-        link_ega_ids(egad_map, consolidated_file)
-        print(egad_map)
-
+    consolidate_age(consolidated_file)
+    consolidate_disease(consolidated_file)
+    consolidate_donor_id(consolidated_file)
+    consolidate_ethnicity(consolidated_file)
+    consolidate_gender(consolidated_file)
+    consolidate_tissue(consolidated_file)
+    link_ega_ids(egad_map, consolidated_file)
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
     with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file) as ebi_db:
