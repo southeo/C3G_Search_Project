@@ -282,6 +282,7 @@ def link_ega_ids(metadata_file, ebi_file):  # Links EGA IDs (EGAF, EGAX, EGAR, E
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
         for egad in egad_json:
+            print(egad)
             for elem in ebi_json["data"]:
                 for inst in elem["instances"]:
                     if egad == inst["secondary_id"]:
