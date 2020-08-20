@@ -91,7 +91,6 @@ def parse_ihec_db():
             json.dump(ebi_dict, outfile, indent=4)
 
 
-
 def consolidate_tissue(data_file):
     with open(data_file, 'r') as database_file:
         db_json = json.load(database_file)
@@ -161,22 +160,6 @@ def consolidate_ethnicity(data_file):
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
 
-'''
-def consolidate_age(data_file):
-    with open(data_file, 'r') as database_file:
-        db_json = json.load(database_file)
-        for elem in db_json['data']:
-            if "donor_life_stage" in elem and elem["donor_life_stage"] is not None:
-                if elem["donor_life_stage"] == "embryonic" or elem["donor_life_stage"] == "fetal":
-                    elem["prenatal"] = True
-                else:
-                    elem["prenatal"] = False
-            else:
-                elem["prenatal"] = False
-
-    with open(data_file, 'w') as outfile:
-        json.dump(db_json, outfile, indent=4)
-'''
 
 def consolidate_donor_id(data_file):
     with open(data_file, 'r') as database_file:
@@ -196,6 +179,7 @@ def consolidate_donor_id(data_file):
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
 
+
 def is_float(str):
     try:
         float(str)
@@ -203,10 +187,11 @@ def is_float(str):
     except ValueError:
         return False
 
+
 def age_in_years(age_list, divisor):
     new_age_list = []
     for val in age_list:
-        new_age_list.append((math.trunc(val*100/divisor)/100))
+        new_age_list.append((math.trunc(val * 100 / divisor) / 100))
     return new_age_list
 
 
@@ -224,25 +209,25 @@ def consolidate_age(data_file):
             if char_list:
                 float_list = []
                 while len(char_list) != 0:
-                    next_char = char_list.pop()  #clear out the characters, keep the numbers
+                    next_char = char_list.pop()  # clear out the characters, keep the numbers
                     if is_float(next_char):
                         float_list.append(float(next_char))
                 if float_list:
                     if "donor_age_unit" in elem.keys():
-                        #print("before: ", float_list)
+                        # print("before: ", float_list)
                         if elem["donor_age_unit"] == "day":
                             float_list = age_in_years(float_list, 365)
                         elif elem["donor_age_unit"] == "week":
                             float_list = age_in_years(float_list, 52)
                         elif elem["donor_age_unit"] == "month":
                             float_list = age_in_years(float_list, 12)
-                        #print("after: ", float_list)
+                        # print("after: ", float_list)
                     elem["age_min"] = min(float_list)  # First element in the age list will be value
                     elem["age_max"] = max(float_list)
                     if elem["age_min"] == elem["age_max"]:
                         elem["age_exact"] = elem["age_min"]
                     else:
-                        elem["age_exact"] = ("")     # if there is a range this key does not contain useful info
+                        elem["age_exact"] = ("")  # if there is a range this key does not contain useful info
             if "donor_life_stage" in elem.keys() and \
                     (elem["donor_life_stage"] == "fetal" or elem["donor_life_stage"] == "embryonic"):
                 elem["prenatal"] = True
@@ -263,7 +248,7 @@ def consolidate_disease(data_file):
                 disease_list.append(elem["disease"])
             if "donor_health_status" in elem and elem["donor_health_status"] is not None:
                 disease_list.append(elem["donor_health_status"])
-            #print(disease_list)
+            # print(disease_list)
             elem["disease_keywords"] = remove_bad_chars(disease_list)
 
     with open(data_file, 'w') as outfile:
@@ -274,6 +259,8 @@ def consolidate_all(data_file):
     home_dir = os.getcwd() + '\\' + data_file
     raw_dir = os.getcwd() + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
+    ebi_file = "egad_file_mapping.json"
+
     if not os.path.isfile(consolidated_file):
         shutil.copy2(home_dir, raw_dir)
         os.rename(data_file, consolidated_file)
@@ -284,10 +271,10 @@ def consolidate_all(data_file):
         consolidate_ethnicity(consolidated_file)
         consolidate_gender(consolidated_file)
         consolidate_tissue(consolidated_file)
-    
+        link_ega_ids(ebi_file, consolidated_file)
 
 
-def link_ega_ids(metadata_file, ebi_file):
+def link_ega_ids(metadata_file, ebi_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
     with open(metadata_file) as egad_mtd, open(ebi_file) as ebi_db:
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
@@ -307,6 +294,7 @@ def link_ega_ids(metadata_file, ebi_file):
     with open("EBI_Consolidated_test", 'w') as outfile:
         json.dump(ebi_json, outfile, indent=4)
 
+
 def remove_bad_chars(keywords):
     new_list = []
     for kw in keywords:
@@ -315,28 +303,32 @@ def remove_bad_chars(keywords):
         new_list.extend(kw.split())
     return list(set(new_list))
 
-'''
-with open("EBI_Consolidated_test.txt") as ebi_db:
-    ebi_json = json.load(ebi_db)
-    disease_keywords = []
-    tissue_keywords = []
-    ethnicity_keywords = []
-    for elem in ebi_json["data"]:
-        if elem["disease_keywords"]:
-            for key1 in elem["disease_keywords"]:
-                if key1 not in disease_keywords:
-                    disease_keywords.append(key1)
-        if elem["tissue_keywords"]:
-            for key2 in elem["tissue_keywords"]:
-                if key2 not in tissue_keywords:
-                    tissue_keywords.append(key2)
-        if elem["donor_ethnicity_keywords"]:
-            for key3 in elem["donor_ethnicity_keywords"]:
-                if key3 not in ethnicity_keywords:
-                    ethnicity_keywords.append(key3)
 
-    disease_keywords = sorted(disease_keywords)
-    tissue_keywords = sorted(tissue_keywords)
-    ethnicity_keywords = sorted(ethnicity_keywords)
+def get_keyword_list(ebi_db):
+    with open(ebi_db) as ebi_db:
+        ebi_json = json.load(ebi_db)
+        disease_keywords = []
+        tissue_keywords = []
+        ethnicity_keywords = []
+        for elem in ebi_json["data"]:
+            if elem["disease_keywords"]:
+                for key1 in elem["disease_keywords"]:
+                    if key1 not in disease_keywords:
+                        disease_keywords.append(key1)
+            if elem["tissue_keywords"]:
+                for key2 in elem["tissue_keywords"]:
+                    if key2 not in tissue_keywords:
+                        tissue_keywords.append(key2)
+            if elem["donor_ethnicity_keywords"]:
+                for key3 in elem["donor_ethnicity_keywords"]:
+                    if key3 not in ethnicity_keywords:
+                        ethnicity_keywords.append(key3)
 
-'''
+        disease_keywords = sorted(disease_keywords)
+        tissue_keywords = sorted(tissue_keywords)
+        ethnicity_keywords = sorted(ethnicity_keywords)
+
+
+parse_ihec_db()
+with open('EBI_Database_Raw.txt', 'r') as raw_file:
+    consolidate_all(raw_file)

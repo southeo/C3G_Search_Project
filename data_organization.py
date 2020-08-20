@@ -24,8 +24,6 @@ DEST_DIR = ""
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 
-# TODO Figure out how to link CEMT IDs to IHEC IDs
-
 
 def parse_args():
     parser = argparse.ArgumentParser()
