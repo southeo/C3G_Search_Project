@@ -272,6 +272,7 @@ def consolidate_all(data_file):
         consolidate_gender(consolidated_file)
         consolidate_tissue(consolidated_file)
         link_ega_ids(egad_map, consolidated_file)
+        print(egad_map)
 
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
