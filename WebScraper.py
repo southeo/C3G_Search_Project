@@ -280,8 +280,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
         for egad in egad_json:
             print(egad)
             for elem in ebi_json["data"]:
-                print(elem)
-                for inst in elem["instances"]:
+                for inst in elem["Instances"]:
                     if egad == inst["secondary_id"]:
                         for egax in egad_json[egad]:
                             if egax == inst["primary_id"]:
