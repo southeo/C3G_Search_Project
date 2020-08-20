@@ -262,7 +262,7 @@ def consolidate_all(data_file):
     egad_map = "egad_file_mapping.json"
 
     if not os.path.isfile(consolidated_file):
-        os.rename(data_file, consolidated_file)
+        copyfile(data_file, consolidated_file)
 
         # consolidate data
     consolidate_age(consolidated_file)
