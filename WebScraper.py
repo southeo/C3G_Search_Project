@@ -265,7 +265,7 @@ def consolidate_all(data_file):
     print(consolidated_file)
 
     if not os.path.isfile(consolidated_file):
-        copyfile(os.path.abspath(consolidated_file), str(consolidated_file))
+        os.rename(os.path.abspath(consolidated_file), consolidated_file)
 
         # consolidate data
         consolidate_age(consolidated_file)
