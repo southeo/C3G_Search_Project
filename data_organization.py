@@ -190,7 +190,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                 writer = csv.writer(rj_lst)
                 writer.writerow(row)
             pass
-    # print(rejected_extensions)
     return move_list
 
 
