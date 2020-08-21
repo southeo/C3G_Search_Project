@@ -283,7 +283,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                 for inst in elem["instances"]:
                     if egad == inst["secondary_id"]:
                         for egax in egad_json[egad]:
-                            if egax == inst["primary id"]:
+                            if egax == inst["primary_id"]:
                                 inst["egar_id"] = []
                                 inst["egaf_id"] = []
                                 for egar in egad_json[egad][egax]:
