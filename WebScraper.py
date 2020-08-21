@@ -329,6 +329,6 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-parse_ihec_db()
-#with open('EBI_Database_Raw.txt', 'r') as raw_file:
-#    consolidate_all('EBI_Database_Raw.txt')
+#parse_ihec_db()
+with open('EBI_Database_Raw.txt', 'r') as raw_file:
+    consolidate_all('EBI_Database_Raw.txt')
