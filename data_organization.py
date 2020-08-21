@@ -6,14 +6,13 @@ import json
 import csv
 import pandas as pd
 import glob
-from Bio import SeqIO
 import gzip
 import argparse
 import xml.etree.ElementTree as ET
 
 
 
-ACCEPTED_EXTENTIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",".crypt", ".bcf", ".md5"]
+ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",".crypt", ".bcf", ".md5"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
@@ -21,9 +20,12 @@ JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
+DEST_DIR_EXTRA = "Extra_files"
+METADATA_EXENSIONS = [".csv", ".txt"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list.txt"
+CONSORTIUM_LIST = ["BLUEPRINT", "AMED-CREST", "no_backup", "EpiVar", "pyega3"]
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -130,7 +132,7 @@ def move_files(ihec_ids,elem, move_list):
             row = [elem, file_path, os.getcwd()]
             writer = csv.writer(dp_lst)
             writer.writerow(row)
-    # Create symlinks for hmm
+    # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
         try:
@@ -144,6 +146,39 @@ def move_files(ihec_ids,elem, move_list):
                 # print(elem, "symlink occurs in ", sym_path)
             except FileExistsError:
                 pass
+        # Create symlink
+        # os.symlink((os.path.join(file_path, elem), sym_path)
+
+    return move_list
+
+
+def get_sub_dir(elem):
+    for sub_dir in CONSORTIUM_LIST:
+        if sub_dir in str(os.path.abspath(elem)):
+            print(sub_dir)
+            return sub_dir
+    return False
+
+
+def move_extras(sub_dir, elem, misc_id):
+    if sub_dir:
+        extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
+        try:
+            os.mkdir(extra_path)
+            extra_path = os.path.join(extra_path, misc_id)
+            os.mkdir(extra_path)
+        except FileExistsError:
+            try:
+                extra_path = os.path.join(extra_path, misc_id)
+                os.mkdir(extra_path)
+            except FileExistsError:
+                pass
+        # shutil.copyfile(elem, extra_path)
+        move_list.append({
+            "source location": str(os.getcwd()),
+            "destination": extra_path,
+            "other versions": "N/A"
+        })
     return move_list
 
 
@@ -167,6 +202,8 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
+                        sub_dir = get_sub_dir(elem)
+                        move_list = move_extras(sub_dir, elem, misc_id)
         elif os.path.isdir(elem):
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
@@ -184,7 +221,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
 
 
 def is_datafile(filename):
-    for ext in ACCEPTED_EXTENTIONS:
+    for ext in ACCEPTED_EXTENSIONS:
         if filename.endswith(ext):
             return True
     print(filename)
@@ -209,6 +246,7 @@ check_args(args)
 os.chdir(args.ref_dir)
 SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
+DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.dest_dir, DEST_DIR_EXTRA))
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
@@ -217,6 +255,7 @@ DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
+
 with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
