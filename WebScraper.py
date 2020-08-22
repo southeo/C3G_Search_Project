@@ -287,7 +287,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                                     for egaf in egad_json[egad][egax][egar]:
                                         inst["egaf_id"].append(egaf)
 
-        json.dump(ebi_json, consolidated_file, indent=4)
+        json.dump(ebi_json, ebi_db, indent=4)
 
 
 def remove_bad_chars(keywords):
