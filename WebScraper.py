@@ -252,7 +252,7 @@ def consolidate_all(data_file):
     if not os.path.isfile(consolidated_file):
         copyfile(data_file, consolidated_file)  # Make copy of this file with new name
     else:
-        consolidated_file = consolidated_file + "_" + (datetime.now()).strftime("%H:%M:%S")
+        consolidated_file = consolidated_file + "_" + (datetime.datetime.now()).strftime("%H:%M:%S")
     # consolidate and clean data
     consolidate_age(consolidated_file)
     consolidate_disease(consolidated_file)
