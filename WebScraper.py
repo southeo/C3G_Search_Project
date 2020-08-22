@@ -1,16 +1,10 @@
 # General import
 import shutil
-from urllib.request import urlopen
-from collections import defaultdict
-from multiprocessing import Pool, Manager
 import requests
 import json
 from requests.adapters import HTTPAdapter
 from urllib3 import Retry
-from lxml import html
 from bs4 import BeautifulSoup
-import pandas as pd
-import re
 from shutil import copyfile
 import os
 from datetime import date
@@ -18,7 +12,7 @@ import math
 
 IHEC_PORTAL_URL = "https://www.ebi.ac.uk/vg/epirr/view/"  # must be cat'd with "all" or IHECRE ID
 remove_char_list = [',', '.', ';', '(', ')', '-', '/', '_', '\'', '\"']
-
+RAW_FILE = "EBI_Database_Raw.txt_" + str(date.today()) + ".txt"
 
 def requests_retry_session(retries=3, backoff_factor=0.3, status_forcelist=(500, 502, 504), session=None, ):
     """Retry timeout requests"""
@@ -87,7 +81,7 @@ def parse_ihec_db():
             print(ihec_id[0], " Complete")
 
         # write raw results
-        with open('EBI_Database_Raw.txt', 'w') as outfile:
+        with open(RAW_FILE, 'w') as outfile:
             json.dump(ebi_dict, outfile, indent=4)
 
 
@@ -253,8 +247,6 @@ def consolidate_disease(data_file):
 
 
 def consolidate_all(data_file):
-    #home_dir = str(os.getcwd()) + '\\' + str(data_file)
-    #raw_dir = str(os.getcwd()) + '\Raw_DB\EBI_Database_' + str(date.today()) + ".txt"
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
     egad_map = "egad_file_mapping.json"
 
@@ -325,5 +317,5 @@ def get_keyword_list(ebi_db):
 
 
 #parse_ihec_db()
-with open('EBI_Database_Raw.txt', 'r') as raw_file:
-    consolidate_all('EBI_Database_Raw.txt')
+with open(RAW_FILE, 'r') as raw_file:
+    consolidate_all(raw_file)
