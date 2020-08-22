@@ -29,7 +29,6 @@ def parse_ihec_page(url):
     # Parses single web page based on url (which includes IHEC_RE ID)
 
     metadata_dict = dict()
-    rawdata_dict = dict()
 
     ihec_response = requests_retry_session().get(url)
     if ihec_response.ok:
@@ -38,8 +37,8 @@ def parse_ihec_page(url):
         # Metadata: This will be the same for each item associated with a given IHEC ID. Create single dictionary
         # each entry can pull from
         ihec_id = soup.find("h1")  # IHEC ID
-        dd_list = soup.find_all("dd")  #
-        dt_list = soup.find_all("dt")
+        dd_list = soup.find_all("dd")  # Metadata that applies to all files associated with this IHEC ID
+        dt_list = soup.find_all("dt")  # Metadata specific to each file (e.g. assay type)
 
         count = 0
         metadata_dict['ihec_id'] = ihec_id.string
@@ -48,12 +47,11 @@ def parse_ihec_page(url):
             count += 1
         metadata_dict['instances'] = []  # this will be filled in in next step
 
-        # Raw Data: This will be different for each item. Create dictionary that will be unique for each entry.
+        # Instance Data: This will be different for each item. Create dictionary that will be unique for each entry.
         # Not that metadata changes from one IHEC ID to another, but this data has the same format
         table = soup.find('table')
         table_rows = table.find_all('tr')
         for tr in table_rows:
-            rawdata_dict = ()  # reset vals -> necessary in python?
             td = tr.find_all('td')
             if len(td) != 0:  # make sure there is data
                 metadata_dict['instances'].append({
@@ -66,16 +64,16 @@ def parse_ihec_page(url):
         return metadata_dict
 
 
-def parse_ihec_db():
-    # parses entire EBI database
-    ihec_response = requests_retry_session().get(IHEC_PORTAL_URL + "all")
+def parse_ihec_db():  # parses entire EBI database
+    ihec_response = requests_retry_session().get(IHEC_PORTAL_URL + "all")  # Get connected
     if ihec_response.ok:
         soup = BeautifulSoup(ihec_response.content, 'html.parser')
         ebi_dict = {'data': []}
         id_list = []
-        # put all ihec ids in a list:
+        # Put all ihec ids in a list. This will allow the program to navigate the web portal
         for row in soup.find_all('table')[0].tbody.find_all('tr'):
             id_list.append(row.find_all('td')[3].contents)
+        # Parse each page in the web portal
         for ihec_id in id_list:
             ebi_dict['data'].append(parse_ihec_page(IHEC_PORTAL_URL + ihec_id[0]))
             print(ihec_id[0], " Complete")
@@ -251,9 +249,9 @@ def consolidate_all(data_file):
     egad_map = "egad_file_mapping.json"
 
     if not os.path.isfile(consolidated_file):
-        copyfile(data_file, consolidated_file)
+        copyfile(data_file, consolidated_file)  # Make copy of this file with new name
 
-        # consolidate data
+    # consolidate and clean data
     consolidate_age(consolidated_file)
     consolidate_disease(consolidated_file)
     consolidate_donor_id(consolidated_file)
