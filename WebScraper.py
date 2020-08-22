@@ -214,14 +214,12 @@ def consolidate_age(data_file):
                         float_list.append(float(next_char))
                 if float_list:
                     if "donor_age_unit" in elem.keys():
-                        # print("before: ", float_list)
                         if elem["donor_age_unit"] == "day":
                             float_list = age_in_years(float_list, 365)
                         elif elem["donor_age_unit"] == "week":
                             float_list = age_in_years(float_list, 52)
                         elif elem["donor_age_unit"] == "month":
                             float_list = age_in_years(float_list, 12)
-                        # print("after: ", float_list)
                     elem["age_min"] = min(float_list)  # First element in the age list will be value
                     elem["age_max"] = max(float_list)
                     if elem["age_min"] == elem["age_max"]:
@@ -248,7 +246,6 @@ def consolidate_disease(data_file):
                 disease_list.append(elem["disease"])
             if "donor_health_status" in elem and elem["donor_health_status"] is not None:
                 disease_list.append(elem["donor_health_status"])
-            # print(disease_list)
             elem["disease_keywords"] = remove_bad_chars(disease_list)
 
     with open(data_file, 'w') as outfile:
@@ -274,11 +271,10 @@ def consolidate_all(data_file):
     link_ega_ids(egad_map, consolidated_file)
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
-    with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file) as ebi_db:
+    with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file, "r+") as ebi_db:
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
         for egad in egad_json:
-            print(egad)
             for elem in ebi_json["data"]:
                 for inst in elem["instances"]:
                     if egad == inst["secondary_id"]:
@@ -291,8 +287,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                                     for egaf in egad_json[egad][egax][egar]:
                                         inst["egaf_id"].append(egaf)
 
-    with open("EBI_Consolidated_test", 'w') as outfile:
-        json.dump(ebi_json, outfile, indent=4)
+        json.dump(ebi_json, consolidated_file, indent=4)
 
 
 def remove_bad_chars(keywords):
