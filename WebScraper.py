@@ -278,6 +278,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                                     inst["egar_id"].append(egar)
                                     for egaf in egad_json[egad][egax][egar]:
                                         inst["egaf_id"].append(egaf)
+                                        print(egaf)
 
     with open(consolidated_file, "w") as ebi_db:
         json.dump(ebi_json, ebi_db, indent=4)
