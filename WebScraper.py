@@ -263,11 +263,10 @@ def consolidate_all(data_file):
     link_ega_ids(egad_map, consolidated_file)
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
-    with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file, "r+") as ebi_db:
+    with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file, "r") as ebi_db:
         egad_json = json.load(egad_mtd)
         ebi_json = json.load(ebi_db)
         for egad in egad_json:
-            print(egad)
             for elem in ebi_json["data"]:
                 for inst in elem["instances"]:
                     if egad == inst["secondary_id"]:
@@ -280,6 +279,7 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                                     for egaf in egad_json[egad][egax][egar]:
                                         inst["egaf_id"].append(egaf)
 
+    with open(consolidated_file, "w") as ebi_db:
         json.dump(ebi_json, ebi_db, indent=4)
 
 
