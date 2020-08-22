@@ -10,9 +10,8 @@ import gzip
 import argparse
 import xml.etree.ElementTree as ET
 
-
-
-ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",".crypt", ".bcf", ".md5"]
+ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",
+                       ".crypt", ".bcf", ".md5"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
@@ -21,11 +20,13 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
 DEST_DIR_EXTRA = "Extra_files"
+DEST_DIR_METADATA = "Archived_Metadata_Files"
 METADATA_EXENSIONS = [".csv", ".txt"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list.txt"
 CONSORTIUM_LIST = ["BLUEPRINT", "AMED-CREST", "no_backup", "EpiVar", "pyega3"]
+
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -105,7 +106,7 @@ def fetch_id(filename):
     return retval
 
 
-def move_files(ihec_ids,elem, move_list):
+def move_files(ihec_ids, elem, move_list):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
     # make directories:
@@ -120,12 +121,13 @@ def move_files(ihec_ids,elem, move_list):
         except FileExistsError:
             pass
     # Copy file to its new home:
-    if not os.path.exists(file_path+"/"+elem):
+    if not os.path.exists(file_path + "/" + elem):
         # shutil.copyfile(elem, file_path)
         move_list.append({
             "source location": str(os.getcwd()) + "/" + str(elem),
             "destination": str(ihec_ids[0]),
-            "other versions": ihec_ids
+            "other versions": ihec_ids,
+            "move_type": "data file"
         })
     else:  # if file already exists, record it:
         with open(DUPLICATE_LIST, "a") as dp_lst:
@@ -175,48 +177,67 @@ def move_extras(sub_dir, elem, misc_id):
                 pass
         # shutil.copyfile(elem, extra_path)
         move_list.append({
-            "source location": str(os.getcwd()),
+            "source location": str(os.getcwd()) + "/" + elem,
             "destination": extra_path,
-            "other versions": "N/A"
+            "other versions": "N/A",
+            "move type": "extra file"
         })
     return move_list
 
 
+def move_metadata(elem, move_list):
+    if not os.path.exists(DEST_DIR_METADATA):
+        os.mkdir(DEST_DIR_METADATA)
+    misc_id = fetch_id(elem)
+    if misc_id:
+        md_path = os.join(DEST_DIR, misc_id)
+    else:
+        md_path = DEST_DIR_METADATA
+    # shutil.copyfile(elem, md_path)
+    move_list.append({
+        "source location": str(os.getcwd()) + "/" + elem,
+        "destination": md_path,
+        "other versions": "N/A",
+        "move type": "metadata file"
+    })
+    return move_list
+
+
 def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
-    rejected_extensions = []
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
         misc_id = []
         if os.path.isfile(elem) and is_datafile(elem_str):
-            misc_id = fetch_id(elem_str)  # get the EGAX/etc id from the filename or the onsite list
+            misc_id = fetch_id(elem_str)  # get primary/secondary id from the filename, parent directory, or onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                # make symlinks for the rest of the occurrences:
-                if ihec_ids:  # if there are later versions this file appears in, make symlinks to data file for
+                if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
                     move_list = move_files(ihec_ids, elem, move_list)
-                    # os.symlink((os.path.join(file_path, filename), sym_path)
-                else:
+                else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                        # Write to Rejected list:
                         row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
-                        sub_dir = get_sub_dir(elem)
-                        move_list = move_extras(sub_dir, elem, misc_id)
-        elif os.path.isdir(elem):
+                    sub_dir = get_sub_dir(elem)
+                    move_list = move_extras(sub_dir, elem, misc_id)
+        elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
-        else:
+        elif is_metadatafile(elem_str):
+            move_list = move_metadata(elem_str, move_list)
+
+        else:  # If elem is not a directory or appropriate file, add it to the
             rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                 row = [elem, "", rejected_ext, "Incorrect file type", os.getcwd()]
                 writer = csv.writer(rj_lst)
                 writer.writerow(row)
-            pass
     return move_list
 
 
@@ -224,7 +245,13 @@ def is_datafile(filename):
     for ext in ACCEPTED_EXTENSIONS:
         if filename.endswith(ext):
             return True
-    print(filename)
+    return False
+
+
+def is_metadatafile(filename):
+    for ext in METADATA_EXENSIONS:
+        if filename.endswith(ext):
+            return True
     return False
 
 
@@ -247,6 +274,7 @@ os.chdir(args.ref_dir)
 SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.dest_dir, DEST_DIR_EXTRA))
+DEST_DIR_METADATA = os.path.abspath(os.path.join(args.dest_dir, DEST_DIR_METADATA))
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))

@@ -315,5 +315,4 @@ def get_keyword_list(ebi_db):
 
 
 parse_ihec_db()
-with open(RAW_FILE, 'r') as raw_file:
-    consolidate_all(raw_file)
+consolidate_all(RAW_FILE)
