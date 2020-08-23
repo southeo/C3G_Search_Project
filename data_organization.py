@@ -132,15 +132,15 @@ def move_files(ihec_ids, elem, move_list):
                     writer = csv.writer(dp_lst)
                     writer.writerow(row)
                     dup = True
-            if not dup:
-                move_list.append({
-                    "source location": str(os.getcwd()) + "/" + str(elem),
-                    "destination": file_path,
-                    "other versions": ihec_ids,
-                    "move_type": "data file",
-                    "file_name": str(elem)
-                })
-                print(elem, " moved")
+        if not dup:
+            move_list.append({
+                "source location": str(os.getcwd()) + "/" + str(elem),
+                "destination": file_path,
+                "other versions": ihec_ids,
+                "move_type": "data file",
+                "file_name": str(elem)
+            })
+            print(elem, " moved")
 
 
     else:
