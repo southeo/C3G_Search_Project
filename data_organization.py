@@ -20,7 +20,7 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
 DEST_DIR_EXTRA = "Extra_files"
-DEST_DIR_METADATA = "Archived_Metadata_Files"
+DEST_DIR_METADATA = "Archived_metadata_files"
 METADATA_EXENSIONS = [".csv", ".txt"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
@@ -177,7 +177,7 @@ def move_extras(sub_dir, elem, misc_id):
                 pass
         # shutil.copyfile(elem, extra_path)
         move_list.append({
-            "source location": str(os.getcwd()) + "/" + elem,
+            "source location": str(os.getcwd()) + "/" + str(elem),
             "destination": extra_path,
             "other versions": "N/A",
             "move type": "extra file"
