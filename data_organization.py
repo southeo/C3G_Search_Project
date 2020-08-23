@@ -157,7 +157,6 @@ def move_files(ihec_ids, elem, move_list):
 def get_sub_dir(elem):
     for sub_dir in CONSORTIUM_LIST:
         if sub_dir in str(os.path.abspath(elem)):
-            print(sub_dir)
             return sub_dir
     return False
 
