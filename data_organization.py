@@ -11,7 +11,7 @@ import argparse
 import xml.etree.ElementTree as ET
 
 ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",
-                       ".crypt", ".bcf", ".md5"]
+                       ".crypt", ".bcf", ".md5", "vcf"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
@@ -21,7 +21,7 @@ SOURCE_DIR = ""
 DEST_DIR = ""
 DEST_DIR_EXTRA = "Extra_files"
 DEST_DIR_METADATA = "Archived_metadata_files"
-METADATA_EXENSIONS = [".csv", ".txt"]
+METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list.txt"
@@ -134,6 +134,7 @@ def move_files(ihec_ids, elem, move_list):
             row = [elem, file_path, os.getcwd()]
             writer = csv.writer(dp_lst)
             writer.writerow(row)
+            print(elem)
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
