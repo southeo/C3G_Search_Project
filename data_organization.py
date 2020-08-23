@@ -125,8 +125,8 @@ def move_files(ihec_ids, elem, move_list):
         # shutil.copyfile(elem, file_path)
         dup = False
         for item in move_list:
-            if first_id in item ["destination"]:
-                print(item["destination"], "\t", first_id)
+            if str(elem) == item ["filename"]:
+                print(item["destination"], "\t", elem)
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
@@ -137,7 +137,8 @@ def move_files(ihec_ids, elem, move_list):
                     "source location": str(os.getcwd()) + "/" + str(elem),
                     "destination": first_id,
                     "other versions": ihec_ids,
-                    "move_type": "data file"
+                    "move_type": "data file",
+                    "file_name": str(elem)
                 })
 
 
@@ -189,7 +190,8 @@ def move_extras(sub_dir, elem, misc_id):
             "source location": str(os.getcwd()) + "/" + str(elem),
             "destination": extra_path,
             "other versions": "N/A",
-            "move type": "extra file"
+            "move type": "extra file",
+            "file_name": str(elem)
         })
     return move_list
 
@@ -207,7 +209,8 @@ def move_metadata(elem, move_list):
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,
         "other versions": "N/A",
-        "move type": "metadata file"
+        "move type": "metadata file",
+        "file_name": str(elem)
     })
     return move_list
 
