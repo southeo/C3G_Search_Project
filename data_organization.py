@@ -123,18 +123,26 @@ def move_files(ihec_ids, elem, move_list):
     # Copy file to its new home:
     if not os.path.exists(str(file_path) + "/" + str(elem)):
         # shutil.copyfile(elem, file_path)
-        move_list.append({
-            "source location": str(os.getcwd()) + "/" + str(elem),
-            "destination": first_id,
-            "other versions": ihec_ids,
-            "move_type": "data file"
-        })
+        dup = False
+        for item in move_list:
+            if item["destination"] == first_id:
+                print(item["first_id"])
+                with open(DUPLICATE_LIST, "a") as dp_lst:
+                    row = [elem, file_path, os.getcwd()]
+                    writer = csv.writer(dp_lst)
+                    writer.writerow(row)
+                    dup = True
+            if not dup:
+                move_list.append({
+                    "source location": str(os.getcwd()) + "/" + str(elem),
+                    "destination": first_id,
+                    "other versions": ihec_ids,
+                    "move_type": "data file"
+                })
+
+
     else:  # if file already exists, record it:
-        with open(DUPLICATE_LIST, "a") as dp_lst:
-            row = [elem, file_path, os.getcwd()]
-            writer = csv.writer(dp_lst)
-            writer.writerow(row)
-            print(elem)
+
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
