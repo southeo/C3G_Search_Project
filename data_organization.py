@@ -125,7 +125,7 @@ def move_files(ihec_ids, elem, move_list):
         # shutil.copyfile(elem, file_path)
         move_list.append({
             "source location": str(os.getcwd()) + "/" + str(elem),
-            "destination": str(ihec_ids[0]),
+            "destination": first_id,
             "other versions": ihec_ids,
             "move_type": "data file"
         })
