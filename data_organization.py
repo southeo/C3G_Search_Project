@@ -125,8 +125,8 @@ def move_files(ihec_ids, elem, move_list):
         # shutil.copyfile(elem, file_path)
         dup = False
         for item in move_list:
-            if item["destination"] == first_id:
-                print(item["destination"])
+            if first_id in item ["destination"] :
+                print(item["destination"], first_id)
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
@@ -139,6 +139,8 @@ def move_files(ihec_ids, elem, move_list):
                     "other versions": ihec_ids,
                     "move_type": "data file"
                 })
+
+
     else:
         pass
         #check if the file is in fact a duplicate
