@@ -121,7 +121,7 @@ def move_files(ihec_ids, elem, move_list):
         except FileExistsError:
             pass
     # Copy file to its new home:
-    if not os.path.exists(file_path + "/" + elem):
+    if not os.path.exists(str(file_path) + "/" + str(elem)):
         # shutil.copyfile(elem, file_path)
         move_list.append({
             "source location": str(os.getcwd()) + "/" + str(elem),
