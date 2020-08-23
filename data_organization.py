@@ -139,6 +139,9 @@ def move_files(ihec_ids, elem, move_list):
                     "other versions": ihec_ids,
                     "move_type": "data file"
                 })
+    else:
+        pass
+        #check if the file is in fact a duplicate
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
