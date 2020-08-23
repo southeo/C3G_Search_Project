@@ -126,7 +126,7 @@ def move_files(ihec_ids, elem, move_list):
         dup = False
         for item in move_list:
             if str(elem) == item["file_name"]:
-                print(item["destination"], "\t", elem, "\t", item["source location"])
+                print(elem, "\t", item["source location"])
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
@@ -140,6 +140,7 @@ def move_files(ihec_ids, elem, move_list):
                     "move_type": "data file",
                     "file_name": str(elem)
                 })
+                print(elem, " moved")
 
 
     else:
