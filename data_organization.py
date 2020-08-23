@@ -126,7 +126,7 @@ def move_files(ihec_ids, elem, move_list):
         dup = False
         for item in move_list:
             if item["destination"] == first_id:
-                print(item["first_id"])
+                print(item["destination"])
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
