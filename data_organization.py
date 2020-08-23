@@ -190,7 +190,7 @@ def move_metadata(elem, move_list):
         os.mkdir(DEST_DIR_METADATA)
     misc_id = fetch_id(elem)
     if misc_id:
-        md_path = os.join(DEST_DIR, misc_id)
+        md_path = os.path.join(DEST_DIR, misc_id)
     else:
         md_path = DEST_DIR_METADATA
     # shutil.copyfile(elem, md_path)
