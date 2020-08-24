@@ -175,6 +175,14 @@ def move_files(ihec_ids, elem, move_list):
                 "file_name": str(elem)
             })
     elif not is_same_hash(fp, elem):  # If files are different but have same name
+        move_list.append({
+            "source location": fp,
+            "destination": file_path,
+            "other versions": ihec_ids,
+            "move_type": "data file, duplicate name",
+            "file_name": str(elem)
+        })
+        # TODO: get path of false duplicate files
         copy = 1
         while os.path.exists(fp):
             os.rename(elem, str(elem + "-" + copy))
