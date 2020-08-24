@@ -145,12 +145,10 @@ def move_files(ihec_ids, elem, move_list):
                 #print(elem, "\t", item["source location"])
                 hash1 = hash_bytestr_iter(file_as_blockiter(open(elem, 'rb')), hashlib.sha256())
                 hash2 = hash_bytestr_iter(file_as_blockiter(open(item["source location"], 'rb')), hashlib.sha256())
-                print("New File Hash: ", hash1)
-                print("Existing File Hash: ", hash2)
-                if hash1 == hash2:
-                    print("Same hash, same file")
-                else:
-                    print("different hash, different files")
+                #print("New File Hash: ", hash1)
+                #print("Existing File Hash: ", hash2)
+                if hash1 != hash2:
+                   print("different hash, different files")
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
