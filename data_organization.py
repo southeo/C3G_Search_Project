@@ -123,6 +123,11 @@ def file_as_blockiter(afile, blocksize=65536):
             block = afile.read(blocksize)
 
 
+def is_same_hash(path1, path2):
+    hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
+    hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
+    return hash1 == hash2
+
 def move_files(ihec_ids, elem, move_list):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
@@ -137,9 +142,15 @@ def move_files(ihec_ids, elem, move_list):
             os.mkdir(file_path)
         except FileExistsError:
             pass
-    # Copy file to its new home:
-    if not os.path.exists(str(file_path) + "/" + str(elem)):
+    # path including file name
+    fp = os.path.join(file_path, str(elem))
+    if not os.path.exists(fp):
+        # Move file to its new home
         # shutil.copyfile(elem, file_path)
+
+        # Duplicate checking -> only use when files have yet to be copied
+        # Once files have been copied, you can check the file path directly, instead of referencing the move_list
+
         dup = False
         for item in move_list:
             if str(elem) == item["file_name"]:
@@ -163,10 +174,14 @@ def move_files(ihec_ids, elem, move_list):
                 "move_type": "data file",
                 "file_name": str(elem)
             })
+    elif not is_same_hash(fp, elem):  # If files are different but have same name
+        copy = 1
+        while os.path.exists(fp):
+            os.rename(elem, str(elem + "-" + copy))
+            fp = os.path.join(file_path, elem)
+            copy += 1  # Increment copy number until you have a unique name
+        # shutil.copyfile(elem, file_path)
 
-    else:
-        pass
-        #check if the file is in fact a duplicate
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
