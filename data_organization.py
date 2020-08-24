@@ -7,6 +7,7 @@ import csv
 import pandas as pd
 import glob
 import gzip
+import hashlib
 import argparse
 import xml.etree.ElementTree as ET
 
@@ -106,6 +107,21 @@ def fetch_id(filename):
     return retval
 
 
+# Hash functions:
+def hash_bytestr_iter(bytesiter, hasher, ashexstr=False):
+    for block in bytesiter:
+        hasher.update(block)
+    return hasher.hexdigest() if ashexstr else hasher.digest()
+
+
+def file_as_blockiter(afile, blocksize=65536):
+    with afile:
+        block = afile.read(blocksize)
+        while len(block) > 0:
+            yield block
+            block = afile.read(blocksize)
+
+
 def move_files(ihec_ids, elem, move_list):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
@@ -126,7 +142,9 @@ def move_files(ihec_ids, elem, move_list):
         dup = False
         for item in move_list:
             if str(elem) == item["file_name"]:
-                print(elem, "\t", item["source location"])
+                #print(elem, "\t", item["source location"])
+                print(hash_bytestr_iter(file_as_blockiter(open(elem, 'rb')), hashlib.sha256()))
+
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, file_path, os.getcwd()]
                     writer = csv.writer(dp_lst)
@@ -140,8 +158,6 @@ def move_files(ihec_ids, elem, move_list):
                 "move_type": "data file",
                 "file_name": str(elem)
             })
-            print(elem, " moved")
-
 
     else:
         pass
