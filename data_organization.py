@@ -16,6 +16,7 @@ ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz"
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = "EBI_Consolidated_test.txt"
+SLICE_FILES_LIST = "Slice_files.txt"
 JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
@@ -264,7 +265,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):
             move_list = move_metadata(elem_str, move_list)
-
+        elif elem_str.endswith(".slice"):  # Gather all slice files for analysis
+            with open(SLICE_FILES_LIST, "a") as slice_list:
+                slice_list.write(elem_str)
+                print(elem_str)
         else:  # If elem is not a directory or appropriate file, add it to the
             rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
