@@ -8,6 +8,7 @@ ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 JGAD_DIR = "JGAD_metadata"
 
+
 def fetch_id(filename):
     retval = ""
     for prefix in ID_PREFIXES:
@@ -59,7 +60,13 @@ with open("Slice_list.txt", "r") as slice_list, open("Move_List.txt") as mv_list
     move_list = json.load(mv_list)
     for slice_file in slice_list:
         print(slice_file)
-        #for file in move_list:
+        slice_id = fetch_id(slice_file)
+        for file in move_list:
+            file_id = fetch_id(file)
+            if slice_id in file_id or file_id in slice_id:
+                print(slice_id)
+
+
 
 
 
