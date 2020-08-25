@@ -165,6 +165,7 @@ def move_files(ihec_ids, elem, move_list):
                         writer.writerow(row)
                         print("Hash is different, files with same name")
                         dup = False
+                else: print("Hash and files are the same")
         if not dup:
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
@@ -289,7 +290,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         elif is_metadatafile(elem_str):
             move_list = move_metadata(elem_str, move_list)
         elif elem_str.endswith(".slice"):  # Gather all slice files for analysis
-            print("slicee")
             with open(SLICE_FILES_LIST, "a") as slice_list:
                 row = [elem_str, os.getcwd()]
                 writer = csv.writer(slice_list)
