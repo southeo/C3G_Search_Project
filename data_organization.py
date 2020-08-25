@@ -164,8 +164,9 @@ def move_files(ihec_ids, elem, move_list):
                         writer = csv.writer(dp_lst)
                         writer.writerow(row)
                         dup = False
+                        print("not a true dup")
         if not dup:
-            print("moved!")
+            #print(elem, " moved!")
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
                 "destination": file_path,
