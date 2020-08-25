@@ -264,6 +264,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
+        print(elem)
         ihec_ids = []
         misc_id = []
         if os.path.isfile(elem) and is_datafile(elem_str):
