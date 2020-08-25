@@ -289,6 +289,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         elif is_metadatafile(elem_str):
             move_list = move_metadata(elem_str, move_list)
         elif elem_str.endswith(".slice"):  # Gather all slice files for analysis
+            print("slicee")
             with open(SLICE_FILES_LIST, "a") as slice_list:
                 row = [elem_str, os.getcwd()]
                 writer = csv.writer(slice_list)
