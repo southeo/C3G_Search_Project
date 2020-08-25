@@ -22,7 +22,7 @@ ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
 DEST_DIR = ""
 DEST_DIR_EXTRA = "Extra_files"
-DEST_DIR_METADATA = "Archived_metadata_files"
+DEST_DIR_METADATA = "Archived_metadata"
 METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
@@ -154,17 +154,17 @@ def move_files(ihec_ids, elem, move_list):
         dup = False
         for item in move_list:
             if str(elem) == item["file_name"]:
+                dup = True
                 #print(elem, "\t", item["source location"])
                 hash1 = hash_bytestr_iter(file_as_blockiter(open(elem, 'rb')), hashlib.sha256())
                 hash2 = hash_bytestr_iter(file_as_blockiter(open(item["source location"], 'rb')), hashlib.sha256())
-                #print("New File Hash: ", hash1)
-                #print("Existing File Hash: ", hash2)
-                if hash1 != hash2:
+                if hash1 != hash2:  # If files are different
                     with open(DUPLICATE_LIST, "a") as dp_lst:
-                        row = [elem, file_path, os.getcwd()]
+                        row = [elem, file_path, os.getcwd(), item["file_name"], item["source location"])
                         writer = csv.writer(dp_lst)
                         writer.writerow(row)
-                    dup = True
+                        print("Hash is different, files with same name")
+                        dup = False
         if not dup:
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
@@ -173,6 +173,7 @@ def move_files(ihec_ids, elem, move_list):
                 "move_type": "data file",
                 "file_name": str(elem)
             })
+    '''
     elif not is_same_hash(fp, elem):  # If files are different but have same name
         move_list.append({
             "source location": fp,
@@ -188,7 +189,7 @@ def move_files(ihec_ids, elem, move_list):
             fp = os.path.join(file_path, elem)
             copy += 1  # Increment copy number until you have a unique name
         # shutil.copyfile(elem, file_path)
-
+'''
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
