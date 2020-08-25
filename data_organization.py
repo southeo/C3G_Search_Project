@@ -160,10 +160,10 @@ def move_files(ihec_ids, elem, move_list):
                 #print("New File Hash: ", hash1)
                 #print("Existing File Hash: ", hash2)
                 if hash1 != hash2:
-                with open(DUPLICATE_LIST, "a") as dp_lst:
-                    row = [elem, file_path, os.getcwd()]
-                    writer = csv.writer(dp_lst)
-                    writer.writerow(row)
+                    with open(DUPLICATE_LIST, "a") as dp_lst:
+                        row = [elem, file_path, os.getcwd()]
+                        writer = csv.writer(dp_lst)
+                        writer.writerow(row)
                     dup = True
         if not dup:
             move_list.append({
