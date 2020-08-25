@@ -359,7 +359,7 @@ DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
-
+print(SLICE_FILES_LIST)
 with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
