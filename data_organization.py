@@ -160,7 +160,7 @@ def move_files(ihec_ids, elem, move_list):
                 hash2 = hash_bytestr_iter(file_as_blockiter(open(item["source location"], 'rb')), hashlib.sha256())
                 if hash1 != hash2:  # If files are different
                     with open(DUPLICATE_LIST, "a") as dp_lst:
-                        row = [elem, file_path, os.getcwd(), item["file_name"], item["source location"])
+                        row = [elem, file_path, os.getcwd(), item["file_name"], item["source location"]]
                         writer = csv.writer(dp_lst)
                         writer.writerow(row)
                         print("Hash is different, files with same name")
