@@ -157,7 +157,7 @@ def move_files(ihec_ids, elem, move_list):
                 dup = True
                 hash1 = hash_bytestr_iter(file_as_blockiter(open(elem, 'rb')), hashlib.sha256())
                 hash2 = hash_bytestr_iter(file_as_blockiter(open(item["source location"], 'rb')), hashlib.sha256())
-                print(elem, "\n \t h1 ", hash1, "\n \t h2 ", "hash2")
+                print(elem, "\n \t h1 ", hash1, "\n \t h2 ", hash2)
                 if hash1 != hash2:  # If files are different
                     with open(DUPLICATE_LIST, "a") as dp_lst:
                         row = [elem, file_path, os.getcwd(), item["file_name"], item["source location"]]
