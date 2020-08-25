@@ -152,19 +152,17 @@ def move_files(ihec_ids, elem, move_list):
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
         dup = False
-        for item in move_list:
+        '''for item in move_list:
             if str(elem) == item["file_name"]:
                 dup = True
-                hash1 = hash_bytestr_iter(file_as_blockiter(open(elem, 'rb')), hashlib.sha256())
-                hash2 = hash_bytestr_iter(file_as_blockiter(open(item["source location"], 'rb')), hashlib.sha256())
                 print(elem, "\n \t h1 ", hash1, "\n \t h2 ", hash2)
                 if hash1 != hash2:  # If files are different
-                    with open(DUPLICATE_LIST, "a") as dp_lst:
-                        row = [elem, file_path, os.getcwd(), item["file_name"], item["source location"]]
-                        writer = csv.writer(dp_lst)
-                        writer.writerow(row)
-                        dup = False
-                        print("not a true dup")
+                with open(DUPLICATE_LIST, "a") as dp_lst:
+                    row = [elem, os.getcwd(), item["source location"]]
+                    writer = csv.writer(dp_lst)
+                    writer.writerow(row)
+                    dup = False
+                    print("not a true dup")'''
         if not dup:
             #print(elem, " moved!")
             move_list.append({
@@ -347,7 +345,7 @@ JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 
 # print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
 
-with open(REF_TABLE) as rt, open("Move_List.txt", 'w') as mv_lst:
+with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
     move_list = []
