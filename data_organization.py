@@ -10,12 +10,13 @@ import gzip
 import hashlib
 import argparse
 import xml.etree.ElementTree as ET
+from datetime import datetime, date
 
 ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip",
                        ".crypt", ".bcf", ".md5", "vcf"]
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
-REF_TABLE = "EBI_Consolidated_test.txt"
+REF_TABLE = ""
 SLICE_FILES_LIST = "Slice_files.txt"
 JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
@@ -329,6 +330,19 @@ def match_to_db(misc_id, ref_list):
     return ihec_ids
 
 
+def get_ref_table(ref_dir):  # looks for most up to-date metadata file
+    latest = date.min
+    for elem in os.listdir(ref_dir):
+        if "EBI_Database_Consolidated_" in elem:
+            date_str = elem.replace("EBI_Database_Consolidated_", "")
+            date_str = date_str.replace(".txt", "")
+            date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
+            if date_str > latest:
+                latest = date_str
+                latest_file = elem
+    return latest_file
+
+
 args = parse_args()
 check_args(args)
 
@@ -337,7 +351,7 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_EXTRA))
 DEST_DIR_METADATA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_METADATA))
-REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, REF_TABLE))
+REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
