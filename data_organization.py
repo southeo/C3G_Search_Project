@@ -140,7 +140,7 @@ def get_local_ids(ihec_id, local_id):
     with open(REF_TABLE) as rt:
         ref_table = json.load(rt)
         for elem in ref_table["data"]:
-            if elem["ihec_id"] == ihec_id:
+            print(elem)if elem["ihec_id"] == ihec_id:
                 for inst in elem["instances"]:
                     if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
                             inst["egaf"] == local_id or inst["egad"] == local_id:
