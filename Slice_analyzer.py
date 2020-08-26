@@ -76,12 +76,18 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
     ref_table = json.load(rt)
     slice_list_reader = csv.reader(slice_list, delimiter=',')
     writer = csv.writer(outfile)
+    slice_file_id_list = []
 
     for row in slice_list_reader:
-        slice_file_id = str(row[1]).split('/')[-1]
+        slice_file_id_list.append(str(row[1]).split('/')[-1])
+    print("before: ", len(slice_file_id_list))
+    slice_file_id_list = set(slice_file_id_list)
+    print("after: ", len(slice_file_id_list))
+
+    for slice_id in slice_file_id_list:
         full_file_moved = False
         for file in move_list:
-            if "egaf" in file.keys() and (file["egaf"] in slice_file_id or slice_file_id in file["egaf"]):
+            if "egaf" in file.keys() and (file["egaf"] in slice_id or slice_id in file["egaf"]):
                 full_file_moved = True
                 full_file_loc = file["source location"]
         if not full_file_moved:
