@@ -153,17 +153,15 @@ def move_files(ihec_ids, elem, move_list):
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
         dup = False
-        '''for item in move_list:
+        for item in move_list:
             if str(elem) == item["file_name"]:
                 dup = True
-                print(elem, "\n \t h1 ", hash1, "\n \t h2 ", hash2)
-                if hash1 != hash2:  # If files are different
+                #print(elem, "\n \t h1 ", hash1, "\n \t h2 ", hash2)
+                #if hash1 != hash2:  # If files are different
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, os.getcwd(), item["source location"]]
                     writer = csv.writer(dp_lst)
                     writer.writerow(row)
-                    dup = False
-                    print("not a true dup")'''
         if not dup:
             #print(elem, " moved!")
             move_list.append({
