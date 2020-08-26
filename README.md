@@ -147,15 +147,15 @@ Epigenomic data and associated files are stored according to the following archi
 
 Epigenomic_Data_Home
 - IHEC_Data_Home
- - IHEC00000001
-  - IHEC00000001.1
-   - EGAF001.fastq
-   - EGAF002.fastq
-  - IHEC00000001.2
-   - EGAF001.fastq -> symlink
-   - EGAF002.fastq -> symlink
-   - EGAF003.fastq
- - IHEC00000002
+  - IHEC00000001
+    - IHEC00000001.1
+      - EGAF001.fastq
+      - EGAF002.fastq
+    - IHEC00000001.2
+      - EGAF001.fastq -> symlink
+      - EGAF002.fastq -> symlink
+      - EGAF003.fastq
+  - IHEC00000002
   - IHEC00000002.1
    - JGAX001.fastq
    - JFAX002.fastq
