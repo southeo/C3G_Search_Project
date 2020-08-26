@@ -77,7 +77,6 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_l
     for row in slice_list_reader:
         slice_file_id = str(row[1]).split('/')[-1]
         print(slice_file_id)
-        print(match_to_db(slice_file_id, ref_table))
 
         '''
         slice_id = fetch_id(slice_file)
