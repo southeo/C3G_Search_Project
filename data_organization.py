@@ -27,7 +27,7 @@ DEST_DIR_METADATA = "Archived_metadata"
 METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
-DUPLICATE_LIST = "Duplicate_list.txt"
+DUPLICATE_LIST = "Duplicate_list_all.txt"
 CONSORTIUM_LIST = ["BLUEPRINT", "AMED-CREST", "no_backup", "EpiVar", "pyega3"]
 
 
