@@ -147,31 +147,53 @@ Epigenomic data and associated files are stored according to the following archi
 
 Epigenomic_Data_Home
 - IHEC_Data_Home
-  - IHEC00000001
-    - IHEC00000001.1
+  - IHECRE00000001
+    - IHECRE00000001.1
       - EGAF001.fastq
       - EGAF002.fastq
-    - IHEC00000001.2
+    - IHECRE00000001.2
       - EGAF001.fastq -> symlink
       - EGAF002.fastq -> symlink
       - EGAF003.fastq
-  - IHEC00000002
-    - IHEC00000002.1
+  - IHECRE00000002
+    - IHECRE00000002.1
       - JGAX001.fastq
       - JFAX002.fastq
-  - IHEC00000003
-    - IHEC00000003.1
+  - IHECRE00000003
+    - IHECRE00000003.1
       - EGAX099.bam
       - EGAX100.bam
   - ...
 - Extra_Files
   - BLUEPRINT
+    - EGAD777
   - AMED-CREST
+    - EGAF888
+    - EGAF999
   - Aspera
+    - EGAD001
+    - EGAD002
   - ...
-- Archived_Metadata_Files
-- Reference_Files
+- Metadata Files
+  - Archived_Metadata_Files
+  - Reference_Files 
 
+#### IHEC_Data_Home
+This directory stores all files on disc associated with IHEC. The first level of directories is the IHECRE ID, and the next level is each version of that IHECRE ID. At the third level is the files associated with that version of the IHECRE ID. Files are stored in the earliest version in which they appear; later versions have symbolic links to the files. 
+Only files in this directory are searchable using the aforementioned search function.
+
+#### Extra_Files
+Data files without IHEC IDs are in sub directory and stored according to their consortium, then primary/secondary ID. These files are not directly associated with IHEC and are not searchable the way the IHEC_Data_Home files are.
+
+#### Metadata_Files
+There are two sub directories under this directory: archived files and files currently in use. The directory Reference_Files contains the master reference file (with information pulled from the EBI web portal), as well as other metadata files important maintaining the data file system.
 
 ### Updating the Data File Organizational Structure
+When files are downloaded onto Beluga, the following script can be run to organize the new data into the file system:
+`python data_organization.py -r [reference directory] -s [source directory] -d [destination directory] `
+`python data_organization.py --ref_dir [reference directory] --source_dir [source directory] -destination_dir [destination directory] `
+The reference directory contains all metadata files required to run the program, located in the Reference_Files directory. The source directory is the directory containing the new, unsorted data files. The destination directory is the root directory of the file organization system: Epigenomic_Data_Home.
+
+The script will sort files with the following extensions: ".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip", ".crypt", ".bcf", ".md5", "vcf"
+
 
