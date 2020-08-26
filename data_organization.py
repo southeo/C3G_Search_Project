@@ -136,7 +136,18 @@ def is_same_hash(path1, path2):
     return hash1 == hash2
 
 
-def move_files(ihec_ids, elem, move_list):
+def get_local_ids(ihec_id, local_id):
+    with open(REF_TABLE) as rt:
+        ref_table = json.load(rt)
+        for elem in ref_table["data"]:
+            if elem["ihec_id"] == ihec_id:
+                for inst in elem["instances"]:
+                    if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
+                            inst["egaf"] == local_id or inst["egad"] == local_id:
+                        return inst["local_ids"]
+
+
+def move_files(ihec_ids, elem, move_list, misc_id):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
     # make directories:
@@ -171,13 +182,14 @@ def move_files(ihec_ids, elem, move_list):
                     writer = csv.writer(dp_lst)
                     writer.writerow(row'''
         if not dup:
+            local_ids = get_local_ids(first_id, misc_id)
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
                 "destination": file_path,
                 "other versions": ihec_ids,
                 "move_type": "data file",
                 "file_name": str(elem),
-                "egaf": fetch_egaf_id(str(os.getcwd()) + "/" + str(elem))
+                "local_ids": ""
             })
             print(fetch_egaf_id(str(os.getcwd()) + "/" + str(elem)))
     '''
@@ -281,7 +293,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
-                    move_list = move_files(ihec_ids, elem, move_list)
+                    move_list = move_files(ihec_ids, elem, move_list, misc_id)
                 else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         # Write to Rejected list:
