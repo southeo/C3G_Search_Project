@@ -178,9 +178,10 @@ def move_files(ihec_ids, elem, move_list):
                 "destination": file_path,
                 "other versions": ihec_ids,
                 "move_type": "data file",
-                "file_name": str(elem)
-                "egaf": fetch_id(str(os.getcwd()) + "/" + str(elem))
+                "file_name": str(elem),
+                "egaf": fetch_egaf_id(str(os.getcwd()) + "/" + str(elem))
             })
+            print(fetch_egaf_id(str(os.getcwd()) + "/" + str(elem)))
     '''
     elif not is_same_hash(fp, elem):  # If files are different but have same name
         move_list.append({
