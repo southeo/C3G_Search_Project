@@ -338,5 +338,5 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-parse_ihec_db()
+#parse_ihec_db()
 consolidate_all(RAW_FILE)
