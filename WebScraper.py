@@ -187,6 +187,7 @@ def consolidate_local_id(data_file):
                 if "egad" in inst and inst["egad"] is not None:
                     local_ids.append(inst["egad"])
                 inst["local_ids"] = local_ids
+                print(local_ids)
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
 
@@ -281,6 +282,7 @@ def consolidate_all(data_file):
     consolidate_gender(consolidated_file)
     consolidate_tissue(consolidated_file)
     link_ega_ids(egad_map, consolidated_file)
+    consolidate_local_id(consolidated_file)
 
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
     with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file, "r") as ebi_db:
