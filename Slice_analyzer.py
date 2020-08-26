@@ -79,7 +79,6 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
 
     for row in slice_list_reader:
         slice_file_id = str(row[1]).split('/')[-1]
-        print(slice_file_id)
         full_file_moved = False
         for file in move_list:
             if "egaf" in file.keys() and file["egaf"] == slice_file_id:
