@@ -60,7 +60,8 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_l
     move_list = json.load(mv_list)
     slice_list_reader = csv.reader(slice_list, delimiter=',')
     for row in slice_list:
-        print(row[1]) '''
+        print(row[1])
+        '''
         slice_id = fetch_id(slice_file)
         for file in move_list:
             file_id = fetch_id(file)
