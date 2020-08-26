@@ -57,7 +57,7 @@ def get_JGAR_id(dir_name, filename):
                 return JGAX_id
 
 with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_list:
-    #move_list = json.load(mv_list)
+    move_list = json.load(mv_list)
     slice_list_reader = csv.reader(slice_list, delimiter=',')
     for row in slice_list_reader:
         print(row[1])
