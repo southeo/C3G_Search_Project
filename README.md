@@ -7,7 +7,7 @@ Search parameters must be in the first line of the query file. Searches must inc
 ### Regular search Parameters
 Regular searches match the string in the query file to the metadata associated with each IHEC ID. All associated instances will be flagged as matches. 
 
-- ihec_id (Note: a different version will not be considered a match)
+- ihec_id (Note: if no version is specified, the latest on disc will be provided)
 - project
 - age_min
 - age_max
@@ -136,8 +136,11 @@ The reference file is the second parameter passed to the search function. It con
 
 ### Updating the Reference File
 The reference file should be updated as files are downloaded onto Beluga. It may be updated with the following command:
+
 ` python WebScraper.py `
+
 You may also submit it as a job using:
+
 ` sbatch WebScraper.sh `
 
 This will scan through the EBI Web portal and create a new metadata file with the updated information. This script may take a few hours to run; it is recommended that this script be run on a compute node. 
@@ -190,8 +193,11 @@ There are two sub directories under this directory: archived files and files cur
 
 ### Updating the Data File Organizational Structure
 When files are downloaded onto Beluga, the following script can be run to organize the new data into the file system:
+
 `python data_organization.py -r [reference directory] -s [source directory] -d [destination directory] `
+
 `python data_organization.py --ref_dir [reference directory] --source_dir [source directory] -destination_dir [destination directory] `
+
 The reference directory contains all metadata files required to run the program, located in the Reference_Files directory. The source directory is the directory containing the new, unsorted data files. The destination directory is the root directory of the file organization system: Epigenomic_Data_Home.
 
 The script will sort files with the following extensions: ".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz", "fastq.bz.md5", ".cram", ".cip", ".crypt", ".bcf", ".md5", "vcf"
