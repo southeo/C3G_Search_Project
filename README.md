@@ -146,32 +146,31 @@ This will scan through the EBI Web portal and create a new metadata file with th
 Epigenomic data and associated files are stored according to the following architecture:
 
 Epigenomic_Data_Home
-
--IHEC_Data_Home
- -IHEC00000001
-  -IHEC00000001.1
-   -EGAF001.fastq
-   -EGAF002.fastq
-  -IHEC00000001.2
-   -EGAF001.fastq -> symlink
-   -EGAF002.fastq -> symlink
-   -EGAF003.fastq
- -IHEC00000002
-  -IHEC00000002.1
-   -JGAX001.fastq
-   -JFAX002.fastq
- -IHEC00000003
-  -IHEC00000003.1
-   -EGAX099.bam
-   -EGAX100.bam
-  -...
--Extra_Files
- -BLUEPRINT
- -AMED-CREST
- -Aspera
- -...
--Archived_Metadata_Files
--Reference_Files
+- IHEC_Data_Home
+ - IHEC00000001
+  - IHEC00000001.1
+   - EGAF001.fastq
+   - EGAF002.fastq
+  - IHEC00000001.2
+   - EGAF001.fastq -> symlink
+   - EGAF002.fastq -> symlink
+   - EGAF003.fastq
+ - IHEC00000002
+  - IHEC00000002.1
+   - JGAX001.fastq
+   - JFAX002.fastq
+ - IHEC00000003
+  - IHEC00000003.1
+   - EGAX099.bam
+   - EGAX100.bam
+  - ...
+- Extra_Files
+ - BLUEPRINT
+ - AMED-CREST
+ - Aspera
+ - ...
+- Archived_Metadata_Files
+- Reference_Files
 
 
 ### Updating the Data File Organizational Structure
