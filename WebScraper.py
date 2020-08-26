@@ -1,4 +1,3 @@
-# General import
 import shutil
 import requests
 import json
@@ -169,6 +168,25 @@ def consolidate_donor_id(data_file):
                 id_keywords.append(elem["donor_id"])
             elem["donor_keyword_id"] = id_keywords
 
+    with open(data_file, 'w') as outfile:
+        json.dump(db_json, outfile, indent=4)
+
+
+def consolidate_local_id(data_file):
+    with open(data_file, 'r') as database_file:
+        db_json = json.load(database_file)
+        for elem in db_json["data"]:
+            for inst in elem["instances"]:
+                local_ids = []
+                if "primary_id" in inst and inst["primary_id"] is not None:
+                    local_ids.append(inst["primary_id"])
+                if "secondary_id" in inst and inst["secondary_id"] is not None:
+                    local_ids.append(inst["secondary_id"])
+                if "egaf" in inst and inst["egaf"] is not None:
+                    local_ids.append(inst["egaf"])
+                if "egad" in inst and inst["egad"] is not None:
+                    local_ids.append(inst["egad"])
+                inst["local_ids"] = local_ids
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
 

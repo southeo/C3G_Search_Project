@@ -39,10 +39,11 @@ with open(args.results_table, 'r') as sr, \
 
     search_results = json.load(sr)
     ref_table = json.load(rt)
+    writer = csv.writer(outfile)
 
     for elem in search_results:
+        row = []
         for results in elem["data"]:
-            row = []
 
 
             # determine read type

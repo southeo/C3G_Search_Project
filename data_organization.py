@@ -28,7 +28,6 @@ METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
-CONSORTIUM_LIST = ["BLUEPRINT", "AMED-CREST", "no_backup", "EpiVar", "pyega3"]
 
 
 def parse_args():
@@ -74,13 +73,11 @@ def get_JGAR_id(dir_name, filename):
                 return JGAX_id
 
 
-
 def fetch_egaf_id(filepath):
     idx = filepath.find("EGAF")
     if idx != -1:  # if prefix is found
-        return filepath[idx:idx+15]
+        return filepath[idx:idx + 15]
     return ""
-
 
 
 def fetch_id(filename):
@@ -137,6 +134,7 @@ def is_same_hash(path1, path2):
     hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
     hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
     return hash1 == hash2
+
 
 def move_files(ihec_ids, elem, move_list):
     first_id = ihec_ids.pop(0)
@@ -219,34 +217,37 @@ def move_files(ihec_ids, elem, move_list):
     return move_list
 
 
-def get_sub_dir(elem):
-    for sub_dir in CONSORTIUM_LIST:
-        if sub_dir in str(os.path.abspath(elem)):
-            return sub_dir
-    return False
+def get_sub_dir(misc_id, ref_list):
+    for elem in ref_list:
+        for inst in elem["instances"]:
+            if misc_id in inst["primary_id"] or misc_id in inst["secondary_id"] \
+                    or misc_id in inst["egaf"] or misc_id in inst["egar"]:
+                return inst["archive"]
 
 
 def move_extras(sub_dir, elem, misc_id):
-    if sub_dir:
-        extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
+    if not sub_dir:
+        sub_dir = "Other"
+
+    extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
+    try:
+        os.mkdir(extra_path)
+        extra_path = os.path.join(extra_path, misc_id)
+        os.mkdir(extra_path)
+    except FileExistsError:
         try:
-            os.mkdir(extra_path)
             extra_path = os.path.join(extra_path, misc_id)
             os.mkdir(extra_path)
         except FileExistsError:
-            try:
-                extra_path = os.path.join(extra_path, misc_id)
-                os.mkdir(extra_path)
-            except FileExistsError:
-                pass
-        # shutil.copyfile(elem, extra_path)
-        move_list.append({
-            "source location": str(os.getcwd()) + "/" + str(elem),
-            "destination": extra_path,
-            "other versions": "N/A",
-            "move type": "extra file",
-            "file_name": str(elem)
-        })
+            pass
+    # shutil.copyfile(elem, extra_path)
+    move_list.append({
+        "source location": str(os.getcwd()) + "/" + str(elem),
+        "destination": extra_path,
+        "other versions": "N/A",
+        "move type": "extra file",
+        "file_name": str(elem)
+    })
     return move_list
 
 
@@ -287,7 +288,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
-                    sub_dir = get_sub_dir(elem)
+                    sub_dir = get_sub_dir(misc_id, ref_list)
                     move_list = move_extras(sub_dir, elem, misc_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
