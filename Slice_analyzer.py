@@ -77,8 +77,6 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
     slice_list_reader = csv.reader(slice_list, delimiter=',')
     writer = csv.writer(outfile)
 
-    print(sum(1 for line in slice_list))
-
     for row in slice_list_reader:
         slice_file_id = str(row[1]).split('/')[-1]
         full_file_moved = False
