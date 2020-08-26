@@ -74,6 +74,15 @@ def get_JGAR_id(dir_name, filename):
                 return JGAX_id
 
 
+
+def fetch_egaf_id(filepath):
+    idx = filepath.find("EGAF")
+    if idx != -1:  # if prefix is found
+        return filepath[idx:idx+15]
+    return ""
+
+
+
 def fetch_id(filename):
     retval = ""
     for prefix in ID_PREFIXES:
@@ -153,6 +162,7 @@ def move_files(ihec_ids, elem, move_list):
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
         dup = False
+        '''
         for item in move_list:
             if str(elem) == item["file_name"]:
                 dup = True
@@ -161,15 +171,15 @@ def move_files(ihec_ids, elem, move_list):
                 with open(DUPLICATE_LIST, "a") as dp_lst:
                     row = [elem, os.getcwd(), item["source location"]]
                     writer = csv.writer(dp_lst)
-                    writer.writerow(row)
+                    writer.writerow(row'''
         if not dup:
-            #print(elem, " moved!")
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
                 "destination": file_path,
                 "other versions": ihec_ids,
                 "move_type": "data file",
                 "file_name": str(elem)
+                "egaf": fetch_id(str(os.getcwd()) + "/" + str(elem))
             })
     '''
     elif not is_same_hash(fp, elem):  # If files are different but have same name
