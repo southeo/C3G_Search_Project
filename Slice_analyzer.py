@@ -87,5 +87,3 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
         if not full_file_moved:
             writer.writerow(os.path.join(row[0], row[1]))
             print(row[0], "must be redownloaded")
-        else:
-            print(row[0], "has complete file elsewhere: ", full_file_loc)
