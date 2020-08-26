@@ -84,5 +84,8 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
         for file in move_list:
             if "egaf" in file.keys() and file["egaf"] == slice_file_id:
                 full_file_moved = True
+                full_file_loc = file["source location"]
         if not full_file_moved:
-            writer.writerow(os.path.join(row[1], row[0]))
+            writer.writerow([os.path.join(row[0], row[1]), full_file_loc])
+        else:
+            print(row[0], "has complete file elsewhere")
