@@ -56,7 +56,7 @@ def get_JGAR_id(dir_name, filename):
                 JGAX_id = child.get("refname")
                 return JGAX_id
 
-with open("Slice_list.txt", "r") as slice_list, open("Move_List.txt") as mv_list:
+with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_list:
     move_list = json.load(mv_list)
     for slice_file in slice_list:
         print(slice_file)
