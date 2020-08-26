@@ -1,5 +1,5 @@
 # C3G_Search_Project
-Compares user input to online EBI database and returns the location of the queried files. 
+Compares user input to online EBI database and returns the location of the queried files on Beluga. 
 
 ## Valid Search Parameters
 Search parameters must be in the first line of the query file. Searches must include at least one of these parameters, copied exactly. 
@@ -135,7 +135,12 @@ The referene file is the second parameter passed to the search function. It cont
 ` EBI_Database_Consolidated_[Date of creation].txt `
 
 ### Updating the Reference File
-If the reference file on disc is outdated with respect to the EBI Database, you may update the metadata file with the following command:
-` sample command `
+The reference file should be updated as files are downloaded onto Beluga. It may be updated with the following command:
+` python WebScraper.py `
+You may also submit it as a job using:
+` sbatch WebScraper.sh `
 
 This will scan through the EBI Web portal and create a new metadata file with the updated information. This script may take a few hours to run; it is recommended that this script be run on a compute node. 
+
+## Data Organizational Structure
+
