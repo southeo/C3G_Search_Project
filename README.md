@@ -134,7 +134,7 @@ The reference file is the second parameter passed to the search function. It con
 
 ` EBI_Database_Consolidated_[Date of creation].txt `
 
-### Updating the Reference File
+#### Updating the Reference File
 The reference file should be updated as files are downloaded onto Beluga. It may be updated with the following command:
 
 ` python WebScraper.py `
