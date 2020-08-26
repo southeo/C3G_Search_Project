@@ -146,6 +146,7 @@ This will scan through the EBI Web portal and create a new metadata file with th
 Epigenomic data and associated files are stored according to the following architecture:
 
 Epigenomic_Data_Home
+
 -IHEC_Data_Home
  -IHEC00000001
   -IHEC00000001.1
