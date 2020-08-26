@@ -28,7 +28,7 @@ def check_args(args):
 
 
 def get_misc_id(ihec_id):
-
+    pass
 
 args = parse_args()
 check_args(args)
