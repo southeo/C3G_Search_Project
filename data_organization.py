@@ -136,16 +136,14 @@ def is_same_hash(path1, path2):
     return hash1 == hash2
 
 
-def get_local_ids(ihec_id, local_id):
-    with open(REF_TABLE) as rt:
-        ref_table = json.load(rt)
-        for elem in ref_table["data"]:
-            print(elem)
-            if elem["ihec_id"] == ihec_id:
-                for inst in elem["instances"]:
-                    if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
+def get_local_ids(ihec_id, local_id, ref_list):
+    for elem in ref_list["data"]:
+        print(elem)
+        if elem["ihec_id"] == ihec_id:
+            for inst in elem["instances"]:
+                if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
                             inst["egaf"] == local_id or inst["egad"] == local_id:
-                        return inst["local_ids"]
+                    return inst["local_ids"]
 
 
 def move_files(ihec_ids, elem, move_list, misc_id):
@@ -295,7 +293,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
-                    move_list = move_files(ihec_ids, elem, move_list, misc_id)
+                    move_list = move_files(ihec_ids, elem, move_list, misc_id, ref_list)
                 else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         # Write to Rejected list:
@@ -312,12 +310,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):
             move_list = move_metadata(elem_str, move_list)
-        elif elem_str.endswith(".slice"):  # Gather all slice files for analysis
-            with open(SLICE_FILES_LIST, "a") as slice_list:
-                row = [elem_str, os.getcwd()]
-                writer = csv.writer(slice_list)
-                writer.writerow(row)
-        else:  # If elem is not a directory or appropriate file, add it to the
+        else:  # If elem is not a directory or appropriate file, add it to the rejected list
             rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                 row = [elem, "", rejected_ext, "Incorrect file type", os.getcwd()]
