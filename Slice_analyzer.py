@@ -56,12 +56,29 @@ def get_JGAR_id(dir_name, filename):
                 JGAX_id = child.get("refname")
                 return JGAX_id
 
-with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_list:
+
+def match_to_db(misc_id, ref_list):
+    ihec_ids = []
+    for elem in ref_list["data"]:
+        for inst in elem["instances"]:
+            if inst["primary_id"] == misc_id or inst["secondary_id"] == misc_id or \
+                    ("egar_id" in inst.keys() and misc_id in inst['egar_id']) or \
+                    ("egaf_id" in inst.keys() and misc_id in inst['egaf_id']):
+                ihec_ids.append(elem["ihec_id"])
+    ihec_ids.sort()
+    return ihec_ids
+
+
+
+with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_list, open("EBI_Consolidated_test.txt") as rt:
     #move_list = json.load(mv_list)
+    ref_table = json.load(rt)
     slice_list_reader = csv.reader(slice_list, delimiter=',')
     for row in slice_list_reader:
         slice_file_id = str(row[1]).split('/')[-1]
         print(slice_file_id)
+        print(match_to_db(slice_file_id, ref_table))
+
         '''
         slice_id = fetch_id(slice_file)
         for file in move_list:
