@@ -82,7 +82,6 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
         slice_file_id_list.append(str(row[1]).split('/')[-1])
 
     slice_file_id_list = set(slice_file_id_list)
-    print(len(slice_file_id_list))
 
     for slice_id in slice_file_id_list:
         full_file_moved = False
