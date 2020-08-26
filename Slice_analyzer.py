@@ -81,7 +81,7 @@ with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt")
         slice_file_id = str(row[1]).split('/')[-1]
         full_file_moved = False
         for file in move_list:
-            if "egaf" in file.keys() and file["egaf"] == slice_file_id:
+            if "egaf" in file.keys() and (file["egaf"] in slice_file_id or slice_file_id in file["egaf"]):
                 full_file_moved = True
                 full_file_loc = file["source location"]
         if not full_file_moved:
