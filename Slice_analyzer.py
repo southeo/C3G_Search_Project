@@ -38,6 +38,7 @@ def fetch_id(filename):
                     break
     return retval
 
+
 def get_JGAR_id(dir_name, filename):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
     JGAR_id = str(Path(dir_name)).split("/")[-1]
@@ -69,24 +70,19 @@ def match_to_db(misc_id, ref_list):
     return ihec_ids
 
 
-
-with open("Slice_files.txt", "r") as slice_list, open("Move_List_2.txt") as mv_list, open("EBI_Consolidated_test.txt") as rt:
-    #move_list = json.load(mv_list)
+with open("Slice_files.txt", "r") as slice_list, open("Move_List_with_egaf.txt") as mv_list, \
+        open("EBI_Consolidated_test.txt") as rt, open("Missing_Full_Files.txt", 'a') as outfile:
+    move_list = json.load(mv_list)
     ref_table = json.load(rt)
     slice_list_reader = csv.reader(slice_list, delimiter=',')
+    writer = csv.writer(outfile)
+
     for row in slice_list_reader:
         slice_file_id = str(row[1]).split('/')[-1]
         print(slice_file_id)
-
-        '''
-        slice_id = fetch_id(slice_file)
+        full_file_moved = False
         for file in move_list:
-            file_id = fetch_id(file)
-            if slice_id in file_id or file_id in slice_id:
-                print(slice_id) '''
-
-
-
-
-
-
+            if "egaf" in file.keys() and file["egaf"] == slice_file_id:
+                full_file_moved = True
+        if not full_file_moved:
+            writer.writerow(os.path.join(row[1], row[0]))
