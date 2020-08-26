@@ -137,10 +137,10 @@ def is_same_hash(path1, path2):
 
 
 def get_local_ids(ihec_id, local_id, ref_list):
-    for elem in ref_list["data"]:
-        print(elem)
-        if elem["ihec_id"] == ihec_id:
-            for inst in elem["instances"]:
+    for entry in ref_list["data"]:
+        print(entry)
+        if entry["ihec_id"] == ihec_id:
+            for inst in entry["instances"]:
                 if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
                             inst["egaf"] == local_id or inst["egad"] == local_id:
                     return inst["local_ids"]
