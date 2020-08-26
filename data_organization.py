@@ -273,7 +273,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     missing_list = []
     for elem_str in os.listdir():
         elem = Path(elem_str)
-        print(os.path.abspath(elem))
         ihec_ids = []
         misc_id = []
         if os.path.isfile(elem) and is_datafile(elem_str):
@@ -303,7 +302,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                 row = [elem_str, os.getcwd()]
                 writer = csv.writer(slice_list)
                 writer.writerow(row)
-                print(elem_str)
         else:  # If elem is not a directory or appropriate file, add it to the
             rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
