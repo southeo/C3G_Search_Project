@@ -183,13 +183,14 @@ def move_files(ihec_ids, elem, move_list, misc_id):
                     writer.writerow(row'''
         if not dup:
             local_ids = get_local_ids(first_id, misc_id)
+            print(local_ids)
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
                 "destination": file_path,
                 "other versions": ihec_ids,
                 "move_type": "data file",
                 "file_name": str(elem),
-                "local_ids": ""
+                "local_ids": local_ids
             })
             print(fetch_egaf_id(str(os.getcwd()) + "/" + str(elem)))
     '''
