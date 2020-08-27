@@ -136,13 +136,21 @@ def is_same_hash(path1, path2):
     return hash1 == hash2
 
 
+def key_match(id, inst):
+    if (inst["primary_id"] in inst.keys() and inst["primary_id"] is not None and inst["primary_id"] == id) or \
+            (inst["secondary_id"] in inst.keys() and inst["secondary_id"] is not None and inst["secondary_id"] == id) \
+            or (inst["egaf"] in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
+            or (inst["egad"] in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
+        return True
+    return False
+
+
 def get_local_ids(ihec_id, local_id, ref_list):
     for entry in ref_list["data"]:
         print(entry)
         if entry["ihec_id"] == ihec_id:
             for inst in entry["instances"]:
-                if inst["primary_id"] == local_id or inst["secondary_id"] == local_id or \
-                            inst["egaf"] == local_id or inst["egad"] == local_id:
+                if key_match(local_id, inst):
                     return inst["local_ids"]
 
 
@@ -232,10 +240,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
 def get_sub_dir(misc_id, ref_list):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            if misc_id in inst["primary_id"] \
-                    or (inst["secondary_id"] is not None and misc_id in inst["secondary_id"]) \
-                    or ("egaf" in inst.keys() and misc_id in inst["egaf"]) \
-                    or ("egar" in inst.keys() and misc_id in inst["egar"]):
+            if key_match(misc_id, inst):
                 return inst["archive"]
 
 
