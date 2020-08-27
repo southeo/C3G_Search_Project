@@ -182,9 +182,9 @@ def consolidate_local_id(data_file):
                     local_ids.append(inst["primary_id"])
                 if "secondary_id" in inst and inst["secondary_id"] is not None:
                     local_ids.append(inst["secondary_id"])
-                if "egaf" in inst and inst["egaf"] is not None:
+                if "egaf_id" in inst and inst["egaf"] is not None:
                     local_ids.append(inst["egaf"])
-                if "egad" in inst and inst["egad"] is not None:
+                if "egad_id" in inst and inst["egad"] is not None:
                     local_ids.append(inst["egad"])
                 inst["local_ids"] = local_ids
     with open(data_file, 'w') as outfile:
