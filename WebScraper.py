@@ -182,7 +182,7 @@ def consolidate_local_id(data_file):
                     local_ids.append(inst["primary_id"])
                     print("1.", local_ids)
                 if "secondary_id" in inst and inst["secondary_id"] is not None:
-                    local_ids.append(inst["secondary_id"])
+                    local_ids.append(inst[ "secondary_id"])
                     print("2", local_ids)
                 if "egaf" in inst and inst["egaf"] is not None:
                     local_ids.append(inst["egaf"])
@@ -304,8 +304,6 @@ def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGA
                                     inst["egar_id"].append(egar)
                                     for egaf in egad_json[egad][egax][egar]:
                                         inst["egaf_id"].append(egaf)
-                                        print(egaf)
-
     with open(consolidated_file, "w") as ebi_db:
         json.dump(ebi_json, ebi_db, indent=4)
 
