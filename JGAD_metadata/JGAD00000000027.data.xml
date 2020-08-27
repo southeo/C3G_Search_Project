@@ -1,0 +1,996 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATA_CONTAINER>
+  <DATA alias="JGAR00000006955" center_name="Individual" accession="JGAR00000006955">
+    <EXPERIMENT_REF refname="JGAX00000006935" refcenter="Individual" accession="JGAX00000006935"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006956" center_name="Individual" accession="JGAR00000006956">
+    <EXPERIMENT_REF refname="JGAX00000006936" refcenter="Individual" accession="JGAX00000006936"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006957" center_name="Individual" accession="JGAR00000006957">
+    <EXPERIMENT_REF refname="JGAX00000006937" refcenter="Individual" accession="JGAX00000006937"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_016.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_017.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_018.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006958" center_name="Individual" accession="JGAR00000006958">
+    <EXPERIMENT_REF refname="JGAX00000006938" refcenter="Individual" accession="JGAX00000006938"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_016.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006959" center_name="Individual" accession="JGAR00000006959">
+    <EXPERIMENT_REF refname="JGAX00000006939" refcenter="Individual" accession="JGAX00000006939"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006960" center_name="Individual" accession="JGAR00000006960">
+    <EXPERIMENT_REF refname="JGAX00000006940" refcenter="Individual" accession="JGAX00000006940"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_016.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_017.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_018.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006961" center_name="Individual" accession="JGAR00000006961">
+    <EXPERIMENT_REF refname="JGAX00000006941" refcenter="Individual" accession="JGAX00000006941"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_016.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_017.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_018.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_019.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_020.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_021.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_022.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_023.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_024.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_025.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_026.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006962" center_name="Individual" accession="JGAR00000006962">
+    <EXPERIMENT_REF refname="JGAX00000006942" refcenter="Individual" accession="JGAX00000006942"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me1_ACAGTG_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006963" center_name="Individual" accession="JGAR00000006963">
+    <EXPERIMENT_REF refname="JGAX00000006943" refcenter="Individual" accession="JGAX00000006943"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K4me3_TGACCA_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006964" center_name="Individual" accession="JGAR00000006964">
+    <EXPERIMENT_REF refname="JGAX00000006944" refcenter="Individual" accession="JGAX00000006944"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27Ac_GCCAAT_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006965" center_name="Individual" accession="JGAR00000006965">
+    <EXPERIMENT_REF refname="JGAX00000006945" refcenter="Individual" accession="JGAX00000006945"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K27me3_CAGATC_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006966" center_name="Individual" accession="JGAR00000006966">
+    <EXPERIMENT_REF refname="JGAX00000006946" refcenter="Individual" accession="JGAX00000006946"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K36me3_TAGCTT_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006967" center_name="Individual" accession="JGAR00000006967">
+    <EXPERIMENT_REF refname="JGAX00000006947" refcenter="Individual" accession="JGAX00000006947"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_K9me3_GGCTAC_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006968" center_name="Individual" accession="JGAR00000006968">
+    <EXPERIMENT_REF refname="JGAX00000006948" refcenter="Individual" accession="JGAX00000006948"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="ChIP_HPC8_input_CGATGT_L007_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006969" center_name="Individual" accession="JGAR00000006969">
+    <EXPERIMENT_REF refname="JGAX00000006949" refcenter="Individual" accession="JGAX00000006949"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l8_2_GCCAAT_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_2_GCCAAT_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006970" center_name="Individual" accession="JGAR00000006970">
+    <EXPERIMENT_REF refname="JGAX00000006950" refcenter="Individual" accession="JGAX00000006950"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l1_1_ATGTCA_L001_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_1_ATGTCA_L001_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006971" center_name="Individual" accession="JGAR00000006971">
+    <EXPERIMENT_REF refname="JGAX00000006951" refcenter="Individual" accession="JGAX00000006951"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l8_4_CGATGT_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_4_CGATGT_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006972" center_name="Individual" accession="JGAR00000006972">
+    <EXPERIMENT_REF refname="JGAX00000006952" refcenter="Individual" accession="JGAX00000006952"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l8_5_CAGATC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_5_CAGATC_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006973" center_name="Individual" accession="JGAR00000006973">
+    <EXPERIMENT_REF refname="JGAX00000006953" refcenter="Individual" accession="JGAX00000006953"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l8_6_GTGAAA_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_6_GTGAAA_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006974" center_name="Individual" accession="JGAR00000006974">
+    <EXPERIMENT_REF refname="JGAX00000006954" refcenter="Individual" accession="JGAX00000006954"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_6_ATCACG_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_6_ATCACG_L002_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006975" center_name="Individual" accession="JGAR00000006975">
+    <EXPERIMENT_REF refname="JGAX00000006955" refcenter="Individual" accession="JGAX00000006955"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l8_1_ACAGTG_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l8_1_ACAGTG_L008_R1_015.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006976" center_name="Individual" accession="JGAR00000006976">
+    <EXPERIMENT_REF refname="JGAX00000006956" refcenter="Individual" accession="JGAX00000006956"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006977" center_name="Individual" accession="JGAR00000006977">
+    <EXPERIMENT_REF refname="JGAX00000006957" refcenter="Individual" accession="JGAX00000006957"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006978" center_name="Individual" accession="JGAR00000006978">
+    <EXPERIMENT_REF refname="JGAX00000006958" refcenter="Individual" accession="JGAX00000006958"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006979" center_name="Individual" accession="JGAR00000006979">
+    <EXPERIMENT_REF refname="JGAX00000006959" refcenter="Individual" accession="JGAX00000006959"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006980" center_name="Individual" accession="JGAR00000006980">
+    <EXPERIMENT_REF refname="JGAX00000006960" refcenter="Individual" accession="JGAX00000006960"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006981" center_name="Individual" accession="JGAR00000006981">
+    <EXPERIMENT_REF refname="JGAX00000006961" refcenter="Individual" accession="JGAX00000006961"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006982" center_name="Individual" accession="JGAR00000006982">
+    <EXPERIMENT_REF refname="JGAX00000006962" refcenter="Individual" accession="JGAX00000006962"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="150224_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006983" center_name="Individual" accession="JGAR00000006983">
+    <EXPERIMENT_REF refname="JGAX00000006963" refcenter="Individual" accession="JGAX00000006963"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_010_ChIP_TAGCTT_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006984" center_name="Individual" accession="JGAR00000006984">
+    <EXPERIMENT_REF refname="JGAX00000006964" refcenter="Individual" accession="JGAX00000006964"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_020_ChIP_GTGGCC_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006985" center_name="Individual" accession="JGAR00000006985">
+    <EXPERIMENT_REF refname="JGAX00000006965" refcenter="Individual" accession="JGAX00000006965"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_003_ChIP_TTAGGC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006986" center_name="Individual" accession="JGAR00000006986">
+    <EXPERIMENT_REF refname="JGAX00000006966" refcenter="Individual" accession="JGAX00000006966"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_009_ChIP_GATCAG_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006987" center_name="Individual" accession="JGAR00000006987">
+    <EXPERIMENT_REF refname="JGAX00000006967" refcenter="Individual" accession="JGAX00000006967"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_025_ChIP_ACTGAT_L008_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006988" center_name="Individual" accession="JGAR00000006988">
+    <EXPERIMENT_REF refname="JGAX00000006968" refcenter="Individual" accession="JGAX00000006968"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_008_ChIP_ACTTGA_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006989" center_name="Individual" accession="JGAR00000006989">
+    <EXPERIMENT_REF refname="JGAX00000006969" refcenter="Individual" accession="JGAX00000006969"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l8_011_ChIP_GGCTAC_L008_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006990" center_name="Individual" accession="JGAR00000006990">
+    <EXPERIMENT_REF refname="JGAX00000006970" refcenter="Individual" accession="JGAX00000006970"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_005_ChIP_ACAGTG_L006_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006991" center_name="Individual" accession="JGAR00000006991">
+    <EXPERIMENT_REF refname="JGAX00000006971" refcenter="Individual" accession="JGAX00000006971"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_006_ChIP_GCCAAT_L006_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006992" center_name="Individual" accession="JGAR00000006992">
+    <EXPERIMENT_REF refname="JGAX00000006972" refcenter="Individual" accession="JGAX00000006972"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_015_ChIP_ATGTCA_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006993" center_name="Individual" accession="JGAR00000006993">
+    <EXPERIMENT_REF refname="JGAX00000006973" refcenter="Individual" accession="JGAX00000006973"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_002_ChIP_CGATGT_L006_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006994" center_name="Individual" accession="JGAR00000006994">
+    <EXPERIMENT_REF refname="JGAX00000006974" refcenter="Individual" accession="JGAX00000006974"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l6_007_ChIP_CAGATC_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006995" center_name="Individual" accession="JGAR00000006995">
+    <EXPERIMENT_REF refname="JGAX00000006975" refcenter="Individual" accession="JGAX00000006975"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_019_ChIP_GTGAAA_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006996" center_name="Individual" accession="JGAR00000006996">
+    <EXPERIMENT_REF refname="JGAX00000006976" refcenter="Individual" accession="JGAX00000006976"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="141212_Hiseq3A_l7_001_ChIP_ATCACG_L007_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006997" center_name="Individual" accession="JGAR00000006997">
+    <EXPERIMENT_REF refname="JGAX00000006977" refcenter="Individual" accession="JGAX00000006977"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_4_GTGGCC_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_4_GTGGCC_L002_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006998" center_name="Individual" accession="JGAR00000006998">
+    <EXPERIMENT_REF refname="JGAX00000006978" refcenter="Individual" accession="JGAX00000006978"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_3_TTAGGC_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_3_TTAGGC_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000006999" center_name="Individual" accession="JGAR00000006999">
+    <EXPERIMENT_REF refname="JGAX00000006979" refcenter="Individual" accession="JGAX00000006979"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_2_GATCAG_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_2_GATCAG_L002_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007000" center_name="Individual" accession="JGAR00000007000">
+    <EXPERIMENT_REF refname="JGAX00000006980" refcenter="Individual" accession="JGAX00000006980"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_1_ACTGAT_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_1_ACTGAT_L002_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007001" center_name="Individual" accession="JGAR00000007001">
+    <EXPERIMENT_REF refname="JGAX00000006981" refcenter="Individual" accession="JGAX00000006981"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l1_6_ACTTGA_L001_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_6_ACTTGA_L001_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007002" center_name="Individual" accession="JGAR00000007002">
+    <EXPERIMENT_REF refname="JGAX00000006982" refcenter="Individual" accession="JGAX00000006982"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l1_5_GGCTAC_L001_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l1_5_GGCTAC_L001_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007003" center_name="Individual" accession="JGAR00000007003">
+    <EXPERIMENT_REF refname="JGAX00000006983" refcenter="Individual" accession="JGAX00000006983"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="l2_5_TAGCTT_L002_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_012.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_013.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="l2_5_TAGCTT_L002_R1_014.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007004" center_name="Individual" accession="JGAR00000007004">
+    <EXPERIMENT_REF refname="JGAX00000006984" refcenter="Individual" accession="JGAX00000006984"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_005_ChIP_ACAGTG_L005_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007005" center_name="Individual" accession="JGAR00000007005">
+    <EXPERIMENT_REF refname="JGAX00000006985" refcenter="Individual" accession="JGAX00000006985"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_006_ChIP_GCCAAT_L005_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007006" center_name="Individual" accession="JGAR00000007006">
+    <EXPERIMENT_REF refname="JGAX00000006986" refcenter="Individual" accession="JGAX00000006986"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_015_ChIP_ATGTCA_L005_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007007" center_name="Individual" accession="JGAR00000007007">
+    <EXPERIMENT_REF refname="JGAX00000006987" refcenter="Individual" accession="JGAX00000006987"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_010.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l5_002_ChIP_CGATGT_L005_R1_011.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007008" center_name="Individual" accession="JGAR00000007008">
+    <EXPERIMENT_REF refname="JGAX00000006988" refcenter="Individual" accession="JGAX00000006988"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_007_ChIP_CAGATC_L006_R1_009.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007009" center_name="Individual" accession="JGAR00000007009">
+    <EXPERIMENT_REF refname="JGAX00000006989" refcenter="Individual" accession="JGAX00000006989"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_019_ChIP_GTGAAA_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000007010" center_name="Individual" accession="JGAR00000007010">
+    <EXPERIMENT_REF refname="JGAX00000006990" refcenter="Individual" accession="JGAX00000006990"/>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_001.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_002.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_003.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_004.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_005.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_006.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_007.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="140822_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1_008.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+</DATA_CONTAINER>

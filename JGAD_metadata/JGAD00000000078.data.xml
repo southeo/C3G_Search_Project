@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATA_CONTAINER>
+  <DATA alias="JGAR00000012179" center_name="Individual" accession="JGAR00000012179">
+    <EXPERIMENT_REF refname="JGAX00000012144" refcenter="Individual" accession="JGAX00000012144"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC4_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC4_DATA_20150224_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012180" center_name="Individual" accession="JGAR00000012180">
+    <EXPERIMENT_REF refname="JGAX00000012145" refcenter="Individual" accession="JGAX00000012145"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC5_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC5_DATA_20150224_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012181" center_name="Individual" accession="JGAR00000012181">
+    <EXPERIMENT_REF refname="JGAX00000012146" refcenter="Individual" accession="JGAX00000012146"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC6_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC6_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC6_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC6_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC6_DATA_20150108_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012182" center_name="Individual" accession="JGAR00000012182">
+    <EXPERIMENT_REF refname="JGAX00000012147" refcenter="Individual" accession="JGAX00000012147"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC7_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20150108_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC7_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012183" center_name="Individual" accession="JGAR00000012183">
+    <EXPERIMENT_REF refname="JGAX00000012148" refcenter="Individual" accession="JGAX00000012148"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC8_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC8_DATA_20150224_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012184" center_name="Individual" accession="JGAR00000012184">
+    <EXPERIMENT_REF refname="JGAX00000012149" refcenter="Individual" accession="JGAX00000012149"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC11_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC11_DATA_20150224_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012185" center_name="Individual" accession="JGAR00000012185">
+    <EXPERIMENT_REF refname="JGAX00000012150" refcenter="Individual" accession="JGAX00000012150"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC14_DATA_20140327_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20140421_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20140815_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20141114_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20141216_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20150218_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC14_DATA_20150224_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012186" center_name="Individual" accession="JGAR00000012186">
+    <EXPERIMENT_REF refname="JGAX00000012151" refcenter="Individual" accession="JGAX00000012151"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC15_DATA_20151027_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC15_DATA_20151106_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012187" center_name="Individual" accession="JGAR00000012187">
+    <EXPERIMENT_REF refname="JGAX00000012152" refcenter="Individual" accession="JGAX00000012152"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC16_DATA_20151027_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC16_DATA_20151106_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC16_DATA_20160720_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC16_DATA_20160902_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012188" center_name="Individual" accession="JGAR00000012188">
+    <EXPERIMENT_REF refname="JGAX00000012153" refcenter="Individual" accession="JGAX00000012153"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC20_DATA_20151106_1_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC20_DATA_20151106_2_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC20_DATA_20160720_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012189" center_name="Individual" accession="JGAR00000012189">
+    <EXPERIMENT_REF refname="JGAX00000012154" refcenter="Individual" accession="JGAX00000012154"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC21_DATA_20151119_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC21_DATA_20160512_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012190" center_name="Individual" accession="JGAR00000012190">
+    <EXPERIMENT_REF refname="JGAX00000012155" refcenter="Individual" accession="JGAX00000012155"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC22_DATA_20151119_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC22_DATA_20160512_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+</DATA_CONTAINER>
