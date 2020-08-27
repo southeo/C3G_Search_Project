@@ -146,7 +146,7 @@ def get_local_ids(ihec_id, local_id, ref_list):
                     return inst["local_ids"]
 
 
-def move_files(ihec_ids, elem, move_list, misc_id):
+def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
     # make directories:
