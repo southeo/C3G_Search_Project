@@ -4,11 +4,23 @@ Compares user input to online EBI database and returns the location of the queri
 
 ` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt `
 
+## Creating A Query File
+A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
 
-## Valid Search Parameters
+### Sample Input
+
+| project |  gender | assay_type | tissue_keywords | experiment_type |
+| --- | --- | --- | --- | --- |
+| blueprint | | chip-seq | cancer |
+| | male | rna-seq | |
+| | | | venous blood | histone H3K4me3 |
+
+Note this file must need to be tab-delimited. An empty string ("") may be used on each new tab for clarity. A sample input file can be found in this repository. 
+
+### Valid Search Parameters
 Search parameters must be in the first line of the query file. Searches must include at least one of these parameters, copied exactly. 
 
-### Regular search Parameters
+#### Regular search Parameters
 Regular searches match the string in the query file to the metadata associated with each IHEC ID. All associated instances will be flagged as matches. 
 
 - ihec_id (Note: if no version is specified, the latest on disc will be provided)
@@ -26,7 +38,7 @@ Regular searches match the string in the query file to the metadata associated w
 - experiment_type
 - archive
 
-### Keyword Search parameters:
+#### Keyword Search parameters:
 All items in input must be satisfied, but there may be extra keywords in the search element. For instance, a dataset may have "cord blood" listed as its tissue type. A keyword search using either "cord", "blood", or both will yield a match. However, if the dataset only has "blood" as its tissue type, a search for "cord blood" will not result in a match. 
 
 - donor_id (stored as donor id, donor_id, or sample_id on the EBI Database)
@@ -34,7 +46,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - donor_ethnicity_keywords
 - disease_keywords
 
-#### Accepted Tissue Keywords
+##### Accepted Tissue Keywords
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
@@ -80,7 +92,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | white |  wt | 
 
 
-#### Accepted Disease Keywords
+##### Accepted Disease Keywords
 
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -120,18 +132,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | white | 
 
 
-## Creating A Query File
-A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
 
-### Sample Input
-
-| project |  gender | assay_type | tissue_keywords | experiment_type |
-| --- | --- | --- | --- | --- |
-| blueprint | | chip-seq | cancer |
-| | male | rna-seq | |
-| | | | venous blood | histone H3K4me3 |
-
-Note this file must need to be tab-delimited. An empty string ("") may be used on each new tab for clarity. A sample input file can be found in this repository. 
 
 ## The Reference File
 The reference file is the second parameter passed to the search function. It contains metadata for all datasets in the EBI database. 
