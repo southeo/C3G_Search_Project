@@ -147,7 +147,6 @@ def key_match(id, inst):
 
 def get_local_ids(ihec_id, local_id, ref_list):
     for entry in ref_list["data"]:
-        print(entry)
         if entry["ihec_id"] == ihec_id:
             for inst in entry["instances"]:
                 if key_match(local_id, inst):
