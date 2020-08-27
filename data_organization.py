@@ -30,6 +30,8 @@ REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
 
 
+## Argument Parsing and Setup
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-s',
@@ -53,6 +55,21 @@ def check_args(args):
     assert (os.path.isdir(args.destination_dir)), "Destination directory not found"
     assert (os.path.isdir(args.ref_dir)), "Reference file directory not found"
 
+
+def get_ref_table(ref_dir):  # looks for most up to-date metadata file
+    latest = date.min
+    for elem in os.listdir(ref_dir):
+        if "EBI_Database_Consolidated_" in elem:
+            date_str = elem.replace("EBI_Database_Consolidated_", "")
+            date_str = date_str.replace(".txt", "")
+            date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
+            if date_str > latest:
+                latest = date_str
+                latest_file = elem
+    return latest_file
+
+
+## Get Secondary IDs
 
 def get_JGAR_id(dir_name, filename):
     JGAD_id = str(Path(dir_name).parent).split("/")[-1]
@@ -78,6 +95,30 @@ def fetch_egaf_id(filepath):
     if idx != -1:  # if prefix is found
         return filepath[idx:idx + 15]
     return ""
+
+
+def key_match(id, inst):
+    if (inst["primary_id"] is not None and inst["primary_id"] == id) or \
+            (inst["secondary_id"] is not None and inst["secondary_id"] == id) \
+            or ("egaf" in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
+            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
+        return True
+    return False
+
+
+def get_local_ids(ihec_id, local_id, ref_list):
+    for entry in ref_list["data"]:
+        if entry["ihec_id"] == ihec_id:
+            for inst in entry["instances"]:
+                if key_match(local_id, inst):
+                    return inst["local_ids"]
+
+
+def get_sub_dir(misc_id, ref_list):
+    for elem in ref_list["data"]:
+        for inst in elem["instances"]:
+            if key_match(misc_id, inst):
+                return inst["archive"]
 
 
 def fetch_id(filename):
@@ -114,6 +155,9 @@ def fetch_id(filename):
     return retval
 
 
+
+
+
 # Hash functions:
 def hash_bytestr_iter(bytesiter, hasher, ashexstr=False):
     for block in bytesiter:
@@ -135,22 +179,7 @@ def is_same_hash(path1, path2):
     return hash1 == hash2
 
 
-def key_match(id, inst):
-    if (inst["primary_id"] is not None and inst["primary_id"] == id) or \
-            (inst["secondary_id"] is not None and inst["secondary_id"] == id) \
-            or ("egaf" in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
-            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
-        return True
-    return False
-
-
-def get_local_ids(ihec_id, local_id, ref_list):
-    for entry in ref_list["data"]:
-        if entry["ihec_id"] == ihec_id:
-            for inst in entry["instances"]:
-                if key_match(local_id, inst):
-                    return inst["local_ids"]
-
+## Moving files
 
 def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     first_id = ihec_ids.pop(0)
@@ -233,13 +262,6 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
         # os.symlink((os.path.join(file_path, elem), sym_path)
 
     return move_list
-
-
-def get_sub_dir(misc_id, ref_list):
-    for elem in ref_list["data"]:
-        for inst in elem["instances"]:
-            if key_match(misc_id, inst):
-                return inst["archive"]
 
 
 def move_extras(sub_dir, elem, misc_id):
@@ -350,19 +372,6 @@ def match_to_db(misc_id, ref_list):
     return ihec_ids
 
 
-def get_ref_table(ref_dir):  # looks for most up to-date metadata file
-    latest = date.min
-    for elem in os.listdir(ref_dir):
-        if "EBI_Database_Consolidated_" in elem:
-            date_str = elem.replace("EBI_Database_Consolidated_", "")
-            date_str = date_str.replace(".txt", "")
-            date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
-            if date_str > latest:
-                latest = date_str
-                latest_file = elem
-    return latest_file
-
-
 args = parse_args()
 check_args(args)
 
@@ -377,7 +386,6 @@ MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
 DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)))
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
-
 
 with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
