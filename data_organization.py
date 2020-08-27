@@ -232,7 +232,6 @@ def move_files(ihec_ids, elem, move_list, misc_id):
 def get_sub_dir(misc_id, ref_list):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            print(inst)
             if misc_id in inst["primary_id"] \
                     or (inst["secondary_id"] is not None and misc_id in inst["secondary_id"]) \
                     or ("egaf" in inst.keys() and misc_id in inst["egaf"]) \
