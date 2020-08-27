@@ -230,7 +230,7 @@ def move_files(ihec_ids, elem, move_list, misc_id):
 
 
 def get_sub_dir(misc_id, ref_list):
-    for elem in ref_list:
+    for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if misc_id in inst["primary_id"] or misc_id in inst["secondary_id"] \
                     or misc_id in inst["egaf"] or misc_id in inst["egar"]:
