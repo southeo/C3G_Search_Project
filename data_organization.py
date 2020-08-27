@@ -234,7 +234,7 @@ def get_sub_dir(misc_id, ref_list):
         for inst in elem["instances"]:
             if misc_id in inst["primary_id"] or misc_id in inst["secondary_id"] \
                     or ("egaf" in inst.keys() and misc_id in inst["egaf"]) \
-                    or ("egar" in inst.keys and misc_id in inst["egar"]):
+                    or ("egar" in inst.keys() and misc_id in inst["egar"]):
                 return inst["archive"]
 
 
