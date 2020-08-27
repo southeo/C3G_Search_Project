@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATA_CONTAINER>
+  <DATA alias="JGAR00000012275" center_name="Individual" accession="JGAR00000012275">
+    <EXPERIMENT_REF refname="JGAX00000012240" refcenter="Individual" accession="JGAX00000012240"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC-004_RNAseq_AACCGAG_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC-004_RNAseq_AACCGAG_L001_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012276" center_name="Individual" accession="JGAR00000012276">
+    <EXPERIMENT_REF refname="JGAX00000012241" refcenter="Individual" accession="JGAX00000012241"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC-005_RNAseq_AACGCTT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC-005_RNAseq_AACGCTT_L002_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012277" center_name="Individual" accession="JGAR00000012277">
+    <EXPERIMENT_REF refname="JGAX00000012242" refcenter="Individual" accession="JGAX00000012242"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC_COC06_RNA_CAGCGTT_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC_COC06_RNA_CAGCGTT_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012278" center_name="Individual" accession="JGAR00000012278">
+    <EXPERIMENT_REF refname="JGAX00000012243" refcenter="Individual" accession="JGAX00000012243"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC-007_RNAseq_AAGACGG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC-007_RNAseq_AAGACGG_L003_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012279" center_name="Individual" accession="JGAR00000012279">
+    <EXPERIMENT_REF refname="JGAX00000012244" refcenter="Individual" accession="JGAX00000012244"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC_COC08_RNA_CATACCA_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC_COC08_RNA_CATACCA_L001_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012280" center_name="Individual" accession="JGAR00000012280">
+    <EXPERIMENT_REF refname="JGAX00000012245" refcenter="Individual" accession="JGAX00000012245"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC-011_RNAseq_AAGGTAC_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC-011_RNAseq_AAGGTAC_L001_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012281" center_name="Individual" accession="JGAR00000012281">
+    <EXPERIMENT_REF refname="JGAX00000012246" refcenter="Individual" accession="JGAX00000012246"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="COC-014_RNAseq_ACACAGA_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="COC-014_RNAseq_ACACAGA_L002_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012282" center_name="Individual" accession="JGAR00000012282">
+    <EXPERIMENT_REF refname="JGAX00000012247" refcenter="Individual" accession="JGAX00000012247"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC_COC15_RNA_CCGAAGT_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC_COC15_RNA_CCGAAGT_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012283" center_name="Individual" accession="JGAR00000012283">
+    <EXPERIMENT_REF refname="JGAX00000012248" refcenter="Individual" accession="JGAX00000012248"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC_COC16_RNA_CCGTGAG_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC_COC16_RNA_CCGTGAG_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012284" center_name="Individual" accession="JGAR00000012284">
+    <EXPERIMENT_REF refname="JGAX00000012249" refcenter="Individual" accession="JGAX00000012249"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC_COC20_RNA_CCTCCTG_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC_COC20_RNA_CCTCCTG_L001_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012285" center_name="Individual" accession="JGAR00000012285">
+    <EXPERIMENT_REF refname="JGAX00000012250" refcenter="Individual" accession="JGAX00000012250"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC-COC21-RNA_AACGTGA_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC-COC21-RNA_AACGTGA_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012286" center_name="Individual" accession="JGAR00000012286">
+    <EXPERIMENT_REF refname="JGAX00000012251" refcenter="Individual" accession="JGAX00000012251"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="IHEC-COC22-RNA_AAACATC_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+        <FILE filename="IHEC-COC22-RNA_AAACATC_R2.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+</DATA_CONTAINER>

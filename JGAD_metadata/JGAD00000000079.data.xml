@@ -1,0 +1,927 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DATA_CONTAINER>
+  <DATA alias="JGAR00000012191" center_name="Individual" accession="JGAR00000012191">
+    <EXPERIMENT_REF refname="JGAX00000012167" refcenter="Individual" accession="JGAX00000012167"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_001_ChIP_ATCACG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012192" center_name="Individual" accession="JGAR00000012192">
+    <EXPERIMENT_REF refname="JGAX00000012165" refcenter="Individual" accession="JGAX00000012165"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_002_ChIP_CGATGT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012193" center_name="Individual" accession="JGAR00000012193">
+    <EXPERIMENT_REF refname="JGAX00000012169" refcenter="Individual" accession="JGAX00000012169"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_005_ChIP_ACAGTG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012194" center_name="Individual" accession="JGAR00000012194">
+    <EXPERIMENT_REF refname="JGAX00000012163" refcenter="Individual" accession="JGAX00000012163"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_006_ChIP_GCCAAT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012195" center_name="Individual" accession="JGAR00000012195">
+    <EXPERIMENT_REF refname="JGAX00000012166" refcenter="Individual" accession="JGAX00000012166"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_007_ChIP_CAGATC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012196" center_name="Individual" accession="JGAR00000012196">
+    <EXPERIMENT_REF refname="JGAX00000012164" refcenter="Individual" accession="JGAX00000012164"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_015_ChIP_ATGTCA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012197" center_name="Individual" accession="JGAR00000012197">
+    <EXPERIMENT_REF refname="JGAX00000012168" refcenter="Individual" accession="JGAX00000012168"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l3_019_ChIP_GTGAAA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012198" center_name="Individual" accession="JGAR00000012198">
+    <EXPERIMENT_REF refname="JGAX00000012157" refcenter="Individual" accession="JGAX00000012157"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_003_ChIP_TTAGGC_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012199" center_name="Individual" accession="JGAR00000012199">
+    <EXPERIMENT_REF refname="JGAX00000012161" refcenter="Individual" accession="JGAX00000012161"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_008_ChIP_ACTTGA_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012200" center_name="Individual" accession="JGAR00000012200">
+    <EXPERIMENT_REF refname="JGAX00000012158" refcenter="Individual" accession="JGAX00000012158"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_009_ChIP_GATCAG_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012201" center_name="Individual" accession="JGAR00000012201">
+    <EXPERIMENT_REF refname="JGAX00000012162" refcenter="Individual" accession="JGAX00000012162"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_010_ChIP_TAGCTT_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012202" center_name="Individual" accession="JGAR00000012202">
+    <EXPERIMENT_REF refname="JGAX00000012160" refcenter="Individual" accession="JGAX00000012160"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_011_ChIP_GGCTAC_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012203" center_name="Individual" accession="JGAR00000012203">
+    <EXPERIMENT_REF refname="JGAX00000012156" refcenter="Individual" accession="JGAX00000012156"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_020_ChIP_GTGGCC_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012204" center_name="Individual" accession="JGAR00000012204">
+    <EXPERIMENT_REF refname="JGAX00000012159" refcenter="Individual" accession="JGAX00000012159"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="131126_Hiseq3B_l4_025_ChIP_ACTGAT_L004_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012205" center_name="Individual" accession="JGAR00000012205">
+    <EXPERIMENT_REF refname="JGAX00000012176" refcenter="Individual" accession="JGAX00000012176"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_001_ChIP_ATCACG_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012206" center_name="Individual" accession="JGAR00000012206">
+    <EXPERIMENT_REF refname="JGAX00000012173" refcenter="Individual" accession="JGAX00000012173"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_002_ChIP_CGATGT_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012207" center_name="Individual" accession="JGAR00000012207">
+    <EXPERIMENT_REF refname="JGAX00000012170" refcenter="Individual" accession="JGAX00000012170"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_005_ChIP_ACAGTG_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012208" center_name="Individual" accession="JGAR00000012208">
+    <EXPERIMENT_REF refname="JGAX00000012171" refcenter="Individual" accession="JGAX00000012171"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_006_ChIP_GCCAAT_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012209" center_name="Individual" accession="JGAR00000012209">
+    <EXPERIMENT_REF refname="JGAX00000012175" refcenter="Individual" accession="JGAX00000012175"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_007_ChIP_CAGATC_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012210" center_name="Individual" accession="JGAR00000012210">
+    <EXPERIMENT_REF refname="JGAX00000012172" refcenter="Individual" accession="JGAX00000012172"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_015_ChIP_ATGTCA_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012211" center_name="Individual" accession="JGAR00000012211">
+    <EXPERIMENT_REF refname="JGAX00000012174" refcenter="Individual" accession="JGAX00000012174"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l1_019_ChIP_GTGAAA_L001_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012212" center_name="Individual" accession="JGAR00000012212">
+    <EXPERIMENT_REF refname="JGAX00000012196" refcenter="Individual" accession="JGAX00000012196"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_002_ChIP_CGATGT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012213" center_name="Individual" accession="JGAR00000012213">
+    <EXPERIMENT_REF refname="JGAX00000012192" refcenter="Individual" accession="JGAX00000012192"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_005_ChIP_ACAGTG_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012214" center_name="Individual" accession="JGAR00000012214">
+    <EXPERIMENT_REF refname="JGAX00000012193" refcenter="Individual" accession="JGAX00000012193"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_006_ChIP_GCCAAT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012215" center_name="Individual" accession="JGAR00000012215">
+    <EXPERIMENT_REF refname="JGAX00000012195" refcenter="Individual" accession="JGAX00000012195"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_007_ChIP_CAGATC_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012216" center_name="Individual" accession="JGAR00000012216">
+    <EXPERIMENT_REF refname="JGAX00000012177" refcenter="Individual" accession="JGAX00000012177"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_010_ChIP_TAGCTT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012217" center_name="Individual" accession="JGAR00000012217">
+    <EXPERIMENT_REF refname="JGAX00000012194" refcenter="Individual" accession="JGAX00000012194"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_015_ChIP_ATGTCA_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012218" center_name="Individual" accession="JGAR00000012218">
+    <EXPERIMENT_REF refname="JGAX00000012197" refcenter="Individual" accession="JGAX00000012197"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l2_019_ChIP_GTGAAA_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012219" center_name="Individual" accession="JGAR00000012219">
+    <EXPERIMENT_REF refname="JGAX00000012179" refcenter="Individual" accession="JGAX00000012179"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_003_ChIP_TTAGGC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012220" center_name="Individual" accession="JGAR00000012220">
+    <EXPERIMENT_REF refname="JGAX00000012181" refcenter="Individual" accession="JGAX00000012181"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_008_ChIP_ACTTGA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012221" center_name="Individual" accession="JGAR00000012221">
+    <EXPERIMENT_REF refname="JGAX00000012180" refcenter="Individual" accession="JGAX00000012180"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_009_ChIP_GATCAG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012222" center_name="Individual" accession="JGAR00000012222">
+    <EXPERIMENT_REF refname="JGAX00000012183" refcenter="Individual" accession="JGAX00000012183"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_011_ChIP_GGCTAC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012223" center_name="Individual" accession="JGAR00000012223">
+    <EXPERIMENT_REF refname="JGAX00000012178" refcenter="Individual" accession="JGAX00000012178"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_020_ChIP_GTGGCC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012224" center_name="Individual" accession="JGAR00000012224">
+    <EXPERIMENT_REF refname="JGAX00000012191" refcenter="Individual" accession="JGAX00000012191"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_022_ChIP_CGTACG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012225" center_name="Individual" accession="JGAR00000012225">
+    <EXPERIMENT_REF refname="JGAX00000012182" refcenter="Individual" accession="JGAX00000012182"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140116_Hiseq3B_l3_025_ChIP_ACTGAT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012226" center_name="Individual" accession="JGAR00000012226">
+    <EXPERIMENT_REF refname="JGAX00000012190" refcenter="Individual" accession="JGAX00000012190"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_001_ChIP_ATCACG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012227" center_name="Individual" accession="JGAR00000012227">
+    <EXPERIMENT_REF refname="JGAX00000012187" refcenter="Individual" accession="JGAX00000012187"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_002_ChIP_CGATGT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012228" center_name="Individual" accession="JGAR00000012228">
+    <EXPERIMENT_REF refname="JGAX00000012184" refcenter="Individual" accession="JGAX00000012184"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_005_ChIP_ACAGTG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012229" center_name="Individual" accession="JGAR00000012229">
+    <EXPERIMENT_REF refname="JGAX00000012185" refcenter="Individual" accession="JGAX00000012185"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_006_ChIP_GCCAAT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012230" center_name="Individual" accession="JGAR00000012230">
+    <EXPERIMENT_REF refname="JGAX00000012189" refcenter="Individual" accession="JGAX00000012189"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_007_ChIP_CAGATC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012231" center_name="Individual" accession="JGAR00000012231">
+    <EXPERIMENT_REF refname="JGAX00000012186" refcenter="Individual" accession="JGAX00000012186"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_015_ChIP_ATGTCA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012232" center_name="Individual" accession="JGAR00000012232">
+    <EXPERIMENT_REF refname="JGAX00000012188" refcenter="Individual" accession="JGAX00000012188"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l3_019_ChIP_GTGAAA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012233" center_name="Individual" accession="JGAR00000012233">
+    <EXPERIMENT_REF refname="JGAX00000012198" refcenter="Individual" accession="JGAX00000012198"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_001_ChIP_ATCACG_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012234" center_name="Individual" accession="JGAR00000012234">
+    <EXPERIMENT_REF refname="JGAX00000012201" refcenter="Individual" accession="JGAX00000012201"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_003_ChIP_TTAGGC_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012235" center_name="Individual" accession="JGAR00000012235">
+    <EXPERIMENT_REF refname="JGAX00000012204" refcenter="Individual" accession="JGAX00000012204"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_008_ChIP_ACTTGA_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012236" center_name="Individual" accession="JGAR00000012236">
+    <EXPERIMENT_REF refname="JGAX00000012203" refcenter="Individual" accession="JGAX00000012203"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_009_ChIP_GATCAG_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012237" center_name="Individual" accession="JGAR00000012237">
+    <EXPERIMENT_REF refname="JGAX00000012199" refcenter="Individual" accession="JGAX00000012199"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_010_ChIP_TAGCTT_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012238" center_name="Individual" accession="JGAR00000012238">
+    <EXPERIMENT_REF refname="JGAX00000012200" refcenter="Individual" accession="JGAX00000012200"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_020_ChIP_GTGGCC_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012239" center_name="Individual" accession="JGAR00000012239">
+    <EXPERIMENT_REF refname="JGAX00000012202" refcenter="Individual" accession="JGAX00000012202"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l6_025_ChIP_ACTGAT_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012240" center_name="Individual" accession="JGAR00000012240">
+    <EXPERIMENT_REF refname="JGAX00000012216" refcenter="Individual" accession="JGAX00000012216"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_002_ChIP_CGATGT_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012241" center_name="Individual" accession="JGAR00000012241">
+    <EXPERIMENT_REF refname="JGAX00000012214" refcenter="Individual" accession="JGAX00000012214"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_005_ChIP_ACAGTG_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012242" center_name="Individual" accession="JGAR00000012242">
+    <EXPERIMENT_REF refname="JGAX00000012215" refcenter="Individual" accession="JGAX00000012215"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_006_ChIP_GCCAAT_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012243" center_name="Individual" accession="JGAR00000012243">
+    <EXPERIMENT_REF refname="JGAX00000012218" refcenter="Individual" accession="JGAX00000012218"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_007_ChIP_CAGATC_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012244" center_name="Individual" accession="JGAR00000012244">
+    <EXPERIMENT_REF refname="JGAX00000012212" refcenter="Individual" accession="JGAX00000012212"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_011_ChIP_GGCTAC_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012245" center_name="Individual" accession="JGAR00000012245">
+    <EXPERIMENT_REF refname="JGAX00000012217" refcenter="Individual" accession="JGAX00000012217"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_015_ChIP_ATGTCA_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012246" center_name="Individual" accession="JGAR00000012246">
+    <EXPERIMENT_REF refname="JGAX00000012213" refcenter="Individual" accession="JGAX00000012213"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l7_022_ChIP_CGTACG_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012247" center_name="Individual" accession="JGAR00000012247">
+    <EXPERIMENT_REF refname="JGAX00000012220" refcenter="Individual" accession="JGAX00000012220"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_001_ChIP_ATCACG_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012248" center_name="Individual" accession="JGAR00000012248">
+    <EXPERIMENT_REF refname="JGAX00000012224" refcenter="Individual" accession="JGAX00000012224"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_003_ChIP_TTAGGC_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012249" center_name="Individual" accession="JGAR00000012249">
+    <EXPERIMENT_REF refname="JGAX00000012223" refcenter="Individual" accession="JGAX00000012223"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_009_ChIP_GATCAG_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012250" center_name="Individual" accession="JGAR00000012250">
+    <EXPERIMENT_REF refname="JGAX00000012221" refcenter="Individual" accession="JGAX00000012221"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_010_ChIP_TAGCTT_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012251" center_name="Individual" accession="JGAR00000012251">
+    <EXPERIMENT_REF refname="JGAX00000012219" refcenter="Individual" accession="JGAX00000012219"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_019_ChIP_GTGAAA_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012252" center_name="Individual" accession="JGAR00000012252">
+    <EXPERIMENT_REF refname="JGAX00000012222" refcenter="Individual" accession="JGAX00000012222"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_020_ChIP_GTGGCC_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012253" center_name="Individual" accession="JGAR00000012253">
+    <EXPERIMENT_REF refname="JGAX00000012225" refcenter="Individual" accession="JGAX00000012225"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150623_Hiseq3B_l8_025_ChIP_ACTGAT_L008_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012254" center_name="Individual" accession="JGAR00000012254">
+    <EXPERIMENT_REF refname="JGAX00000012228" refcenter="Individual" accession="JGAX00000012228"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_001_ChIP_ATCACG_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012255" center_name="Individual" accession="JGAR00000012255">
+    <EXPERIMENT_REF refname="JGAX00000012232" refcenter="Individual" accession="JGAX00000012232"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_006_ChIP_GCCAAT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012256" center_name="Individual" accession="JGAR00000012256">
+    <EXPERIMENT_REF refname="JGAX00000012226" refcenter="Individual" accession="JGAX00000012226"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_007_ChIP_CAGATC_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012257" center_name="Individual" accession="JGAR00000012257">
+    <EXPERIMENT_REF refname="JGAX00000012229" refcenter="Individual" accession="JGAX00000012229"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_008_ChIP_ACTTGA_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012258" center_name="Individual" accession="JGAR00000012258">
+    <EXPERIMENT_REF refname="JGAX00000012230" refcenter="Individual" accession="JGAX00000012230"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_010_ChIP_TAGCTT_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012259" center_name="Individual" accession="JGAR00000012259">
+    <EXPERIMENT_REF refname="JGAX00000012231" refcenter="Individual" accession="JGAX00000012231"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_011_ChIP_GGCTAC_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012260" center_name="Individual" accession="JGAR00000012260">
+    <EXPERIMENT_REF refname="JGAX00000012227" refcenter="Individual" accession="JGAX00000012227"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l2_016_ChIP_CCGTCC_L002_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012261" center_name="Individual" accession="JGAR00000012261">
+    <EXPERIMENT_REF refname="JGAX00000012235" refcenter="Individual" accession="JGAX00000012235"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_003_ChIP_TTAGGC_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012262" center_name="Individual" accession="JGAR00000012262">
+    <EXPERIMENT_REF refname="JGAX00000012233" refcenter="Individual" accession="JGAX00000012233"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_008_ChIP_ACTTGA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012263" center_name="Individual" accession="JGAR00000012263">
+    <EXPERIMENT_REF refname="JGAX00000012236" refcenter="Individual" accession="JGAX00000012236"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_009_ChIP_GATCAG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012264" center_name="Individual" accession="JGAR00000012264">
+    <EXPERIMENT_REF refname="JGAX00000012234" refcenter="Individual" accession="JGAX00000012234"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_010_ChIP_TAGCTT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012265" center_name="Individual" accession="JGAR00000012265">
+    <EXPERIMENT_REF refname="JGAX00000012239" refcenter="Individual" accession="JGAX00000012239"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_012_ChIP_CTTGTA_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012266" center_name="Individual" accession="JGAR00000012266">
+    <EXPERIMENT_REF refname="JGAX00000012237" refcenter="Individual" accession="JGAX00000012237"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_022_ChIP_CGTACG_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012267" center_name="Individual" accession="JGAR00000012267">
+    <EXPERIMENT_REF refname="JGAX00000012238" refcenter="Individual" accession="JGAX00000012238"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="150929_Hiseq3B_l3_027_ChIP_ATTCCT_L003_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012268" center_name="Individual" accession="JGAR00000012268">
+    <EXPERIMENT_REF refname="JGAX00000012205" refcenter="Individual" accession="JGAX00000012205"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l6_011_ChIP_GGCTAC_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012269" center_name="Individual" accession="JGAR00000012269">
+    <EXPERIMENT_REF refname="JGAX00000012206" refcenter="Individual" accession="JGAX00000012206"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l6_022_ChIP_CGTACG_L006_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012270" center_name="Individual" accession="JGAR00000012270">
+    <EXPERIMENT_REF refname="JGAX00000012210" refcenter="Individual" accession="JGAX00000012210"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l7_001_ChIP_ATCACG_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012271" center_name="Individual" accession="JGAR00000012271">
+    <EXPERIMENT_REF refname="JGAX00000012207" refcenter="Individual" accession="JGAX00000012207"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l7_003_ChIP_TTAGGC_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012272" center_name="Individual" accession="JGAR00000012272">
+    <EXPERIMENT_REF refname="JGAX00000012208" refcenter="Individual" accession="JGAX00000012208"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l7_009_ChIP_GATCAG_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012273" center_name="Individual" accession="JGAR00000012273">
+    <EXPERIMENT_REF refname="JGAX00000012211" refcenter="Individual" accession="JGAX00000012211"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l7_010_ChIP_TAGCTT_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+  <DATA alias="JGAR00000012274" center_name="Individual" accession="JGAR00000012274">
+    <EXPERIMENT_REF refname="JGAX00000012209" refcenter="Individual" accession="JGAX00000012209"/>
+    <DATA_TYPE>
+      <SEQUENCING/>
+    </DATA_TYPE>
+    <DATA_BLOCK>
+      <FILES>
+        <FILE filename="140822_Hiseq3B_l7_025_ChIP_ACTGAT_L007_R1.fastq.gz" filetype="fastq" quality_scoring_system="phred" quality_encoding="ascii" ascii_offset="!" checksum_method="MD5" checksum="" unencrypted_checksum=""/>
+      </FILES>
+    </DATA_BLOCK>
+  </DATA>
+</DATA_CONTAINER>
