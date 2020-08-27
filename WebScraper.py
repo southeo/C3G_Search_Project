@@ -183,9 +183,11 @@ def consolidate_local_id(data_file):
                 if "secondary_id" in inst and inst["secondary_id"] is not None:
                     local_ids.append(inst["secondary_id"])
                 if "egaf_id" in inst and inst["egaf_id"] is not None:
-                    local_ids.append(inst["egaf_id"])
+                    for egaf in inst["egaf_id"]:
+                        local_ids.append(egaf)
                 if "egad_id" in inst and inst["egad_id"] is not None:
-                    local_ids.append(inst["egad_id"])
+                    for egad in inst["egad_id"]:
+                        local_ids.append(egad)
                 inst["local_ids"] = local_ids
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
