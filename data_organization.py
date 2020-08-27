@@ -137,10 +137,10 @@ def is_same_hash(path1, path2):
 
 
 def key_match(id, inst):
-    if (inst["primary_id"] in inst.keys() and inst["primary_id"] is not None and inst["primary_id"] == id) or \
-            (inst["secondary_id"] in inst.keys() and inst["secondary_id"] is not None and inst["secondary_id"] == id) \
-            or (inst["egaf"] in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
-            or (inst["egad"] in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
+    if (inst["primary_id"] is not None and inst["primary_id"] == id) or \
+            (inst["secondary_id"] is not None and inst["secondary_id"] == id) \
+            or ("egaf" in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
+            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
         return True
     return False
 
