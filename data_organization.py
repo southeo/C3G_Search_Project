@@ -86,7 +86,6 @@ def fetch_id(filename):
         idx = filename.find(prefix)
         if idx != -1:  # if prefix is found
             retval = filename[idx:idx + 15]
-            # print(prefix, filename)
             break
     if "EGAZ" in filename:  # need to go through on-site list to get EGAX id
         with open(ON_SITE_TABLE) as onsite_csv:
@@ -371,7 +370,6 @@ os.chdir(args.ref_dir)
 SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_EXTRA))
-SLICE_FILES_LIST = os.path.abspath(os.path.join(args.ref_dir, SLICE_FILES_LIST))
 DEST_DIR_METADATA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_METADATA))
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
@@ -380,8 +378,7 @@ REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
 DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)))
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 
-# print("source: ", SOURCE_DIR, '\n dest: ', DEST_DIR, "\n ref table: ", REF_TABLE, '\n on site table:', ON_SITE_TABLE)
-print(SLICE_FILES_LIST)
+
 with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
     ref_table = json.load(rt)
