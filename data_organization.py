@@ -61,7 +61,8 @@ def get_ref_table(ref_dir):  # looks for most up to-date metadata file
     for elem in os.listdir(ref_dir):
         if "EBI_Database_Consolidated_" in elem:
             date_str = elem.replace("EBI_Database_Consolidated_", "")
-            date_str = date_str.replace(".txt", "")
+            date_str = date_str[0:9]
+            print(date_str)
             date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
             if date_str > latest:
                 latest = date_str
