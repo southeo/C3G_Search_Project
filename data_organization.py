@@ -413,8 +413,8 @@ if args.move_files:
 
 with open(REF_TABLE, "r") as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     print(REF_TABLE)
-    os.chdir(args.source_dir)
     ref_list = json.load(rt)
+    os.chdir(args.source_dir)
     move_list = []
     move_list = scan_through(ref_list, move_list)
     json.dump(move_list, mv_lst, indent=2)
