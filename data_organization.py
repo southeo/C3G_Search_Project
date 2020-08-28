@@ -366,7 +366,7 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"] = [filename]
                 pp.pprint(inst)
 
-    with open(REF_TABLE) as rt:
+    with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
 def is_datafile(filename):
