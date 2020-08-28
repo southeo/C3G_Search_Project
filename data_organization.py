@@ -336,6 +336,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         writer.writerow(row)
                     sub_dir = get_sub_dir(misc_id, ref_list)
                     move_list = move_extras(sub_dir, elem, misc_id)
+                    update_filename(ref_list, elem_str, misc_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
