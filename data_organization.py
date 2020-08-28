@@ -361,6 +361,8 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"].append(filename)
                 else:
                     inst["filename"] = [filename]
+            for entry in inst:
+                print(entry)
     with open(REF_TABLE, "w") as rt:
         ref_json = json.load(rt)
         json.dump(ref_list)
