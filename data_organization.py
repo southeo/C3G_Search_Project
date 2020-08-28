@@ -394,7 +394,7 @@ REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
 DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)))
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
-    MOVE_FILES = True
+    MOVE_FILES = args.move_files
 print(MOVE_FILES)
 
 
