@@ -364,7 +364,7 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"].append(filename)
                 else:
                     inst["filename"] = [filename]
-            pp.print(inst)
+            pp.pprint(inst)
     json.dump(ref_list)
 
 def is_datafile(filename):
