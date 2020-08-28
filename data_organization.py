@@ -355,7 +355,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
 
 
 def update_filename(ref_list, filename, misc_id):
-    pp = pprint.PrettyPrinter(indent=2)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
@@ -363,8 +362,6 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"].append(filename)
                 else:
                     inst["filename"] = [filename]
-                print("INST: ", inst, '\n')
-    print(misc_id, "updated")
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
