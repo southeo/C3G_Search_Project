@@ -68,7 +68,6 @@ def get_ref_table(ref_dir):  # looks for most up to-date metadata file
         if "EBI_Database_Consolidated_" in elem:
             date_str = elem.replace("EBI_Database_Consolidated_", "")
             date_str = date_str[0:9]
-            print(date_str)
             date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
             if date_str > latest:
                 latest = date_str
@@ -118,7 +117,7 @@ def get_local_ids(ihec_id, local_id, ref_list):
         if entry["ihec_id"] == ihec_id:
             for inst in entry["instances"]:
                 if key_match(local_id, inst):
-                    print(inst["local_ids"])
+                    #print(inst["local_ids"])
                     return inst["local_ids"]
 
 
