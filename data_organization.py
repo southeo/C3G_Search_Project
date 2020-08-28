@@ -395,7 +395,7 @@ DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if not args.move_files:
     MOVE_FILES = False
-    print(MOVE_FILES)
+print(MOVE_FILES)
 
 
 with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
