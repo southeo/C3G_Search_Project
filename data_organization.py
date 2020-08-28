@@ -317,9 +317,8 @@ def move_metadata(elem, move_list):
     return move_list
 
 
-def scan_through(rt, move_list):  # Scans through source directory and moves stuff around
+def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
     missing_list = []
-    ref_list = json.load(rt)
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
@@ -414,6 +413,7 @@ if args.move_files:
 
 with open(REF_TABLE, "r+") as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
+    ref_list = json.load(rt)
     move_list = []
-    move_list = scan_through(rt, move_list)
+    move_list = scan_through(ref_list, move_list)
     json.dump(move_list, mv_lst, indent=2)
