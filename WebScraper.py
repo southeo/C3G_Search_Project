@@ -185,7 +185,7 @@ def consolidate_local_id(data_file):
                 if "egaf_id" in inst and inst["egaf_id"] is not None:
                     for egaf in inst["egaf_id"]:
                         local_ids.append(egaf)
-                if "egad_id" in inst and inst["egad_id"] is not None:
+                if "egar_id" in inst and inst["egad_id"] is not None:
                     for egad in inst["egad_id"]:
                         local_ids.append(egad)
                 inst["local_ids"] = local_ids
