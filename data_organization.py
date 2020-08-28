@@ -233,7 +233,6 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
                 "file_name": str(elem),
                 "local_ids": local_ids
             })
-            print(fetch_egaf_id(str(os.getcwd()) + "/" + str(elem)))
     '''
     elif not is_same_hash(fp, elem):  # If files are different but have same name
         move_list.append({
@@ -358,6 +357,8 @@ def update_filename(ref_list, filename, misc_id):
     pp = pprint.PrettyPrinter(indent=2)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
+            if "local_ids" in inst.keys():
+                print(inst["local_ids"])
             if misc_id in inst["local_ids"]:
                 if "filename" in inst.keys():
                     inst["filename"].append(filename)
