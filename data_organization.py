@@ -411,8 +411,7 @@ if args.move_files:
     MOVE_FILES = args.move_files
 
 
-with open('EBI_Database_Consolidated_2020-08-28.txt', "r") as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
-    print(REF_TABLE)
+with open('EBI_Database_Consolidated_2020-08-28.txt') as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
