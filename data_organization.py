@@ -411,7 +411,7 @@ if args.move_files:
     MOVE_FILES = args.move_files
 
 
-with open(REF_TABLE, "r") as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
+with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     print(REF_TABLE)
     os.chdir(args.source_dir)
     ref_list = json.load(rt)
