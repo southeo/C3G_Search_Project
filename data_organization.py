@@ -353,6 +353,11 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     return move_list
 
 
+def update_filename(ref_list, filename, misc_id):
+    for elem in ref_list["data"]:
+        for inst in elem["instances"]:
+            if misc_id in inst["local"]
+
 def is_datafile(filename):
     for ext in ACCEPTED_EXTENSIONS:
         if filename.endswith(ext):
@@ -395,7 +400,6 @@ DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
-print(MOVE_FILES)
 
 
 with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
