@@ -28,6 +28,7 @@ METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
+MOVE_FILES = False
 
 
 ## Argument Parsing and Setup
