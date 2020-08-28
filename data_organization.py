@@ -28,7 +28,6 @@ METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
-MOVE_FILES = True
 
 
 ## Argument Parsing and Setup
@@ -49,7 +48,7 @@ def parse_args():
                         required=True)
     parser.add_argument('-m',
                         "--move_files",
-                        help="Enter False to not move files (generates report)",
+                        help="Enter True to move files (otherwise just generates report)",
                         required=False)
     return parser.parse_args()
 
@@ -393,8 +392,8 @@ MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
 DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)))
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
-if args.move_files == False:
-    MOVE_FILES = False
+if args.move_files:
+    MOVE_FILES = True
 print(MOVE_FILES)
 
 
