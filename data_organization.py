@@ -224,7 +224,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
                     writer.writerow(row'''
         if not dup:
             local_ids = get_local_ids(first_id, misc_id, ref_list)
-            print(local_ids)
+            #print(local_ids)
             move_list.append({
                 "source location": str(os.getcwd()) + "/" + str(elem),
                 "destination": file_path,
