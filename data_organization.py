@@ -356,7 +356,14 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
 def update_filename(ref_list, filename, misc_id):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            if misc_id in inst["local"]
+            if misc_id in inst["local_ids"]:
+                if "filename" in inst.keys():
+                    inst["filename"].append(filename)
+                else:
+                    inst["filename"] = [filename]
+    with open(REF_TABLE, "w") as rt:
+        ref_json = json.load(rt)
+        json.dump(ref_list)
 
 def is_datafile(filename):
     for ext in ACCEPTED_EXTENSIONS:
