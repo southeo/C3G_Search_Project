@@ -318,43 +318,46 @@ def move_metadata(elem, move_list):
 
 def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
     missing_list = []
-    for elem_str in os.listdir():
-        elem = Path(elem_str)
-        ihec_ids = []
-        misc_id = []
-        if os.path.isfile(elem) and is_datafile(elem_str):
-            misc_id = fetch_id(elem_str)  # get primary/secondary id from the filename, parent directory, or onsite list
-            if misc_id:  # if there is a match for secondary id
-                ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
-                if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
-                    move_list = move_files(ihec_ids, elem, move_list, misc_id, ref_list)
-                else:  # If there is no match between ids, move the file into the extra file sub directory
-                    with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                        # Write to Rejected list:
-                        row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
-                        writer = csv.writer(rj_lst)
-                        writer.writerow(row)
-                    sub_dir = get_sub_dir(misc_id, ref_list)
-                    move_list = move_extras(sub_dir, elem, misc_id)
-                    update_filename(ref_list, elem_str, misc_id)
-        elif os.path.isdir(elem):  # Recursively enter directories
-            saved_wd = os.getcwd()
-            new_wd = os.path.join(saved_wd, elem)
-            os.chdir(new_wd)
-            move_list = scan_through(ref_list, move_list)
-            os.chdir(saved_wd)
-        elif is_metadatafile(elem_str):
-            move_list = move_metadata(elem_str, move_list)
-        else:  # If elem is not a directory or appropriate file, add it to the rejected list
-            rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
-            with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                row = [elem, "", rejected_ext, "Incorrect file type", os.getcwd()]
-                writer = csv.writer(rj_lst)
-                writer.writerow(row)
-    return move_list
+    with open(REF_TABLE) as rt:
+        ref_table = json.load(rt)
+        for elem_str in os.listdir():
+            elem = Path(elem_str)
+            ihec_ids = []
+            misc_id = []
+            if os.path.isfile(elem) and is_datafile(elem_str):
+                misc_id = fetch_id(elem_str)  # get primary/secondary id from the filename, parent directory, or onsite list
+                if misc_id:  # if there is a match for secondary id
+                    ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
+                    if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
+                        move_list = move_files(ihec_ids, elem, move_list, misc_id, ref_list)
+                    else:  # If there is no match between ids, move the file into the extra file sub directory
+                        with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                            # Write to Rejected list:
+                            row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
+                            writer = csv.writer(rj_lst)
+                            writer.writerow(row)
+                        sub_dir = get_sub_dir(misc_id, ref_list)
+                        move_list = move_extras(sub_dir, elem, misc_id)
+                        update_filename(rt, elem_str, misc_id)
+            elif os.path.isdir(elem):  # Recursively enter directories
+                saved_wd = os.getcwd()
+                new_wd = os.path.join(saved_wd, elem)
+                os.chdir(new_wd)
+                move_list = scan_through(ref_list, move_list)
+                os.chdir(saved_wd)
+            elif is_metadatafile(elem_str):
+                move_list = move_metadata(elem_str, move_list)
+            else:  # If elem is not a directory or appropriate file, add it to the rejected list
+                rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
+                with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                    row = [elem, "", rejected_ext, "Incorrect file type", os.getcwd()]
+                    writer = csv.writer(rj_lst)
+                    writer.writerow(row)
+        return move_list
 
 
-def update_filename(ref_list, filename, misc_id):
+def update_filename(rt, filename, misc_id):
+    ref_list = json.load(rt)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if misc_id in inst["local_ids"]:
@@ -415,7 +418,6 @@ if args.move_files:
 
 with open(REF_TABLE) as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
     os.chdir(args.source_dir)
-    ref_table = json.load(rt)
     move_list = []
     move_list = scan_through(ref_table, move_list)
     json.dump(move_list, mv_lst, indent=2)
