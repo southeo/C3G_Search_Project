@@ -368,8 +368,8 @@ def update_filename(rt, filename, misc_id):
             for entry in inst:
                 print(entry)
             print('\n')
-    with open(REF_TABLE, "w") as rt:
-        ref_json = json.load(rt)
+    with open(REF_TABLE, "w") as rtw:
+        ref_json = json.load(rtw)
         json.dump(ref_list)
 
 def is_datafile(filename):
