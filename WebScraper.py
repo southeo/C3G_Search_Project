@@ -12,7 +12,7 @@ import datetime
 
 IHEC_PORTAL_URL = "https://www.ebi.ac.uk/vg/epirr/view/"  # must be cat'd with "all" or IHECRE ID
 remove_char_list = [',', '.', ';', '(', ')', '-', '/', '_', '\'', '\"']
-RAW_FILE = "EBI_Database_Raw.txt_" + str(date.today()) + ".txt"
+RAW_FILE = "EBI_Database_Raw.txt_2020-08-26.txt"     #"EBI_Database_Raw.txt_" + str(date.today()) + ".txt"
 
 def requests_retry_session(retries=3, backoff_factor=0.3, status_forcelist=(500, 502, 504), session=None, ):
     """Retry timeout requests"""
@@ -209,7 +209,7 @@ def age_in_years(age_list, divisor):
 
 
 def consolidate_age(data_file):
-    with open(data_file) as database_file:
+    with open(data_file, "r") as database_file:
         db_json = json.load(database_file)
 
         for elem in db_json["data"]:
@@ -340,4 +340,4 @@ def get_keyword_list(ebi_db):
 
 
 #parse_ihec_db()
-consolidate_all("EBI_Database_Consolidated_2020-08-26.txt")
+consolidate_all(RAW_FILE)
