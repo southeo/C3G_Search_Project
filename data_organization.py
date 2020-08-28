@@ -327,6 +327,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
                     move_list = move_files(ihec_ids, elem, move_list, misc_id, ref_list)
+                    update_filename(ref_list, elem_str, misc_id)
                 else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         # Write to Rejected list:
@@ -335,7 +336,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         writer.writerow(row)
                     sub_dir = get_sub_dir(misc_id, ref_list)
                     move_list = move_extras(sub_dir, elem, misc_id)
-                    update_filename(ref_list, elem_str, misc_id)
+
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
@@ -363,7 +364,7 @@ def update_filename(ref_list, filename, misc_id):
                 else:
                     inst["filename"] = [filename]
                 print("INST: ", inst, '\n')
-    print(misc_id, " updated")
+    print(misc_id, "updated")
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
