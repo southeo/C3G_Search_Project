@@ -27,6 +27,7 @@ def parse_args():
                         '--ref_table',
                         help="Reference table from EBI site",
                         required=True)
+
     return parser.parse_args()
 
 
