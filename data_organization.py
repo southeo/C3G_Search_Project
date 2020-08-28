@@ -366,7 +366,7 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"] = [filename]
                 pp.pprint(inst)
 
-    json.dump(ref_list)
+    json.dump(ref_list, ref_list, indent=4)
 
 def is_datafile(filename):
     for ext in ACCEPTED_EXTENSIONS:
