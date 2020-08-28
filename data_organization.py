@@ -356,9 +356,9 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
 
 def update_filename(ref_list, filename, misc_id):
     pp = pprint.PrettyPrinter(indent=2)
-    print(misc_id)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
+            print(misc_id, inst["local_ids"])
             if misc_id in inst["local_ids"]:
                 if "filename" in inst.keys():
                     inst["filename"].append(filename)
