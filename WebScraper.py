@@ -209,7 +209,7 @@ def age_in_years(age_list, divisor):
 
 
 def consolidate_age(data_file):
-    with open(data_file, 'r') as database_file:
+    with open(data_file) as database_file:
         db_json = json.load(database_file)
 
         for elem in db_json["data"]:
