@@ -357,15 +357,13 @@ def update_filename(ref_list, filename, misc_id):
     pp = pprint.PrettyPrinter(indent=2)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            if "local_ids" in inst.keys():
-                print(inst["local_ids"])
-            if misc_id in inst["local_ids"]:
+            if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
                 if "filename" in inst.keys():
                     inst["filename"].append(filename)
                 else:
                     inst["filename"] = [filename]
                 print("INST: ", inst, '\n')
-
+    print(misc_id, " updated")
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
