@@ -350,6 +350,7 @@ def update_filename(ref_list, filename, misc_id):
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
+
 def is_datafile(filename):
     for ext in ACCEPTED_EXTENSIONS:
         if filename.endswith(ext):
