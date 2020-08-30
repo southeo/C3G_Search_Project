@@ -304,7 +304,7 @@ def move_metadata(elem, move_list):
         md_path = os.path.join(DEST_DIR, misc_id)
     else:
         md_path = DEST_DIR_METADATA
-    # shutil.copyfile(elem, md_path)
+    if MOVE_FILES: shutil.copyfile(elem, md_path)
     move_list.append({
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,

@@ -33,6 +33,7 @@ with open("Duplicate_list_all.txt") as dup, open("False_dups.txt", "r+") as fd:
         if not is_same_hash(file1, file2):
             new_row = [file1, file2]
             writer.writerow(new_row)
+            print("False dups", file1, '\t', file2)
 
 
 

@@ -36,9 +36,6 @@ def check_args(args):
     assert (os.path.isfile(args.query_table)), "Query table not found"
     assert (os.path.isfile(args.ref_table)), "Reference table file not found"
 
-    # first step: optional, update ref table from ebi website (keep old version)
-    # Second step: search
-
 
 def get_search_list(query_table):
     # reads query table and collects search functions
@@ -143,6 +140,7 @@ def fetch_id(filename):
 
 
 def get_location(scope, search_list, val_list):
+    # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
     ihec_list = []
 
@@ -150,22 +148,21 @@ def get_location(scope, search_list, val_list):
         "parameters": [],
         "data": []
     }
-
+    # Gather search parameters to specify which search this is displaying
     for query in search_list:
         param_string = str(query) + " = " + val_list[idx]
         results["parameters"].append(param_string)
         idx += 1
 
+    # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
+        #TODO: change this path to its permanent path
         ihec_path = "/genfs/projects/IHEC/soulaine_test/FinderProject/demo_search/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    misc_id = fetch_id(str(filename))  # Matches filename to instance
-
-                    if (misc_id == inst["primary_id"] or misc_id in inst["egar_id"] or misc_id in inst["egaf_id"]):
-
+                    if str(filename) == inst["filename"]:
                         if elem["ihec_id"] not in ihec_list:
                             if "read1" in str(filename):
                                 results["data"].append({
