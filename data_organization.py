@@ -27,7 +27,7 @@ DEST_DIR_EXTRA = "Extra_files"
 DEST_DIR_METADATA = "Archived_metadata"
 METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
-REJECTED_LIST = "Rejected_file_list.txt"
+REJECTED_LIST = "Rejected_file_list_1.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
 MOVE_FILES = False
 
@@ -203,9 +203,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     fp = os.path.join(file_path, str(elem))
     if not os.path.exists(fp):
         # Move file to its new home
-        if (MOVE_FILES): shutil.copyfile(elem, file_path)
-
-        # Duplicate checking -> only use when files have yet to be copied
+        if MOVE_FILES: shutil.copyfile(elem, file_path)
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
         local_ids = get_local_ids(first_id, misc_id, ref_list)
@@ -218,7 +216,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
             "local_ids": local_ids
             })
 
-    elif not is_same_hash(fp, elem):  # If files are different but have same name
+    '''elif not is_same_hash(fp, elem):  # If files are different but have same name
         local_ids = get_local_ids(first_id, misc_id, ref_list)
         move_list.append({
             "source location": fp,
@@ -236,7 +234,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
                 fp = os.path.join(file_path, elem)
                 copy += 1  # Increment copy number until you have a unique name
             shutil.copyfile(elem, file_path)
-
+    '''
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
@@ -396,7 +394,7 @@ if args.move_files:
     MOVE_FILES = args.move_files
 
 
-with open('EBI_Database_Consolidated_2020-08-28.txt') as rt, open("Move_List_with_egaf.txt", 'w') as mv_lst:
+with open('EBI_Database_Consolidated_2020-08-28.txt') as rt, open("move_list_latest.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
