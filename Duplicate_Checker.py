@@ -20,6 +20,7 @@ def is_same_hash(path1, path2):
     hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
     hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
     print(hash1, '\t', hash2)
+    print(hash1 == hash2)
     return hash1 == hash2
 
 
