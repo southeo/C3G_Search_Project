@@ -336,7 +336,6 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         writer.writerow(row)
                     sub_dir = get_sub_dir(misc_id, ref_list)
                     move_list = move_extras(sub_dir, elem, misc_id)
-
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
@@ -363,6 +362,7 @@ def update_filename(ref_list, filename, misc_id):
                     inst["filename"].append(filename)
                 else:
                     inst["filename"] = [filename]
+                print(inst["filename"])
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
