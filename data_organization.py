@@ -162,9 +162,6 @@ def fetch_id(filename):
     return retval
 
 
-
-
-
 # Hash functions:
 def hash_bytestr_iter(bytesiter, hasher, ashexstr=False):
     for block in bytesiter:
@@ -206,50 +203,40 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     fp = os.path.join(file_path, str(elem))
     if not os.path.exists(fp):
         # Move file to its new home
-        # shutil.copyfile(elem, file_path)
+        if (MOVE_FILES): shutil.copyfile(elem, file_path)
 
         # Duplicate checking -> only use when files have yet to be copied
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
-        dup = False
-        '''
-        for item in move_list:
-            if str(elem) == item["file_name"]:
-                dup = True
-                #print(elem, "\n \t h1 ", hash1, "\n \t h2 ", hash2)
-                #if hash1 != hash2:  # If files are different
-                with open(DUPLICATE_LIST, "a") as dp_lst:
-                    row = [elem, os.getcwd(), item["source location"]]
-                    writer = csv.writer(dp_lst)
-                    writer.writerow(row'''
-        if not dup:
-            local_ids = get_local_ids(first_id, misc_id, ref_list)
-            #print(local_ids)
-            move_list.append({
-                "source location": str(os.getcwd()) + "/" + str(elem),
-                "destination": file_path,
-                "other versions": ihec_ids,
-                "move_type": "data file",
-                "file_name": str(elem),
-                "local_ids": local_ids
+        local_ids = get_local_ids(first_id, misc_id, ref_list)
+        move_list.append({
+            "source location": str(os.getcwd()) + "/" + str(elem),
+            "destination": file_path,
+            "other versions": ihec_ids,
+            "move_type": "data file",
+            "file_name": str(elem),
+            "local_ids": local_ids
             })
-    '''
+
     elif not is_same_hash(fp, elem):  # If files are different but have same name
+        local_ids = get_local_ids(first_id, misc_id, ref_list)
         move_list.append({
             "source location": fp,
             "destination": file_path,
             "other versions": ihec_ids,
             "move_type": "data file, duplicate name",
-            "file_name": str(elem)
+            "file_name": str(elem),
+            "local_ids": local_ids
+
         })
-        # TODO: get path of false duplicate files
-        copy = 1
-        while os.path.exists(fp):
-            os.rename(elem, str(elem + "-" + copy))
-            fp = os.path.join(file_path, elem)
-            copy += 1  # Increment copy number until you have a unique name
-        # shutil.copyfile(elem, file_path)
-'''
+        if MOVE_FILES:
+            copy = 1
+            while os.path.exists(fp):
+                os.rename(elem, str(elem + "-" + copy))
+                fp = os.path.join(file_path, elem)
+                copy += 1  # Increment copy number until you have a unique name
+            shutil.copyfile(elem, file_path)
+
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
@@ -357,12 +344,10 @@ def update_filename(ref_list, filename, misc_id):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
-                #print(filename)
                 if "filename" in inst.keys():
-                    inst["filename"].append(filename)
+                    inst["filename"].append((filename, misc_id))
                 else:
-                    inst["filename"] = [filename]
-                print(inst["filename"])
+                    inst["filename"] = [(filename, misc_id)]
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
