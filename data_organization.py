@@ -357,7 +357,7 @@ def update_filename(ref_list, filename, misc_id):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
-                print(filename)
+                #print(filename)
                 if "filename" in inst.keys():
                     inst["filename"].append(filename)
                 else:
