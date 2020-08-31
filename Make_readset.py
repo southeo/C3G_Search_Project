@@ -83,9 +83,8 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
         # Produce a new readset file per search result
 
         with open(readset_file, 'w') as outfile:
-            writer = csv.writer(outfile)
+            writer = csv.writer(outfile, delimeter='\t')
             writer.writerow(HEADING)
-            print(writer.dialect)
             row = []
             this_run_count = 0
             for results in elem["data"]:
