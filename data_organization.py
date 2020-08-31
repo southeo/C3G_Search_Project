@@ -202,7 +202,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     fp = os.path.join(file_path, str(elem))
     if not os.path.exists(fp):
         # Move file to its new home
-        if MOVE_FILES: shutil.copyfile(elem, file_path)
+        if MOVE_FILES: shutil.copyfile(elem, fp)
         # Once files have been copied, you can check the file path directly, instead of referencing the move_list
 
         local_ids = get_local_ids(first_id, misc_id, ref_list)
