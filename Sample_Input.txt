@@ -1,5 +1,5 @@
 ihec_id	assay_type	archive
-	rna_seq	
-		ega
-	Bisulfite-Seq
-IHECRE00000353		
+    rna_seq
+        ega
+    Bisulfite-Seq
+IHECRE00000353
