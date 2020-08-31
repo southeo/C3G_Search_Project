@@ -97,16 +97,16 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
                     filename = path1.split('/')[-1]
                     readset = get_misc_id(sample, filename, ref_table)
                     if path2:
+                        print(path2)
                         run_type = "PAIRED_END"
-                        fastq1 = results["r1_path"]
-                        fastq2 = results["r2_path"]
-                        filename = results["r2_path"]
+                        fastq1 = path1
+                        fastq2 = path2
                     else:
                         run_type = "SINGLE_END"
                         if "fastq" in path1:
-                            fastq1 = results["r1_path"]
+                            fastq1 = path1
                         else:
-                            bam = results["r1_path"]
+                            bam = path1
 
                     run = "run" + str(this_run_count)
                     this_run_count, sample_run_mapping = get_run(sample, this_run_count, sample_run_mapping)
