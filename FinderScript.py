@@ -209,7 +209,7 @@ def get_location(scope, search_list, val_list):
 args = parse_args()
 check_args(args)
 results = []
-with open(args.query_table) as qt, open(args.ref_table) as rt:
+with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
     ref_table_json = json.load(rt)
     # get_location(ref_table_json["data"][10])
     query_table_csv = csv.reader(qt, delimiter='\t')
