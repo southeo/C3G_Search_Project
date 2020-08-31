@@ -140,9 +140,10 @@ def fetch_id(filename):
 
 
 def match_files(filename, inst):
-    for tuple in inst['filename']:
-        if str(filename) in tuple:
-            return True
+    if 'filename' in inst.keys():
+        for tuple in inst['filename']:
+            if str(filename) in tuple:
+                return True
     return False
 
 
