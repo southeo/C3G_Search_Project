@@ -180,7 +180,8 @@ def get_location(scope, search_list, val_list):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
-                                "r1_path": (str(ihec_path) + "/" + str(filename))
+                                "r1_path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": str(filename)
                             })
                             ihec_list.append(elem["ihec_id"])
 
@@ -188,14 +189,16 @@ def get_location(scope, search_list, val_list):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
-                                "r2_path": (str(ihec_path) + "/" + str(filename))
+                                "r2_path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": str(filename)
                             })
                             ihec_list.append(elem["ihec_id"])
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
-                                "path": (str(ihec_path) + "/" + str(filename))
+                                "path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": str(filename)
                             })
                             ihec_list.append(elem["ihec_id"])
                     else:

@@ -52,6 +52,19 @@ def get_run(ihec_id, this_run_count, sample_run_mapping):
     return this_run_count, sample_run_mapping
 
 
+def get_paths(results):
+    if "path" in results.keys():
+        path1 = results["path"]
+        path2 = None
+    elif "r2_path" in results.keys:
+        path1 = results["r1_path"]
+        path2 = results["r2_path"]
+    elif "r1_path" in results.keys():
+        path1 = results["r1_path"]
+        path2 = None
+    return path1, path2
+
+
 args = parse_args()
 check_args(args)
 
@@ -77,20 +90,24 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
                 fastq1 = '\t'
                 fastq2 = '\t'
                 bam = '\t'
-                if "bam" in results["r1_path"] or "fastq" in results["r1_path"]:  #if file is correct type
+                path1, path2 = get_paths(results)
+                if "bam" in path1 or "fastq" in path1:  #if file is correct type
                     this_run_count += 100
                     sample = results["ihec_id"]
-                    readset = get_misc_id(sample, ref_table)
-                    if "r2_path" in results.keys():
+                    filename = path1.split('/')[-1]
+                    readset = get_misc_id(sample, filename, ref_table)
+                    if path2:
                         run_type = "PAIRED_END"
                         fastq1 = results["r1_path"]
                         fastq2 = results["r2_path"]
+                        filename = results["r2_path"]
                     else:
                         run_type = "SINGLE_END"
-                        if "fastq" in results["r1_path"]:
+                        if "fastq" in results["r1_path"] or 'fastq' in results["path"]:
                             fastq1 = results["r1_path"]
                         else:
                             bam = results["r1_path"]
+
                     run = "run" + str(this_run_count)
                     this_run_count, sample_run_mapping = get_run(sample, this_run_count, sample_run_mapping)
                     # TODO: figure out best way to take in user input for adapters. One for all search results? One for each search?
@@ -98,6 +115,7 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
                     adapter2 = "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
                     row = [sample, readset, '\t', run_type, this_run_count, lane_count,
                            adapter1, adapter2, '\t', '\t', fastq1, fastq1, bam]
+                    writer.writerow(row)
 
 
 
