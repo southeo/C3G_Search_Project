@@ -23,8 +23,8 @@ def parse_args():
 
 def check_args(args):
     # make sure directories exist
-    assert (os.path.isdir(args.search_results)), "Search results not found"
-    assert (os.path.isdir(args.search_results)), "Metadata file not found"
+    assert (os.path.isfile(args.search_results)), "Search results not found"
+    assert (os.path.isfile(args.search_results)), "Metadata file not found"
 
 
 def get_misc_id(ihec_id, filename, ref_table):
