@@ -1,5 +1,5 @@
 #!/bin/sh
-#SBATCH --time=10:00:00
+#SBATCH --time=18:00:00
 #SBATCH --account=def-bourqueg
 chmod +x Move_List_with_egaf.txt
 chmod +x Duplicate_list_all.txt
