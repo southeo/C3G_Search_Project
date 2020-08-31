@@ -22,7 +22,7 @@ def is_same_hash(path1, path2):
     hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
     filename = path2.split('/')[-1]
     dup_reader = csv.reader(dup, delimiter=',')
-    if hash1 != hash2:
+    if hash1 == hash2:
         file = path1.split('/')[-1]
         new_row = [file, path1, path2]
         output.put(new_row)
