@@ -167,7 +167,7 @@ def get_location(scope, search_list, val_list):
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
         #TODO: change this path to its permanent path
-        ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home" + elem["ihec_id"][0:14] + "/" + \
+        ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         print(ihec_path)
         if path.exists(ihec_path):
