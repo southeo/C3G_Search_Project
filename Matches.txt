@@ -12,7 +12,7 @@
         },
         {
             "ihec_id": "ihecre00002724.1",
-            "r1_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz"
+            "r1_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz",
             "r2_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz"
 
         }
