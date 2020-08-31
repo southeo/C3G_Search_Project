@@ -64,7 +64,7 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
 
     for elem in search_results:
         search_count += 1
-        readset_file = str("Readset_" + str(date.today()) + "_Search_" + search_count + ".txt")
+        readset_file = "Readset_" + str(date.today()) + "_Search_" + str(search_count) + ".txt"
         lane_count += 1
         sample_run_mapping = []
         # Produce a new readset file per search result
