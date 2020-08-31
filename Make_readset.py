@@ -24,7 +24,7 @@ def parse_args():
 def check_args(args):
     # make sure directories exist
     assert (os.path.isfile(args.search_results)), "Search results not found"
-    assert (os.path.isfile(args.search_results)), "Metadata file not found"
+    assert (os.path.isfile(args.reference_table)), "Metadata file not found"
 
 
 def get_misc_id(ihec_id, filename, ref_table):
@@ -54,7 +54,7 @@ def get_run(ihec_id, this_run_count, sample_run_mapping):
 args = parse_args()
 check_args(args)
 
-with open(args.results_table, 'r') as sr, open(args.reference_table, 'r') as rt:
+with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt:
     search_results = json.load(sr)
     ref_table = json.load(rt)
 
