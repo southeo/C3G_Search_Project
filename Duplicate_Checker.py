@@ -30,10 +30,15 @@ def is_same_hash(path1, path2):
 
 with open("Duplicate_list_all.txt") as dup:
     dup_csv_reader = csv.reader(dup)
+    dup_list1 = []
+    dup_list2 = []
+    for row in dup_csv_reader:
+        dup_list1.append(os.path.join(row[1], row[0]))
+        dup_list1.append(row[2])
 
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
-processes = [mp.Process(target=is_same_hash, args=((os.path.join(row[1], row[0])), row[2])) for row in dup_csv_reader]
+processes = [mp.Process(target=is_same_hash, args=(dup_list1, dup_list2)) for dup1, dup2 in zip(dup_list1, dup_list2)]
 
 for p in processes:
     p.start()
