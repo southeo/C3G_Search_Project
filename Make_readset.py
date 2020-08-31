@@ -103,7 +103,7 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
                         filename = results["r2_path"]
                     else:
                         run_type = "SINGLE_END"
-                        if "fastq" in results["r1_path"] or 'fastq' in results["path"]:
+                        if "fastq" in path1:
                             fastq1 = results["r1_path"]
                         else:
                             bam = results["r1_path"]
