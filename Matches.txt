@@ -1,0 +1,26 @@
+[
+    {
+        "parameters": [
+            "assay_type = rna_seq"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "archive = ega"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "assay_type = bisulfite-seq"
+        ],
+        "data": []
+    },
+    {
+        "parameters": [
+            "ihec_id = ihecre00000353"
+        ],
+        "data": []
+    }
+]
