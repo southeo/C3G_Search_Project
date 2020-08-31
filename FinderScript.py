@@ -141,6 +141,7 @@ def fetch_id(filename):
 
 def match_files(filename, elem):
     for inst in elem["instances"]:
+        print(inst.keys())
         if 'filename' in inst.keys():
             print("associated files: ", inst['filename'])
             for tuple in inst['filename']:
