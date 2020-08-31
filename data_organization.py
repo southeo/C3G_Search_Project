@@ -390,7 +390,7 @@ SOURCE_DIR = os.path.abspath(args.source_dir)
 DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_EXTRA))
 DEST_DIR_METADATA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_METADATA))
-REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
+#REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
@@ -399,9 +399,8 @@ JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
 
-print(REF_TABLE)
 
-with open(REF_TABLE) as rt, open("move_list_latest.txt", 'w') as mv_lst:
+with open('EBI_Databse_Consolidated_Copy') as rt, open("move_list_latest.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
