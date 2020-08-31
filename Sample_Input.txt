@@ -2,4 +2,5 @@ ihec_id	assay_type	archive
 	rna_seq	
 		ega
 	Bisulfite-Seq
+IHECRE00000308
 IHECRE00000353		
