@@ -27,14 +27,12 @@ def is_same_hash(path1, path2):
         new_row = [file, path1, path2]
         output.put(new_row)
 
-def setup_func(row0, row1, row2):
-    return os.path.join(row1, row0), row2
 
 with open("Duplicate_list_all.txt") as dup:
 
     pool = mp.Pool(mp.cpu_count())
     output = mp.Queue()
-    processes = [mp.Process(target=is_same_hash(), args=(setup_func(row[0], row[1], row[2]))) for row in dup]
+    processes = [mp.Process(target=is_same_hash(), args=((os.path.join(row[1], row[0])), row[2])) for row in dup]
 
     for p in processes:
         p.start()
