@@ -20,10 +20,9 @@ def file_as_blockiter(afile, blocksize=65536):
 def is_same_hash(path1, path2):
     hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
     hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
-    filename = path2.split('/')[-1]
+    filename = path1.split('/')[-1]
     if hash1 != hash2:
-        file = path1.split('/')[-1]
-        new_row = [file, path1, path2]
+        new_row = [filename, path1, path2]
         output.put(new_row)
     print("is same hash? ", hash1 == hash2)
 
