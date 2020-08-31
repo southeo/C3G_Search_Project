@@ -36,13 +36,12 @@ with open("Duplicate_list_all.txt") as dup:
         dup_list1.append(os.path.join(row[1], row[0]))
         dup_list2.append(row[2])
 
-pool = mp.Pool(mp.cpu_count())
-output = mp.Queue()
 for dup in dup_list1:
     print(dup)
+pool = mp.Pool(mp.cpu_count())
+output = mp.Queue()
 
 
-'''
 processes = [mp.Process(target=is_same_hash, args=(dup1, dup2)) for dup1, dup2 in zip(dup_list1, dup_list2)]
 
 for p in processes:
@@ -53,5 +52,3 @@ for p in processes:
 
 results = [output.get() for p in processes]
 print(results)
-
-'''
