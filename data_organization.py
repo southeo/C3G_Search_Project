@@ -353,7 +353,7 @@ def update_filename(ref_list, filename, misc_id):
                 else:
                     inst["filename"] = [(filename, misc_id)]
 
-    with open('EBI_Databse_Consolidated_Copy.txtK', 'w') as rt:
+    with open('EBI_Databse_Consolidated_Copy.txt', 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
 
