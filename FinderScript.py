@@ -140,7 +140,7 @@ def fetch_id(filename):
 
 
 def match_files(filename, inst):
-    print("to match: ", filename)
+    print("inst keys: ", inst.keys())
     if 'filename' in inst.keys():
         print("associated files: ", inst['filename'])
         for tuple in inst['filename']:
