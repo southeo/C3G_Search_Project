@@ -396,8 +396,9 @@ JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
 
+print(REF_TABLE)
 
-with open('EBI_Database_Consolidated_2020-08-28.txt') as rt, open("move_list_latest.txt", 'w') as mv_lst:
+with open(REF_TABLE) as rt, open("move_list_latest.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
