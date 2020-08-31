@@ -4,11 +4,11 @@
     "data": [
         {
             "ihec_id": "ihecre00002725.2",
-            "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318873_NS612_ACAGTGGT_L002_R1_003.fastq.gz",
+            "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318873_NS612_ACAGTGGT_L002_R1_003.fastq.gz"
         },
         {
             "ihec_id": "ihecre00002725.2",
-            "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318880_NS613_GCCAATGT_L005_R1_003a.fastq.gz"
+            "path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318880_NS613_GCCAATGT_L005_R1_003a.fastq.gz"
         }
         ]
     }
