@@ -56,7 +56,7 @@ def get_paths(results):
     if "path" in results.keys():
         path1 = results["path"]
         path2 = None
-    elif "r2_path" in results.keys:
+    elif "r2_path" in results.keys():
         path1 = results["r1_path"]
         path2 = results["r2_path"]
     elif "r1_path" in results.keys():
