@@ -400,7 +400,7 @@ if args.move_files:
     MOVE_FILES = args.move_files
 
 
-with open('EBI_Databse_Consolidated_Copy') as rt, open("move_list_latest.txt", 'w') as mv_lst:
+with open('EBI_Databse_Consolidated_Copy.txt') as rt, open("move_list_latest.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
