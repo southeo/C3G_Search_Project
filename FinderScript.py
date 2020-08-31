@@ -139,12 +139,13 @@ def fetch_id(filename):
     return (filename[idx:idx + 15])
 
 
-def match_files(filename, inst):
-    if 'filename' in inst.keys():
-        print("associated files: ", inst['filename'])
-        for tuple in inst['filename']:
-            if str(filename) in tuple:
-                return True
+def match_files(filename, elem):
+    for inst in elem["instances"]:
+        if 'filename' in inst.keys():
+            print("associated files: ", inst['filename'])
+            for tuple in inst['filename']:
+                if str(filename) in tuple:
+                    return inst
     return False
 
 
@@ -169,42 +170,43 @@ def get_location(scope, search_list, val_list):
         ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
-            for inst in elem["instances"]:  # Cycle through instances of each match
-                for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    if match_files(filename, inst):
-                        if elem["ihec_id"] not in ihec_list:
-                            if "read1" in str(filename):
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "is live": elem["is live version?"],
-                                    "r1_path": (str(ihec_path) + "/" + str(filename))
-                                })
-                                ihec_list.append(elem["ihec_id"])
+            #for inst in elem["instances"]:  # Cycle through instances of each match
+            for filename in os.listdir(ihec_path):  # Cycle through files in directory
+                inst = match_files(filename, elem)
+                if inst:
+                    if elem["ihec_id"] not in ihec_list:
+                        if "read1" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "is live": elem["is live version?"],
+                                "r1_path": (str(ihec_path) + "/" + str(filename))
+                            })
+                            ihec_list.append(elem["ihec_id"])
 
-                            elif "read2" in str(filename):
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "is live": elem["is live version?"],
-                                    "r2_path": (str(ihec_path) + "/" + str(filename))
-                                })
-                                ihec_list.append(elem["ihec_id"])
-                            else:
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "is live": elem["is live version?"],
-                                    "path": (str(ihec_path) + "/" + str(filename))
-                                })
-                                ihec_list.append(elem["ihec_id"])
+                        elif "read2" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "is live": elem["is live version?"],
+                                "r2_path": (str(ihec_path) + "/" + str(filename))
+                            })
+                            ihec_list.append(elem["ihec_id"])
                         else:
-                            for res in results["data"]:
-                                if elem["ihec_id"] == res["ihec_id"]:
-                                    ordered_keys = ["ihec_id", "is live", "r1_path", "r2_path"]
-                                    if "read1" in str(filename):
-                                        res["r1_path"] = (str(ihec_path) + "/" + str(filename))
-                                        res = {k: res[k] for k in ordered_keys}
-                                    elif "read2" in str(filename):
-                                        res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-                                        res = {k: res[k] for k in ordered_keys}
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "is live": elem["is live version?"],
+                                "path": (str(ihec_path) + "/" + str(filename))
+                            })
+                            ihec_list.append(elem["ihec_id"])
+                    else:
+                        for res in results["data"]:
+                            if elem["ihec_id"] == res["ihec_id"]:
+                                ordered_keys = ["ihec_id", "is live", "r1_path", "r2_path"]
+                                if "read1" in str(filename):
+                                    res["r1_path"] = (str(ihec_path) + "/" + str(filename))
+                                    res = {k: res[k] for k in ordered_keys}
+                                elif "read2" in str(filename):
+                                    res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+                                    res = {k: res[k] for k in ordered_keys}
     return results
 
 
