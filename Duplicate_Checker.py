@@ -41,7 +41,7 @@ for dup in dup_list1:
 output = mp.Queue()
 
 
-processes = [ mp.Process(target=is_same_hash, args=(dup1, dup2)) for dup1, dup2 in zip(dup_list1, dup_list2) ]
+processes = [mp.Process(target=is_same_hash, args=(dup1, dup2)) for dup1, dup2 in zip(dup_list1, dup_list2)]
 
 for p in processes:
     p.start()
