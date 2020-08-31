@@ -140,9 +140,8 @@ def fetch_id(filename):
 
 
 def match_files(filename, inst):
-    print("inst keys: ", inst.keys())
     if 'filename' in inst.keys():
-        print("associated files: ", inst['filename'])
+        #print("associated files: ", inst['filename'])
         for tuple in inst['filename']:
             if str(filename) in tuple:
                 return True
@@ -169,8 +168,8 @@ def get_location(scope, search_list, val_list):
         #TODO: change this path to its permanent path
         ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
-        print(ihec_path)
         if path.exists(ihec_path):
+            print(ihec_path)
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if match_files(filename, inst):
