@@ -36,6 +36,8 @@ with open("Duplicate_list_all.txt") as dup:
         dup_list2.append(row[2])
     print(len(dup_list1), len(dup_list2))
 
+print("outside file open: ", len(dup_list1), len(dup_list2))
+
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
 list(zip(dup_list1, dup_list2))
