@@ -1,8 +1,9 @@
 import csv
-import json
+#import json
 import argparse
 import os
 from datetime import date
+import simplejson as json
 
 HEADING = ['Sample', 'Readset', 'Library', 'RunType', 'Run', 'Lane', 'Adapter1', 'Adapter2', 'QualityOffset', 'BED',
            'FASTQ1', 'FASTQ2', 'BAM']
