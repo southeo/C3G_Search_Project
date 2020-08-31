@@ -37,6 +37,7 @@ with open("Duplicate_list_all.txt") as dup:
 
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
+list(zip(dup_list1, dup_list2))
 processes = [mp.Process(target=is_same_hash, args=(dup_list1, dup_list2)) for dup1, dup2 in zip(dup_list1, dup_list2)]
 
 for p in processes:
