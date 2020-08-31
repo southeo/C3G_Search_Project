@@ -34,7 +34,7 @@ with open("Duplicate_list_all.txt") as dup:
     for row in dup_csv_reader:
         dup_list1.append(os.path.join(row[1], row[0]))
         dup_list2.append(row[2])
-    list(zip(dup_list1, dup_list2))
+    print(len(dup_list1), len(dup_list2))
 
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
