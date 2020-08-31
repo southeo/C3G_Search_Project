@@ -36,8 +36,6 @@ with open("Duplicate_list_all.txt") as dup:
         dup_list2.append(row[2])
 
 pool = mp.Pool(mp.cpu_count())
-
-
 output = mp.Queue()
 
 

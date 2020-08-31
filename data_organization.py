@@ -18,13 +18,12 @@ ACCEPTED_EXTENSIONS = [".bam", ".fastq", ".fastq.bz2", ".sam", ".gz", "fastq.bz"
 POTENTIAL_DELIMETERS = [".", "-", "_"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX", "DRX"]
 REF_TABLE = ""
-SLICE_FILES_LIST = "Slice_files.txt"
 JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
-DEST_DIR = ""
+DEST_DIR = "IHEC_Files"
 DEST_DIR_EXTRA = "Extra_files"
-DEST_DIR_METADATA = "Archived_metadata"
+DEST_DIR_METADATA = "Metadata/Archived_Metadata"
 METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
 MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list_1.txt"
@@ -260,6 +259,8 @@ def move_extras(sub_dir, elem, misc_id):
         sub_dir = "Other"
 
     extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
+    if not os.path.exists(extra_path):
+        os.mkdir(extra_path)
     try:
         os.mkdir(extra_path)
         extra_path = os.path.join(extra_path, misc_id)
