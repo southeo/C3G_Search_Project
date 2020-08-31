@@ -35,8 +35,6 @@ with open("Duplicate_list_all.txt") as dup:
         dup_list1.append(os.path.join(row[1], row[0]))
         dup_list2.append(row[2])
 
-for dup in dup_list1:
-    print(dup)
 # pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
 
