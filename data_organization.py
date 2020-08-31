@@ -353,7 +353,7 @@ def update_filename(ref_list, filename, misc_id):
                 else:
                     inst["filename"] = [(filename, misc_id)]
 
-    with open(REF_TABLE) as rt:
+    with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
 
