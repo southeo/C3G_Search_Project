@@ -271,7 +271,7 @@ def move_extras(sub_dir, elem, misc_id):
             os.mkdir(extra_path)
         except FileExistsError:
             pass
-    # shutil.copyfile(elem, extra_path)
+    if MOVE_FILES: shutil.copyfile(elem, os.path.join(extra_path, elem))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + str(elem),
         "destination": extra_path,
@@ -290,7 +290,7 @@ def move_metadata(elem, move_list):
         md_path = os.path.join(DEST_DIR, misc_id)
     else:
         md_path = DEST_DIR_METADATA
-    if MOVE_FILES: shutil.copyfile(elem, md_path)
+    if MOVE_FILES: shutil.copyfile(elem, os.path.join(md_path, elem))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,
