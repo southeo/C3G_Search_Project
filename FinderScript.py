@@ -139,6 +139,13 @@ def fetch_id(filename):
     return (filename[idx:idx + 15])
 
 
+def match_files(filename, inst):
+    for tuple in inst['filename']:
+        if str(filename) in tuple:
+            return True
+    return False
+
+
 def get_location(scope, search_list, val_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
@@ -162,7 +169,7 @@ def get_location(scope, search_list, val_list):
         if path.exists(ihec_path):
             for inst in elem["instances"]:  # Cycle through instances of each match
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    if str(filename) == inst["filename"]:
+                    if match_files(filename, inst):
                         if elem["ihec_id"] not in ihec_list:
                             if "read1" in str(filename):
                                 results["data"].append({
