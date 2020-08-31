@@ -114,6 +114,7 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
                     # TODO: figure out best way to take in user input for adapters. One for all search results? One for each search?
                     adapter1 = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
                     adapter2 = "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
+                    run_type = "run" + str(run_type)
                     row = [sample, readset, '\t', run_type, this_run_count, lane_count,
                            adapter1, adapter2, '\t', '\t', fastq1, fastq1, bam]
                     writer.writerow(row)
