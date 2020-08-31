@@ -1,6 +1,2 @@
 ihec_id project tisssue_keyword assay_type
-IHECRE00002160.1
-    blueprint
-        venous blood
-            chip-seq
-            rna-seq
+IHECRE00002160.
