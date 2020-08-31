@@ -236,7 +236,7 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
         for elem in scope["data"]:
-            print(elem)
+            print(elem, '\n')
         results.append(get_location(scope, query_list, val_list))
 
 
