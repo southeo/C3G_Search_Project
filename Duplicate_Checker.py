@@ -29,18 +29,19 @@ def is_same_hash(path1, path2):
 
 
 with open("Duplicate_list_all.txt") as dup:
+    dup_csv_reader = csv.reader(dup)
 
-    pool = mp.Pool(mp.cpu_count())
-    output = mp.Queue()
-    processes = [mp.Process(target=is_same_hash, args=((os.path.join(row[1], row[0])), row[2])) for row in dup]
+pool = mp.Pool(mp.cpu_count())
+output = mp.Queue()
+processes = [mp.Process(target=is_same_hash, args=((os.path.join(row[1], row[0])), row[2])) for row in dup_csv_reader]
 
-    for p in processes:
-        p.start()
+for p in processes:
+    p.start()
 
-    for p in processes:
-        p.join()
+for p in processes:
+    p.join()
 
-    results = [output.get() for p in processes]
-    print(results)
+results = [output.get() for p in processes]
+print(results)
 
 
