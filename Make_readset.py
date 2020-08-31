@@ -84,6 +84,7 @@ with open(args.search_results, 'r') as sr, open(args.reference_table, 'r') as rt
 
         with open(readset_file, 'w') as outfile:
             writer = csv.writer(outfile)
+            writer.writerow(HEADING)
             row = []
             this_run_count = 0
             for results in elem["data"]:
