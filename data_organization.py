@@ -349,9 +349,9 @@ def update_filename(ref_list, filename, misc_id):
         for inst in elem["instances"]:
             if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
                 if "filename" in inst.keys():
-                    inst["filename"].append((filename, misc_id))
+                    inst["filename"].append((filename, inst["primary_id"]))
                 else:
-                    inst["filename"] = [(filename, misc_id)]
+                    inst["filename"] = [(filename, inst["primary_id"])]
 
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
