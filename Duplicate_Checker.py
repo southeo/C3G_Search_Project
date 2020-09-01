@@ -17,14 +17,15 @@ def file_as_blockiter(afile, blocksize=65536):
             block = afile.read(blocksize)
 
 
-def is_same_hash(path1, path2):
-    hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
-    hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
-    filename = path1.split('/')[-1]
-    if hash1 != hash2:
-        new_row = [filename, path1, path2]
-        output.put(new_row)
-    print("is same hash? ", hash1 == hash2)
+def is_same_hash(path1, path2): #time benchmark, mem benchmark
+    with open(path1, 'rb') as p1, open(path2, 'rb') as p2:
+        hash1 = hash_bytestr_iter(file_as_blockiter(p1), hashlib.sha256())
+        hash2 = hash_bytestr_iter(file_as_blockiter(p2), hashlib.sha256())
+        filename = path1.split('/')[-1]
+        if hash1 != hash2:
+            new_row = [filename, path1, path2]
+            output.put(new_row)
+        print("is same hash? ", hash1 == hash2)
 
 
 with open("Duplicate_list_all.txt") as dup:
