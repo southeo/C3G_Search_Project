@@ -6,7 +6,7 @@ import os
 from os import path
 import json
 import copy
-from datetime import datetime
+from datetime import datetime, date
 
 INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_type",
                      "archive"]  # these searches are handled differently
