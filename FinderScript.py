@@ -211,7 +211,7 @@ def get_location(scope, search_list, val_list):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
                                     print("r2")
                                     #res = {k: res[k] for k in ordered_keys}
-                                print(res.keys())
+                                print(res)
 
     return results
 
