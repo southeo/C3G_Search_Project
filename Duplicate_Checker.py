@@ -27,7 +27,7 @@ def is_same_hash(paths):  #, output): #time benchmark, mem benchmark
         if hash1 != hash2:
             new_row = [filename, paths[0], paths[1]]
             return new_row
-        print("is same hash? ", hash1 == hash2)
+
 
 
 
