@@ -9,13 +9,13 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     missed_files = []
     for elem in matches:
         for data in matches["data"]:
-            print(data.keys())
             file_list.append(data["filename"])
 
 
     for elem in ref_table_json["data"]:
         for inst in elem["instances"]:
             if inst['assay_type'] == "rna_seq" and "filename" in inst.keys():
+                print(":p")
                 for file in inst["filename"]:
                     if file in file_list:
                         good_files.append(file)
