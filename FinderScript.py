@@ -169,6 +169,7 @@ def get_location(scope, search_list, val_list):
     with open("ihec_list.txt", 'r') as listy:
         for ihec in listy:
             missed_ihecs.append(ihec)
+
     missed_ihecs = set(missed_ihecs)
     print(missed_ihecs)
 
