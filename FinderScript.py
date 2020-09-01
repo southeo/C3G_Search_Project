@@ -13,6 +13,8 @@ KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_key
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 
 
+
+
 def help():
     print("help info")
 
@@ -163,6 +165,13 @@ def get_location(scope, search_list, val_list):
         results["parameters"].append(param_string)
         idx += 1
 
+    missed_ihecs = []
+    with open("ihec_list.txt", 'r') as listy:
+        for ihec in listy:
+            missed_ihecs.append(ihec)
+    missed_ihecs = set(missed_ihecs)
+    print(missed_ihecs)
+
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
         #TODO: change this path to its permanent path
@@ -203,6 +212,8 @@ def get_location(scope, search_list, val_list):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+        else:
+
     print(len(results["data"]))
     return results
 
