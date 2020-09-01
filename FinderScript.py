@@ -166,8 +166,10 @@ def get_location(scope, search_list, val_list):
         idx += 1
 
     missed_ihecs = []
+
     with open("ihec_list.txt", 'r') as listy:
-        for ihec in listy:
+        listreader = csv.reader(listy, delimiter='\n')
+        for ihec in listreader:
             missed_ihecs.append(ihec)
 
     missed_ihecs = set(missed_ihecs)
