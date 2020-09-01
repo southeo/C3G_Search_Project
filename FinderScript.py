@@ -209,7 +209,7 @@ def get_location(scope, search_list, val_list):
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
                                     res = {k: res[k] for k in ordered_keys}
-                                results["data"].append(res)
+
     return results
 
 
