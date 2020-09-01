@@ -7,6 +7,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     file_list = []
     good_files = []
     missed_files = []
+    missed_loc = []
     for elem in matches:
         for data in matches["data"]:
             file_list.append(data["filename"])
@@ -21,10 +22,11 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
                         good_files.append(file)
                     else:
                         missed_files.append(file)
+                        missed_loc = elem["ihec_id"]
     missed_files = set(missed_files)
-    print("Search Results: ", len(set(file_list)), ", Good Matches: ", len(set(good_files)), ", Missed files:", len(set(missed_files)))
+#    print("Search Results: ", len(set(file_list)), ", Good Matches: ", len(set(good_files)), ", Missed files:", len(set(missed_files)))
 
-    for missed in missed_files:
+    for missed in missed_loc:
         print(missed)
 
 
