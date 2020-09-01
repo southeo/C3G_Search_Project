@@ -170,6 +170,7 @@ def get_location(scope, search_list, val_list):
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
             #for inst in elem["instances"]:  # Cycle through instances of each match
+            print(os.listdir(ihec_path))
             for filename in os.listdir(ihec_path):  # Cycle through files in directory
                 inst = match_files(filename, elem)
                 if inst:
@@ -201,7 +202,7 @@ def get_location(scope, search_list, val_list):
                             ihec_list.append(elem["ihec_id"])
                     else:
                         for res in results["data"]:
-                            print("before: :", res["filename"])
+                            #print("before: :", res["filename"])
                             if elem["ihec_id"] == res["ihec_id"]:
                                 ordered_keys = ["ihec_id", "is live", "r1_path", "r2_path"]
                                 if "read1" in str(filename) :
@@ -212,7 +213,7 @@ def get_location(scope, search_list, val_list):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
                                     print("r2")
                                     #res = {k: res[k] for k in ordered_keys}
-                                print("after: ", res["filename"])
+                                #print("after: ", res["filename"])
 
     return results
 
