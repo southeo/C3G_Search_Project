@@ -173,8 +173,6 @@ def get_location(scope, search_list, val_list):
             missed_ihecs.append(ihec[0])
 
     missed_ihecs = set(missed_ihecs)
-    print(missed_ihecs)
-    print(len(missed_ihecs))
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
@@ -216,9 +214,10 @@ def get_location(scope, search_list, val_list):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+        elif elem["ihec_id"] in missed_ihecs:
+            print(ihec_path)
 
-
-    print(len(results["data"]))
+    #print(len(results["data"]))
     return results
 
 
