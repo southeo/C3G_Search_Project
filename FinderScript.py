@@ -151,7 +151,7 @@ def match_files(filename, elem):
     return False
 
 def get_match_file_name():
-    return "Matches_" + (datetime.datetime.now()).strftime("%H:%M:%S") + ".txt"
+    return "Search_Result_Matches_" + (datetime.datetime.now()).strftime("%H:%M:%S") + ".txt"
 
 
 def get_location(scope, search_list, val_list):
