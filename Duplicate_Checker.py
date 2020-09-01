@@ -17,7 +17,7 @@ def file_as_blockiter(afile, blocksize=65536):
             block = afile.read(blocksize)
 
 
-def is_same_hash(path1, path2): #time benchmark, mem benchmark
+def is_same_hash(path1, path2, output): #time benchmark, mem benchmark
     with open(path1, 'rb') as p1, open(path2, 'rb') as p2:
         hash1 = hash_bytestr_iter(file_as_blockiter(p1), hashlib.sha256())
         hash2 = hash_bytestr_iter(file_as_blockiter(p2), hashlib.sha256())
@@ -39,8 +39,7 @@ with open("Duplicate_list_all.txt") as dup:
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
 
-
-results = [pool.apply_async(is_same_hash, args=(dup1, dup2)) for dup1, dup2 in zip(dup_list1, dup_list2)]
+results = [pool.apply_async(is_same_hash, args=(dup1, dup2, output)) for dup1, dup2 in zip(dup_list1, dup_list2)]
 output = [p.get() for p in results]
 print(output)
 
