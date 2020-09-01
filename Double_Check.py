@@ -9,8 +9,8 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     missed_files = []
     for elem in matches:
         for data in matches["data"]:
-            print(data)
-            #file_list.append(data["filemname"])
+            print(data.keys())
+            #file_list.append(data["filename"])
 
 
     for elem in ref_table_json["data"]:
