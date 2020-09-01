@@ -63,6 +63,7 @@ def check_args(args):
 
 def get_ref_table(ref_dir):  # looks for most up to-date metadata file
     latest = date.min
+    latest_file = ""
     for elem in os.listdir(ref_dir):
         if "EBI_Database_Consolidated_" in elem:
             date_str = elem.replace("EBI_Database_Consolidated_", "")
