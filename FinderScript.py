@@ -14,6 +14,9 @@ KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_key
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 
 
+# Specify output*****
+# Requires python 3.7.3!
+
 
 
 def help():
@@ -176,13 +179,6 @@ def get_location(scope, search_list, val_list):
         idx += 1
 
     missed_ihecs = []
-
-    with open("ihec_list.txt", 'r') as listy:
-        listreader = csv.reader(listy, delimiter='\n')
-        for ihec in listreader:
-            missed_ihecs.append(ihec[0])
-
-    missed_ihecs = set(missed_ihecs)
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
