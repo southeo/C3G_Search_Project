@@ -151,7 +151,7 @@ def match_files(filename, elem):
     return False
 
 def get_match_file_name():
-    file_name = "Search_Result_Matches_" + date.today() + ".txt"
+    file_name = "Search_Result_Matches_" + str(date.today()) + ".txt"
     count = 1
     while os.path.exists(file_name):
         file_name = file_name[0:-4] + "_" + count + ".txt"
