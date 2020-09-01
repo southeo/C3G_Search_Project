@@ -6,6 +6,7 @@ import os
 from os import path
 import json
 import copy
+from datetime import datetime
 
 INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_type",
                      "archive"]  # these searches are handled differently
@@ -149,6 +150,9 @@ def match_files(filename, elem):
                     return inst
     return False
 
+def get_match_file_name():
+    return "Matches_" + (datetime.datetime.now()).strftime("%H:%M:%S") + ".txt"
+
 
 def get_location(scope, search_list, val_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
@@ -214,10 +218,8 @@ def get_location(scope, search_list, val_list):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-        else:
-            print(ihec_path)
 
-    #print(len(results["data"]))
+    print(len(results["data"]))
     return results
 
 
@@ -249,6 +251,5 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 scope = match_search_params(scope, search_param, val_to_match)
         results.append(get_location(scope, query_list, val_list))
 
-
-with open("Matches.txt", "w") as outfile:
+with open(get_match_file_name(), "w") as outfile:
     json.dump(results, outfile, indent=4)

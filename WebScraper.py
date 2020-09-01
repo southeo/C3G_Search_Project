@@ -285,6 +285,7 @@ def consolidate_all(data_file):
     link_ega_ids(egad_map, consolidated_file)
     consolidate_local_id(consolidated_file)
 
+
 def link_ega_ids(egad_map, consolidated_file):  # Links EGA IDs (EGAF, EGAX, EGAR, EGAD) to IHEC id
     with open(os.path.abspath(egad_map)) as egad_mtd, open(consolidated_file, "r") as ebi_db:
         egad_json = json.load(egad_mtd)
@@ -339,5 +340,5 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-#parse_ihec_db()
+parse_ihec_db()
 consolidate_all(RAW_FILE)
