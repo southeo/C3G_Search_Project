@@ -143,7 +143,6 @@ def match_files(filename, elem):
     print(elem["ihec_id"])
     for inst in elem["instances"]:
         if 'filename' in inst.keys():
-            print("associated files: ", inst['filename'])
             for tuple in inst['filename']:
                 if str(filename) in tuple:
                     return inst
@@ -170,13 +169,12 @@ def get_location(scope, search_list, val_list):
         #TODO: change this path to its permanent path
         ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
-        print(elem["ihec_id"], ihec_path)
         if path.exists(ihec_path):
-
             #for inst in elem["instances"]:  # Cycle through instances of each match
             for filename in os.listdir(ihec_path):  # Cycle through files in directory
                 inst = match_files(filename, elem)
                 if inst:
+                    print(filename)
                     if elem["ihec_id"] not in ihec_list:
                         if "read1" in str(filename) or "_r1".casefold() in str(filename):
                             results["data"].append({
