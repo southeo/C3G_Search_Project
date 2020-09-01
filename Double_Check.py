@@ -30,7 +30,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
 
     for missed in missed_loc:
         print(missed)
-    print(len(missed_loc))
+    print(len(missed_loc), len(missed_files))
 
 
 
