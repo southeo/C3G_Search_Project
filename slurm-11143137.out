@@ -1,4 +1,0 @@
-slurmstepd: error: *** JOB 11143137 ON blg9324 CANCELLED AT 2020-08-31T17:36:46 ***
-slurmstepd: error: Detected 3543990 oom-kill event(s) in step 11143137.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
-slurmstepd: error: *** JOB 11143137 ON blg9324 CANCELLED AT 2020-08-31T17:36:46 ***
-slurmstepd: error: Detected 3543990 oom-kill event(s) in step 11143137.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.

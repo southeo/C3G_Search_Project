@@ -1,5 +1,3 @@
-ihec_id	assay_type	archive
-    rna_seq
-        ega
-    Bisulfite-Seq
-IHECRE00000353
+ihec_id	assay_type	archive	tissue_keywords
+IHECRE00002494.1		
+	RNA-Seq		blood
