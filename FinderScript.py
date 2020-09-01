@@ -181,8 +181,6 @@ def get_location(scope, search_list, val_list):
                                 "r1_path": (str(ihec_path) + "/" + str(filename)),
                                 "filename": str(filename)
                             })
-                            ihec_list.append(elem["ihec_id"])
-
                         elif "read2" in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
@@ -190,7 +188,6 @@ def get_location(scope, search_list, val_list):
                                 "r2_path": (str(ihec_path) + "/" + str(filename)),
                                 "filename": str(filename)
                             })
-                            ihec_list.append(elem["ihec_id"])
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
@@ -198,19 +195,19 @@ def get_location(scope, search_list, val_list):
                                 "path": (str(ihec_path) + "/" + str(filename)),
                                 "filename": str(filename)
                             })
-                            ihec_list.append(elem["ihec_id"])
+                        ihec_list.append(elem["ihec_id"])
                     else:
                         for res in results["data"]:
                             if elem["ihec_id"] == res["ihec_id"]:
                                 ordered_keys = ["ihec_id", "is live", "r1_path", "r2_path"]
-                                if "read1" in str(filename) :
+                                if "read1" in str(filename):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
-                                    print(res.keys())  #res = {k: res[k] for k in ordered_keys}
+                                    print(res["r1_path"])
+                                    #print(res.keys())  #res = {k: res[k] for k in ordered_keys}
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
                                     print("r2")
                                     #res = {k: res[k] for k in ordered_keys}
-                                #print("after: ", res["filename"])
 
     return results
 
