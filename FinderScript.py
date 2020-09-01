@@ -174,6 +174,7 @@ def get_location(scope, search_list, val_list):
 
     missed_ihecs = set(missed_ihecs)
     print(missed_ihecs)
+    print(len(missed_ihecs))
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
