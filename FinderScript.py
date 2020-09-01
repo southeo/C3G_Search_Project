@@ -239,9 +239,7 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 query_list.append(search_param)
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
-        for elem in scope["data"]:
-            print(elem["ihec_id"])
-        results.append(get_location(scope, query_list, val_list))
+    results.append(get_location(scope, query_list, val_list))
 
 
 with open("Matches.txt", "w") as outfile:
