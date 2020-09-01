@@ -150,12 +150,15 @@ def match_files(filename, elem):
                     return inst
     return False
 
+
 def get_match_file_name():
     file_name = "Search_Result_Matches_" + str(date.today()) + ".txt"
     count = 1
     while os.path.exists(file_name):
         file_name = file_name[0:-4] + "_" + count + ".txt"
         count += count
+    return file_name
+
 
 def get_location(scope, search_list, val_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
