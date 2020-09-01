@@ -101,7 +101,7 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    print("Matches so far: ", len(modified_scope["data"]))
+    #print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
 
@@ -203,6 +203,7 @@ def get_location(scope, search_list, val_list):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+    print(len(results))
     return results
 
 
