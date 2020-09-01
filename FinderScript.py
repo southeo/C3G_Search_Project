@@ -176,7 +176,7 @@ def get_location(scope, search_list, val_list):
                 if inst:
                     print(filename)
                     if elem["ihec_id"] not in ihec_list:
-                        if "read1" in str(filename) or "_r1".casefold() in str(filename):
+                        if "read1" in str(filename): # or "_r1".casefold() in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
@@ -185,7 +185,7 @@ def get_location(scope, search_list, val_list):
                             })
                             ihec_list.append(elem["ihec_id"])
 
-                        elif "read2" in str(filename) or "_r2".casefold() in str(filename):
+                        elif "read2" in str(filename) : #or "_r2".casefold() in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
