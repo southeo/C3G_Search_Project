@@ -23,7 +23,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
                     else:
                         missed_files.append(file)
 
-    print("Search Results: ", len(set(file_list)), ", Good Matches: ", len(set(good_files)), ", Missed files:", len(missed_files))
+    print("Search Results: ", len(set(file_list)), ", Good Matches: ", len(set(good_files)), ", Missed files:", len(set(missed_files)))
 
 
 
