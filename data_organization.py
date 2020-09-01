@@ -404,7 +404,7 @@ if args.move_files:
 
 print(REF_TABLE)
 
-with open(REF_TABLE) as rt, open("move_list_latest.txt", 'w') as mv_lst:
+with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
