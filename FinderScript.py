@@ -176,7 +176,7 @@ def get_location(scope, search_list, val_list):
                 inst = match_files(filename, elem)
                 if inst:
                     if elem["ihec_id"] not in ihec_list:
-                        if "read1" in str(filename):
+                        if "read1" in str(filename) or "_r1".casefold() in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
@@ -185,7 +185,7 @@ def get_location(scope, search_list, val_list):
                             })
                             ihec_list.append(elem["ihec_id"])
 
-                        elif "read2" in str(filename):
+                        elif "read2" in str(filename) or "_r2".casefold() in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],
@@ -205,12 +205,13 @@ def get_location(scope, search_list, val_list):
                         for res in results["data"]:
                             if elem["ihec_id"] == res["ihec_id"]:
                                 ordered_keys = ["ihec_id", "is live", "r1_path", "r2_path"]
-                                if "read1" in str(filename):
+                                if "read1" in str(filename) or "_r2".casefold() in str(filename):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                     res = {k: res[k] for k in ordered_keys}
-                                elif "read2" in str(filename):
+                                elif "read2" in str(filename) or "_r2".casefold() in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
                                     res = {k: res[k] for k in ordered_keys}
+                                results["data"].append(res)
     return results
 
 
