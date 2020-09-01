@@ -203,7 +203,7 @@ def get_location(scope, search_list, val_list):
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
                                 elif "read2" in str(filename):
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-    print(len(results))
+    print(len(results["data"]))
     return results
 
 
