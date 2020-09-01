@@ -47,8 +47,11 @@ if __name__ == '__main__':
             p2 = row[2]
             dup_list.append((p1, p2))  # append a tuple
 
+    dup_list = dup_list[20:30]
+
     pool = mp.Pool(mp.cpu_count())
     output = pool.map(is_same_hash, dup_list)
+    print("Output: {}".format(output))
 '''
 pool = mp.Pool(mp.cpu_count())
 output = mp.Queue()
