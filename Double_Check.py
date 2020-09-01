@@ -10,6 +10,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     for elem in matches:
         for data in matches["data"]:
             file_list.append(data["filename"])
+            print(data["filename"])
 
 
     for elem in ref_table_json["data"]:
