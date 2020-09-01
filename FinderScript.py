@@ -172,7 +172,7 @@ def get_location(scope, search_list, val_list):
         for ihec in listreader:
             missed_ihecs.append(ihec[0])
 
-    #missed_ihecs = set(missed_ihecs)
+    missed_ihecs = set(missed_ihecs)
     print(missed_ihecs)
 
     # Get location of files
