@@ -10,13 +10,14 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     for elem in matches:
         for data in matches["data"]:
             file_list.append(data["filename"])
-            print(data["filename"])
 
 
     for elem in ref_table_json["data"]:
         for inst in elem["instances"]:
             if (inst['assay_type']).casefold() == ("RNA-Seq").casefold() and "filename" in inst.keys():
-                for file in inst["filename"]:
+                for tuple in inst["filename"]:
+                    file= tuple[0]
+                    print(file)
                     if file in file_list:
                         good_files.append(file)
                     else:
