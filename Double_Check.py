@@ -17,7 +17,6 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
             if (inst['assay_type']).casefold() == ("RNA-Seq").casefold() and "filename" in inst.keys():
                 for tuple in inst["filename"]:
                     file= tuple[0]
-                    print(file)
                     if file in file_list:
                         good_files.append(file)
                     else:
