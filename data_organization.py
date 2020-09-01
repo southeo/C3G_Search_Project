@@ -29,7 +29,7 @@ MISSING_LIST = "No_Misc_ID_List.txt"
 REJECTED_LIST = "Rejected_file_list_1.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
 MOVE_FILES = False
-
+FALSE_DUPLICATES = []
 
 ## Argument Parsing and Setup
 
@@ -181,9 +181,36 @@ def file_as_blockiter(afile, blocksize=65536):
 
 
 def is_same_hash(path1, path2):
-    hash1 = hash_bytestr_iter(file_as_blockiter(open(path1, 'rb')), hashlib.sha256())
-    hash2 = hash_bytestr_iter(file_as_blockiter(open(path2, 'rb')), hashlib.sha256())
-    return hash1 == hash2
+    with open(path1, 'rb') as p1, open(path2, 'rb') as p2:
+        hash1 = hash_bytestr_iter(file_as_blockiter(p1), hashlib.sha256())
+        hash2 = hash_bytestr_iter(file_as_blockiter(p2), hashlib.sha256())
+        return hash1 == hash2
+
+
+def id_false_duplicates():
+    with open(os.path.join(args.ref_dir,"False_dups.txt")) as fd:
+        listreader = csv.reader(fd, delimiter='\n')
+        for item in listreader:
+            FALSE_DUPLICATES.append(item)
+
+
+def move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids):
+    move_list.append({
+        "source location": fp,
+        "destination": file_path,
+        "other versions": ihec_ids,
+        "move_type": "data file, duplicate name",
+        "file_name": str(elem),
+        "local_ids": local_ids
+
+    })
+    if MOVE_FILES:
+        copy = 1
+        while os.path.exists(fp):
+            os.rename(elem, str(elem) + "-" + str(copy))
+            fp = os.path.join(file_path, elem)
+            copy += 1  # Increment copy number until you have a unique name
+        shutil.copyfile(elem, file_path)
 
 
 ## Moving files
@@ -207,8 +234,6 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     if not os.path.exists(fp):
         # Move file to its new home
         if MOVE_FILES: shutil.copyfile(elem, fp)
-        # Once files have been copied, you can check the file path directly, instead of referencing the move_list
-
         local_ids = get_local_ids(first_id, misc_id, ref_list)
         move_list.append({
             "source location": str(os.getcwd()) + "/" + str(elem),
@@ -219,24 +244,15 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
             "local_ids": local_ids
             })
 
-    '''elif not is_same_hash(fp, elem):  # If files are different but have same name
+    '''
+    elif str(elem) in FALSE_DUPLICATES:  #files have already been established to be false dups
         local_ids = get_local_ids(first_id, misc_id, ref_list)
-        move_list.append({
-            "source location": fp,
-            "destination": file_path,
-            "other versions": ihec_ids,
-            "move_type": "data file, duplicate name",
-            "file_name": str(elem),
-            "local_ids": local_ids
-
-        })
-        if MOVE_FILES:
-            copy = 1
-            while os.path.exists(fp):
-                os.rename(elem, str(elem + "-" + copy))
-                fp = os.path.join(file_path, elem)
-                copy += 1  # Increment copy number until you have a unique name
-            shutil.copyfile(elem, file_path)
+        move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids)
+        
+    elif not is_same_hash(fp, elem):  # If files are different but have same name
+        local_ids = get_local_ids(first_id, misc_id, ref_list)
+        move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids)
+        
     '''
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
@@ -252,8 +268,9 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
                 # print(elem, "symlink occurs in ", sym_path)
             except FileExistsError:
                 pass
-        # Create symlink
-        # os.symlink((os.path.join(file_path, elem), sym_path)
+        #Create symlink
+        sym_path = os.path.join(sym_path, elem)
+        if MOVE_FILES and not os.path.exists(sym_path): os.symlink(os.path.join(file_path, elem), sym_path)
 
     return move_list
 
@@ -393,7 +410,6 @@ DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_EXTRA))
 DEST_DIR_METADATA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_METADATA))
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
-#REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, 'EBI_Databse_Consolidated_Copy.txt'))
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
@@ -401,8 +417,7 @@ DUPLICATE_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, DUPLICATE_LIST)
 JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
-
-print(REF_TABLE)
+id_false_duplicates()
 
 with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
