@@ -59,7 +59,7 @@ def match_search_params(scope, query, value):
                     if value != str(inst[query]).casefold():  # remove all bad instance matches
                         elem["instances"].pop(elem["instances"].index(inst))
                     else:
-                        bad_matches -= 1  # one less bad match
+                        bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
                 # print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
@@ -101,7 +101,7 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    # print("Matches so far: ", len(modified_scope["data"]))
+    print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
 
@@ -140,7 +140,6 @@ def fetch_id(filename):
 
 
 def match_files(filename, elem):
-    print(elem["ihec_id"])
     for inst in elem["instances"]:
         if 'filename' in inst.keys():
             for tuple in inst['filename']:
@@ -174,7 +173,6 @@ def get_location(scope, search_list, val_list):
             for filename in os.listdir(ihec_path):  # Cycle through files in directory
                 inst = match_files(filename, elem)
                 if inst:
-                    print(filename)
                     if elem["ihec_id"] not in ihec_list:
                         if "read1" in str(filename): # or "_r1".casefold() in str(filename):
                             results["data"].append({
