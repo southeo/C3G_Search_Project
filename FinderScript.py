@@ -121,7 +121,7 @@ def match_search_params(scope, query, value):
     # print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
-
+'''
 def print_results(scope, search_params, row):
     search_params_shortlist = []
     instance_flag = False
@@ -146,7 +146,7 @@ def print_results(scope, search_params, row):
                         print(inst[param], ", ", end="")
                     print("\n }")
     print("\n Number of matches: ", match_count)
-
+'''
 
 def fetch_id(filename):
     for prefix in ID_PREFIXES:
