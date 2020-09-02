@@ -57,6 +57,8 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
 
 
     print(len(dup_id_list), len(set(dup_id_list)))
+    for elem in set(dup_id_list):
+        print(elem)
 
 
 

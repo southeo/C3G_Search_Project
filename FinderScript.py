@@ -37,6 +37,10 @@ def parse_args():
                         '--ref_table',
                         help="Reference table from EBI site",
                         required=True)
+    arser.add_argument('-o',
+                       '--output',
+                       help="Path to ",
+                       required=False)
 
     return parser.parse_args()
 
