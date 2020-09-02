@@ -157,6 +157,16 @@ def get_match_file_name():
     return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
 
 
+def get_path(primary_id):
+    with open(ONSITE_LIST) as ol:
+        reader = csv.reader(ol)
+        for row in reader:
+            if row[2] == primary_id:
+                return row[-1]
+
+
+
+
 def get_location(scope, search_list, val_list, ref_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0

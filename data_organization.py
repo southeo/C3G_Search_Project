@@ -375,9 +375,9 @@ def update_filename(ref_list, filename, primary_id):
             if primary_id == inst["primary_id"]:
                 with open(ONSITE_LIST, "a") as sl:
                     writer = csv.writer(sl)
-                    row = filename, elem["ihec_id"], primary_id, "\\Epigenetic_Data_Home\\" + elem["ihec_id"][0:14] + \
-                          '\\' + elem["ihec_id"] + '\\' + filename
+                    row = filename, elem["ihec_id"], primary_id, os.path.abspath(os.path.join(os.getcwd(), filename))
                     writer.writerow(row)
+                    print(os.getcwd())
 
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
