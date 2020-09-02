@@ -162,6 +162,17 @@ def fetch_id(filename):
             row = [filename, os.getcwd()]
             writer = csv.writer(ms_lst)
             writer.writerow(row)
+    else:  # Take primary id, not misc id
+        for elem in ref_list["data"]:
+            for inst in elem["instances"]:
+                if "local_ids" in inst.keys():
+                    if retval in inst["local_ids"]:
+                        retval = inst["primary_id"]
+
+
+
+
+
     return retval
 
 
@@ -330,7 +341,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         misc_id = []
         print('\t Current element:', elem)
         if os.path.isfile(elem) and is_datafile(elem_str):
-            misc_id = fetch_id(elem_str)  # get primary/secondary id from the filename, parent directory, or onsite list
+            misc_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
             if misc_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
