@@ -221,9 +221,10 @@ def get_onsite_file(ref):
             date_str = date_str[0:10]
             try:
                 date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
-            except:
+            except TypeError:
                 date_str = None
-            if not latest_file and date_str:
+
+            if date_str and not latest_file:
                 latest_file = elem
                 latest = date_str
             elif date_str > latest:
