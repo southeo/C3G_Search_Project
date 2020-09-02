@@ -18,6 +18,8 @@ def help():
     print("********************************************************************************************************* \n"
           "Search Function Help \n"
           "********************************************************************************************************* \n"
+          "Last updated: September 2, 2020 \n"
+          "This program requires python 3.7.3 to run \n"
           "Compares user input to online EBI database and returns the location of the queried files on Beluga. \n "
           "A query file is one of two parameters passed into the search function. It is a tab-delimited text file file "
           "containing all information you are searching for. The first line of the file contains all seach "
@@ -193,6 +195,7 @@ def get_location(scope, search_list, val_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
     pid_list = []
+    key_order = ["ihec_id", "primary_id", "is_live", "r1_path", "r2_path", "path", "path2", "filename"]
 
     results = {
         "parameters": [],
@@ -214,37 +217,46 @@ def get_location(scope, search_list, val_list):
                 inst = match_files(filename, elem)
                 if inst:
                     p_id = inst["primary_id"]
-                    if p_id not in DUP_ID_LIST:
-                        if "read1" in str(filename):
+                    if p_id in DUP_ID_LIST:
+                        p_id = p_id + inst["filename"][0:8]
+                    if p_id not in pid_list:
+                        if "read2" in str(filename) or "pair2" in str(filename) or "_2" in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
-                                "is live": elem["is live version?"],
-                                "r1_path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": str(filename)
-                            })
-                        elif "read2" in str(filename) or "pair2" in str(filename):
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
                                 "is live": elem["is live version?"],
                                 "r2_path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": str(filename)
+                                "filename": [str(filename)]
+                            })
+                        elif "read1" in str(filename) or "pair1" in str(filename) or "_1" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "r1_path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": [str(filename)]
                             })
                         else:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
                                 "is live": elem["is live version?"],
                                 "path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": str(filename)
+                                "filename": [str(filename)]
                             })
-                        PID_list.append(p_id)
+                        pid_list.append(p_id)
                     else:
                         for res in results["data"]:
-                            if elem["ihec_id"] == res["ihec_id"]:
-                                if "read1" in str(filename):
+                            if p_id == res["primary_id"]:
+                                if "r1_path" in res.keys():
                                     res["r1_path"] = (str(ihec_path) + "/" + str(filename))
-                                elif "read2" in str(filename):
+                                elif "read2" in res.keys():
                                     res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-
+                                else:
+                                    res["path2"] = (str(ihec_path) + "/" + str(filename))
+                                res["filename"].append(str(filename))
+                                [res[k] for k in key_order if k in res]
+                                print(res)
     return results
 
 
