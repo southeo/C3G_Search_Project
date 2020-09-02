@@ -49,14 +49,12 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
         for inst in elem["instances"]:
             PID = inst["primary_id"]
             SID = inst["secondary_id"]
-            if PID in primary_id_list:
+            if (PID, SID) in primary_id_list:
                 dup_id_list.append((PID, SID))
             else:
                 primary_id_list.append((PID, SID))
 
 
-    for dupid in dup_id_list:
-        print(dupid)
 
     print(len(dup_id_list), len(set(dup_id_list)))
 
