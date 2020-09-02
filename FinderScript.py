@@ -224,7 +224,7 @@ def get_onsite_file(ref):
             except TypeError:
                 date_str = None
 
-            if date_str and not latest_file:
+            if date_str and not latest_file:  #if date string exists, and latest file is empty
                 latest_file = elem
                 latest = date_str
             elif date_str > latest:
