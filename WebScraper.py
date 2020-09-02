@@ -315,6 +315,22 @@ def remove_bad_chars(keywords):
     return list(set(new_list))
 
 
+def match_files(consolidated_file)
+    with open("EBI_Database_Consolidated_2020-08-31.txt") as rt, open("On-Site_File_List_Sep2_2020.txt", "w") as sl:
+        ebi_table = json.load(rt)
+        writer = csv.writer(sl)
+        header = ["File_Name", "IHEC_ID", "Primary_ID", "Location"]
+        writer.writerow(header)
+
+        for elem in ebi_table["data"]:
+            for inst in elem["instances"]:
+                if "filename" in inst.keys():
+                    for file in inst["filename"]:
+                        row = file, elem["ihec_id"], inst["primary_id"], \
+                              "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"]
+                        writer.writerow(row)
+
+
 def get_keyword_list(ebi_db):
     with open(ebi_db) as ebi_db:
         ebi_json = json.load(ebi_db)
@@ -340,5 +356,5 @@ def get_keyword_list(ebi_db):
         ethnicity_keywords = sorted(ethnicity_keywords)
 
 
-#parse_ihec_db()
+parse_ihec_db()
 consolidate_all("EBI_Database_Raw.txt_2020-08-26.txt")

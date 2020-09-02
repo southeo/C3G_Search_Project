@@ -38,7 +38,8 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
 
 '''
 import json
-
+import csv
+'''
 with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     ref_table_json = json.load(rt)
     primary_id_list = []
@@ -59,6 +60,19 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     print(len(dup_id_list), len(set(dup_id_list)), len(set(primary_id_list)))
     for elem in set(dup_id_list):
         print(elem)
+'''
 
+with open("EBI_Database_Consolidated_2020-08-31.txt") as rt, open("On-Site_File_List_Sep2_2020.txt", "w") as sl:
+    ebi_table = json.load(rt)
+    writer = csv.writer(sl)
+    header = ["File_Name", "IHEC_ID", "Primary_ID", "Location"]
+    writer.writerow(header)
 
+    for elem in ebi_table["data"]:
+        for inst in elem["instances"]:
+            if "filename" in inst.keys():
+                for file in inst["filename"]:
+                    row = file, elem["ihec_id"], inst["primary_id"], \
+                          "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"]
+                    writer.writerow(row)
 
