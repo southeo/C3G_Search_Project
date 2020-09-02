@@ -39,7 +39,7 @@ def parse_args():
                         '--ref_table',
                         help="Reference table from EBI site",
                         required=True)
-    parser.add_argument('-o',z
+    parser.add_argument('-o',
                        '--output',
                        help="Path to ",
                        required=False)
@@ -221,7 +221,7 @@ def get_location(scope, search_list, val_list):
                         if p_id in DUP_ID_LIST:
                             p_id = p_id + inst["filename"][0:8]
                         if p_id not in pid_list:
-                            if "read2" in str(filename) or "pair2" in str(filename) or "_2" in str(filename):
+                            if "read2" in str(filename) or "pair2" in str(filename):
                                 results["data"].append({
                                     "ihec_id": elem["ihec_id"],
                                     "primary_id": p_id,
