@@ -14,6 +14,7 @@ KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_key
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 DUP_ID_LIST = []
 OUTFILE = ""
+ONSITE_LIST = ""
 
 def help():
     print("********************************************************************************************************* \n"
@@ -122,22 +123,15 @@ def match_search_params(scope, query, value):
     return modified_scope
 
 
-def fetch_id(filename):
-    for prefix in ID_PREFIXES:
-        idx = filename.find(prefix)
-        if idx != -1:
-            break
-    return (filename[idx:idx + 15])
-
-
 def match_files(filename, elem):
-    for inst in elem["instances"]:
-        if 'filename' in inst.keys():
-            for tuple in inst['filename']:
-                if str(filename) in tuple:
-                    return inst
+    #References onsite file list and fetches primary id and inst
+    with open(ONSITE_LIST, 'r') as ol:
+        reader = csv.reader(ol)
+        for row in reader:
+            if row[0] == filename:
+                pid = row[2]
+                return pid
     return False
-
 
 def is_duplicate_pid(p_id, ref_list):
     # After this function checks for duplicate primary ids, it will save the list, so it only has to run this once
@@ -186,11 +180,10 @@ def get_location(scope, search_list, val_list, ref_list):
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
             for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                inst = match_files(filename, elem)  # Returns inst metadata if this file is in the matched scope
-                if inst:
-                    p_id = inst["primary_id"]
+                p_id = match_files(filename, elem)  # Returns inst metadata if this file is in the matched scope
+                if p_id:
                     if is_duplicate_pid(p_id, ref_list):
-                        p_id = p_id + "_" + inst["filename"][0:8]
+                        p_id = p_id + "_" + filename[0:8]
                     if p_id not in pid_list:
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
@@ -207,12 +200,33 @@ def get_location(scope, search_list, val_list, ref_list):
                                 res["filename"].append(str(filename))
     return results
 
+def get_onsite_file(ref):
+    dir = os.path.split()[0]
+    latest = date.min
+    latest_file = ""
+    for elem in os.listdir(dir):
+        if "Onsite_Files" in elem:
+            date_str = elem.replace("Onsite_Files", "")
+            date_str = date_str[0:10]
+            date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
+            if not latest_file:
+                latest_file = elem
+                latest = date_str
+            elif date_str > latest:
+                latest = date_str
+                latest_file = elem
+    return os.path.abspath(latest_file)
+
 
 args = parse_args()
 check_args(args)
 results = []
 if args.outfile:
     OUTFILE = args.outfile
+
+ONSITE_LIST = get_onsite_file(args.ref_table)
+
+
 
 with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
     ref_table_json = json.load(rt)

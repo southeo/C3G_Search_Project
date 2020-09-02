@@ -346,4 +346,4 @@ def get_keyword_list(ebi_db):
 
 
 parse_ihec_db()
-consolidate_all("EBI_Database_Raw.txt_2020-08-26.txt")
+consolidate_all(RAW_FILE)

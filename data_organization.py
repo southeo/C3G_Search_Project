@@ -30,6 +30,7 @@ REJECTED_LIST = "Rejected_file_list_1.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
 MOVE_FILES = False
 FALSE_DUPLICATES = []
+ONSITE_LIST = "Onsite_Files" + str(date.today())
 
 ## Argument Parsing and Setup
 
@@ -131,7 +132,7 @@ def get_sub_dir(misc_id, ref_list):
                 return inst["archive"]
 
 
-def fetch_id(filename):
+def fetch_id(filename, ref_list):
     retval = ""
     for prefix in ID_PREFIXES:
         idx = filename.find(prefix)
@@ -168,11 +169,6 @@ def fetch_id(filename):
                 if "local_ids" in inst.keys():
                     if retval in inst["local_ids"]:
                         retval = inst["primary_id"]
-
-
-
-
-
     return retval
 
 
@@ -377,10 +373,11 @@ def update_filename(ref_list, filename, primary_id):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if primary_id == inst["primary_id"]:
-                if "filename" in inst.keys():
-                    inst["filename"].append((filename, inst["primary_id"]))
-                else:
-                    inst["filename"] = [(filename, inst["primary_id"])]
+                with open(ONSITE_LIST, "a") as sl:
+                    writer = csv.writer(sl)
+                    row = filename, elem["ihec_id"], primary_id, "\\Epigenetic_Data_Home\\" + elem["ihec_id"][0:14] + \
+                          '\\' + elem["ihec_id"] + '\\' + filename
+                    writer.writerow(row)
 
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
@@ -445,6 +442,7 @@ JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
 id_false_duplicates()
+ONSITE_LIST = os.path.abspath(os.path.join((args.ref_dir, ONSITE_LIST)))
 
 with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
