@@ -45,10 +45,11 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     dup_id_list = []
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
+            PID = inst["primary_id"]
             if PID in primary_id_list:
                 dup_id_list.append(PID)
             else:
-                PID = inst["primary_id"]
+
                 primary_id_list.append(PID)
 
 
