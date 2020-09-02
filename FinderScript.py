@@ -184,10 +184,10 @@ def is_duplicate_pid(p_id, ref_list):
 
 
 def get_match_file_name():
-        if OUTFILE:
-            return OUTFILE
-        now = datetime.now()
-        return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
+    if OUTFILE:
+        return OUTFILE
+    now = datetime.now()
+    return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
 
 
 def get_location(scope, search_list, val_list):
