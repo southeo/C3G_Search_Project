@@ -223,13 +223,13 @@ def get_onsite_file(ref):
                 date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
             except (TypeError, ValueError) as e:
                 date_str = None
-
-            if date_str and not latest_file:  #if date string exists, and latest file is empty
-                latest_file = elem
-                latest = date_str
-            elif date_str > latest:
-                latest = date_str
-                latest_file = elem
+            if date_str:
+                if not latest_file:  #if date string exists, and latest file is empty
+                    latest_file = elem
+                    latest = date_str
+                elif date_str > latest:
+                    latest = date_str
+                    latest_file = elem
     return os.path.abspath(latest_file)
 
 
