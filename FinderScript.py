@@ -163,7 +163,7 @@ def get_path(primary_id):
         reader = csv.reader(ol)
         for row in reader:
             if row[2] == primary_id:
-                return str(os.path.split(row[-1])[0])  # return just directory
+                return row[-1]  # return just directory
     return False
 
 
