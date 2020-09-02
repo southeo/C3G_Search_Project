@@ -43,15 +43,17 @@ import csv
 with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     ref_table_json = json.load(rt)
     assay_list = []
+    exp_list =[]
 
 
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
             assay_type = inst["assay_type"]
-            if assay_type not in assay_list:
-                assay_list.append(assay_type)
+            xp = inst["experiment_type"]
+            if xp not in exp_list:
+                exp_list.append(assay_type)
 
-    for elem in assay_list: print(elem)
+    for elem in exp_list: print(elem)
 
 '''
 
