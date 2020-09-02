@@ -1,40 +1,15 @@
 [
     {
-    "parameters": [ ""],
-    "data": [
-        {
-            "ihec_id": "ihecre00002725.2",
-            "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318873_NS612_ACAGTGGT_L002_R1_003.fastq.gz"
-        },
-        {
-            "ihec_id": "ihecre00002725.2",
-            "path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318880_NS613_GCCAATGT_L005_R1_003a.fastq.gz"
-        },
-        {
-            "ihec_id": "ihecre00002724.1",
-            "r1_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz",
-            "r2_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz"
-
-        }
-    ]
-    },
-    {
-    "parameters": [ ""],
-    "data": [
-        {
-            "ihec_id": "ihecre00002725.2",
-            "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318873_NS612_ACAGTGGT_L002_R1_003.fastq.gz"
-        },
-        {
-            "ihec_id": "ihecre00002725.2",
-            "path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002725/IHECRE00002725.2/EGAR00001318880_NS613_GCCAATGT_L005_R1_003a.fastq.gz"
-        },
-        {
-            "ihec_id": "ihecre00002724.1",
-            "r1_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz",
-            "r2_path": "EGAR00001318460_NS476_GGTGAGTT_L008_R1_001.fastq.gz"
-
-        }
+        "parameters": [
+            "ihec_id = ihecre00002494.1"
+        ],
+        "data": [
+            {
+                "ihec_id": "IHECRE00002494.1",
+                "is live": "yes",
+                "r1_path": "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/IHECRE00002494/IHECRE00002494.1/EGAR00001155927_131114_SN935_0183_A_C36BYACXX_GTCCGC_2_read1.fastq.gz",
+                "filename": "EGAR00001155927_131114_SN935_0183_A_C36BYACXX_GTCCGC_2_read1.fastq.gz"
+            }
         ]
     }
 ]

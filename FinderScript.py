@@ -178,7 +178,6 @@ def get_location(scope, search_list, val_list):
         results["parameters"].append(param_string)
         idx += 1
 
-    missed_ihecs = []
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
