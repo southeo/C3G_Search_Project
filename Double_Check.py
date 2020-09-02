@@ -44,16 +44,17 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     ref_table_json = json.load(rt)
     assay_list = []
     exp_list =[]
-
+    count = 0
 
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
             assay_type = inst["assay_type"]
             xp = inst["experiment_type"]
-            if xp not in exp_list:
-                exp_list.append(xp)
+            if xp == "WGS":
+                count += 1
 
-    for elem in exp_list: print(elem)
+    print(count)
+    #for elem in exp_list: print(elem)
 
 '''
 
