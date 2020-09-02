@@ -211,7 +211,7 @@ def get_location(scope, search_list, val_list, ref_list):
 
 
 def get_onsite_file(ref):
-    dir = os.path.split()[0]
+    dir = os.path.split(ref)[0]
     latest = date.min
     latest_file = ""
     for elem in os.listdir(dir):
