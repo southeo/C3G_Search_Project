@@ -338,23 +338,23 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     for elem_str in os.listdir():
         elem = Path(elem_str)
         ihec_ids = []
-        misc_id = []
+        primary_id = ""
         print('\t Current element:', elem)
         if os.path.isfile(elem) and is_datafile(elem_str):
-            misc_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
-            if misc_id:  # if there is a match for secondary id
-                ihec_ids = match_to_db(misc_id, ref_list)  # list of ihec ids in which this file appears
+            primary_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
+            if primary_id:  # if there is a match for secondary id
+                ihec_ids = match_to_db(primary_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
-                    move_list = move_files(ihec_ids, elem, move_list, misc_id, ref_list)
-                    update_filename(ref_list, elem_str, misc_id)
+                    move_list = move_files(ihec_ids, elem, move_list, primary_id, ref_list)
+                    update_filename(ref_list, elem_str, primary_id)
                 else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         # Write to Rejected list:
-                        row = [elem, misc_id, "", "no corresponding IHEC ID", os.getcwd()]
+                        row = [elem, primary_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
-                    sub_dir = get_sub_dir(misc_id, ref_list)
-                    move_list = move_extras(sub_dir, elem, misc_id)
+                    sub_dir = get_sub_dir(primary_id, ref_list)
+                    move_list = move_extras(sub_dir, elem, primary_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
@@ -373,10 +373,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     return move_list
 
 
-def update_filename(ref_list, filename, misc_id):
+def update_filename(ref_list, filename, primary_id):
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            if "local_ids" in inst.keys() and misc_id in inst["local_ids"]:
+            if primary_id == inst["primary_id"]:
                 if "filename" in inst.keys():
                     inst["filename"].append((filename, inst["primary_id"]))
                 else:
