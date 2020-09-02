@@ -44,9 +44,9 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     primary_id_list = []
     dup_id_list = []
     tup_list = [("a", "b"), ("c", "d"), ("c", "d"), ("e", "f")]
-    print(tup_list)
-    print(set(tup_list))
 
+    tup_list = set(tup_list)
+    print(tup_list)
     '''
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
