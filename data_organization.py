@@ -1,13 +1,8 @@
-import copy
-import glob
-import pprint
+
 import os, sys, shutil
 from pathlib import Path
 import json
 import csv
-import pandas as pd
-import glob
-import gzip
 import hashlib
 import argparse
 import xml.etree.ElementTree as ET
