@@ -16,6 +16,7 @@ DUP_ID_LIST = []
 OUTFILE = ""
 ONSITE_LIST = ""
 
+
 def help():
     print("********************************************************************************************************* \n"
           "Search Function Help \n"
@@ -42,9 +43,9 @@ def parse_args():
                         help="Reference table from EBI site",
                         required=True)
     parser.add_argument('-o',
-                       '--outfile',
-                       help="Path to match output file (optional). ",
-                       required=False)
+                        '--outfile',
+                        help="Path to match output file (optional). ",
+                        required=False)
 
     return parser.parse_args()
 
@@ -123,6 +124,7 @@ def match_search_params(scope, query, value):
     return modified_scope
 
 
+'''
 def match_files(filename, elem):
     #References onsite file list and fetches primary id and inst
     with open(ONSITE_LIST, 'r') as ol:
@@ -132,6 +134,8 @@ def match_files(filename, elem):
                 pid = row[2]
                 return pid
     return False
+'''
+
 
 def is_duplicate_pid(p_id, ref_list):
     # After this function checks for duplicate primary ids, it will save the list, so it only has to run this once
@@ -149,7 +153,6 @@ def is_duplicate_pid(p_id, ref_list):
     return False
 
 
-
 def get_match_file_name():
     if OUTFILE:
         return OUTFILE
@@ -162,16 +165,14 @@ def get_path(primary_id):
         reader = csv.reader(ol)
         for row in reader:
             if row[2] == primary_id:
-                return row[-1]
-
-
+                return str(os.path.split(row[-1])[0])  # return just directory
+    return False
 
 
 def get_location(scope, search_list, val_list, ref_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
     pid_list = []
-    key_order = ["ihec_id", "primary_id", "is_live", "r1_path", "r2_path", "path", "path2", "filename"]
 
     results = {
         "parameters": [],
@@ -185,30 +186,29 @@ def get_location(scope, search_list, val_list, ref_list):
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
-        # TODO: change this path to its permanent path
-        ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
-                    elem["ihec_id"]  # get path to where the file SHOULD be...
-        if path.exists(ihec_path):
-            for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                p_id = match_files(filename, elem)  # Returns inst metadata if this file is in the matched scope
-                if p_id:
+        for inst in elem["instances"]:
+            p_id = inst["primary_id"]
+            ihec_path = get_path(p_id)
+            if path.exists(ihec_path) and os.path.isdir(ihec_path):
+                for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
-                    if p_id not in pid_list:
-                        results["data"].append({
-                            "ihec_id": elem["ihec_id"],
-                            "primary_id": p_id,
-                            "is live": elem["is live version?"],
-                            "paths": [(str(ihec_path) + "/" + str(filename))],
-                            "filename": [str(filename)]
-                        })
-                        pid_list.append(p_id)
-                    else:
-                        for res in results["data"]:
-                            if p_id == res["primary_id"]:
-                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
-                                res["filename"].append(str(filename))
+                        if p_id not in pid_list:
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "paths": [(str(ihec_path) + "/" + str(filename))],
+                                "filename": [str(filename)]
+                            })
+                            pid_list.append(p_id)
+                        else:
+                            for res in results["data"]:
+                                if p_id == res["primary_id"]:
+                                    res["paths"].append((str(ihec_path) + "/" + str(filename)))
+                                    res["filename"].append(str(filename))
     return results
+
 
 def get_onsite_file(ref):
     dir = os.path.split()[0]
@@ -235,8 +235,6 @@ if args.outfile:
     OUTFILE = args.outfile
 
 ONSITE_LIST = get_onsite_file(args.ref_table)
-
-
 
 with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
     ref_table_json = json.load(rt)
