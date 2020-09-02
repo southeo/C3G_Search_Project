@@ -119,35 +119,8 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    # print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
-'''
-def print_results(scope, search_params, row):
-    search_params_shortlist = []
-    instance_flag = False
-    # generate list of search parameters used in this particular query
-    for elem in row:
-        idx = row.index(elem)
-        if elem:
-            search_params_shortlist.append(search_params[idx])
-    match_count = 0
-    # print(search_params_shortlist, instance_flag)
-    if scope["data"]:
-        for elem in scope["data"]:
-            print(elem)
-            print("\n \n IHEC ID: ", elem["ihec_id"])
-            for param in search_params_shortlist:
-                match_count += 1
-                if param not in INSTANCE_SEARCHES:
-                    print('\t', param, ":", elem[param], end="")
-                else:
-                    print("\n {  ", param, ": \n \t", end="")
-                    for inst in elem["instances"]:
-                        print(inst[param], ", ", end="")
-                    print("\n }")
-    print("\n Number of matches: ", match_count)
-'''
 
 def fetch_id(filename):
     for prefix in ID_PREFIXES:
@@ -190,7 +163,7 @@ def get_match_file_name():
     return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
 
 
-def get_location(scope, search_list, val_list):
+def get_location(scope, search_list, val_list, ref_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
     pid_list = []
@@ -216,46 +189,22 @@ def get_location(scope, search_list, val_list):
                 inst = match_files(filename, elem)  # Returns inst metadata if this file is in the matched scope
                 if inst:
                     p_id = inst["primary_id"]
-                    if p_id in DUP_ID_LIST:
-                        p_id = p_id + inst["filename"][0:8]
+                    if is_duplicate_pid(p_id, ref_list):
+                        p_id = p_id + "_" + inst["filename"][0:8]
                     if p_id not in pid_list:
-                        if "read2" in str(filename) or "pair2" in str(filename):
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "primary_id": p_id,
-                                "is live": elem["is live version?"],
-                                "r2_path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": [str(filename)]
-                            })
-                        elif "read1" in str(filename) or "pair1" in str(filename) or "_1" in str(filename):
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "primary_id": p_id,
-                                "is live": elem["is live version?"],
-                                "r1_path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": [str(filename)]
-                            })
-                        else:
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "primary_id": p_id,
-                                "is live": elem["is live version?"],
-                                "path": (str(ihec_path) + "/" + str(filename)),
-                                "filename": [str(filename)]
-                            })
+                        results["data"].append({
+                            "ihec_id": elem["ihec_id"],
+                            "primary_id": p_id,
+                            "is live": elem["is live version?"],
+                            "paths": [(str(ihec_path) + "/" + str(filename))],
+                            "filename": [str(filename)]
+                        })
                         pid_list.append(p_id)
                     else:
                         for res in results["data"]:
                             if p_id == res["primary_id"]:
-                                if "r1_path" in res.keys():
-                                    res["r1_path"] = (str(ihec_path) + "/" + str(filename))
-                                elif "read2" in res.keys():
-                                    res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-                                else:
-                                    res["path2"] = (str(ihec_path) + "/" + str(filename))
+                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
                                 res["filename"].append(str(filename))
-                                [res[k] for k in key_order if k in res]
-                                print(res)
     return results
 
 
@@ -288,7 +237,7 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 query_list.append(search_param)
                 val_list.append(val_to_match)
                 scope = match_search_params(scope, search_param, val_to_match)
-        results.append(get_location(scope, query_list, val_list))
+        results.append(get_location(scope, query_list, val_list, ref_table_json))
 
 with open(get_match_file_name(), "w") as outfile:
     json.dump(results, outfile, indent=4)
