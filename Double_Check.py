@@ -45,6 +45,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     assay_list = []
     exp_list =[]
     count = 0
+    count2 = 0
 
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
@@ -52,8 +53,9 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
             xp = inst["experiment_type"]
             if xp == "WGS":
                 count += 1
+            else: count2 += 1
 
-    print(count)
+    print(count2)
     #for elem in exp_list: print(elem)
 
 '''
