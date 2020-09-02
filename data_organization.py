@@ -412,6 +412,22 @@ def match_to_db(misc_id, ref_list):
     return ihec_ids
 
 
+def map_onsite_files(ref_table):
+    with open(ref_table) as rt, open("Onsite_Files_" + str(date.today()), "w") as sl:
+        ebi_table = json.load(rt)
+        writer = csv.writer(sl)
+        header = ["File_Name", "IHEC_ID", "Primary_ID", "Location"]
+        writer.writerow(header)
+
+        for elem in ebi_table["data"]:
+            for inst in elem["instances"]:
+                if "filename" in inst.keys():
+                    for file in inst["filename"]:
+                        row = file[0], elem["ihec_id"], inst["primary_id"], \
+                              "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"] + '/' + file[0]
+                        writer.writerow(row)
+
+
 args = parse_args()
 check_args(args)
 
@@ -436,3 +452,5 @@ with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     move_list = []
     move_list = scan_through(ref_list, move_list)
     json.dump(move_list, mv_lst, indent=2)
+    map_onsite_files(REF_TABLE)
+

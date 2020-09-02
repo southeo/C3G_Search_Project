@@ -73,6 +73,6 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt, open("On-Site_File_
             if "filename" in inst.keys():
                 for file in inst["filename"]:
                     row = file[0], elem["ihec_id"], inst["primary_id"], \
-                          "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"]
+                          "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"] + '/' + file[0]
                     writer.writerow(row)
 
