@@ -29,11 +29,6 @@ def is_same_hash(paths):  #, output): #time benchmark, mem benchmark
             return new_row
 
 
-
-
-
-
-
 if __name__ == '__main__':
     with open("Duplicate_list_all.txt") as dup:
         dup_csv_reader = csv.reader(dup)
