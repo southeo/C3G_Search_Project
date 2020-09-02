@@ -405,7 +405,7 @@ def match_to_db(misc_id, ref_list):
 
 
 def map_onsite_files(ref_table):
-    with open(ref_table) as rt, open("Onsite_Files_" + str(date.today()), "w") as sl:
+    with open(ref_table) as rt, open("Onsite_Files_" + str(date.today()), "a+") as sl:
         ebi_table = json.load(rt)
         writer = csv.writer(sl)
         header = ["File_Name", "IHEC_ID", "Primary_ID", "Location"]

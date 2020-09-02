@@ -157,7 +157,7 @@ def get_match_file_name():
     if OUTFILE:
         return OUTFILE
     now = datetime.now()
-    return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
+    return "Search_Result_Matches_" + now.strftime("%d-%m-%Y_%H:%M:%S")
 
 
 def get_path(primary_id):
@@ -266,5 +266,5 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 scope = match_search_params(scope, search_param, val_to_match)
         results.append(get_location(scope, query_list, val_list, ref_table_json))
 
-with open(get_match_file_name(), "w") as outfile:
+with open(get_match_file_name(), "w+") as outfile:
     json.dump(results, outfile, indent=4)
