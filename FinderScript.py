@@ -17,7 +17,7 @@ DUP_ID_LIST = []
 def help():
     print("********************************************************************************************************* \n"
           "Search Function Help \n"
-          "********************************************************************************************************* \n
+          "********************************************************************************************************* \n"
           "Last updated: September 2, 2020 \n"
           "This program requires python 3.7.3 to run \n"
           "Compares user input to online EBI database and returns the location of the queried files on Beluga. \n "
