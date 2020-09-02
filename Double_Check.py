@@ -50,5 +50,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
             if PID in primary_id_list:
                 dup_id_list.append(PID)
 
+    for elem in dup_id_list:
+        print(elem)
     #print("Total ids: ", len(primary_id_list), ", without duplicates: ", len(set(primary_id_list)))
     print(len(dup_id_list), len(set(dup_id_list)))
