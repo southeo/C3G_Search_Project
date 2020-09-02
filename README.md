@@ -1,5 +1,7 @@
 # C3G_Search_Project
-Compares user input to online EBI database and returns the location of the queried files on Beluga. The program can be run with the following command:
+Requires python 3.7.3 to run
+
+This program compares user input to online EBI database and returns the location of the queried files on Beluga. The program can be run with the following command:
 ` python FinderScript.py -q [query table].txt -r [ref table].txt `
 
 ` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt `
