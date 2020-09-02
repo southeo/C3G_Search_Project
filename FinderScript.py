@@ -61,7 +61,6 @@ def get_search_list(query_table):
     search_list = []
     for elem in next(query_table_csv):
         search_list.append(elem.casefold())
-    # print(search_list)
     return search_list
 
 
@@ -81,7 +80,6 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                # print("Matches so far: ",len(scope),"\t Elem[Query: ", inst[query], "\t Query: ", query)
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -157,7 +155,7 @@ def get_match_file_name():
     if OUTFILE:
         return OUTFILE
     now = datetime.now()
-    return "Search_Result_Matches_" + now.strftime("%d-%m-%Y_%H:%M:%S")
+    return "Search_Results_" + now.strftime("%d-%m-%Y_%H:%M:%S")
 
 
 def get_path(primary_id):
@@ -188,6 +186,7 @@ def get_location(scope, search_list, val_list, ref_list):
     for elem in scope["data"]:  # Cycle through all matches
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
+            print(p_id)
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
@@ -212,7 +211,6 @@ def get_location(scope, search_list, val_list, ref_list):
 
 def get_onsite_file(ref):
     dir = os.path.split(os.path.abspath(ref))[0]
-    print(dir)
     latest = date.min
     latest_file = ""
     for elem in os.listdir(dir):
