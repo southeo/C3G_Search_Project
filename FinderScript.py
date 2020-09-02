@@ -217,47 +217,46 @@ def get_location(scope, search_list, val_list):
                 inst = match_files(filename, elem)  # Returns inst metadata if this file is in the matched scope
                 if inst:
                     p_id = inst["primary_id"]
-                    if p_id == elem["instances"]["primary_id"]: # make sure this file absolutely matches
-                        if p_id in DUP_ID_LIST:
-                            p_id = p_id + inst["filename"][0:8]
-                        if p_id not in pid_list:
-                            if "read2" in str(filename) or "pair2" in str(filename):
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "primary_id": p_id,
-                                    "is live": elem["is live version?"],
-                                    "r2_path": (str(ihec_path) + "/" + str(filename)),
-                                    "filename": [str(filename)]
-                                })
-                            elif "read1" in str(filename) or "pair1" in str(filename) or "_1" in str(filename):
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "primary_id": p_id,
-                                    "is live": elem["is live version?"],
-                                    "r1_path": (str(ihec_path) + "/" + str(filename)),
-                                    "filename": [str(filename)]
-                                })
-                            else:
-                                results["data"].append({
-                                    "ihec_id": elem["ihec_id"],
-                                    "primary_id": p_id,
-                                    "is live": elem["is live version?"],
-                                    "path": (str(ihec_path) + "/" + str(filename)),
-                                    "filename": [str(filename)]
-                                })
-                            pid_list.append(p_id)
+                    if p_id in DUP_ID_LIST:
+                        p_id = p_id + inst["filename"][0:8]
+                    if p_id not in pid_list:
+                        if "read2" in str(filename) or "pair2" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "r2_path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": [str(filename)]
+                            })
+                        elif "read1" in str(filename) or "pair1" in str(filename) or "_1" in str(filename):
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "r1_path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": [str(filename)]
+                            })
                         else:
-                            for res in results["data"]:
-                                if p_id == res["primary_id"]:
-                                    if "r1_path" in res.keys():
-                                        res["r1_path"] = (str(ihec_path) + "/" + str(filename))
-                                    elif "read2" in res.keys():
-                                        res["r2_path"] = (str(ihec_path) + "/" + str(filename))
-                                    else:
-                                        res["path2"] = (str(ihec_path) + "/" + str(filename))
-                                    res["filename"].append(str(filename))
-                                    [res[k] for k in key_order if k in res]
-                                    print(res)
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "path": (str(ihec_path) + "/" + str(filename)),
+                                "filename": [str(filename)]
+                            })
+                        pid_list.append(p_id)
+                    else:
+                        for res in results["data"]:
+                            if p_id == res["primary_id"]:
+                                if "r1_path" in res.keys():
+                                    res["r1_path"] = (str(ihec_path) + "/" + str(filename))
+                                elif "read2" in res.keys():
+                                    res["r2_path"] = (str(ihec_path) + "/" + str(filename))
+                                else:
+                                    res["path2"] = (str(ihec_path) + "/" + str(filename))
+                                res["filename"].append(str(filename))
+                                [res[k] for k in key_order if k in res]
+                                print(res)
     return results
 
 
