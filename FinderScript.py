@@ -12,7 +12,7 @@ INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_typ
                      "archive"]  # these searches are handled differently
 KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_keywords", "tissue_keywords"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
-
+DUP_ID_LIST = []
 
 def help():
     print("********************************************************************************************************* \n"
@@ -163,6 +163,23 @@ def match_files(filename, elem):
     return False
 
 
+def is_duplicate_pid(p_id, ref_list):
+    # After this function checks for duplicate primary ids, it will save the list, so it only has to run this once
+    primary_id_list = []
+    if not DUP_ID_LIST:
+        for elem in ref_list["data"]:
+            for inst in elem["instances"]:
+                PID = inst["primary_id"]
+                if PID in primary_id_list:
+                    DUP_ID_LIST.append(PID)
+                else:
+                    primary_id_list.append(PID)
+    if p_id in DUP_ID_LIST:
+        return True
+    return False
+
+
+
 def get_match_file_name():
     file_name = "Search_Result_Matches_" + str(date.today()) + ".txt"
     count = 1
@@ -175,7 +192,7 @@ def get_match_file_name():
 def get_location(scope, search_list, val_list):
     # Creates an entry in a json format that displays the parameters of one search and all files matched to those params
     idx = 0
-    ihec_list = []
+    pid_list = []
 
     results = {
         "parameters": [],
@@ -187,7 +204,6 @@ def get_location(scope, search_list, val_list):
         results["parameters"].append(param_string)
         idx += 1
 
-
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
         # TODO: change this path to its permanent path
@@ -197,7 +213,8 @@ def get_location(scope, search_list, val_list):
             for filename in os.listdir(ihec_path):  # Cycle through files in directory
                 inst = match_files(filename, elem)
                 if inst:
-                    if elem["ihec_id"] not in ihec_list:
+                    p_id = inst["primary_id"]
+                    if p_id not in DUP_ID_LIST:
                         if "read1" in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
@@ -219,7 +236,7 @@ def get_location(scope, search_list, val_list):
                                 "path": (str(ihec_path) + "/" + str(filename)),
                                 "filename": str(filename)
                             })
-                        ihec_list.append(elem["ihec_id"])
+                        PID_list.append(p_id)
                     else:
                         for res in results["data"]:
                             if elem["ihec_id"] == res["ihec_id"]:
