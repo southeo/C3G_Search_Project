@@ -219,8 +219,11 @@ def get_onsite_file(ref):
         if "Onsite_Files" in elem:
             date_str = elem.replace("Onsite_Files_", "")
             date_str = date_str[0:10]
-            date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
-            if not latest_file:
+            try:
+                date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
+            except:
+                date_str = None
+            if not latest_file and date_str:
                 latest_file = elem
                 latest = date_str
             elif date_str > latest:
