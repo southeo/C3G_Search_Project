@@ -13,6 +13,7 @@ INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_typ
 KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_keywords", "tissue_keywords"]
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 DUP_ID_LIST = []
+OUTFILE = ""
 
 def help():
     print("********************************************************************************************************* \n"
@@ -40,8 +41,8 @@ def parse_args():
                         help="Reference table from EBI site",
                         required=True)
     parser.add_argument('-o',
-                       '--output',
-                       help="Path to ",
+                       '--outfile',
+                       help="Path to match output file (optional). ",
                        required=False)
 
     return parser.parse_args()
@@ -183,12 +184,10 @@ def is_duplicate_pid(p_id, ref_list):
 
 
 def get_match_file_name():
-    file_name = "Search_Result_Matches_" + str(date.today()) + ".txt"
-    count = 1
-    while os.path.exists(file_name):
-        file_name = file_name[0:-4] + "_" + str(count) + ".txt"
-        count += count
-    return file_name
+        if OUTFILE:
+            return OUTFILE
+        now = datetime.now()
+        return "Search_Result_Matches_" + now.strftime("%d/%m/%Y_%H:%M:%S")
 
 
 def get_location(scope, search_list, val_list):
@@ -263,6 +262,9 @@ def get_location(scope, search_list, val_list):
 args = parse_args()
 check_args(args)
 results = []
+if args.outfile:
+    OUTFILE = args.outfile
+
 with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
     ref_table_json = json.load(rt)
     # get_location(ref_table_json["data"][10])
