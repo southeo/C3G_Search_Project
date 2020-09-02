@@ -14,13 +14,17 @@ KEYWORD_SEARCHES = ["donor_keyword_id", "disease_keywords", "donor_ethnicity_key
 ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 
 
-# Specify output*****
-# Requires python 3.7.3!
-
-
-
 def help():
-    print("help info")
+    print("********************************************************************************************************* \n"
+          "Search Function Help \n"
+          "********************************************************************************************************* \n"
+          "Compares user input to online EBI database and returns the location of the queried files on Beluga. \n "
+          "A query file is one of two parameters passed into the search function. It is a tab-delimited text file file "
+          "containing all information you are searching for. The first line of the file contains all seach "
+          "parameters, and subsequent lines contain values to be matched. \n"
+          "The reference file is the second parameter passed to the search function. It contains metadata for all "
+          "datasets in the EBI database. It is named: \n EBI_Database_Consolidated_[Date of creation].txt \n"
+          "for more information, visit [git repo]")
 
 
 def parse_args():
@@ -102,12 +106,13 @@ def match_search_params(scope, query, value):
             if keywords_all_match:
                 modified_scope["data"].append(elem)
         elif query.casefold() == "ihec_id" and len(value) == 14:  # if no version is provided, provided latest version
-            if elem["is live version?"] == "yes" and value == (str(elem[query]).casefold())[0:14]:  #checks if it is latest
+            if elem["is live version?"] == "yes" and value == (str(elem[query]).casefold())[
+                                                              0:14]:  # checks if it is latest
                 modified_scope["data"].append(elem)
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-    #print("Matches so far: ", len(modified_scope["data"]))
+    # print("Matches so far: ", len(modified_scope["data"]))
     return modified_scope
 
 
@@ -181,7 +186,7 @@ def get_location(scope, search_list, val_list):
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
-        #TODO: change this path to its permanent path
+        # TODO: change this path to its permanent path
         ihec_path = "/genfs/projects/IHEC/soulaine_test/Epigenomic_Data_Home/" + elem["ihec_id"][0:14] + "/" + \
                     elem["ihec_id"]  # get path to where the file SHOULD be...
         if path.exists(ihec_path):
@@ -196,7 +201,7 @@ def get_location(scope, search_list, val_list):
                                 "r1_path": (str(ihec_path) + "/" + str(filename)),
                                 "filename": str(filename)
                             })
-                        elif "read2" in str(filename):
+                        elif "read2" in str(filename) or "pair2" in str(filename):
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
                                 "is live": elem["is live version?"],

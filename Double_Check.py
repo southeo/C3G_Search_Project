@@ -1,3 +1,5 @@
+'''
+
 import json
 
 with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.txt") as mt:
@@ -34,4 +36,15 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
     print(len(missed_loc), len(missed_files))
 
 
+'''
+import json
+
+with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
+    ref_table_json = json.load(rt)
+    primary_id_list = []
+    for elem in ref_table_json ["data"]:
+        for inst in elem["instances"]:
+            primary_id_list.append(inst["primary_id"])
+
+    print("Total ids: ", len(primary_id_list), ", without duplicates: ", len(set(primary_id_list)))
 
