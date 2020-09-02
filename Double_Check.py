@@ -43,6 +43,10 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     ref_table_json = json.load(rt)
     primary_id_list = []
     dup_id_list = []
+    tup_list = [("a", "b"), ("c", "d"), ("e", "f")]
+    print("a" in tup_list, "d" in tup_list, ("a, b") in tup_list, ("c", "f") in tup_list)
+
+    '''
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
             PID = inst["primary_id"]
@@ -52,7 +56,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
 
                 primary_id_list.append(PID)
 
-
+'''
     for elem in dup_id_list:
         print(elem)
     #print("Total ids: ", len(primary_id_list), ", without duplicates: ", len(set(primary_id_list)))
