@@ -55,7 +55,7 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
         if "biomaterial_provider" in elem.keys() and elem["biomaterial_provider"] not in biomat_list:
             biomat_list.append(elem["biomaterial_provider"])
         for inst in elem["instances"]:
-            if elem["archive"] not in archive_list:
+            if inst["archive"] not in archive_list:
                 archive_list.append(elem["archive"])
 
     for elem in project_list:
