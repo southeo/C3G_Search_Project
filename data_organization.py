@@ -26,6 +26,7 @@ DUPLICATE_LIST = "Duplicate_list_all.txt"
 MOVE_FILES = False
 FALSE_DUPLICATES = []
 ONSITE_LIST = "Onsite_Files" + str(date.today())
+EXTRA_DIR_LIST = ["EGA", ]
 
 ## Argument Parsing and Setup
 
@@ -120,11 +121,9 @@ def get_local_ids(ihec_id, local_id, ref_list):
                     return inst["local_ids"]
 
 
-def get_sub_dir(misc_id, ref_list):
-    for elem in ref_list["data"]:
-        for inst in elem["instances"]:
-            if key_match(misc_id, inst):
-                return inst["archive"]
+def get_sub_dir():
+    dir_str = str(os.getcwd()).split("/")
+    print(dir_str)
 
 
 def fetch_id(filename, ref_list):
@@ -222,7 +221,6 @@ def get_assay(ref_list, primary_id):
         for inst in elem["instances"]:
             if primary_id == inst["primary_id"]:
                 assay = inst["assay_type"]
-                print(assay)
                 if assay == "RNA-Seq" or assay == "miRNA-Seq" or assay == "ncRNA-Seq": return "RNA-seq"
                 if assay == "OTHER": return "Other"
                 return assay
@@ -338,7 +336,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         elem = Path(elem_str)
         ihec_ids = []
         primary_id = ""
-        print('\t Current element:', elem)
+        #print('\t Current element:', elem)
         if os.path.isfile(elem) and is_datafile(elem_str):
             primary_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
             if primary_id:  # if there is a match for secondary id
@@ -358,7 +356,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            print("Current directory: ", os.getcwd())
+            #print("Current directory: ", os.getcwd())
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):

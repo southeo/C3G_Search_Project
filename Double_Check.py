@@ -57,7 +57,8 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
         for inst in elem["instances"]:
             if inst["archive"] not in archive_list:
                 archive_list.append(inst["archive"])
-
+    for elem in archive_list:
+        print(elem)
 '''
     for elem in project_list:
         print('\t', elem)
@@ -66,9 +67,9 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
         print(elem)
     for elem in biomat_list:
         print('\t', elem)
-    for elem in archive_list:
-        print(elem)
+    '''
 
+'''
 
     print(count)
 
