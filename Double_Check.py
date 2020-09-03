@@ -57,7 +57,6 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     for elem in experiment_list: print (elem)
 
 
-    print(count2)
     #for elem in exp_list: print(elem)
     ''''
     consolidate experiments, 
