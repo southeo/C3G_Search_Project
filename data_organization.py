@@ -305,10 +305,10 @@ def move_extras(sub_dir, elem, misc_id):
     return move_list
 
 
-def move_metadata(elem, move_list):
+def move_metadata(elem, move_list, ref_list):
     if not os.path.exists(DEST_DIR_METADATA):
         os.mkdir(DEST_DIR_METADATA)
-    misc_id = fetch_id(elem)
+    misc_id = fetch_id(elem, ref_list)
     if misc_id:
         md_path = os.path.join(DEST_DIR, misc_id)
     else:
@@ -354,7 +354,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):
-            move_list = move_metadata(elem_str, move_list)
+            move_list = move_metadata(elem_str, move_list, ref_list)
         else:  # If elem is not a directory or appropriate file, add it to the rejected list
             rejected_ext = elem_str.split(".")[-1]  # save extensions that are on disc that are not in accpeted list
             with open(REJECTED_LIST, "a+", newline="") as rj_lst:
