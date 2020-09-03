@@ -123,8 +123,11 @@ def get_local_ids(ihec_id, local_id, ref_list):
 
 
 def get_sub_dir():
-    dir_str = str(os.getcwd()).split("/")
-    print(dir_str)
+    dir_str = str(os.getcwd()).casefold()
+    for dir in EXTRA_DIR_LIST:
+        if dir.casefold() in dir_str:
+            return dir
+    return "Other"
 
 
 def fetch_id(filename, ref_list):
@@ -352,6 +355,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
                     sub_dir = get_sub_dir()
+                    print(sub_dir)
                     move_list = move_extras(sub_dir, elem, primary_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
