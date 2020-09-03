@@ -271,11 +271,14 @@ def consolidate_experiment(data_file):
 
         for elem in db_json["data"]:
             for inst in db_json["instances"]:
-                exp = db_json["assay_type"]
-                if exp == "total-RNA-Seq" or exp == "total-RNA-seq" or exp == "RNA": db_json["assay_type"] = "RNA-Seq"
-                elif exp == "H3K4me3":  db_json["assay_type"] = "Histone H3K4me3"
-                elif exp == "H3K27ac": db_json["assay_type"] = "Histone H3K27ac"
-                db_json["assay_type"] = (db_json["assay_type"]).casefold()
+                exp = db_json["experiment_type"]
+                if exp == "RNA": exp = "RNA-Seq"
+                elif exp == "H3K4me3":  exp = "Histone H3K4me3"
+                elif exp == "H3K27ac": exp = "Histone H3K27ac"
+
+                if "Histone" in exp: exp = "ChIP-Seq " + exp
+
+                db_json["experiment_type"] = exp.casefold()
 
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)
@@ -363,4 +366,4 @@ def get_keyword_list(ebi_db):
 
 
 parse_ihec_db()
-consolidate_all(RAW_FILE)
+consolidate_all("EBI_Database_Consolidated_2020-08-31.txt")
