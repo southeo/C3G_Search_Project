@@ -52,7 +52,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
                     elem[1] += 1
                     inc = True
             if not inc:
-                experiment_list.append((xp, 1))
+                experiment_list.append([xp, 1])
 
     for elem in experiment_list: print (elem)
 
