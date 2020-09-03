@@ -42,18 +42,20 @@ import csv
 
 with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
     ref_table_json = json.load(rt)
-    assay_list = []
-    exp_list =[]
-    count = 0
-    count2 = 0
-
+    experiment_list = []
     for elem in ref_table_json ["data"]:
         for inst in elem["instances"]:
-            assay_type = inst["assay_type"]
+            inc = False
             xp = inst["experiment_type"]
-            if xp == "WGS":
-                count += 1
-            else: count2 += 1
+            for elem in experiment_list:
+                if xp == elem[0]:
+                    elem[1] += 1
+                    inc = True
+            if not inc:
+                experiment_list.append((xp, 1))
+
+    for elem in experiment_list: print (elem)
+
 
     print(count2)
     #for elem in exp_list: print(elem)
