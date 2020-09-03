@@ -42,19 +42,31 @@ import csv
 
 with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
     ref_table_json = json.load(rt)
-    experiment_list = []
+    project_list = []
+    markers_list = []
+    biomat_list = []
+    archive_list = []
     count = 0
     for elem in ref_table_json ["data"]:
+        if elem["project"] not in project_list:
+            project_list.append(elem["project"])
+        if "markers" in elem.keys() and elem["markers"] not in markers_list:
+            markers_list.append(elem["markers"])
+        if "biomaterial_provider" in elem.keys() and elem["biomaterial_provider"] not in biomat_list:
+            biomat_list.append(elem["biomaterial_provider"])
         for inst in elem["instances"]:
-            count += 1
-            inc = False
-            xp = inst["experiment_type"]
-            for elem in experiment_list:
-                if xp == elem[0]:
-                    elem[1] += 1
-                    inc = True
-            if not inc:
-                experiment_list.append([xp, 1])
+            if elem["archive"] not in archive_list:
+                archive_list.append(elem["archive"])
+
+    for elem in project_list:
+        print(elem)
+    for elem in markers_list:
+        print(elem)
+    for elem in biomat_list:
+        print(elem)
+    for elem in archive_list:
+        print(elem)
+
 
     print(count)
 
