@@ -217,20 +217,28 @@ def move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids):
 
 ## Moving files
 
+def get_assay(ref_list, primary_id):
+    for elem in ref_list["data"]:
+        for inst in elem["instances"]:
+            if primary_id == inst["assay_type"]:
+                assay = inst["assay_type"]
+                if assay == "RNA-Seq" or assay == "miRNA-Seq" or assay == "ncRNA-Seq": return "RNA-seq"
+                return assay
+
+
+
 def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     first_id = ihec_ids.pop(0)
     file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
     # make directories:
-    try:
+    if not os.path.exists(file_path):
         os.mkdir(file_path)
-        file_path = os.path.join(file_path, first_id)
+    file_path = os.path.join(file_path, first_id)
+    if not os.path.exists(file_path):
         os.mkdir(file_path)
-    except FileExistsError:
-        try:
-            file_path = os.path.join(file_path, first_id)
-            os.mkdir(file_path)
-        except FileExistsError:
-            pass
+    file_path = os.path.join(file_path, get_assay(ref_list, misc_id))
+    if not os.path.exists(file_path):
+        os.mkdir(file_path)
     # path including file name
     fp = os.path.join(file_path, str(elem))
     if not os.path.exists(fp):
@@ -259,21 +267,18 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
     # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
         sym_path = os.path.join(DEST_DIR, str(id[0:14]))
-        try:
+        if not os.path.exists(sym_path):
             os.mkdir(sym_path)
-            sym_path = os.path.join(sym_path, id)
+        sym_path = os.path.join(sym_path, first_id)
+        if not os.path.exists(sym_path):
             os.mkdir(sym_path)
-        except FileExistsError:
-            try:
-                sym_path = os.path.join(sym_path, id)
-                os.mkdir(sym_path)
-                # print(elem, "symlink occurs in ", sym_path)
-            except FileExistsError:
-                pass
-        #Create symlink
+        sym_path = os.path.join(sym_path, get_assay(ref_list, misc_id))
+        if not os.path.exists(sym_path):
+            os.mkdir(sym_path)
+        # path including file name
+        sym_fp = os.path.join(sym_path, str(elem))
         sym_path = os.path.join(sym_path, elem)
-        if MOVE_FILES and not os.path.exists(sym_path): os.symlink(os.path.join(file_path, elem), sym_path)
-
+        if MOVE_FILES and not os.path.is_link(sym_fp): os.symlink(os.path.join(file_path, elem), sym_path)
     return move_list
 
 
