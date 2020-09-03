@@ -448,7 +448,7 @@ id_false_duplicates()
 ONSITE_LIST = os.path.abspath(os.path.join(args.ref_dir, ONSITE_LIST))
 print(REF_TABLE)
 
-with open("EBI_Database_Consolidated_2020-09-02.txt") as rt, open("Move_List_3.txt", 'w') as mv_lst:
+with open("EBI_Database_Consolidated_2020-09-02.txt") as rt, open("Move_List_3.txt", 'w+') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
     move_list = []
