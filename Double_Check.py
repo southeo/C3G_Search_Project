@@ -59,9 +59,11 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
                 archive_list.append(inst["archive"])
     for elem in archive_list:
         print(elem)
-'''
+    print("\n")
     for elem in project_list:
         print('\t', elem)
+'''
+    
 
     for elem in markers_list:
         print(elem)
