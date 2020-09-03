@@ -338,7 +338,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         elem = Path(elem_str)
         ihec_ids = []
         primary_id = ""
-        print('\t Current element:', elem)
+        #print('\t Current element:', elem)
         if os.path.isfile(elem) and is_datafile(elem_str):
             primary_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
             if primary_id:  # if there is a match for secondary id
@@ -358,7 +358,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            print("Current directory: ", os.getcwd())
+            #print("Current directory: ", os.getcwd())
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):
