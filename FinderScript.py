@@ -197,6 +197,7 @@ def get_location(scope, search_list, val_list, ref_list):
                         if p_id not in pid_list:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
+                                "experiment_type": inst["experiment_type"],
                                 "primary_id": p_id,
                                 "is live": elem["is live version?"],
                                 "paths": [(str(ihec_path) + "/" + str(filename))],

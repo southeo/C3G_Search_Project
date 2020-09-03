@@ -438,6 +438,7 @@ if args.move_files:
     MOVE_FILES = args.move_files
 id_false_duplicates()
 ONSITE_LIST = os.path.abspath(os.path.join(args.ref_dir, ONSITE_LIST))
+print(REF_TABLE)
 
 with open(REF_TABLE) as rt, open("Move_List_2.txt", 'w') as mv_lst:
     ref_list = json.load(rt)
