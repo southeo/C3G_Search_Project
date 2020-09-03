@@ -270,7 +270,7 @@ def consolidate_experiment(data_file):
         db_json = json.load(database_file)
 
         for elem in db_json["data"]:
-            for inst in db_json["instances"]:
+            for inst in elem["instances"]:
                 exp = db_json["experiment_type"]
                 if exp == "RNA": exp = "RNA-Seq"
                 elif exp == "H3K4me3":  exp = "Histone H3K4me3"
