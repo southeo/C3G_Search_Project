@@ -279,7 +279,6 @@ def consolidate_experiment(data_file):
                 if "Histone" in exp: exp = "ChIP-Seq " + exp
 
                 inst["experiment_type"] = exp.casefold()
-                print(inst["experiment_type"])
 
     with open(data_file, 'w') as outfile:
         json.dump(db_json, outfile, indent=4)

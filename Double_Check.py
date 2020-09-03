@@ -40,7 +40,7 @@ with open("EBI_Database_Consolidated_2020-08-31.txt", 'r') as rt, open("Matches.
 import json
 import csv
 
-with open("EBI_Database_Consolidated_2020-08-31.txt") as rt:
+with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
     ref_table_json = json.load(rt)
     experiment_list = []
     for elem in ref_table_json ["data"]:
