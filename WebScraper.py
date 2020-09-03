@@ -265,6 +265,22 @@ def consolidate_disease(data_file):
         json.dump(db_json, outfile, indent=4)
 
 
+def consolidate_experiment(data_file):
+    with open(data_file, 'r') as database_file:
+        db_json = json.load(database_file)
+
+        for elem in db_json["data"]:
+            for inst in db_json["instances"]:
+                exp = db_json["assay_type"]
+                if exp == "total-RNA-Seq" or exp == "total-RNA-seq" or exp == "RNA": db_json["assay_type"] = "RNA-Seq"
+                elif exp == "H3K4me3":  db_json["assay_type"] = "Histone H3K4me3"
+                elif exp == "H3K27ac": db_json["assay_type"] = "Histone H3K27ac"
+                db_json["assay_type"] = (db_json["assay_type"]).casefold()
+
+    with open(data_file, 'w') as outfile:
+        json.dump(db_json, outfile, indent=4)
+
+
 def consolidate_all(data_file):
     consolidated_file = "EBI_Database_Consolidated_" + str(date.today()) + ".txt"
     egad_map = "egad_file_mapping.json"
@@ -282,6 +298,7 @@ def consolidate_all(data_file):
     consolidate_ethnicity(consolidated_file)
     consolidate_gender(consolidated_file)
     consolidate_tissue(consolidated_file)
+    consolidate_experiment(consolidated_file)
     link_ega_ids(egad_map, consolidated_file)
     consolidate_local_id(consolidated_file)
 
