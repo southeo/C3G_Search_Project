@@ -351,7 +351,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                         row = [elem, primary_id, "", "no corresponding IHEC ID", os.getcwd()]
                         writer = csv.writer(rj_lst)
                         writer.writerow(row)
-                    sub_dir = get_sub_dir(primary_id, ref_list)
+                    sub_dir = get_sub_dir()
                     move_list = move_extras(sub_dir, elem, primary_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
