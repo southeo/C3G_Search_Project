@@ -218,13 +218,13 @@ def move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids):
 ## Moving files
 
 def get_assay(ref_list, primary_id):
-    print("primary_id ", primary_id)
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
-            if primary_id == inst["assay_type"]:
+            if primary_id == inst["primary_id"]:
                 assay = inst["assay_type"]
                 print(assay)
                 if assay == "RNA-Seq" or assay == "miRNA-Seq" or assay == "ncRNA-Seq": return "RNA-seq"
+                if assay == "OTHER": return "Other"
                 return assay
     return "Other"
 
