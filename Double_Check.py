@@ -57,8 +57,7 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
         for inst in elem["instances"]:
             if inst["archive"] not in archive_list:
                 archive_list.append(inst["archive"])
-            if inst["experiment_type"] == "transcription factor" and inst["assay_type"] != "ChIP-Seq":
-                print(inst["assay_type"])
+
 '''
     for elem in project_list:
         print('\t', elem)

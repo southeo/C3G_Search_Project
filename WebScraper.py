@@ -275,6 +275,7 @@ def consolidate_experiment(data_file):
                 if exp == "RNA": exp = "RNA-Seq"
                 elif exp == "H3K4me3":  exp = "Histone H3K4me3"
                 elif exp == "H3K27ac": exp = "Histone H3K27ac"
+                elif exp == "stranded total rna-seq": exp = "total-rna-seq"
 
                 if "Histone" in exp: exp = "ChIP-Seq " + exp
 
