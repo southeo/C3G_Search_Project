@@ -155,7 +155,7 @@ def get_match_file_name():
     if OUTFILE:
         return OUTFILE
     now = datetime.now()
-    return "Search_Results_" + now.strftime("%d-%m-%Y_%H:%M:%S")
+    return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
 
 
 def get_path(primary_id):
