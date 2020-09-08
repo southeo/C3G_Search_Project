@@ -57,13 +57,12 @@ with open("EBI_Consolidated_test.txt") as rt:
         if "biomaterial_provider" in elem.keys() and elem["biomaterial_provider"] not in biomat_list:
             biomat_list.append(elem["biomaterial_provider"])
         for inst in elem["instances"]:
-            print(":)")
             if inst["archive"] not in archive_list:
                 archive_list.append(inst["archive"])
             if inst["experiment_type"] not in experiment_list:
-                archive_list.append(inst["experiment_type"])
+                experiment_list.append(inst["experiment_type"])
             if inst["assay_type"] not in assay_list:
-                archive_list.append(inst["assay_type"])
+                assay_list.append(inst["assay_type"])
     for elem in assay_list:
         print(elem)
     print('\n')
