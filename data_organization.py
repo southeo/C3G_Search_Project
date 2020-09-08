@@ -16,7 +16,7 @@ REF_TABLE = ""
 JGAD_DIR = "JGAD_metadata"
 ON_SITE_TABLE = "McGill_onsite_filelist.details.csv"
 SOURCE_DIR = ""
-DEST_DIR = "IHEC_Files"
+DEST_DIR = "IHEC_Data_Home"
 DEST_DIR_EXTRA = "Extra_files"
 DEST_DIR_METADATA = "Metadata/Archived_Metadata"
 METADATA_EXENSIONS = [".csv", ".txt", ".json", ".xml"]
@@ -325,7 +325,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                 ihec_ids = match_to_db(primary_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
                     move_list = move_files(ihec_ids, elem, move_list, primary_id, ref_list)
-                    update_filename(ref_list, elem_str, primary_id)
+                    update_filename(ref_list, elem_str, primary_id, ihec_ids)
                 else:  # If there is no match between ids, move the file into the extra file sub directory
                     with open(REJECTED_LIST, "a+", newline="") as rj_lst:
                         # Write to Rejected list:
@@ -353,7 +353,25 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
     return move_list
 
 
-def update_filename(ref_list, filename, primary_id):
+def update_filename(ref_list, filename, primary_id, ihec_ids):
+    with open(ONSITE_LIST, "a") as sl:
+        for id in ihec_ids:
+            src_path = os.path.abspath(filename)
+            dest_path = os.path.join(DEST_DIR, get_assay(ref_list, primary_id), id[0:14], id)
+            print(dest_path)
+            writer = csv.writer(sl)
+            row = [filename, primary_id, id, src_path, dest_path]
+            writer.writerow(row)
+            print(os.getcwd())
+
+    '''
+    
+    :param ref_list: 
+    :param filename: 
+    :param primary_id: 
+    :param ihec_ids: 
+    :return: 
+        
     for elem in ref_list["data"]:
         for inst in elem["instances"]:
             if primary_id == inst["primary_id"]:
@@ -362,7 +380,7 @@ def update_filename(ref_list, filename, primary_id):
                     row = filename, elem["ihec_id"], primary_id, os.path.abspath(os.path.join(os.getcwd(), filename))
                     writer.writerow(row)
                     print(os.getcwd())
-
+'''
     with open(REF_TABLE, 'w') as rt:
         json.dump(ref_list, rt, indent=4)
 
