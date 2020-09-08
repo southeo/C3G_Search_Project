@@ -2,9 +2,9 @@
 Requires python 3.7.3 to run
 
 This program compares user input to online EBI database and returns the location of the queried files on Beluga. The program can be run with the following command:
-` python FinderScript.py -q [query table].txt -r [ref table].txt `
+` python FinderScript.py -q [query table].txt -r [ref table].txt - o [output location (optional] `
 
-` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt `
+` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt -outfile [output location (optional] `
 
 ## Creating A Query File
 A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
@@ -39,6 +39,21 @@ Regular searches match the string in the query file to the metadata associated w
 - assay_type
 - experiment_type
 - archive
+
+##### Searchable Project Types 
+- blueprint
+- ceehrc
+- deep
+- amed-crest
+- encode
+- nih roadmap epigenomics
+- korea epigenome project (knih)
+- hipsci
+- gis
+- epihk
+
+##### Searchable Experiment Types
+
 
 #### Keyword Search parameters:
 All items in input must be satisfied, but there may be extra keywords in the search element. For instance, a dataset may have "cord blood" listed as its tissue type. A keyword search using either "cord", "blood", or both will yield a match. However, if the dataset only has "blood" as its tissue type, a search for "cord blood" will not result in a match. 
@@ -151,6 +166,11 @@ You may also submit it as a job using:
 ` sbatch WebScraper.sh `
 
 This will scan through the EBI Web portal and create a new metadata file with the updated information. This script may take a few hours to run; it is recommended that this script be run on a compute node. 
+
+
+### Interpreting the Search Output
+Two output files will be produced. The detailed output file is a json containing information on which files result from which search. It consolidates files based on their primary IDs, and lists their associated experiment type, IHEC ID, whether or not they are the most up to-date version, and the files' location. This file's name defaults to `Search_Results_Details_[date and time].txt`, but its name and location can be specified in the input parameters.
+The second output file, `Search_Results_Locations_[date and time].txt`, is a text file that just contains file locations. 
 
 ## Data File Organizational Structure
 Epigenomic data and associated files are stored according to the following architecture:
