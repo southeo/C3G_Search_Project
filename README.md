@@ -22,7 +22,7 @@ Note this file must need to be tab-delimited. An empty string ("") may be used o
 ### Valid Search Parameters
 Search parameters must be in the first line of the query file. Searches must include at least one of these parameters, copied exactly. 
 
-#### Regular search Parameters
+#### Regular Search Parameters
 Regular searches match the string in the query file to the metadata associated with each IHEC ID. All associated instances will be flagged as matches. 
 
 - ihec_id (Note: if no version is specified, the latest on disc will be provided)
@@ -40,18 +40,21 @@ Regular searches match the string in the query file to the metadata associated w
 - experiment_type
 - archive
 
-##### Searchable Project Types 
-- blueprint
-- ceehrc
-- deep
-- amed-crest
-- encode
-- nih roadmap epigenomics
-- korea epigenome project (knih)
-- hipsci
-- gis
-- epihk
-
+##### Valid Search Parameter
+| project | assay_type | experiment_type | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| amed-crest|  atac-seq | atac-seq | histone h2ak9ac | histone h3k27me3 | histone h3k9/14ac | histone reh3k27me3 |
+| blueprint | bisulfite-Seq | bisulfite-seq | histone h2bk120ac | histone h3k36me3 | histone h3k9ac | histone reh3k27me3 |
+| ceehrc | chip-seq | chip-seq| histone h2bk12ac | histone h2bk15ac | histone h3k4ac | histone h3k9me1 |  histone reh3k4me3 |
+| deep |  chip-seq input| chip-seq input | histone h2bk20ac |  histone h3k4me1 | histone h3k9me3 | mirna-seq |
+| encode | dnase-hypersensitivity | chromatin accessibility | histone h2bk5ac | histone h3t11ph | mrna-seq |
+| epihk | mirna-seq | dna methylation | histone h3k14ac | histone h3k4me2 | histone h4k12ac | nome seq |
+| gis | ncrna-seq  | flrna-seq | histone h3k18ac |  histone h3k4me3 | histone h4k20me1 | rna-seq |
+| hipsci | other | histone h2a.zac |  histone h3k23ac | histone h3k56ac |  histone h4k5ac | smrna-seq |
+| korea epigenome project (knih) | rna-seq | histone h2afz | histone h3k23me2 | histone h3k79me1 | histone h4k8ac | total-rna-seq |
+| nih roadmap epigenomics | wgs | histone h2ak5ac | histone h3k27ac | histone h3k79me2 | histone h4k91ac | transcription factor |
+        
+       
 ##### Searchable Experiment Types
 
 
