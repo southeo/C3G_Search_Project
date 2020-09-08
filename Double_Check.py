@@ -66,14 +66,10 @@ with open("EBI_Consolidated_test.txt") as rt:
     assay_list = sorted(assay_list)
     experiment_list = sorted(experiment_list)
     project_list = sorted(project_list)
-    for elem in assay_list:
-        print(elem)
-    print('\n')
+
     for elem in experiment_list:
         print('\t', elem)
     print('\n')
-    for elem in project_list:
-        print(elem)
 
 '''
     for elem in archive_list:
