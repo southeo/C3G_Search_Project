@@ -60,7 +60,7 @@ with open("EBI_Consolidated_test.txt") as rt:
             if inst["archive"] not in archive_list:
                 archive_list.append(inst["archive"])
             if inst["experiment_type"] not in experiment_list:
-                experiment_list.append(inst["experiment_type"])
+                experiment_list.append(inst["experiment_type"].casefold())
             if inst["assay_type"] not in assay_list:
                 assay_list.append(inst["assay_type"])
     assay_list = sorted(assay_list)
