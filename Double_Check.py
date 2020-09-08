@@ -46,6 +46,8 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
     markers_list = []
     biomat_list = []
     archive_list = []
+    experiment_list = []
+    assay_list = []
     count = 0
     for elem in ref_table_json ["data"]:
         if elem["project"] not in project_list:
@@ -57,11 +59,18 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
         for inst in elem["instances"]:
             if inst["archive"] not in archive_list:
                 archive_list.append(inst["archive"])
+            if inst["experiment_type"] not in experiment_list:
+                archive_list.append(inst["experiment_type"])
+            if inst["assay_type"] not in assay_list:
+                archive_list.append(inst["assay_type"])
+
+
     for elem in archive_list:
         print(elem)
     print("\n")
     for elem in project_list:
         print('\t', elem)
+
 '''
     
 

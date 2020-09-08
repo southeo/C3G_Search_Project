@@ -458,3 +458,4 @@ with open(REF_TABLE) as rt, open("Move_List_3.txt", 'w+') as mv_lst:
     json.dump(move_list, mv_lst, indent=2)
     map_onsite_files(REF_TABLE)
 
+334691
