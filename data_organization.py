@@ -233,57 +233,33 @@ def get_assay(ref_list, primary_id):
 
 
 def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
-    first_id = ihec_ids.pop(0)
-    file_path = os.path.join(DEST_DIR, str(first_id[0:14]))
-    # make directories:
-    if not os.path.exists(file_path):
-        os.mkdir(file_path)
-    file_path = os.path.join(file_path, first_id)
-    if not os.path.exists(file_path):
-        os.mkdir(file_path)
-    file_path = os.path.join(file_path, get_assay(ref_list, misc_id))
-    if not os.path.exists(file_path):
-        os.mkdir(file_path)
-    # path including file name
-    fp = os.path.join(file_path, str(elem))
-    if not os.path.exists(fp):
-        # Move file to its new home
-        if MOVE_FILES: shutil.copyfile(elem, fp)
-        local_ids = get_local_ids(first_id, misc_id, ref_list)
-        move_list.append({
-            "source location": str(os.getcwd()) + "/" + str(elem),
-            "destination": file_path,
-            "other versions": ihec_ids,
-            "move_type": "data file",
-            "file_name": str(elem),
-            "local_ids": local_ids
-            })
-
-    '''
-    elif str(elem) in FALSE_DUPLICATES:  #files have already been established to be false dups
-        local_ids = get_local_ids(first_id, misc_id, ref_list)
-        move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids)
-        
-    elif not is_same_hash(fp, elem):  # If files are different but have same name
-        local_ids = get_local_ids(first_id, misc_id, ref_list)
-        move_false_duplicates(elem, local_ids, fp, file_path, ihec_ids)
-        
-    '''
-    # Create symlinks for files that appear in later IHEC versions
     for id in ihec_ids:
-        sym_path = os.path.join(DEST_DIR, str(id[0:14]))
-        if not os.path.exists(sym_path):
-            os.mkdir(sym_path)
-        sym_path = os.path.join(sym_path, first_id)
-        if not os.path.exists(sym_path):
-            os.mkdir(sym_path)
-        sym_path = os.path.join(sym_path, get_assay(ref_list, misc_id))
-        if not os.path.exists(sym_path):
-            os.mkdir(sym_path)
+        file_path = os.path.join(DEST_DIR, str(id[0:14]))
+        # make directories:
+        if not os.path.exists(file_path):
+            os.mkdir(file_path)
+        file_path = os.path.join(file_path, id)
+        if not os.path.exists(file_path):
+            os.mkdir(file_path)
+        file_path = os.path.join(file_path, get_assay(ref_list, misc_id))
+        if not os.path.exists(file_path):
+            os.mkdir(file_path)
         # path including file name
-        sym_fp = os.path.join(sym_path, str(elem))
-        sym_path = os.path.join(sym_path, elem)
-        if MOVE_FILES and not os.path.is_link(sym_fp): os.symlink(os.path.join(file_path, elem), sym_path)
+        file_path = os.path.join(file_path, str(elem))
+        src_path = os.path.abspath(elem)
+        if not os.path.exists(file_path):
+            # Move file to its new home
+            if MOVE_FILES:
+                os.link(src_path, file_path)
+            local_ids = get_local_ids(id, misc_id, ref_list)
+            move_list.append({
+                "source location": src_path,
+                "destination": file_path,
+                "other versions": ihec_ids,
+                "move_type": "data file",
+                "file_name": str(elem),
+                "local_ids": local_ids
+                })
     return move_list
 
 
@@ -304,7 +280,8 @@ def move_extras(sub_dir, elem, misc_id):
             os.mkdir(extra_path)
         except FileExistsError:
             pass
-    if MOVE_FILES: shutil.copyfile(elem, os.path.join(extra_path, elem))
+    src_path = str(os.path.abspath(elem))
+    if MOVE_FILES: os.link(src_path, str(os.path.join(extra_path, elem)))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + str(elem),
         "destination": extra_path,
@@ -323,7 +300,8 @@ def move_metadata(elem, move_list, ref_list):
         md_path = os.path.join(DEST_DIR, misc_id)
     else:
         md_path = DEST_DIR_METADATA
-    if MOVE_FILES: shutil.copyfile(elem, os.path.join(md_path, elem))
+    src_path = str(os.path.abspath(elem))
+    if MOVE_FILES: os.link(src_path, os.path.join(md_path, elem))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,
