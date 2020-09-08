@@ -382,7 +382,8 @@ def match_to_db(misc_id, ref_list):
         for inst in elem["instances"]:
             if inst["primary_id"] == misc_id or inst["secondary_id"] == misc_id or \
                     ("egar_id" in inst.keys() and misc_id in inst['egar_id']) or \
-                    ("egaf_id" in inst.keys() and misc_id in inst['egaf_id']):
+                    ("egaf_id" in inst.keys() and misc_id in inst['egaf_id']) or \
+                    ("local_ids" in inst.keys() and misc_id in inst["local_ids"]):
                 ihec_ids.append(elem["ihec_id"])
     ihec_ids.sort()
     return ihec_ids
