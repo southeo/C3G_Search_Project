@@ -357,31 +357,9 @@ def update_filename(ref_list, filename, primary_id, ihec_ids):
         for id in ihec_ids:
             src_path = os.path.abspath(filename)
             dest_path = os.path.join(DEST_DIR, get_assay(ref_list, primary_id), id[0:14], id)
-            print(dest_path)
             writer = csv.writer(sl)
             row = [filename, primary_id, id, src_path, dest_path]
             writer.writerow(row)
-            print(os.getcwd())
-
-    '''
-    
-    :param ref_list: 
-    :param filename: 
-    :param primary_id: 
-    :param ihec_ids: 
-    :return: 
-        
-    for elem in ref_list["data"]:
-        for inst in elem["instances"]:
-            if primary_id == inst["primary_id"]:
-                with open(ONSITE_LIST, "a") as sl:
-                    writer = csv.writer(sl)
-                    row = filename, elem["ihec_id"], primary_id, os.path.abspath(os.path.join(os.getcwd(), filename))
-                    writer.writerow(row)
-                    print(os.getcwd())
-'''
-    with open(REF_TABLE, 'w') as rt:
-        json.dump(ref_list, rt, indent=4)
 
 
 def is_datafile(filename):
