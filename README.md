@@ -40,7 +40,7 @@ Regular searches match the string in the query file to the metadata associated w
 - experiment_type
 - archive
 
-##### Valid Search Parameter
+##### Valid Search Parameters
 | project | assay_type | experiment_type | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd |
 | --- | --- | --- | --- | --- | --- | --- |
 | amed-crest|  atac-seq | atac-seq | histone h2ak9ac | histone h3k27me3 | histone h3k9/14ac | histone reh3k27me3 |
