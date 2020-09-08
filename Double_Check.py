@@ -64,12 +64,14 @@ with open("EBI_Consolidated_test.txt") as rt:
             if inst["assay_type"] not in assay_list:
                 archive_list.append(inst["assay_type"])
 
-
+'''
     for elem in archive_list:
         print(elem)
     print("\n")
     for elem in project_list:
         print('\t', elem)
+    print("\n")
+    '''
     for elem in assay_list:
         print(elem)
     for elem in experiment_list:
