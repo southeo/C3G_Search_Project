@@ -414,6 +414,7 @@ DEST_DIR = os.path.abspath(args.destination_dir)
 DEST_DIR_EXTRA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_EXTRA))
 DEST_DIR_METADATA = os.path.abspath(os.path.join(args.destination_dir, DEST_DIR_METADATA))
 REF_TABLE = os.path.abspath(os.path.join(args.ref_dir, get_ref_table(args.ref_dir)))
+REF_TABLE = "EBI_Consolidated_test.txt"
 ON_SITE_TABLE = os.path.abspath(os.path.join(args.ref_dir, ON_SITE_TABLE))
 MISSING_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, MISSING_LIST)))
 REJECTED_LIST = Path(os.path.abspath(os.path.join(args.ref_dir, REJECTED_LIST)))
@@ -429,6 +430,3 @@ with open(REF_TABLE) as rt, open("Move_List_3.txt", 'w+') as mv_lst:
     move_list = []
     move_list = scan_through(ref_list, move_list)
     json.dump(move_list, mv_lst, indent=2)
-    map_onsite_files(REF_TABLE)
-
-334691
