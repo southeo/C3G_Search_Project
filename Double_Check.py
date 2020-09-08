@@ -70,6 +70,10 @@ with open("EBI_Database_Consolidated_2020-09-03.txt") as rt:
     print("\n")
     for elem in project_list:
         print('\t', elem)
+    for elem in assay_list:
+        print(elem)
+    for elem in experiment_list:
+        print('\t', elem)
 
 '''
     
