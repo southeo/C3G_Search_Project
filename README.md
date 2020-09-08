@@ -47,7 +47,7 @@ Regular searches match the string in the query file to the metadata associated w
 | blueprint | bisulfite-Seq | bisulfite-seq | histone h2bk120ac | histone h3k36me3 | histone h3k9ac | histone reh3k27me3 |
 | ceehrc | chip-seq | chip-seq| histone h2bk12ac | histone h2bk15ac | histone h3k4ac | histone h3k9me1 |  histone reh3k4me3 |
 | deep |  chip-seq input| chip-seq input | histone h2bk20ac |  histone h3k4me1 | histone h3k9me3 | mirna-seq |
-| encode | dnase-hypersensitivity | chromatin accessibility | histone h2bk5ac | histone h3t11ph | mrna-seq |
+| encode | dnase-hypersensitivity | chromatin accessibility | histone h2bk5ac | histone h3t11ph | mrna-seq | wgs |
 | epihk | mirna-seq | dna methylation | histone h3k14ac | histone h3k4me2 | histone h4k12ac | nome seq |
 | gis | ncrna-seq  | flrna-seq | histone h3k18ac |  histone h3k4me3 | histone h4k20me1 | rna-seq |
 | hipsci | other | histone h2a.zac |  histone h3k23ac | histone h3k56ac |  histone h4k5ac | smrna-seq |
