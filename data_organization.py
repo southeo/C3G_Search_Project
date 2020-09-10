@@ -250,7 +250,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
         if not os.path.exists(file_path):
             # Move file to its new home
             if MOVE_FILES:
-                os.link(src_path, file_path)
+                os.symlink(src_path, file_path)
             local_ids = get_local_ids(id, misc_id, ref_list)
             move_list.append({
                 "source location": src_path,
@@ -281,7 +281,7 @@ def move_extras(sub_dir, elem, misc_id):
         except FileExistsError:
             pass
     src_path = str(os.path.abspath(elem))
-    if MOVE_FILES: os.link(src_path, str(os.path.join(extra_path, elem)))
+    if MOVE_FILES: os.symlink(src_path, str(os.path.join(extra_path, elem)))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + str(elem),
         "destination": extra_path,
@@ -301,7 +301,7 @@ def move_metadata(elem, move_list, ref_list):
     else:
         md_path = DEST_DIR_METADATA
     src_path = str(os.path.abspath(elem))
-    if MOVE_FILES: os.link(src_path, os.path.join(md_path, elem))
+    if MOVE_FILES: os.symlink(src_path, os.path.join(md_path, elem))
     move_list.append({
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,
