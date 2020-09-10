@@ -266,6 +266,7 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
 def move_extras(sub_dir, elem, misc_id):
     if not sub_dir:
         sub_dir = "Other"
+    if not os.path.exists(DEST_DIR_EXTRA): os.mkdir(DEST_DIR_EXTRA)
 
     extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
     if not os.path.exists(extra_path):
