@@ -12,7 +12,7 @@ import datetime
 
 IHEC_PORTAL_URL = "https://www.ebi.ac.uk/vg/epirr/view/"  # must be cat'd with "all" or IHECRE ID
 remove_char_list = [',', '.', ';', '(', ')', '-', '/', '_', '\'', '\"']
-RAW_FILE = "EBI_Database_Raw.txt_2020-08-26.txt"     #"EBI_Database_Raw.txt_" + str(date.today()) + ".txt"
+RAW_FILE = "EBI_Database_Raw.txt_" + str(date.today()) + ".txt"
 
 def requests_retry_session(retries=3, backoff_factor=0.3, status_forcelist=(500, 502, 504), session=None, ):
     """Retry timeout requests"""
