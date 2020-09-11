@@ -219,7 +219,7 @@ def get_onsite_file(ref):
     latest_file = ""
     for elem in os.listdir(dir):
         if "Onsite_Files" in elem:
-            date_str = elem.replace("Onsite_Files_", "")
+            date_str = elem.replace("Onsite_Files", "")
             date_str = date_str[0:10]
             print(date_str)
             try:
