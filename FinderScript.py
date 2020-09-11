@@ -168,7 +168,7 @@ def get_path(primary_id):
                         list = entry.split('/')
                         assay = list.pop(4)
                         list.append(assay)
-                        print(os.path.join(list))
+                        print("/".join(list))
 
                         return entry
                 # This will work in future iterationsm with a better Onsite file:
