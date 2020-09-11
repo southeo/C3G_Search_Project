@@ -211,27 +211,28 @@ def get_location(scope, search_list, val_list, ref_list):
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    with open("Search_results_file_paths_sep11.txt", "w+") as file_list:
-                        writer = csv.writer(file_list)
-                        writer.writerow(os.path.join(ihec_path, filename))
-                        print(os.path.join(ihec_path, filename))
-                    if is_duplicate_pid(p_id, ref_list):
-                        p_id = p_id + "_" + filename[0:8]
-                    if p_id not in pid_list and check_file(p_id, filename):
-                        results["data"].append({
-                            "ihec_id": elem["ihec_id"],
-                            "experiment_type": inst["experiment_type"],
-                            "primary_id": p_id,
-                            "is live": elem["is live version?"],
-                            "paths": [(str(ihec_path) + "/" + str(filename))],
-                            "filename": [str(filename)]
-                        })
-                        pid_list.append(p_id)
-                    elif check_file(p_id, filename):
-                        for res in results["data"]:
-                            if p_id == res["primary_id"]:
-                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
-                                res["filename"].append(str(filename))
+                    if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
+                        with open("Search_results_file_paths_sep11.txt", "w+") as file_list:
+                            writer = csv.writer(file_list)
+                            writer.writerow(os.path.join(ihec_path, filename))
+                            print(os.path.join(ihec_path, filename))
+                        if is_duplicate_pid(p_id, ref_list):
+                            p_id = p_id + "_" + filename[0:8]
+                        if p_id not in pid_list:
+                            results["data"].append({
+                                "ihec_id": elem["ihec_id"],
+                                "experiment_type": inst["experiment_type"],
+                                "primary_id": p_id,
+                                "is live": elem["is live version?"],
+                                "paths": [(str(ihec_path) + "/" + str(filename))],
+                                "filename": [str(filename)]
+                            })
+                            pid_list.append(p_id)
+                        else:
+                            for res in results["data"]:
+                                if p_id == res["primary_id"]:
+                                    res["paths"].append((str(ihec_path) + "/" + str(filename)))
+                                    res["filename"].append(str(filename))
     return results
 
 
