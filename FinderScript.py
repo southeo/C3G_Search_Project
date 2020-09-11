@@ -162,8 +162,8 @@ def get_path(primary_id):
     with open(ONSITE_LIST) as ol:
         reader = csv.reader(ol)
         for row in reader:
-            print(primary_id, row[1])
             if row[1] == primary_id:
+                print(primary_id)
                 return row[-1]  # return just directory
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
