@@ -165,11 +165,9 @@ def get_path(primary_id):
             if primary_id in row:
                 for entry in row:
                     if "organised_data" in entry:
-                        print(entry)
                         return entry
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
-    print("rejected: ", primary_id)
     return False
 
 
@@ -194,6 +192,7 @@ def get_location(scope, search_list, val_list, ref_list):
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
+                print(ihec_path)
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
