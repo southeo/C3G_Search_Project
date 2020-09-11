@@ -219,7 +219,7 @@ def get_location(scope, search_list, val_list, ref_list):
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
-                        with open(file_list) as fl:
+                        with open(file_list, "a+") as fl:
                             writer = csv.writer(fl)
                             writer.writerow(os.path.join(ihec_path, filename))
                         if is_duplicate_pid(p_id, ref_list):
