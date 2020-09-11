@@ -374,7 +374,7 @@ def update_filename(ref_list, filename, primary_id, ihec_ids):
     with open(ONSITE_LIST, "a+") as sl:
         for id in ihec_ids:
             src_path = os.path.abspath(filename)
-            dest_path = os.path.join(DEST_DIR, get_assay(ref_list, primary_id), id[0:14], id)
+            dest_path = os.path.join(DEST_DIR, id[0:14], id, get_assay(ref_list, primary_id))
             writer = csv.writer(sl)
             row = [filename, primary_id, id, src_path, dest_path]
             writer.writerow(row)
@@ -441,7 +441,7 @@ JGAD_DIR = Path(os.path.abspath(os.path.join(args.ref_dir, JGAD_DIR)))
 if args.move_files:
     MOVE_FILES = args.move_files
 id_false_duplicates()
-ONSITE_LIST = os.path.abspath(os.path.join(args.ref_dir, ONSITE_LIST))
+ONSITE_LIST = os.path.abspath(os.path.join(args.ref_dir, ONSITE_LIST)) + "_fixed"
 with open(REF_TABLE) as rt, open("Move_List_3.txt", 'w+') as mv_lst:
     ref_list = json.load(rt)
     os.chdir(args.source_dir)
