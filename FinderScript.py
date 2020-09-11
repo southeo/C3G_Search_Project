@@ -196,8 +196,8 @@ def get_location(scope, search_list, val_list, ref_list):
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
-                print(ihec_path)
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
+                    print(filename)
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
                         if p_id not in pid_list:
