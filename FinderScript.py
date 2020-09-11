@@ -218,8 +218,8 @@ def get_onsite_file(ref):
     latest = date.min
     latest_file = ""
     for elem in os.listdir(dir):
-        if "Onsite_Files" in elem:
-            date_str = elem.replace("Onsite_Files", "")
+        if "Onsite_Files_" in elem:
+            date_str = elem.replace("Onsite_Files_", "")
             date_str = date_str[0:10]
             try:
                 date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
