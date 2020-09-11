@@ -297,7 +297,7 @@ def move_metadata(elem, move_list, ref_list):
         os.mkdir(DEST_DIR_METADATA)
     misc_id = fetch_id(elem, ref_list)
     if misc_id:
-        md_path = os.path.join(DEST_DIR, misc_id)
+        md_path = os.path.join(DEST_DIR_METADATA, misc_id)
     else:
         md_path = DEST_DIR_METADATA
     src_path = str(os.path.abspath(elem))
@@ -341,14 +341,14 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
                     move_list = move_files(ihec_ids, elem, move_list, primary_id, ref_list)
                     update_filename(ref_list, elem_str, primary_id, ihec_ids)
-                else:  # If there is no match between ids, move the file into the extra file sub directory
-                    with open(REJECTED_LIST, "a+", newline="") as rj_lst:
-                        # Write to Rejected list:
-                        row = [elem, primary_id, "", "no corresponding IHEC ID", os.getcwd()]
-                        writer = csv.writer(rj_lst)
-                        writer.writerow(row)
-                    sub_dir = get_sub_dir()
-                    move_list = move_extras(sub_dir, elem, primary_id)
+            else:  # If there is no match between ids, move the file into the extra file sub directory
+                with open(REJECTED_LIST, "a+", newline="") as rj_lst:
+                    # Write to Rejected list:
+                    row = [elem, primary_id, "", "no corresponding IHEC ID", os.getcwd()]
+                    writer = csv.writer(rj_lst)
+                    writer.writerow(row)
+                sub_dir = get_sub_dir()
+                move_list = move_extras(sub_dir, elem, primary_id)
         elif os.path.isdir(elem):  # Recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
