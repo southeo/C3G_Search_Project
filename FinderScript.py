@@ -221,6 +221,7 @@ def get_onsite_file(ref):
         if "Onsite_Files" in elem:
             date_str = elem.replace("Onsite_Files_", "")
             date_str = date_str[0:10]
+            print(date_str)
             try:
                 date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
             except (TypeError, ValueError) as e:
