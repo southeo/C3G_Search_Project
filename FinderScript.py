@@ -165,6 +165,11 @@ def get_path(primary_id):
             if primary_id in row:
                 for entry in row:
                     if "organised_data" in entry:
+                        list = entry.split('/')
+                        assay = list.pop(4)
+                        list.append(assay)
+                        print(os.path.join(list)
+
                         return entry
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
