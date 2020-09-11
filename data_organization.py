@@ -268,18 +268,10 @@ def move_extras(sub_dir, elem, misc_id):
     if not os.path.exists(DEST_DIR_EXTRA): os.mkdir(DEST_DIR_EXTRA)
 
     extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
-    if not os.path.exists(extra_path):
-        os.mkdir(extra_path)
-    try:
-        os.mkdir(extra_path)
-        extra_path = os.path.join(extra_path, misc_id)
-        os.mkdir(extra_path)
-    except FileExistsError:
-        try:
-            extra_path = os.path.join(extra_path, misc_id)
-            os.mkdir(extra_path)
-        except FileExistsError:
-            pass
+    if not os.path.exists(extra_path): os.mkdir(extra_path)
+    extra_path = os.path.join(extra_path, misc_id)
+    if not os.path.exists(extra_path): os.mkdir(extra_path)
+
     src_path = str(os.path.abspath(elem))
     if MOVE_FILES: os.symlink(src_path, str(os.path.join(extra_path, elem)))
     move_list.append({
