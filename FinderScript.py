@@ -163,8 +163,9 @@ def get_path(primary_id):
         reader = csv.reader(ol)
         for row in reader:
             if primary_id in row:
-                print(primary_id)
+                print(row[-1])
                 return row[-1]  # return just directory
+
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
     print(primary_id)
@@ -232,7 +233,6 @@ def get_onsite_file(ref):
                 elif date_str > latest:
                     latest = date_str
                     latest_file = elem
-    print(os.path.abspath(latest_file))
     return os.path.abspath(latest_file)
 
 
