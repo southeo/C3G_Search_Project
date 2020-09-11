@@ -273,7 +273,8 @@ def move_extras(sub_dir, elem, misc_id):
 
     extra_path = os.path.join(DEST_DIR_EXTRA, sub_dir)
     if not os.path.exists(extra_path): os.mkdir(extra_path)
-    extra_path = os.path.join(extra_path, misc_id)
+    if misc_id:
+        extra_path = os.path.join(extra_path, misc_id)
     if not os.path.exists(extra_path): os.mkdir(extra_path)
 
     src_path = str(os.path.abspath(elem))
