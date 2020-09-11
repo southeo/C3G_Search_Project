@@ -162,7 +162,6 @@ def get_path(primary_id):
     with open(ONSITE_LIST) as ol:
         reader = csv.reader(ol)
         for row in reader:
-            print(row)
             if row[2] == primary_id:
                 return row[-1]  # return just directory
                 # This will work in future iterationsm with a better Onsite file:
@@ -191,7 +190,6 @@ def get_location(scope, search_list, val_list, ref_list):
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
-                print(ihec_path)
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
@@ -221,7 +219,6 @@ def get_onsite_file(ref):
         if "Onsite_Files" in elem:
             date_str = elem.replace("Onsite_Files", "")
             date_str = date_str[0:10]
-            print(date_str)
             try:
                 date_str = datetime.strptime(date_str, '%Y-%m-%d').date()
             except (TypeError, ValueError) as e:
@@ -233,7 +230,6 @@ def get_onsite_file(ref):
                 elif date_str > latest:
                     latest = date_str
                     latest_file = elem
-    print(os.path.abspath(latest_file))
     return os.path.abspath(latest_file)
 
 
