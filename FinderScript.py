@@ -186,9 +186,9 @@ def get_location(scope, search_list, val_list, ref_list):
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
-        print(elem["ihec_id"])
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
+            print(p_id)
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
