@@ -9,6 +9,8 @@ This program compares user input to online EBI database and returns the location
 ## Creating A Query File
 A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
 
+Inputs are **not** case-sensitive. 
+
 ### Sample Input
 
 | project |  gender | assay_type | tissue_keywords | experiment_type |
@@ -27,9 +29,7 @@ Regular searches match the string in the query file to the metadata associated w
 
 - ihec_id (Note: if no version is specified, the latest on disc will be provided)
 - project
-- age_min
-- age_max
-- age_exact
+- age_min, age_max , age_exact (note: age must be supplied in years)
 - gender
 - species
 - markers
@@ -55,7 +55,7 @@ Regular searches match the string in the query file to the metadata associated w
 | nih roadmap epigenomics | wgs | histone h2ak5ac | histone h3k27ac | histone h3k79me2 | histone h4k91ac | transcription factor |
         
        
-##### Searchable Experiment Types
+Any experiment with the keyword "histone" in it is associated with the ChIP-Seq pipeline, as well as the experiment type ChIP-Seq Input. To acquire all ChIP-Seq files, set the assay_type value to ChIP-Seq instead of searching for each histone experiment type. 
 
 
 #### Keyword Search parameters:
