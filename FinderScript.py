@@ -161,6 +161,8 @@ def get_match_file_name():
 def get_path(primary_id):
     with open(ONSITE_LIST) as ol:
         reader = csv.reader(ol)
+        path_list = False
+        file_list = []
         for row in reader:
             if primary_id in row:
                 for entry in row:
@@ -170,8 +172,20 @@ def get_path(primary_id):
                         path_list.append(assay)
                         path_list = ("/".join(path_list))
                         return path_list
-                # This will work in future iterationsm with a better Onsite file:
-                return str(os.path.split(row[-1])[0])
+
+    if not path_list : return False
+
+
+def check_file(primary_id, filename):
+    with open(ONSITE_LIST) as ol:
+        reader = csv.reader(ol)
+        path_list = False
+        file_list = []
+        for row in reader:
+            if primary_id in row:
+                for entry in row:
+                    if filename in entry:
+                        return True
     return False
 
 
@@ -197,10 +211,9 @@ def get_location(scope, search_list, val_list, ref_list):
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    print(filename)
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
-                    if p_id not in pid_list:
+                    if p_id not in pid_list and check_file(p_id, filename):
                         results["data"].append({
                             "ihec_id": elem["ihec_id"],
                             "experiment_type": inst["experiment_type"],
@@ -210,7 +223,7 @@ def get_location(scope, search_list, val_list, ref_list):
                             "filename": [str(filename)]
                         })
                         pid_list.append(p_id)
-                    else:
+                    elif check_file(p_id, filename):
                         for res in results["data"]:
                             if p_id == res["primary_id"]:
                                 res["paths"].append((str(ihec_path) + "/" + str(filename)))
