@@ -25,7 +25,7 @@ REJECTED_LIST = "Rejected_file_list_1.txt"
 DUPLICATE_LIST = "Duplicate_list_all.txt"
 MOVE_FILES = False
 FALSE_DUPLICATES = []
-ONSITE_LIST = "Onsite_Files" + str(date.today())
+ONSITE_LIST = "Onsite_Files_" + str(date.today())
 EXTRA_DIR_LIST = ["EGA", "ENCODE", "GEO", "BLUEPRINT", "KNIH", "CEEHRC", "DEEP", "AMED-CREST", "GIS", "ASPERA",
                   "CEMT", "EPIVAR"]
 
@@ -249,7 +249,10 @@ def move_files(ihec_ids, elem, move_list, misc_id, ref_list):
         if not os.path.exists(file_path):
             # Move file to its new home
             if MOVE_FILES:
-                os.symlink(src_path, file_path)
+                try:
+                    os.symlink(src_path, file_path)
+                except FileExistsError:
+                    pass
             local_ids = get_local_ids(id, misc_id, ref_list)
             move_list.append({
                 "source location": src_path,
@@ -273,7 +276,11 @@ def move_extras(sub_dir, elem, misc_id):
     if not os.path.exists(extra_path): os.mkdir(extra_path)
 
     src_path = str(os.path.abspath(elem))
-    if MOVE_FILES: os.symlink(src_path, str(os.path.join(extra_path, elem)))
+    if MOVE_FILES:
+        try:
+            os.symlink(src_path, str(os.path.join(extra_path, elem)))
+        except FileExistsError:
+            pass
     move_list.append({
         "source location": str(os.getcwd()) + "/" + str(elem),
         "destination": extra_path,
@@ -293,7 +300,11 @@ def move_metadata(elem, move_list, ref_list):
     else:
         md_path = DEST_DIR_METADATA
     src_path = str(os.path.abspath(elem))
-    if MOVE_FILES: os.symlink(src_path, os.path.join(md_path, elem))
+    if MOVE_FILES:
+        try:
+            os.symlink(src_path, os.path.join(md_path, elem))
+        except FileExistsError:
+            pass
     move_list.append({
         "source location": str(os.getcwd()) + "/" + elem,
         "destination": md_path,
