@@ -108,7 +108,8 @@ def key_match(id, inst):
     if (inst["primary_id"] is not None and inst["primary_id"] == id) or \
             (inst["secondary_id"] is not None and inst["secondary_id"] == id) \
             or ("egaf" in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
-            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id):
+            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id) \
+            or ("local_ids" in inst.keys() and id in inst["local_ids"]):
         return True
     return False
 
@@ -315,6 +316,16 @@ def move_metadata(elem, move_list, ref_list):
     return move_list
 
 
+def fetch_primary_id(misc_id, ref_list):
+    for elem in ref_list["data"]:
+        for inst in elem["instances"]:
+            if key_match(misc_id, inst):
+                print(inst["primary_id"])
+                return inst["primary_id"]
+    print("rejected id: ", misc_id)
+    return False
+
+
 def scan_through(ref_list, move_list):  # Scans through source directory and moves stuff around
     missing_list = []
     for elem_str in os.listdir():
@@ -323,7 +334,8 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
         primary_id = ""
         #print('\t Current element:', elem)
         if os.path.isfile(elem) and is_datafile(elem_str):
-            primary_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
+            misc_id = fetch_id(elem_str, ref_list)  # get primary id from the filename, parent directory, or onsite list
+            primary_id = fetch_primary_id(misc_id, ref_list)
             if primary_id:  # if there is a match for secondary id
                 ihec_ids = match_to_db(primary_id, ref_list)  # list of ihec ids in which this file appears
                 if ihec_ids:  # if there is a match between primary/secondary id and one or more ihec ids
@@ -356,7 +368,7 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
 
 
 def update_filename(ref_list, filename, primary_id, ihec_ids):
-    with open(ONSITE_LIST, "a") as sl:
+    with open(ONSITE_LIST, "a+") as sl:
         for id in ihec_ids:
             src_path = os.path.abspath(filename)
             dest_path = os.path.join(DEST_DIR, get_assay(ref_list, primary_id), id[0:14], id)
