@@ -186,6 +186,7 @@ def get_location(scope, search_list, val_list, ref_list):
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
+        print(elem["ihec_id"])
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
