@@ -212,14 +212,15 @@ def get_location(scope, search_list, val_list, ref_list):
 
     # Get location of files
     for elem in scope["data"]:  # Cycle through all matches
+        file_list = get_match_file_name("f")
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
-                        with open(get_match_file_name('f'), "a+") as file_list:
-                            writer = csv.writer(file_list)
+                        with open(file_list) as fl:
+                            writer = csv.writer(fl)
                             writer.writerow(os.path.join(ihec_path, filename))
                         if is_duplicate_pid(p_id, ref_list):
                             p_id = p_id + "_" + filename[0:8]
