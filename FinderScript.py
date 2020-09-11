@@ -151,11 +151,17 @@ def is_duplicate_pid(p_id, ref_list):
     return False
 
 
-def get_match_file_name():
+def get_match_file_name(mode):
     if OUTFILE:
-        return OUTFILE
+        if mode == "d":
+            return OUTFILE + "_details.txt"
+        elif mode == "f":
+            return OUTFILE + "_filelist.txt"
     now = datetime.now()
-    return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
+    if mode == "d":
+        return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
+    elif mode == "f":
+        return "Search_Results_File_list_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
 
 
 def get_path(primary_id):
@@ -212,7 +218,7 @@ def get_location(scope, search_list, val_list, ref_list):
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
-                        with open("Search_results_file_paths_sep11.txt", "a+") as file_list:
+                        with open(get_match_file_name('f'), "a+") as file_list:
                             writer = csv.writer(file_list)
                             writer.writerow(os.path.join(ihec_path, filename))
                         if is_duplicate_pid(p_id, ref_list):
@@ -290,5 +296,5 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
                 scope = match_search_params(scope, search_param, val_to_match)
         results.append(get_location(scope, query_list, val_list, ref_table_json))
 
-with open(get_match_file_name(), "w+") as outfile:
+with open(get_match_file_name('d'), "w+") as outfile:
     json.dump(results, outfile, indent=4)
