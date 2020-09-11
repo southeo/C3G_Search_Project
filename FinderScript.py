@@ -200,21 +200,21 @@ def get_location(scope, search_list, val_list, ref_list):
                     print(filename)
                     if is_duplicate_pid(p_id, ref_list):
                         p_id = p_id + "_" + filename[0:8]
-                        if p_id not in pid_list:
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "experiment_type": inst["experiment_type"],
-                                "primary_id": p_id,
-                                "is live": elem["is live version?"],
-                                "paths": [(str(ihec_path) + "/" + str(filename))],
-                                "filename": [str(filename)]
-                            })
-                            pid_list.append(p_id)
-                        else:
-                            for res in results["data"]:
-                                if p_id == res["primary_id"]:
-                                    res["paths"].append((str(ihec_path) + "/" + str(filename)))
-                                    res["filename"].append(str(filename))
+                    if p_id not in pid_list:
+                        results["data"].append({
+                            "ihec_id": elem["ihec_id"],
+                            "experiment_type": inst["experiment_type"],
+                            "primary_id": p_id,
+                            "is live": elem["is live version?"],
+                            "paths": [(str(ihec_path) + "/" + str(filename))],
+                            "filename": [str(filename)]
+                        })
+                        pid_list.append(p_id)
+                    else:
+                        for res in results["data"]:
+                            if p_id == res["primary_id"]:
+                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
+                                res["filename"].append(str(filename))
     return results
 
 
