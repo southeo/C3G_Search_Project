@@ -166,7 +166,7 @@ def get_path(primary_id):
                 for entry in row:
                     if "organised_data" in entry:
                         path_list = entry.split('/')
-                        assay = path_list.pop(4)
+                        assay = path_list.pop(5)
                         path_list.append(assay)
                         path_list = ("/".join(path_list))
                         return path_list
