@@ -232,6 +232,7 @@ def get_onsite_file(ref):
                 elif date_str > latest:
                     latest = date_str
                     latest_file = elem
+    print(os.path.abspath(latest_file))
     return os.path.abspath(latest_file)
 
 
