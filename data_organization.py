@@ -107,8 +107,8 @@ def fetch_egaf_id(filepath):
 def key_match(id, inst):
     if (inst["primary_id"] is not None and inst["primary_id"] == id) or \
             (inst["secondary_id"] is not None and inst["secondary_id"] == id) \
-            or ("egaf" in inst.keys() and inst["egaf"] is not None and inst["egaf"] == id) \
-            or ("egad" in inst.keys() and inst["egad"] is not None and inst["egad"] == id) \
+            or ("egaf_id" in inst.keys() and id in inst["egaf_id"]) \
+            or ("egar_id" in inst.keys() and id in inst["egar_id"]) \
             or ("local_ids" in inst.keys() and id in inst["local_ids"]):
         return True
     return False
