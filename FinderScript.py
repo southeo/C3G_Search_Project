@@ -167,6 +167,7 @@ def get_path(primary_id):
                 return row[-1]  # return just directory
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
+    print(primary_id)
     return False
 
 
