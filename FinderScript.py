@@ -163,12 +163,13 @@ def get_path(primary_id):
         reader = csv.reader(ol)
         for row in reader:
             if primary_id in row:
-                print(row[-1])
-                return row[-1]  # return just directory
-
+                for entry in row:
+                    if "organised_data" in entry:
+                        print(entry)
+                        return entry
                 # This will work in future iterationsm with a better Onsite file:
                 return str(os.path.split(row[-1])[0])
-    print(primary_id)
+    print("rejected: ", primary_id)
     return False
 
 
