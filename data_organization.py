@@ -302,6 +302,8 @@ def move_metadata(elem, move_list, ref_list):
     else:
         md_path = DEST_DIR_METADATA
     src_path = str(os.path.abspath(elem))
+    if not os.path.exists(md_path):
+        os.mkdir(md_path)
     if MOVE_FILES:
         try:
             os.symlink(src_path, os.path.join(md_path, elem))
