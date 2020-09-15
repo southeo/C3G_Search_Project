@@ -7,6 +7,7 @@ from os import path
 import json
 import copy
 from datetime import datetime, date
+import time
 
 INSTANCE_SEARCHES = ["primary_id", "secondary_id", "assay_type", "experiment_type",
                      "archive"]  # these searches are handled differently
@@ -217,8 +218,11 @@ def get_location(scope, search_list, val_list, ref_list):
                             writer = csv.writer(fl, delimiter=' ')
                             fp = os.path.join(ihec_path, filename)
                             writer.writerow([fp])
+                        start_time = time.time()
                         if is_duplicate_pid(p_id, ref_list):
                             p_id = p_id + "_" + filename[0:8]
+                        elapsed_time = time.time() - start_time
+                        print(elapsed_time)
                         if p_id not in pid_list:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
@@ -230,13 +234,13 @@ def get_location(scope, search_list, val_list, ref_list):
                                 "filename": [str(filename)]
                             })
                             pid_list.append(p_id)
-                            print("entry added")
+                            #print("entry added")
                         else:
                             for res in results["data"]:
                                 if p_id == res["primary_id"]:
                                     res["paths"].append((str(ihec_path) + "/" + str(filename)))
                                     res["filename"].append(str(filename))
-                                    print("entry updated")
+                                    #print("entry updated")
 
     print("sorting results")
     for entry in results:
