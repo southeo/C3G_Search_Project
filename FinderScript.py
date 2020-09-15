@@ -84,7 +84,7 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                print("match found")
+                print("match found ", query, value)
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -124,7 +124,7 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-                print("match found")
+                print("match found ", query, value)
     return modified_scope
 
 
