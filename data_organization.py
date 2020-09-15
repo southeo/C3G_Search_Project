@@ -49,6 +49,10 @@ def parse_args():
                         "--move_files",
                         help="Enter True to move files (otherwise just generates report)",
                         required=False)
+    parser.add_argument('-m',
+                        "--move_files",
+                        help="Enter True to move files (otherwise just generates report)",
+                        required=False)
     return parser.parse_args()
 
 
@@ -408,9 +412,16 @@ def match_to_db(misc_id, ref_list):
 def filter_dir():
     empty = False
     for symlink in os.listdir():
-        if symlink.startswith("_"):
+        unlink = False
+        try:
+            os.stat(symlink)
+        except OSError:
             os.unlink(symlink)
-        if ".cip" in symlink or ".crypt" in symlink:
+            unlink = True
+        if not unlink and symlink.startswith("_"):
+            os.unlink(symlink)
+            unlink = True
+        if not unlink and (".cip" in symlink or ".crypt" in symlink):
             header = symlink.spit(".")[0]
             for other_syms in os.listdir:
                 if header in other_syms and ".cip" not in other_syms and ".crypt" not in other_syms:
@@ -427,8 +438,10 @@ def filter_through():  # Scans through directories and removes encrypted files a
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            filter_dir()
+            empty = filter_dir()
             os.chdir(saved_wd)
+            if empty:
+                os.remove(elem)  # remove empty directory
 
 
 args = parse_args()

@@ -204,8 +204,8 @@ def get_location(scope, search_list, val_list, ref_list):
         idx += 1
 
     # Get location of files
+    file_list = get_match_file_name("f")
     for elem in scope["data"]:  # Cycle through all matches
-        file_list = get_match_file_name("f")
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
