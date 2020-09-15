@@ -235,7 +235,6 @@ def get_location(scope, search_list, val_list, ref_list):
                             "filename": [str(filename)]
                         })
                         pid_list.append(p_id)
-                        print("entry added")
                     else:
                         for res in results["data"]:
                             if p_id == res["primary_id"]:
@@ -243,9 +242,6 @@ def get_location(scope, search_list, val_list, ref_list):
                                 if fp not in res["paths"]:
                                     res["paths"].append(fp)
                                     res["filename"].append(str(filename))
-                                    print("entry modified")
-                                else:
-                                    print("entry not modified")
 
 
     with open(file_list, "w+", newline="") as fl:
