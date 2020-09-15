@@ -352,11 +352,10 @@ def scan_through(ref_list, move_list):  # Scans through source directory and mov
                     writer.writerow(row)
                 sub_dir = get_sub_dir()
                 move_list = move_extras(sub_dir, elem, primary_id)
-        elif os.path.isdir(elem):  # Recursively enter directories
+        elif os.path.isdir(elem):  # recursively enter directories
             saved_wd = os.getcwd()
             new_wd = os.path.join(saved_wd, elem)
             os.chdir(new_wd)
-            #print("Current directory: ", os.getcwd())
             move_list = scan_through(ref_list, move_list)
             os.chdir(saved_wd)
         elif is_metadatafile(elem_str):
@@ -406,21 +405,30 @@ def match_to_db(misc_id, ref_list):
     ihec_ids.sort()
     return ihec_ids
 
+def filter_dir():
+    empty = False
+    for symlink in os.listdir():
+        if symlink.startswith("_"):
+            os.unlink(symlink)
+        if ".cip" in symlink or ".crypt" in symlink:
+            header = symlink.spit(".")[0]
+            for other_syms in os.listdir:
+                if header in other_syms and ".cip" not in other_syms and ".crypt" not in other_syms:
+                    os.unlink(symlink)
+    if not os.listdir():
+        empty = True
+    return empty
 
-def map_onsite_files(ref_table):
-    with open(ref_table) as rt, open("Onsite_Files_" + str(date.today()), "a+") as sl:
-        ebi_table = json.load(rt)
-        writer = csv.writer(sl)
-        header = ["File_Name", "IHEC_ID", "Primary_ID", "Location"]
-        writer.writerow(header)
 
-        for elem in ebi_table["data"]:
-            for inst in elem["instances"]:
-                if "filename" in inst.keys():
-                    for file in inst["filename"]:
-                        row = file[0], elem["ihec_id"], inst["primary_id"], \
-                              "/Epigenetic_Data_Home/" + elem["ihec_id"][0:14] + '/' + elem["ihec_id"] + '/' + file[0]
-                        writer.writerow(row)
+def filter_through():  # Scans through directories and removes encrypted files and backups
+    os.chdir(DEST_DIR)
+    for elem in os.listdir():
+        if os.path.isdir(elem):  # Recursively enter directories
+            saved_wd = os.getcwd()
+            new_wd = os.path.join(saved_wd, elem)
+            os.chdir(new_wd)
+            filter_dir()
+            os.chdir(saved_wd)
 
 
 args = parse_args()
@@ -447,4 +455,5 @@ with open(REF_TABLE) as rt, open("Move_List_3.txt", 'w+') as mv_lst:
     os.chdir(args.source_dir)
     move_list = []
     move_list = scan_through(ref_list, move_list)
+    filter_through()
     json.dump(move_list, mv_lst, indent=2)
