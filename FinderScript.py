@@ -58,7 +58,7 @@ def check_args(args):
     # make sure files exist
     assert (os.path.isfile(args.query_table)), "Query table not found"
     assert (os.path.isfile(args.ref_table)), "Reference table file not found"
-    assert (os.path.isfile(args.onsite_dable)), "Onsite file not found"
+    assert (os.path.isfile(args.onsite_table)), "Onsite file not found"
 
 
 def get_search_list(query_table):
