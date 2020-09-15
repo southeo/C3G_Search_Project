@@ -15,6 +15,7 @@ ID_PREFIXES = ["EGAR", "EGAF", "EGAD", "EGAX"]
 DUP_ID_LIST = []
 OUTFILE = ""
 ONSITE_LIST = ""
+DATETIME = datetime.now().strftime("%d-%m-%Y_%H-%M-%S")
 
 
 def help():
@@ -153,9 +154,9 @@ def get_match_file_name(mode):
             return OUTFILE + "_filelist.txt"
     now = datetime.now()
     if mode == "d":
-        return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H-%M-%S") + ".txt"
+        return "Search_Results_Details_" + DATETIME + ".txt"
     elif mode == "f":
-        return "Search_Results_File_list_" + now.strftime("%d-%m-%Y_%H-%M-%S") + ".txt"
+        return "Search_Results_File_list_" + DATETIME + ".txt"
 
 
 def get_path(primary_id):
