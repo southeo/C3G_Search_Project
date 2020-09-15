@@ -148,10 +148,9 @@ def is_duplicate_pid(p_id, ref_list):
 def get_match_file_name(mode):
     if OUTFILE:
         if mode == "d":
-            return OUTFILE + "_details.txt"
+            return OUTFILE + "_Details.txt"
         elif mode == "f":
-            return OUTFILE + "_filelist.txt"
-    now = datetime.now()
+            return OUTFILE + "_File_List.txt"
     if mode == "d":
         return "Search_Results_Details_" + DATETIME + ".txt"
     elif mode == "f":

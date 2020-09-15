@@ -49,10 +49,6 @@ def parse_args():
                         "--move_files",
                         help="Enter True to move files (otherwise just generates report)",
                         required=False)
-    parser.add_argument('-m',
-                        "--move_files",
-                        help="Enter True to move files (otherwise just generates report)",
-                        required=False)
     return parser.parse_args()
 
 
