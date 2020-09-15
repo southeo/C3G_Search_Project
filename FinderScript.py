@@ -84,6 +84,7 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
+                print("match found")
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -123,20 +124,8 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
+                print("match found")
     return modified_scope
-
-
-'''
-def match_files(filename, elem):
-    #References onsite file list and fetches primary id and inst
-    with open(ONSITE_LIST, 'r') as ol:
-        reader = csv.reader(ol)
-        for row in reader:
-            if row[0] == filename:
-                pid = row[2]
-                return pid
-    return False
-'''
 
 
 def is_duplicate_pid(p_id, ref_list):
