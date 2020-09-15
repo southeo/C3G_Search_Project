@@ -160,21 +160,19 @@ def get_match_file_name(mode):
         return "Search_Results_File_list_" + DATETIME + ".txt"
 
 
-def get_path(primary_id):
-    with open(ONSITE_LIST) as ol:
-        reader = csv.reader(ol)
-        path_list = False
-        file_list = []
-        for row in reader:
+def get_path(primary_id, onsite_list):
+    path_list = False
+    for row in onsite_list:
+        for entry in row:
             if primary_id in row:
-                for entry in row:
-                    if "organised_data" in entry:
-                        path_list = entry.split('/')
-                        assay = path_list.pop(5)
-                        path_list.append(assay)
-                        path_list = ("/".join(path_list))
-                        return path_list
-    if not path_list : return False
+                if "organised_data" in entry:
+                    path_list = entry.split('/')
+                    assay = path_list.pop(5)
+                    path_list.append(assay)
+                    path_list = ("/".join(path_list))
+                    return path_list
+    if not path_list:
+        return False
 
 
 def check_file(primary_id, filename, onsite_list):
@@ -219,35 +217,35 @@ def get_location(scope, search_list, val_list, ref_list):
     for elem in scope["data"]:  # Cycle through all matches
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
-            ihec_path = get_path(p_id)
+            ihec_path = get_path(p_id, onsite_copy)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    saved_len = len(onsite_copy)
-                    onsite_copy, on_disc = check_file(p_id, filename, onsite_copy)
-                    if on_disc:  # verifies correct files get added and prevents duplicates
-                        print(len(onsite_copy), saved_len)
-                        fp = os.path.join(ihec_path, filename)
-                        file_rows.append(fp)
-                        if is_duplicate_pid(p_id, ref_list):
-                            p_id = p_id + "_" + filename[0:8]
-                        if p_id not in pid_list:
-                            results["data"].append({
-                                "ihec_id": elem["ihec_id"],
-                                "assay_type": inst["assay_type"],
-                                "experiment_type": inst["experiment_type"],
-                                "primary_id": p_id,
-                                "is live": elem["is live version?"],
-                                "paths": [(str(ihec_path) + "/" + str(filename))],
-                                "filename": [str(filename)]
-                            })
-                            pid_list.append(p_id)
-                            #print("entry added")
-                        else:
-                            for res in results["data"]:
-                                if p_id == res["primary_id"]:
-                                    res["paths"].append((str(ihec_path) + "/" + str(filename)))
-                                    res["filename"].append(str(filename))
-                                    #print("entry updated")
+                    #saved_len = len(onsite_copy)
+                    #onsite_copy, on_disc = check_file(p_id, filename, onsite_copy)
+                    #if on_disc:  # verifies correct files get added and prevents duplicates
+                    #    print(len(onsite_copy), saved_len)
+                    fp = os.path.join(ihec_path, filename)
+                    file_rows.append(fp)
+                    if is_duplicate_pid(p_id, ref_list):
+                        p_id = p_id + "_" + filename[0:8]
+                    if p_id not in pid_list:
+                        results["data"].append({
+                            "ihec_id": elem["ihec_id"],
+                            "assay_type": inst["assay_type"],
+                            "experiment_type": inst["experiment_type"],
+                            "primary_id": p_id,
+                            "is live": elem["is live version?"],
+                            "paths": [(str(ihec_path) + "/" + str(filename))],
+                            "filename": [str(filename)]
+                        })
+                        pid_list.append(p_id)
+                        #print("entry added")
+                    else:
+                        for res in results["data"]:
+                            if p_id == res["primary_id"]:
+                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
+                                res["filename"].append(str(filename))
+                                #print("entry updated")
 
     with open(file_list, "w+", newline="") as fl:
         writer = csv.writer(fl, delimiter=' ')
