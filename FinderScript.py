@@ -237,6 +237,7 @@ def get_location(scope, search_list, val_list, ref_list):
                                     res["filename"].append(str(filename))
                                     print("entry updated")
 
+    print("sorting results")
     for entry in results:
         results["data"] = sorted(results["data"], key=lambda i: i["assay_type"])
 
