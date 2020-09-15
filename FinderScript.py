@@ -178,7 +178,6 @@ def get_path(primary_id):
                         path_list.append(assay)
                         path_list = ("/".join(path_list))
                         return path_list
-
     if not path_list : return False
 
 
@@ -241,6 +240,9 @@ def get_location(scope, search_list, val_list, ref_list):
                                 if p_id == res["primary_id"]:
                                     res["paths"].append((str(ihec_path) + "/" + str(filename)))
                                     res["filename"].append(str(filename))
+    for entry in results:
+        results["data"] = sorted(results["data"], key=lambda i: i["assay_type"])
+
     return results
 
 
@@ -300,6 +302,4 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
         results.append(get_location(scope, query_list, val_list, ref_table_json))
 
 with open(get_match_file_name('d'), "w+") as outfile:
-    results = sorted(results, key=lambda i: i["assay_type"])
-
     json.dump(results, outfile, indent=4)
