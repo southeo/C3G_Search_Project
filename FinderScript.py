@@ -41,6 +41,10 @@ def parse_args():
     parser.add_argument('-r',
                         '--ref_table',
                         help="Reference table from EBI site",
+                        required=True),
+    parser.add_argument('-r2',
+                        '--Onsite_table',
+                        help="Reference table containing onsite file information",
                         required=True)
     parser.add_argument('-o',
                         '--outfile',
