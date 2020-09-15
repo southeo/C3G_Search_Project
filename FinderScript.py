@@ -183,6 +183,7 @@ def check_file(primary_id, filename, onsite_list):
         for entry in row:
             if filename in entry and primary_id in entry:
                 on_disc = True
+                print(row)
                 onsite_list.remove(row)
                 return onsite_list, on_disc
     return onsite_list, on_disc
