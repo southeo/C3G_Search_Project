@@ -252,7 +252,7 @@ def get_location(scope, search_list, val_list, ref_list):
     with open(file_list, "w+", newline="") as fl:
         writer = csv.writer(fl, delimiter=' ')
         for row in file_rows:
-            writer.write(row)
+            writer.writerow(row)
 
 
 
