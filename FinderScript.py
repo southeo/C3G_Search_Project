@@ -220,10 +220,6 @@ def get_location(scope, search_list, val_list, ref_list):
             ihec_path = get_path(p_id, onsite_copy)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    #saved_len = len(onsite_copy)
-                    #onsite_copy, on_disc = check_file(p_id, filename, onsite_copy)
-                    #if on_disc:  # verifies correct files get added and prevents duplicates
-                    #    print(len(onsite_copy), saved_len)
                     fp = os.path.join(ihec_path, filename)
                     file_rows.append(fp)
                     if is_duplicate_pid(p_id, ref_list):
@@ -243,9 +239,11 @@ def get_location(scope, search_list, val_list, ref_list):
                     else:
                         for res in results["data"]:
                             if p_id == res["primary_id"]:
-                                res["paths"].append((str(ihec_path) + "/" + str(filename)))
-                                res["filename"].append(str(filename))
-                                #print("entry updated")
+                                fp = str(ihec_path) + "/" + str(filename)
+                                if fp not in res["paths"]:
+                                    res["paths"].append(fp)
+                                    res["filename"].append(str(filename))
+
 
     with open(file_list, "w+", newline="") as fl:
         writer = csv.writer(fl, delimiter=' ')
