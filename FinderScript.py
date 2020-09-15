@@ -225,7 +225,7 @@ def get_location(scope, search_list, val_list, ref_list):
                     saved_len = len(onsite_copy)
                     onsite_copy, on_disc = check_file(p_id, filename, onsite_copy)
                     if on_disc:  # verifies correct files get added and prevents duplicates
-                        print(len(onsite_copy, saved_len))
+                        print(len(onsite_copy), saved_len)
                         fp = os.path.join(ihec_path, filename)
                         file_rows.append(fp)
                         if is_duplicate_pid(p_id, ref_list):
