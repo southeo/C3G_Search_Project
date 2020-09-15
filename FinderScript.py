@@ -43,7 +43,7 @@ def parse_args():
                         help="Reference table from EBI site",
                         required=True),
     parser.add_argument('-r2',
-                        '--Onsite_table',
+                        '--onsite_table',
                         help="Reference table containing onsite file information",
                         required=True)
     parser.add_argument('-o',
@@ -58,6 +58,7 @@ def check_args(args):
     # make sure files exist
     assert (os.path.isfile(args.query_table)), "Query table not found"
     assert (os.path.isfile(args.ref_table)), "Reference table file not found"
+    assert (os.path.isfile(args.onsite_dable)), "Onsite file not found"
 
 
 def get_search_list(query_table):
@@ -84,7 +85,7 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                print("match found ", query, value)
+                print("match found ", elem["ihec_id"])
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -124,7 +125,7 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-                print("match found ", query, value)
+                print("match found ", elem["ihec_id"])
     return modified_scope
 
 
