@@ -180,8 +180,8 @@ def get_path(primary_id):
 def check_file(primary_id, filename, onsite_list):
     on_disc = False
     for row in onsite_list:
-        print(row)
         for entry in row:
+            print(entry)
             if filename in entry and primary_id in entry:
                 on_disc = True
                 onsite_list.remove(row)
