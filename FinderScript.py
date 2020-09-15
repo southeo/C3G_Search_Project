@@ -87,7 +87,6 @@ def match_search_params(scope, query, value):
                         bad_matches -= 1  # one less bad matc
             if elem["instances"]:  # if instance list is not empty
                 modified_scope["data"].append(elem)  # Append only the results with the correct instance searches
-                print("match found ", elem["ihec_id"])
         elif query == "age_min" and query in elem.keys():
             try:
                 value = float(value)
@@ -127,7 +126,6 @@ def match_search_params(scope, query, value):
         else:
             if query in elem.keys() and value == str(elem[query]).casefold():
                 modified_scope["data"].append(elem)
-                print("match found ", elem["ihec_id"])
     return modified_scope
 
 
@@ -235,7 +233,7 @@ def get_location(scope, search_list, val_list, ref_list):
                             "filename": [str(filename)]
                         })
                         pid_list.append(p_id)
-                        #print("entry added")
+                        print("entry added")
                     else:
                         for res in results["data"]:
                             if p_id == res["primary_id"]:
@@ -243,6 +241,9 @@ def get_location(scope, search_list, val_list, ref_list):
                                 if fp not in res["paths"]:
                                     res["paths"].append(fp)
                                     res["filename"].append(str(filename))
+                                    print("entry modified")
+                                else:
+                                    print("entry not modified")
 
 
     with open(file_list, "w+", newline="") as fl:
