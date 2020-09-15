@@ -1,17 +1,20 @@
-# C3G_Search_Project
+# Beluga Data Organization project
 Requires python 3.7.3 to run
+Last updated: September 2020
 
 This program compares user input to online EBI database and returns the location of the queried files on Beluga. The program can be run with the following command:
-` python FinderScript.py -q [query table].txt -r [ref table].txt - o [output location (optional] `
+` python FinderScript.py -q [query table].txt -r [ref table].txt -r2 [onsite table] -o [output location (optional] `
 
-` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt -outfile [output location (optional] `
+` python FinderScript.py --query_table [query table].txt --ref_table [ref table].txt -onsite_table [onsite table].txt -outfile [output location (optional)] `
 
-## Creating A Query File
-A query file is one of two parameters passed into the search function. It is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
+## Inputs to the Finder Script
+
+### Creating A Query File
+A query file is a tab-delimited text file file containing all information you are searching for. The first line of the file contains all seach parameters, and subsequent lines contain values to be matched. All values on one line must be satisfied in order to be considered a match (i.e. "and" function). 
 
 Inputs are **not** case-sensitive. 
 
-### Sample Input
+#### Sample Input
 
 | project |  gender | assay_type | tissue_keywords | experiment_type |
 | --- | --- | --- | --- | --- |
@@ -21,10 +24,10 @@ Inputs are **not** case-sensitive.
 
 Note this file must need to be tab-delimited. An empty string ("") may be used on each new tab for clarity. A sample input file can be found in this repository. 
 
-### Valid Search Parameters
+#### Valid Search Parameters
 Search parameters must be in the first line of the query file. Searches must include at least one of these parameters, copied exactly. 
 
-#### Regular Search Parameters
+##### Regular Search Parameters
 Regular searches match the string in the query file to the metadata associated with each IHEC ID. All associated instances will be flagged as matches. 
 
 - ihec_id (Note: if no version is specified, the latest on disc will be provided)
@@ -40,7 +43,7 @@ Regular searches match the string in the query file to the metadata associated w
 - experiment_type
 - archive
 
-##### Valid Search Parameters
+###### Valid Search Parameters
 | project | assay_type | experiment_type | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd | experiment_type cont'd |
 | --- | --- | --- | --- | --- | --- | --- |
 | amed-crest|  atac-seq | atac-seq | histone h2ak9ac | histone h3k27me3 | histone h3k9/14ac | histone reh3k27me3 |
@@ -58,7 +61,7 @@ Regular searches match the string in the query file to the metadata associated w
 Any experiment with the keyword "histone" in it is associated with the ChIP-Seq pipeline, as well as the experiment type ChIP-Seq Input. To acquire all ChIP-Seq files, set the assay_type value to ChIP-Seq instead of searching for each histone experiment type. 
 
 
-#### Keyword Search parameters:
+##### Keyword Search parameters:
 All items in input must be satisfied, but there may be extra keywords in the search element. For instance, a dataset may have "cord blood" listed as its tissue type. A keyword search using either "cord", "blood", or both will yield a match. However, if the dataset only has "blood" as its tissue type, a search for "cord blood" will not result in a match. 
 
 - donor_id (stored as donor id, donor_id, or sample_id on the EBI Database)
@@ -66,7 +69,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 - donor_ethnicity_keywords
 - disease_keywords
 
-##### Accepted Tissue Keywords
+###### Accepted Tissue Keywords
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | abdominal | absorptive | activated | adenoma | adipocyte | adipose | adrenal | alpha |
@@ -112,7 +115,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | white |  wt | 
 
 
-##### Accepted Disease Keywords
+###### Accepted Disease Keywords
 
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -141,7 +144,7 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | stenosis | submaxillar | symptomatic | syndrome | systemic | temporal | thyroid | trauma |
 | trisomy | tumor | type | ulcerative | usher | vater | xald
 
-#### Accepted Ethnicity Keywords
+##### Accepted Ethnicity Keywords
 | h1 | h2 | h3 | h4 | h5 | h6 | h7 | h8 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | afghan | african | american | arab | arabic | asian | australia | bahraini |
@@ -151,13 +154,23 @@ All items in input must be satisfied, but there may be extra keywords in the sea
 | nations | north | northern | pakistan | pakistani | seychellwa | south | srilankan |
 | white | 
 
+### Output File
+The finder script produces two reports: A detailed json containing select metadata about each file and its location, and a second text file that just has matched file locations. The default naming structure is as follows:
+
+`Search_Results_Details_-DD-MM-YYYY_HH-MM-SS.txt`
+`Search_Results_File_List_-DD-MM-YYYY_HH-MM-SS.txt`
+
+Output file names and locations may be specified using the -o tag. One file name is taken as input, and the two output files will be named accordingly:
+`[Output File]_Details.txt`
+`[Output File]_File_List.txt`
 
 
-
-## The Reference File
+### The Reference File
 The reference file is the second parameter passed to the search function. It contains metadata for all datasets in the EBI database. 
 
 ` EBI_Database_Consolidated_[Date of creation].txt `
+
+
 
 #### Updating the Reference File
 The reference file should be updated as files are downloaded onto Beluga. It may be updated with the following command:
@@ -170,6 +183,10 @@ You may also submit it as a job using:
 
 This will scan through the EBI Web portal and create a new metadata file with the updated information. This script may take a few hours to run; it is recommended that this script be run on a compute node. 
 
+### The Onsite File
+The onsite file contains information of all IHEC-associated files on disc. It contains IHEC ID, Primary ID, file name, physical location, and location of the symlink in the organizational structure. It is stored with the reference file, and it has the following naming convention:
+
+`Onsite_Files_[Date of creation].txt `
 
 ### Interpreting the Search Output
 Two output files will be produced. The detailed output file is a json containing information on which files result from which search. It consolidates files based on their primary IDs, and lists their associated experiment type, IHEC ID, whether or not they are the most up to-date version, and the files' location. This file's name defaults to `Search_Results_Details_[date and time].txt`, but its name and location can be specified in the input parameters.
