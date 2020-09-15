@@ -177,17 +177,19 @@ def get_path(primary_id):
     if not path_list : return False
 
 
-def check_file(primary_id, filename):
-    with open(ONSITE_LIST) as ol:
-        reader = csv.reader(ol)
-        path_list = False
-        file_list = []
-        for row in reader:
-            if primary_id in row:
-                for entry in row:
-                    if filename in entry:
-                        return True
-    return False
+def check_file(primary_id, filename, onsite_list):
+    on_disc = False
+    for row in onsite_list:
+        for entry in row:
+            if filename in entry and primary_id in entry:
+                on_disc = True
+                onsite_list.remove(row)
+                return onsite_list, on_disc
+    return onsite_list, on_disc
+
+
+
+
 
 
 def get_location(scope, search_list, val_list, ref_list):
@@ -213,17 +215,16 @@ def get_location(scope, search_list, val_list, ref_list):
         onsite_true = list(csv.reader(ol))
         onsite_copy = copy.deepcopy(onsite_true[:])
 
-    for elem in onsite_copy: print(elem)
-
-
-
     for elem in scope["data"]:  # Cycle through all matches
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
             ihec_path = get_path(p_id)
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
-                    if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
+                    saved_len = len(onsite_copy)
+                    onsite_copy, on_disc = check_file(p_id, filename, onsite_copy)
+                    if on_disc:  # verifies correct files get added and prevents duplicates
+                        print(len(onsite_copy, saved_len))
                         fp = os.path.join(ihec_path, filename)
                         file_rows.append(fp)
                         if is_duplicate_pid(p_id, ref_list):
