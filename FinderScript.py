@@ -159,9 +159,9 @@ def get_match_file_name(mode):
             return OUTFILE + "_filelist.txt"
     now = datetime.now()
     if mode == "d":
-        return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
+        return "Search_Results_Details_" + now.strftime("%d-%m-%Y_%H-%M-%S") + ".txt"
     elif mode == "f":
-        return "Search_Results_File_list_" + now.strftime("%d-%m-%Y_%H:%M:%S") + ".txt"
+        return "Search_Results_File_list_" + now.strftime("%d-%m-%Y_%H-%M-%S") + ".txt"
 
 
 def get_path(primary_id):
@@ -228,6 +228,7 @@ def get_location(scope, search_list, val_list, ref_list):
                         if p_id not in pid_list:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
+                                "assay_type": inst["assay_type"],
                                 "experiment_type": inst["experiment_type"],
                                 "primary_id": p_id,
                                 "is live": elem["is live version?"],
@@ -299,4 +300,6 @@ with open(args.query_table) as qt, open(args.ref_table, 'r') as rt:
         results.append(get_location(scope, query_list, val_list, ref_table_json))
 
 with open(get_match_file_name('d'), "w+") as outfile:
+    results = sorted(results, key=lambda i: i["assay_type"])
+
     json.dump(results, outfile, indent=4)
