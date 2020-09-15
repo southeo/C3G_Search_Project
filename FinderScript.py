@@ -229,11 +229,14 @@ def get_location(scope, search_list, val_list, ref_list):
                                 "filename": [str(filename)]
                             })
                             pid_list.append(p_id)
+                            print("entry added")
                         else:
                             for res in results["data"]:
                                 if p_id == res["primary_id"]:
                                     res["paths"].append((str(ihec_path) + "/" + str(filename)))
                                     res["filename"].append(str(filename))
+                                    print("entry updated")
+
     for entry in results:
         results["data"] = sorted(results["data"], key=lambda i: i["assay_type"])
 
