@@ -207,6 +207,16 @@ def get_location(scope, search_list, val_list, ref_list):
 
     # Get location of files
     file_list = get_match_file_name("f")
+    file_rows = []  # Will contain information for file_list output
+
+    with open(ONSITE_LIST, 'r') as ol:
+        onsite_true = list(csv.reader(ol))
+        onsite_copy = copy.deepcopy(onsite_true[:])
+
+    for elem in onsite_copy: print(elem)
+
+
+
     for elem in scope["data"]:  # Cycle through all matches
         for inst in elem["instances"]:
             p_id = inst["primary_id"]
@@ -214,15 +224,10 @@ def get_location(scope, search_list, val_list, ref_list):
             if path.exists(ihec_path) and os.path.isdir(ihec_path):
                 for filename in os.listdir(ihec_path):  # Cycle through files in directory
                     if check_file(p_id, filename):  # verifies correct files get added and prevents duplicates
-                        with open(file_list, "a+", newline="") as fl:
-                            writer = csv.writer(fl, delimiter=' ')
-                            fp = os.path.join(ihec_path, filename)
-                            writer.writerow([fp])
-                        start_time = time.time()
+                        fp = os.path.join(ihec_path, filename)
+                        file_rows.append(fp)
                         if is_duplicate_pid(p_id, ref_list):
                             p_id = p_id + "_" + filename[0:8]
-                        elapsed_time = time.time() - start_time
-                        print(elapsed_time)
                         if p_id not in pid_list:
                             results["data"].append({
                                 "ihec_id": elem["ihec_id"],
@@ -241,6 +246,13 @@ def get_location(scope, search_list, val_list, ref_list):
                                     res["paths"].append((str(ihec_path) + "/" + str(filename)))
                                     res["filename"].append(str(filename))
                                     #print("entry updated")
+
+    with open(file_list, "w+", newline="") as fl:
+        writer = csv.writer(fl, delimiter=' ')
+        for row in file_rows:
+            writer.write(row)
+
+
 
     print("sorting results")
     for entry in results:
